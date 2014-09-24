@@ -1,5 +1,5 @@
 package com.walemao.megastore.repository;
 
-public class UserDao {
+public interface UserDao {
 
 }
