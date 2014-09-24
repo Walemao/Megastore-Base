@@ -11,9 +11,9 @@ import org.springframework.web.portlet.bind.annotation.RenderMapping;
 public class UserController extends BaseController {
 	private Logger logger = LoggerFactory.getLogger(UserController.class);
 	
-	@RequestMapping(value={"/users"}, method = { RequestMethod.GET })
+	@RequestMapping(value={ "/users" }, method = { RequestMethod.GET })
 	public String getUsers(){
-		return "";
+		return "index";
 	}
 	
 }
