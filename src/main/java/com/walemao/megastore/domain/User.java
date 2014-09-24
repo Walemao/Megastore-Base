@@ -1,15 +1,17 @@
 package com.walemao.megastore.domain;
 
+import java.util.UUID;
+
 public class User {
-    private int id;
+    private UUID id;
     private String username;
     private String password;
     
-	public int getId() {
+	public UUID getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 	
