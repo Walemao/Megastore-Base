@@ -1,6 +1,7 @@
 package com.walemao.megastore.repository.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,5 +23,11 @@ public class UserDaoImpl implements UserDao{
 	public List<User> getUsers(){
 		String sql = "select * from user";
 		return this.jdbcTemplate.query(sql, new UserMapper());
+	}
+
+	@Override
+	public User getUser(UUID uuid) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

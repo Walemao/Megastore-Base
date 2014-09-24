@@ -1,5 +1,11 @@
 package com.walemao.megastore.repository;
 
-public interface UserDao {
+import java.util.List;
+import java.util.UUID;
 
+import com.walemao.megastore.domain.User;
+
+public interface UserDao {
+	public List<User> getUsers();
+	public User getUser(UUID uuid);
 }
