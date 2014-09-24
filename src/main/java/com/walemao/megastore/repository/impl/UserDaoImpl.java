@@ -30,4 +30,16 @@ public class UserDaoImpl implements UserDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Boolean Login(String userName, String passwd) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean Update(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
