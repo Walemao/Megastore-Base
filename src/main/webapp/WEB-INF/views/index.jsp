@@ -9,7 +9,9 @@
 <%@ include file="/WEB-INF/views/includes/head_scripts_links.jspf"%>
 </head>
 <body>
+<div>
 
+</div>
 
 
 

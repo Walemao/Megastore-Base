@@ -14,18 +14,17 @@
 
 	<!-- 需要Security保护的资源 -->
 	<http>
-		<intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		<intercept-url pattern="/user/**" access="ROLE_USER" />
+		<intercept-url pattern="/admin/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
 
 		<!-- 登陆管理 -->
-		<form-login login-page="/login.html" login-processing-url="/login"
+		<form-login login-page="/admin/login.html" login-processing-url="/admin/login"
 			username-parameter="username" password-parameter="password"
-			default-target-url="/" always-use-default-target="true"
-			authentication-failure-url="/login.html?error" />
+			default-target-url="/admin/index" always-use-default-target="true"
+			authentication-failure-url="/admin/login.html?error" />
 
 		<!-- 登出管理 -->
-		<logout logout-url="/logout" logout-success-url="/login.html?logout"
+		<logout logout-url="/admin/logout" logout-success-url="/admin/login.html?logout"
 			delete-cookies="JSESSIONID" invalidate-session="true" />
 
 		<!-- Header管理 -->
@@ -39,7 +38,7 @@
 		<!-- Session策略 -->
 		<session-management session-fixation-protection="migrateSession">
 			<concurrency-control max-sessions="1"
-				error-if-maximum-exceeded="false" expired-url="/login.html" />
+				error-if-maximum-exceeded="false" expired-url="/admin/login.html" />
 		</session-management>
 
 		<!-- Token策略 -->
@@ -55,8 +54,8 @@
 		<authentication-provider>
 			<jdbc-user-service id="userDetailsService"
 				data-source-ref="dataSource"
-				users-by-username-query="select username, password, enabled from user where username = ?"
-				authorities-by-username-query="select username, authority from authorities where username = ?" />
+				users-by-username-query="select username, password, enabled from t_admin where username = ?"
+				authorities-by-username-query="select username, authority from t_admin_authorities where username = ?" />
 		</authentication-provider>
 	</authentication-manager>
 
