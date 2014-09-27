@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2014-09-27 17:59:50
+Date: 2014-09-27 18:03:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -234,7 +234,7 @@ DROP TABLE IF EXISTS `t_user_authority`;
 CREATE TABLE `t_user_authority` (
   `username` varchar(255) NOT NULL COMMENT '用户名',
   `authority` varchar(255) NOT NULL COMMENT '权限',
-  KEY `idx_auth_username` (`username`,`authority`) USING BTREE,
+  UNIQUE KEY `idx_auth_username` (`username`,`authority`),
   CONSTRAINT `fk_t_user_authority_1` FOREIGN KEY (`username`) REFERENCES `t_user` (`u_username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
