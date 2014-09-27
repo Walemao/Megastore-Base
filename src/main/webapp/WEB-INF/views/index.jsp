@@ -6,8 +6,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>首页</title>
+<%@ include file="/WEB-INF/views/includes/head_scripts_links.jspf"%>
 </head>
 <body>
+<div>
+
+</div>
+
+
 
 </body>
+<%@ include file="/WEB-INF/views/includes/foot_scripts_links.jspf"%>
 </html>
