@@ -5,17 +5,25 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
 @Controller
 public class UserController extends BaseController {
 	private Logger logger = LoggerFactory.getLogger(UserController.class);
-	
-	@RequestMapping(value={"/users"}, method = { RequestMethod.GET })
-	public String getUsers(){
-		
+
+	@RequestMapping(value = "/login.html", method = RequestMethod.GET)
+	public String loginPage() {
+		return "login";
+	}
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String indexPage() {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/admin/users", method = { RequestMethod.GET })
+	public String getUsers() {
+
+		return "index";
+	}
+
 }

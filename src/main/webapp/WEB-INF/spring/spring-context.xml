@@ -49,10 +49,10 @@
 	</bean>
 	
 	<!-- 初始化数据库数据 -->
-	<jdbc:initialize-database data-source="dataSource" enabled="true" ignore-failures="ALL">
+	<jdbc:initialize-database data-source="dataSource" enabled="false" ignore-failures="ALL">
 		<jdbc:script encoding="UTF-8" location="/WEB-INF/classes/com/walemao/megastore/sql/megastore_schema.sql" />
-		<jdbc:script encoding="UTF-8" location="/WEB-INF/classes/com/walemao/megastore/sql/init_admin.sql" />
-		<jdbc:script encoding="UTF-8" location="/WEB-INF/classes/com/walemao/megastore/sql/init_admin_authorities.sql" />
+		<jdbc:script encoding="UTF-8" location="/WEB-INF/classes/com/walemao/megastore/sql/init_user.sql" />
+		<jdbc:script encoding="UTF-8" location="/WEB-INF/classes/com/walemao/megastore/sql/init_user_authority.sql" />
 	</jdbc:initialize-database>
 
 	<!-- 配置MongoDB数据源 -->
