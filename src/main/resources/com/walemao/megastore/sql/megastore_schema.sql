@@ -10,10 +10,59 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2014-09-27 16:20:09
+Date: 2014-09-27 17:46:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for d_cities
+-- ----------------------------
+DROP TABLE IF EXISTS `d_cities`;
+CREATE TABLE `d_cities` (
+  `c_key` smallint(6) DEFAULT NULL COMMENT '城市ID',
+  `c_value` varchar(255) DEFAULT NULL COMMENT '城市名称',
+  `c_pid` tinyint(4) DEFAULT NULL COMMENT '省份ID外键',
+  KEY `fk_d_provinces_1` (`c_pid`),
+  KEY `c_key` (`c_key`),
+  CONSTRAINT `fk_d_provinces_1` FOREIGN KEY (`c_pid`) REFERENCES `d_provinces` (`p_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for d_districts
+-- ----------------------------
+DROP TABLE IF EXISTS `d_districts`;
+CREATE TABLE `d_districts` (
+  `d_key` int(11) NOT NULL COMMENT '地区维表ID',
+  `d_value` varchar(255) DEFAULT NULL COMMENT '值',
+  `d_pid` smallint(6) DEFAULT NULL COMMENT '外键关联城市维表',
+  PRIMARY KEY (`d_key`),
+  KEY `fk_d_districts_1` (`d_pid`),
+  CONSTRAINT `fk_d_districts_1` FOREIGN KEY (`d_pid`) REFERENCES `d_cities` (`c_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for d_provinces
+-- ----------------------------
+DROP TABLE IF EXISTS `d_provinces`;
+CREATE TABLE `d_provinces` (
+  `p_key` tinyint(4) DEFAULT NULL,
+  `p_value` varchar(255) DEFAULT NULL COMMENT '省份名称',
+  KEY `p_key` (`p_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for d_user
+-- ----------------------------
+DROP TABLE IF EXISTS `d_user`;
+CREATE TABLE `d_user` (
+  `ud_id` int(255) NOT NULL COMMENT '用户维表ID',
+  `ud_key` int(11) DEFAULT NULL COMMENT 'key值',
+  `ud_value` varchar(255) DEFAULT NULL COMMENT '具体值',
+  `ud_type` tinyint(4) DEFAULT NULL COMMENT '类型',
+  PRIMARY KEY (`ud_id`),
+  KEY `idx_d_user_1` (`ud_type`) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_address
@@ -141,6 +190,19 @@ CREATE TABLE `t_proposal` (
   `p_content` varchar(255) DEFAULT NULL COMMENT '内容',
   `p_creattime` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`P_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_shopping_cart
+-- ----------------------------
+DROP TABLE IF EXISTS `t_shopping_cart`;
+CREATE TABLE `t_shopping_cart` (
+  `sc_id` char(36) NOT NULL COMMENT '购物车ID-跟用户ID一致',
+  `sc_u_id` char(36) DEFAULT NULL COMMENT '为空表示临时购物车',
+  `sc_productid` char(36) DEFAULT NULL,
+  `sc_amount` int(11) DEFAULT NULL,
+  `deletemark` datetime DEFAULT NULL,
+  PRIMARY KEY (`sc_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
