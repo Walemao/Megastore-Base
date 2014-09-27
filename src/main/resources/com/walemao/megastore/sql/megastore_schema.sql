@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2014-09-27 18:03:59
+Date: 2014-09-27 18:10:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -219,7 +219,8 @@ CREATE TABLE `t_user` (
   `u_logintime` datetime DEFAULT NULL COMMENT '登录时间',
   `u_remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `u_type` tinyint(4) DEFAULT NULL COMMENT '类型',
-  `u_level` tinyint(4) DEFAULT NULL,
+  `u_level` tinyint(1) DEFAULT NULL COMMENT '会员等级',
+  `u_enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用，0是未启用，1是启用',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`u_id`),
   KEY `idx_t_user_1` (`u_type`) USING BTREE,
