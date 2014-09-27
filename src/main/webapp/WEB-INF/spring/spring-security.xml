@@ -38,15 +38,12 @@
 		<!-- Session策略 -->
 		<session-management session-fixation-protection="migrateSession">
 			<concurrency-control max-sessions="1"
-				error-if-maximum-exceeded="false" expired-url="/admin/login.html" />
+				error-if-maximum-exceeded="false" expired-url="/" />
 		</session-management>
 
 		<!-- Token策略 -->
 		<csrf />
 
-		<!-- 是否記住用戶 -->
-		<remember-me token-validity-seconds="1209600"
-			remember-me-parameter="remember-me" data-source-ref="dataSource" />
 	</http>
 
 	<!-- 认证管理 -->

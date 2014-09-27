@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `t_admin` (
   UNIQUE KEY `UK_qh5t4dhrghyroc0clumyg8gx0` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
+
 -- ----------------------------
 -- Table structure for `t_authorities`
 -- ----------------------------
@@ -36,13 +37,5 @@ CREATE TABLE IF NOT EXISTS `t_admin_authorities` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 CREATE UNIQUE INDEX `ix_auth_username` ON t_admin_authorities (`username`,`authority`);
--- ----------------------------
--- Table structure for `t_persistent_logins`
--- ----------------------------
-CREATE TABLE IF NOT EXISTS `t_persistent_admin_logins` (
-  `username` VARCHAR(64) NOT NULL,
-  `series` VARCHAR(64) PRIMARY KEY,
-  `token` VARCHAR(64) NOT NULL,
-  `last_used` TIMESTAMP NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
