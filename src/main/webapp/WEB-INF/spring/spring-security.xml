@@ -20,6 +20,8 @@
 	<beans:bean id="loginFilter"
 		class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
 		<beans:property name="authenticationManager" ref="authenticationManager" />
+		<beans:property name="usernameParameter" value="username"></beans:property>
+		<beans:property name="passwordParameter" value="password"></beans:property>
 		<beans:property name="authenticationFailureHandler"
 			ref="failureHandler" />
 		<beans:property name="authenticationSuccessHandler"
@@ -42,6 +44,8 @@
 	<beans:bean id="adminLoginFilter"
 		class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
 		<beans:property name="authenticationManager" ref="authenticationManager" />
+		<beans:property name="usernameParameter" value="username"></beans:property>
+		<beans:property name="passwordParameter" value="password"></beans:property>
 		<beans:property name="authenticationFailureHandler"
 			ref="adminFailureHandler" />
 		<beans:property name="authenticationSuccessHandler"
@@ -126,7 +130,7 @@
 		<authentication-provider>
 			<jdbc-user-service id="userDetailsService"
 				data-source-ref="dataSource"
-				users-by-username-query="select u_username as username, u_password as password, u_enabled as enabled from t_user where username = ?"
+				users-by-username-query="select u_username as username, u_password as password, u_enabled as enabled from t_user where u_username = ?"
 				authorities-by-username-query="select username, authority from t_user_authority where username = ?" />
 		</authentication-provider>
 	</authentication-manager>

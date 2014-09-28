@@ -16,3 +16,21 @@ body.login {
 	border: 5px solid #ddd;
 	background-color: #fff;
 }
+
+.page-header-sub {
+	border-bottom: 1px solid #ddd;
+	font-weight: bold;
+	line-height: 18px;
+	padding-bottom: 5px;
+}
+
+#admin-login-form label{
+	text-align: left;
+	width: 100px;
+	padding-right: 0;
+}
+
+#admin-login-form span{
+	padding-left: 5px;
+	padding-right: 5px;
+}
