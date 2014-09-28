@@ -25,8 +25,7 @@
 					<label for="admin-username-input" class="col-sm-4 control-label"><span
 						class="glyphicon glyphicon-user"></span>用户名：</label>
 					<div class="col-sm-8">
-						<input type="text" name="username" class="form-control" id="admin-username-input"
-							placeholder="Enter Username">
+						<input type="text" name="username" class="form-control" id="admin-username-input" />
 					</div>
 				</div>
 				<div class="form-group">
@@ -34,7 +33,7 @@
 						class="glyphicon glyphicon-lock"></span>密码：</label>
 					<div class="col-sm-8">
 						<input type="password" name="password" class="form-control"
-							id="admin-password-input" placeholder="Enter Password">
+							id="admin-password-input" />
 					</div>
 				</div>
 				<div class="form-group">

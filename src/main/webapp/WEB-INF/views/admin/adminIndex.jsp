@@ -10,10 +10,12 @@
 <%@ include file="/WEB-INF/views/includes/admin_head_scripts_links.jspf"%>
 </head>
 <body>
-	<div class="header"></div>
-	<div class="container"></div>
+	<%@ include file="/WEB-INF/views/includes/admin_header.jspf"%>
+	<div id="container">
+	
+	</div>
 
-	<div class="footer"></div>
+	<div id="footer"></div>
 </body>
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
 </html>

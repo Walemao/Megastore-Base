@@ -24,13 +24,81 @@ body.login {
 	padding-bottom: 5px;
 }
 
-#admin-login-form label{
+#admin-login-form label {
 	text-align: left;
 	width: 100px;
 	padding-right: 0;
 }
 
-#admin-login-form span{
+#admin-login-form span {
 	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/** Admin Index Page **/
+#header {
+	height: 40px;
+	min-height: 0;
+	background: #4b4b4b;
+}
+
+#header .header-logo {
+	display: inline-block;
+	height: 40px;
+}
+
+#header .header-logo img {
+	padding: 10px;
+	padding-top: 7px;
+}
+
+.header-bar>li {
+	display: block;
+	width: auto;
+	height: 40px;
+	float: left;
+	line-height: 20px;
+	list-style: none;
+}
+
+.header-bar .divider-vertical {
+	width: 0;
+	border-width: 1px;
+	border-style: solid;
+	border-right-color: #3b3b3b;
+	border-left-color: #5b5b5b;
+}
+
+.header-bar span {
+	display: inline-block;
+	color: #999;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+	line-height: 40px;
+	padding-left: 8px;
+}
+
+.header-bar label {
+	color: #999;
+	margin-right: 8px;
+}
+
+.header-bar .dropdown-menu {
+	margin: -1px 0 0;
+	z-index: 1051;
+	min-width: 100px;
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+	box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+}
+
+.dropdown-menu>li>a:hover {
+	background: #db4a39;
+	color: #fff;
+}
+
+.dropdown-menu i {
+	display: inline-block;
+	width: 22px;
+	text-align: center;
 	padding-right: 5px;
 }
