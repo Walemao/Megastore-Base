@@ -10,46 +10,43 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2014-09-27 18:10:49
+Date: 2014-09-28 10:08:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for d_cities
+-- Table structure for d_city
 -- ----------------------------
-DROP TABLE IF EXISTS `d_cities`;
-CREATE TABLE `d_cities` (
-  `c_key` smallint(6) DEFAULT NULL COMMENT '城市ID',
-  `c_value` varchar(255) DEFAULT NULL COMMENT '城市名称',
-  `c_pid` tinyint(4) DEFAULT NULL COMMENT '省份ID外键',
-  KEY `fk_d_provinces_1` (`c_pid`),
-  KEY `c_key` (`c_key`),
-  CONSTRAINT `fk_d_provinces_1` FOREIGN KEY (`c_pid`) REFERENCES `d_provinces` (`p_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `d_city`;
+CREATE TABLE `d_city` (
+  `cityid` smallint(6) NOT NULL,
+  `cityname` varchar(50) DEFAULT NULL,
+  `zipcode` varchar(6) DEFAULT NULL,
+  `provinceid` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`cityid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for d_districts
+-- Table structure for d_district
 -- ----------------------------
-DROP TABLE IF EXISTS `d_districts`;
-CREATE TABLE `d_districts` (
-  `d_key` int(11) NOT NULL COMMENT '地区维表ID',
-  `d_value` varchar(255) DEFAULT NULL COMMENT '值',
-  `d_pid` smallint(6) DEFAULT NULL COMMENT '外键关联城市维表',
-  PRIMARY KEY (`d_key`),
-  KEY `fk_d_districts_1` (`d_pid`),
-  CONSTRAINT `fk_d_districts_1` FOREIGN KEY (`d_pid`) REFERENCES `d_cities` (`c_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `d_district`;
+CREATE TABLE `d_district` (
+  `districtid` smallint(6) NOT NULL,
+  `districtname` varchar(50) DEFAULT NULL,
+  `cityid` smallint(6) DEFAULT NULL,
+  PRIMARY KEY (`districtid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for d_provinces
+-- Table structure for d_province
 -- ----------------------------
-DROP TABLE IF EXISTS `d_provinces`;
-CREATE TABLE `d_provinces` (
-  `p_key` tinyint(4) DEFAULT NULL,
-  `p_value` varchar(255) DEFAULT NULL COMMENT '省份名称',
-  KEY `p_key` (`p_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `d_province`;
+CREATE TABLE `d_province` (
+  `ProvinceID` tinyint(4) NOT NULL,
+  `ProvinceName` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`ProvinceID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for d_user
@@ -74,7 +71,7 @@ CREATE TABLE `t_address` (
   `a_consignee` char(50) DEFAULT NULL COMMENT '联系人',
   `a_provinces` tinyint(4) DEFAULT NULL COMMENT '省份',
   `a_cities` smallint(6) DEFAULT NULL COMMENT '城市',
-  `a_districts` int(11) DEFAULT NULL COMMENT '地区',
+  `a_districts` smallint(6) DEFAULT NULL COMMENT '地区',
   `a_address` varchar(255) DEFAULT NULL COMMENT '地址',
   `a_zip_code` char(6) DEFAULT NULL COMMENT '邮政编码',
   `a_mobilephone` char(11) DEFAULT NULL COMMENT '手机号码',
@@ -253,9 +250,9 @@ CREATE TABLE `t_user_base` (
   `u_isval_email` tinyint(4) DEFAULT NULL COMMENT '是否严重邮箱',
   `u_provices` tinyint(4) DEFAULT NULL COMMENT '省份',
   `u_cities` smallint(6) DEFAULT NULL COMMENT '城市',
-  `u_districts` int(11) DEFAULT NULL COMMENT '地区',
+  `u_districts` smallint(6) DEFAULT NULL COMMENT '地区',
   `u_address` varchar(255) DEFAULT NULL COMMENT '详细地址',
-  `u_zip_code` smallint(6) DEFAULT NULL COMMENT '邮政编码',
+  `u_zipcode` varchar(6) DEFAULT NULL COMMENT '邮政编码',
   `u_isval_mobilephone` tinyint(4) DEFAULT NULL COMMENT '是否验证手机',
   `u_telphone` varchar(20) DEFAULT NULL COMMENT '座机',
   PRIMARY KEY (`u_id`),
