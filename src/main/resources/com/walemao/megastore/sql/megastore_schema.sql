@@ -151,11 +151,28 @@ CREATE TABLE `t_product` (
   `p_id` char(36) NOT NULL COMMENT '商品id',
   `p_number` varchar(255) DEFAULT NULL COMMENT '商品货号',
   `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
+  `p_images` varchar(255) DEFAULT NULL COMMENT '商品图片',
+  `p_type` int(11) DEFAULT '0' COMMENT '商品分类,关联t_product_classification',
+  `p_origin` varchar(50) DEFAULT NULL COMMENT '商品产地',
+  `p_weight` varchar(50) DEFAULT NULL COMMENT '商品毛重',
+  `p_materials` varchar(50) DEFAULT NULL COMMENT '商品材质',
   `p_desc` varchar(255) DEFAULT NULL COMMENT '商品描述',
-  `p_price` decimal(10,0) DEFAULT NULL,
-  `p_discount` double DEFAULT NULL,
+  `p_price` decimal(10,0) DEFAULT NULL COMMENT '商品价格',
+  `p_discount` double DEFAULT NULL COMMENT '商品折扣',
+  `p_remark` varchar(255) DEFAULT NULL COMMENT '商品备注',
+  `p_creattime` datetime DEFAULT NULL COMMENT '商品上架时间',
   `deletemark` datetime DEFAULT NULL,
   PRIMARY KEY (`p_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_product_classification
+-- ----------------------------
+DROP TABLE IF EXISTS `t_product_classification`;
+CREATE TABLE `t_product_classification` (
+  `pc_id` int(11) NOT NULL,
+  `pc_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`pc_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
