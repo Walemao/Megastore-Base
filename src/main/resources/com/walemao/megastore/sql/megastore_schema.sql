@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : MyComputer
-Source Server Version : 50703
-Source Host           : localhost:3306
+Source Server         : tycai
+Source Server Version : 50536
+Source Host           : 192.168.1.123:3306
 Source Database       : megastore
 
 Target Server Type    : MYSQL
-Target Server Version : 50703
+Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-09-28 10:08:22
+Date: 2014-09-29 17:56:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -144,6 +144,20 @@ CREATE TABLE `t_order_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Table structure for t_prodcut_color
+-- ----------------------------
+DROP TABLE IF EXISTS `t_prodcut_color`;
+CREATE TABLE `t_prodcut_color` (
+  `pd_id` bigint(20) NOT NULL COMMENT '商品颜色分类ID',
+  `pd_productid` char(36) NOT NULL COMMENT '商品ID，关联t_product',
+  `pd_name` varchar(255) DEFAULT NULL COMMENT '商品颜色名称',
+  `pd_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`pd_id`),
+  KEY `fk_t_product_color_1` (`pd_productid`),
+  CONSTRAINT `fk_t_product_color_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product` (`p_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
 -- Table structure for t_product
 -- ----------------------------
 DROP TABLE IF EXISTS `t_product`;
@@ -162,7 +176,10 @@ CREATE TABLE `t_product` (
   `p_remark` varchar(255) DEFAULT NULL COMMENT '商品备注',
   `p_creattime` datetime DEFAULT NULL COMMENT '商品上架时间',
   `deletemark` datetime DEFAULT NULL,
-  PRIMARY KEY (`p_id`)
+  PRIMARY KEY (`p_id`),
+  UNIQUE KEY `idx_t_product_number` (`p_number`),
+  KEY `idx_t_product_name` (`p_name`),
+  KEY `idx_t_product_deletemark` (`deletemark`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -239,7 +256,8 @@ CREATE TABLE `t_user` (
   PRIMARY KEY (`u_id`),
   KEY `idx_t_user_1` (`u_type`) USING BTREE,
   KEY `idx_t_user_2` (`u_level`),
-  KEY `u_username` (`u_username`)
+  KEY `idx_t_user_deletemark` (`deletemark`),
+  KEY `idx_t_user_username` (`u_username`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
