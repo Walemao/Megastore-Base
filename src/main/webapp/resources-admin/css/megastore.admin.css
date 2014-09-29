@@ -1,5 +1,5 @@
 /** Admin Login Page **/
-a:hover{
+a:hover {
 	text-decoration: none;
 }
 
@@ -228,4 +228,115 @@ a.btn-goto-font i {
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
+}
+
+#nav-info {
+	list-style: none;
+	margin: -20px -20px 20px;
+	padding: 0;
+	border-bottom: 1px solid #ddd;
+	background-color: #f6f6f6;
+}
+
+#nav-info>li {
+	float: left;
+	padding: 0 15px 0 20px;
+	height: 30px;
+	line-height: 32px;
+	color: #999;
+	font-size: 12px;
+	background-image: url(../images/nav_info_seperator.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: 5px 30px;
+}
+
+#nav-info>li:first-child {
+	background: 0 0;
+	padding: 0 15px;
+}
+
+#nav-info>li.active a {
+	color: #db4a39;
+}
+
+#nav-info>li>a {
+	color: #555;
+}
+
+.nav-dash {
+	list-style: none;
+	margin: 0 -20px 20px;
+	padding: 10px 0;
+	text-align: center;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	background-color: #f9f9f9;
+}
+
+.nav-dash>li {
+	display: inline-block;
+	margin: 0 3px;
+}
+
+.nav-dash>li>a {
+	position: relative;
+	font-size: 32px;
+	line-height: 32px;
+	color: #777;
+	display: block;
+	background-color: #ddd;
+	border: 1px solid #ccc;
+	width: 87px;
+	height: 87px;
+	padding: 27px 20px 13px;
+	text-align: center;
+	margin: 0 0 5px;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;
+}
+
+.nav-dash>li.active>a, .nav-dash>li>a:hover {
+	color: #fff;
+	background-color: #db4a39;
+	border: 1px solid #db4a39;
+	text-decoration: none
+}
+
+.nav-dash>li>a>.badge, .nav-dash>li>a>.label {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0 0 0 3px;
+	padding: 0 7px;
+	height: 20px;
+	line-height: 20px;
+}
+
+.badge-success {
+	background-color: #5cb85c;
+}
+
+.badge-default {
+	background-color: #777;
+}
+
+.badge-warning {
+	background-color: #f0ad4e;
+}
+
+.badge-danger {
+	background-color: #db4a39;
+}
+
+@keyframes fadeIn{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}@-webkit-keyframes fadeIn{0%{-webkit-transform:scale(0);opacity:0}100%{-webkit-transform:scale(1);opacity:1}}
+.animation-fadeIn {
+	animation-name: fadeIn;
+	-webkit-animation-name: fadeIn;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+	visibility: visible !important;
 }
