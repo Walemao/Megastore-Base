@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-09-29 17:56:11
+Date: 2014-09-29 22:19:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -119,11 +119,11 @@ CREATE TABLE `t_order` (
   `o_createtime` datetime DEFAULT NULL COMMENT '下单时间',
   `o_addressid` char(36) DEFAULT NULL COMMENT '地址id',
   `o_sid` char(36) DEFAULT NULL COMMENT '确认人id',
-  `o_state` tinyint(4) DEFAULT NULL COMMENT '订单状态',
+  `o_state` tinyint(1) DEFAULT NULL COMMENT '订单状态',
   `o_fee` decimal(12,0) DEFAULT NULL COMMENT '订单金额',
   `o_freight` decimal(12,0) DEFAULT NULL COMMENT '运费',
   `o_remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `o_paytype` tinyint(4) DEFAULT NULL COMMENT '支付方式',
+  `o_paytype` tinyint(2) DEFAULT NULL COMMENT '支付方式',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`o_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -165,6 +165,7 @@ CREATE TABLE `t_product` (
   `p_id` char(36) NOT NULL COMMENT '商品id',
   `p_number` varchar(255) DEFAULT NULL COMMENT '商品货号',
   `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
+  `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
   `p_images` varchar(255) DEFAULT NULL COMMENT '商品图片',
   `p_type` int(11) DEFAULT '0' COMMENT '商品分类,关联t_product_classification',
   `p_origin` varchar(50) DEFAULT NULL COMMENT '商品产地',
@@ -280,15 +281,15 @@ CREATE TABLE `t_user_base` (
   `u_head_portrait` varchar(255) DEFAULT NULL COMMENT '头像',
   `u_nickname` varchar(50) DEFAULT NULL COMMENT '昵称',
   `u_realname` varchar(50) DEFAULT NULL COMMENT '真实姓名',
-  `u_sex` tinyint(4) DEFAULT NULL COMMENT '性别',
+  `u_sex` tinyint(1) DEFAULT NULL COMMENT '性别',
   `u_birth` date DEFAULT NULL COMMENT '生日',
-  `u_isval_email` tinyint(4) DEFAULT NULL COMMENT '是否严重邮箱',
+  `u_isval_email` tinyint(1) DEFAULT NULL COMMENT '是否严重邮箱',
   `u_provices` tinyint(4) DEFAULT NULL COMMENT '省份',
   `u_cities` smallint(6) DEFAULT NULL COMMENT '城市',
   `u_districts` smallint(6) DEFAULT NULL COMMENT '地区',
   `u_address` varchar(255) DEFAULT NULL COMMENT '详细地址',
   `u_zipcode` varchar(6) DEFAULT NULL COMMENT '邮政编码',
-  `u_isval_mobilephone` tinyint(4) DEFAULT NULL COMMENT '是否验证手机',
+  `u_isval_mobilephone` tinyint(1) DEFAULT NULL COMMENT '是否验证手机',
   `u_telphone` varchar(20) DEFAULT NULL COMMENT '座机',
   PRIMARY KEY (`u_id`),
   UNIQUE KEY `idx_t_user_base_1` (`u_id`) USING BTREE
