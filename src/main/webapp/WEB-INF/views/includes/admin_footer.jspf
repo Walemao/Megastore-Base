@@ -1,0 +1,5 @@
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"%>
+
+<a href="javascript:void(0);" id="to-top">
+	    <i class="icon-angle-up icon-large"></i>
+	</a>

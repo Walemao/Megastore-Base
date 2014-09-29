@@ -10,12 +10,24 @@
 <%@ include file="/WEB-INF/views/includes/admin_head_scripts_links.jspf"%>
 </head>
 <body>
+    <!-- 引用页面header模板 -->
 	<%@ include file="/WEB-INF/views/includes/admin_header.jspf"%>
-	<div id="container">
 	
+	<div id="container">
+	<!-- 引用页面侧边栏模板 -->
+	<%@ include file="/WEB-INF/views/includes/admin_aside.jspf"%>
+		
+		<div id="content">
+			dsfsdfsdf<br> sdfsdf<br> sdfsdf<br> sdfs<br>
+			
+			
+			
+			
+		</div>
 	</div>
 
-	<div id="footer"></div>
+    <!-- 引用页面底部模板 -->
+	<%@ include file="/WEB-INF/views/includes/admin_footer.jspf"%>
 </body>
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
 </html>

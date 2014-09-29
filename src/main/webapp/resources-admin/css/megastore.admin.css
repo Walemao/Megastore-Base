@@ -1,4 +1,8 @@
 /** Admin Login Page **/
+a:hover{
+	text-decoration: none;
+}
+
 body.login {
 	padding: 80px 0 0;
 	background-color: #f9f9f9;
@@ -101,4 +105,127 @@ body.login {
 	width: 22px;
 	text-align: center;
 	padding-right: 5px;
+}
+
+#container {
+	background-color: #ddd;
+}
+
+#aside {
+	width: 201px;
+	padding: 0;
+	position: absolute;
+	border-right: 1px solid #ccc;
+}
+
+#sidebar-search {
+	margin: 0;
+	padding: 0;
+	height: 31px;
+	background-color: #eee;
+}
+
+#sidebar-search input[type=text] {
+	padding: 0 10px;
+	height: 30px;
+	line-height: normal;
+	width: 177px;
+	border: none;
+	background-color: #eee;
+	font-style: italic;
+	font-size: 12px;
+	color: #555;
+	outline: none;
+}
+
+#sidebar-search button {
+	border: none;
+	background-color: #eee;
+	height: 30px;
+	padding: 0;
+	color: #999;
+}
+
+#content {
+	margin: 0 0 0 200px;
+	padding: 20px;
+	background-color: #fff;
+	border-left: 1px solid #ccc;
+	min-height: 1000px;
+}
+
+#primary-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 15px 0;
+}
+
+#primary-nav li a {
+	display: block;
+	margin: 3px 0 0;
+	background-color: #e9e9e9;
+	color: #999;
+	line-height: 20px;
+	padding: 9px 10px 6px 40px;
+}
+
+#primary-nav li a:focus, #primary-nav li a:hover {
+	color: #777;
+	background-color: #f6f6f6;
+	text-decoration: none;
+}
+
+#primary-nav li a.active {
+	padding-left: 35px;
+	color: #333;
+	background-color: #fff;
+	border-left: 5px solid #db4a39;
+}
+
+#primary-nav li i {
+	margin: 0 10px 0 -30px;
+	width: 20px;
+	text-align: center;
+	display: inline-block;
+	color: #999;
+}
+
+a.btn-goto-font {
+	color: #999;
+	font-size: 14px;
+	margin: 0;
+	display: block;
+	padding-top: 9px;
+	padding-bottom: 6px;
+	text-align: left;
+	border: none;
+	background: #f1f1f1;
+}
+
+a.btn-goto-font i {
+	margin: 0 6px 0 -1px;
+	width: 20px;
+	text-align: center;
+	display: inline-block;
+	color: #999;
+}
+
+#to-top {
+	font-size: 20px;
+	font-weight: bold;
+	width: 40px;
+	height: 40px;
+	line-height: 38px;
+	text-align: center;
+	position: fixed;
+	bottom: 85px;
+	left: 5px;
+	color: #555;
+	display: none;
+	background-color: #fff;
+	opacity: .5;
+	filter: alpha(opacity = 5);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
 }

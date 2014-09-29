@@ -1,0 +1,28 @@
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"%>
+
+<div id="aside">
+			<form id="sidebar-search" method="get" action="#">
+				<div class="input-group">
+					<input type="text" name="sidebar-search-term"
+						placeholder="Search.." />
+					<button>
+						<i class="icon-search"></i>
+					</button>
+				</div>
+			</form>
+			
+			<div id="primary-nav">
+			   <ul>
+			      <li><a href="#" class="active"><i class="icon-dashboard"></i>仪表盘</a></li>
+			      <li><a href="#"><i class="icon-gift"></i>商品管理</a></li>
+			      <li><a href="#"><i class="icon-table"></i>订单管理</a></li>
+			      <li><a href="#"><i class="icon-shopping-cart"></i>购物车管理</a></li>
+			      <li><a href="#"><i class="icon-group"></i>用户管理</a></li>
+			   </ul>
+			</div>
+
+            <div class="goto-megastore">
+             <a href="#" class="btn btn-goto-font"><i class="icon-external-link"></i>前往商城主页</a>
+            </div>
+
+		</div>
