@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-09-29 22:19:22
+Date: 2014-09-29 22:24:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -76,7 +76,7 @@ CREATE TABLE `t_address` (
   `a_zip_code` char(6) DEFAULT NULL COMMENT '邮政编码',
   `a_mobilephone` char(11) DEFAULT NULL COMMENT '手机号码',
   `a_phone` char(20) DEFAULT NULL COMMENT '座机',
-  `a_isdefault` tinyint(4) DEFAULT NULL COMMENT '是否默认',
+  `a_isdefault` tinyint(1) DEFAULT NULL COMMENT '是否默认',
   `a_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`a_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -87,7 +87,7 @@ CREATE TABLE `t_address` (
 DROP TABLE IF EXISTS `t_complaints`;
 CREATE TABLE `t_complaints` (
   `c_id` char(36) NOT NULL COMMENT '投诉咨询表ID',
-  `c_subject` tinyint(4) DEFAULT NULL COMMENT '主题选择',
+  `c_subject` tinyint(2) DEFAULT NULL COMMENT '主题选择',
   `c_name` char(20) DEFAULT NULL COMMENT '姓名',
   `c_provinces` tinyint(4) DEFAULT NULL COMMENT '省份',
   `c_cities` smallint(6) DEFAULT NULL COMMENT '城市',
@@ -213,10 +213,10 @@ DROP TABLE IF EXISTS `t_proposal`;
 CREATE TABLE `t_proposal` (
   `P_ID` char(36) NOT NULL,
   `p_u_id` char(36) DEFAULT NULL COMMENT '用户ID',
-  `p_subject` tinyint(4) DEFAULT NULL COMMENT '建议留言类型',
+  `p_subject` tinyint(2) DEFAULT NULL COMMENT '建议留言类型',
   `p_name` char(20) DEFAULT NULL COMMENT '姓名',
   `p_provinces` tinyint(4) DEFAULT NULL COMMENT '省份',
-  `p_cities` tinyint(4) DEFAULT NULL COMMENT '城市',
+  `p_cities` smallint(6) DEFAULT NULL COMMENT '城市',
   `p_contact` char(11) DEFAULT NULL COMMENT '联系方式',
   `p_email` varchar(255) DEFAULT NULL COMMENT '电子邮箱',
   `p_content` varchar(255) DEFAULT NULL COMMENT '内容',
