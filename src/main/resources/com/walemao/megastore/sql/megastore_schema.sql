@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-09-29 22:24:29
+Date: 2014-09-30 11:25:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -201,9 +201,11 @@ CREATE TABLE `t_product_favorites` (
   `pf_id` char(36) NOT NULL COMMENT '收藏表ID',
   `pf_u_id` char(36) NOT NULL COMMENT '用户ID',
   `pf_productid` char(36) NOT NULL COMMENT '商品ID',
+  `pf_colorid` bigint(20) DEFAULT NULL COMMENT '颜色ID',
   `pf_creattime` datetime DEFAULT NULL COMMENT '创建时间',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
-  PRIMARY KEY (`pf_id`)
+  PRIMARY KEY (`pf_id`),
+  UNIQUE KEY `idx_t_product_favorites_1` (`pf_u_id`,`pf_productid`,`pf_colorid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
