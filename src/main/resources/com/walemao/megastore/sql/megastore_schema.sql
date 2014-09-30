@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-09-30 22:11:57
+Date: 2014-09-30 22:20:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -69,9 +69,9 @@ CREATE TABLE `t_address` (
   `a_id` char(36) NOT NULL COMMENT '地址ID',
   `a_u_id` char(36) NOT NULL COMMENT '用户ID',
   `a_consignee` char(50) DEFAULT NULL COMMENT '联系人',
-  `a_provinces` tinyint(4) DEFAULT NULL COMMENT '省份',
-  `a_cities` smallint(6) DEFAULT NULL COMMENT '城市',
-  `a_districts` smallint(6) DEFAULT NULL COMMENT '地区',
+  `a_province` tinyint(4) DEFAULT NULL COMMENT '省份',
+  `a_citie` smallint(6) DEFAULT NULL COMMENT '城市',
+  `a_district` smallint(6) DEFAULT NULL COMMENT '地区',
   `a_address` varchar(255) DEFAULT NULL COMMENT '地址',
   `a_zip_code` char(6) DEFAULT NULL COMMENT '邮政编码',
   `a_mobilephone` char(11) DEFAULT NULL COMMENT '手机号码',
