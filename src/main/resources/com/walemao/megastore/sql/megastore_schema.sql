@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-09-30 20:16:35
+Date: 2014-09-30 22:11:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -234,11 +234,14 @@ CREATE TABLE `t_proposal` (
 DROP TABLE IF EXISTS `t_shopping_cart`;
 CREATE TABLE `t_shopping_cart` (
   `sc_id` char(36) NOT NULL COMMENT '购物车ID-跟用户ID一致',
-  `sc_u_id` char(36) DEFAULT NULL COMMENT '为空表示临时购物车',
-  `sc_productid` char(36) DEFAULT NULL,
-  `sc_amount` int(11) DEFAULT NULL,
-  `deletemark` datetime DEFAULT NULL,
-  PRIMARY KEY (`sc_id`)
+  `sc_u_id` char(36) NOT NULL COMMENT '用户ID',
+  `sc_productid` char(36) NOT NULL COMMENT '商品ID',
+  `sc_productcolorid` bigint(20) NOT NULL COMMENT '商品颜色ID',
+  `sc_amount` int(11) DEFAULT NULL COMMENT '数量',
+  `sc_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  PRIMARY KEY (`sc_id`),
+  UNIQUE KEY `idx_t_shopping_cart_1` (`sc_u_id`,`sc_productid`,`sc_productcolorid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
