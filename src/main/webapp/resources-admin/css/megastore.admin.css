@@ -340,3 +340,107 @@ a.btn-goto-font i {
 	-webkit-animation-timing-function: ease-in-out;
 	visibility: visible !important;
 }
+
+.dash-tile {
+	min-height: 190px;
+	background-color: #e9e9e9;
+	margin: 0 0 20px;
+	padding: 0 20px;
+}
+
+.dash-tile-header {
+	margin: 0 -20px;
+	padding: 0 4px 0 10px;
+	min-height: 38px;
+	line-height: 45px;
+	font-weight: 700;
+	border-bottom: 2px solid #ddd;
+	background-color: #eee;
+}
+
+.dash-tile-icon {
+	float: left;
+	padding: 40px 0 0;
+	font-size: 48px;
+	text-align: left;
+}
+
+.dash-tile-text {
+	float: right;
+	padding: 48px 0 0;
+	font-size: 36px;
+	text-align: right;
+}
+
+.dash-tile-icon, .dash-tile-text {
+	line-height: normal;
+	color: #fff;
+}
+
+.dash-tile-balloon .dash-tile-header, .dash-tile-dark .dash-tile-header, .dash-tile-doll .dash-tile-header, .dash-tile-flower .dash-tile-header, .dash-tile-fruit .dash-tile-header, .dash-tile-leaf .dash-tile-header, .dash-tile-ocean .dash-tile-header, .dash-tile-oil .dash-tile-header {
+	border-bottom: 2px solid #f9f9f9;
+	background-color: #eee;
+	opacity: .75;
+	filter: alpha(opacity=75);
+}
+
+.dash-tile-ocean {
+	background-color: #3991db;
+}
+
+.dash-tile-leaf {
+	background-color: #c2db39;
+}
+
+.dash-tile-flower {
+	background-color: #9139db;
+}
+
+.dash-tile-fruit {
+	background-color: #db9839;
+}
+
+.dash-tile-oil {
+	background-color: #d9db39;
+}
+
+.dash-tile-dark {
+	background-color: #555;
+}
+
+.dash-tile-balloon {
+	background-color: #db6739;
+}
+
+.dash-tile-doll {
+	background-color: #db39bb;
+}
+
+.dash-tile-options {
+	float: right;
+	height: 38px;
+	line-height: 41px;
+}
+
+.dash-tile-options .btn{
+	-webkit-border-radius: 0!important;
+	-moz-border-radius: 0!important;
+	border-radius: 0!important;
+}
+
+.dash-tile-options .btn-default {
+	background: #eee;
+}
+
+@keyframes pullDown{0%{transform:scaleY(0.1)}40%{transform:scaleY(1.02)}100%,60%{transform:scaleY(0.98)}80%{transform:scaleY(1.01)}100%{transform:scaleY(1)}}@-webkit-keyframes pullDown{0%{-webkit-transform:scaleY(0.1)}40%{-webkit-transform:scaleY(1.02)}100%,60%{-webkit-transform:scaleY(0.98)}80%{-webkit-transform:scaleY(1.01)}100%{-webkit-transform:scaleY(1)}}
+.animation-pullDown {
+	animation-name: pullDown;
+	-webkit-animation-name: pullDown;
+	animation-duration: 1.1s;
+	-webkit-animation-duration: 1.1s;
+	animation-timing-function: ease-out;
+	-webkit-animation-timing-function: ease-out;
+	transform-origin: 50% 0;
+	-ms-transform-origin: 50% 0;
+	-webkit-transform-origin: 50% 0;
+}
