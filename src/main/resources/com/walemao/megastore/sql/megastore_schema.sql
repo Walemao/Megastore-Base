@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-09-30 11:25:07
+Date: 2014-09-30 14:55:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -303,11 +303,11 @@ CREATE TABLE `t_user_base` (
 DROP TABLE IF EXISTS `t_user_detail`;
 CREATE TABLE `t_user_detail` (
   `u_id` char(36) NOT NULL COMMENT '用户ID',
-  `u_matrial_status` tinyint(4) DEFAULT NULL COMMENT '婚姻状况',
-  `u_education` tinyint(4) DEFAULT NULL COMMENT '教育程度',
-  `u_professional` tinyint(4) DEFAULT NULL COMMENT '从事职业',
-  `u_industry` tinyint(4) DEFAULT NULL COMMENT '工作所属行业',
-  `u_income` tinyint(4) DEFAULT NULL COMMENT '月均收入',
+  `u_matrial_status` tinyint(2) DEFAULT NULL COMMENT '婚姻状况',
+  `u_education` tinyint(2) DEFAULT NULL COMMENT '教育程度',
+  `u_professional` tinyint(2) DEFAULT NULL COMMENT '从事职业',
+  `u_industry` tinyint(2) DEFAULT NULL COMMENT '工作所属行业',
+  `u_income` tinyint(2) DEFAULT NULL COMMENT '月均收入',
   `u_interests` varchar(255) DEFAULT NULL COMMENT '兴趣爱好',
   `u_selfdesc` varchar(255) DEFAULT NULL COMMENT '自我介绍',
   PRIMARY KEY (`u_id`)
