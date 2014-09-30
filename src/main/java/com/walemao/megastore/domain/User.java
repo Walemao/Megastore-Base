@@ -15,23 +15,23 @@ public class User {
     private int level;
     private Boolean enabled;
     
-    private UserBase ub;
-    private UserDetail ud;
+    private UserBase userbase;
+    private UserDetail userdetail;
     
-	public UserBase getUb() {
-		return ub;
+	public UserBase getUserbase() {
+		return userbase;
 	}
 
-	public void setUb(UserBase ub) {
-		this.ub = ub;
+	public void setUserbase(UserBase userbase) {
+		this.userbase = userbase;
 	}
 
-	public UserDetail getUd() {
-		return ud;
+	public UserDetail getUserdetail() {
+		return userdetail;
 	}
 
-	public void setUd(UserDetail ud) {
-		this.ud = ud;
+	public void setUserdetail(UserDetail userdetail) {
+		this.userdetail = userdetail;
 	}
 
 	public String getMobilephone() {
