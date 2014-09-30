@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-09-30 17:26:47
+Date: 2014-09-30 20:16:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -141,7 +141,8 @@ CREATE TABLE `t_order_detail` (
   `od_reamark` varchar(255) DEFAULT NULL COMMENT '备注',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`od_id`),
-  KEY `idx_t_order_detail` (`od_productid`,`od_orderid`)
+  UNIQUE KEY `idx_t_order_detail_2` (`od_productid`,`od_colorid`),
+  KEY `idx_t_order_detail_1` (`od_productid`,`od_orderid`,`od_colorid`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
