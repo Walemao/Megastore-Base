@@ -10,7 +10,7 @@ public class OrderDetail {
 	private int amount;
 	private String remark;
 	
-	private Product product;
+	private ProductInfo product;
 	private ProductColor productcolor;
 	public UUID getId() {
 		return id;
@@ -48,10 +48,10 @@ public class OrderDetail {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	public Product getProduct() {
+	public ProductInfo getProduct() {
 		return product;
 	}
-	public void setProduct(Product product) {
+	public void setProduct(ProductInfo product) {
 		this.product = product;
 	}
 	public ProductColor getProductcolor() {

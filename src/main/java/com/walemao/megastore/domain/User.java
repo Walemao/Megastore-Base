@@ -13,7 +13,7 @@ public class User {
     private String remark;
     private int type;
     private int level;
-    private Boolean enabled;
+    private boolean enabled;
     
     private UserBase userbase;
     private UserDetail userdetail;
@@ -90,11 +90,11 @@ public class User {
 		this.level = level;
 	}
 
-	public Boolean getEnabled() {
+	public boolean getEnabled() {
 		return enabled;
 	}
 
-	public void setEnabled(Boolean enabled) {
+	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
 

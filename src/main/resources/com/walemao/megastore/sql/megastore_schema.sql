@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-09-30 15:28:34
+Date: 2014-09-30 17:26:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -155,33 +155,7 @@ CREATE TABLE `t_prodcut_color` (
   `pd_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`pd_id`),
   KEY `fk_t_product_color_1` (`pd_productid`),
-  CONSTRAINT `fk_t_product_color_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product` (`p_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for t_product
--- ----------------------------
-DROP TABLE IF EXISTS `t_product`;
-CREATE TABLE `t_product` (
-  `p_id` char(36) NOT NULL COMMENT '商品id',
-  `p_number` varchar(255) DEFAULT NULL COMMENT '商品货号',
-  `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
-  `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
-  `p_images` varchar(255) DEFAULT NULL COMMENT '商品图片',
-  `p_type` int(11) DEFAULT '0' COMMENT '商品分类,关联t_product_classification',
-  `p_origin` varchar(50) DEFAULT NULL COMMENT '商品产地',
-  `p_weight` varchar(50) DEFAULT NULL COMMENT '商品毛重',
-  `p_materials` varchar(50) DEFAULT NULL COMMENT '商品材质',
-  `p_desc` varchar(255) DEFAULT NULL COMMENT '商品描述',
-  `p_price` decimal(10,0) DEFAULT NULL COMMENT '商品价格',
-  `p_discount` double DEFAULT NULL COMMENT '商品折扣',
-  `p_remark` varchar(255) DEFAULT NULL COMMENT '商品备注',
-  `p_creattime` datetime DEFAULT NULL COMMENT '商品上架时间',
-  `deletemark` datetime DEFAULT NULL,
-  PRIMARY KEY (`p_id`),
-  UNIQUE KEY `idx_t_product_number` (`p_number`),
-  KEY `idx_t_product_name` (`p_name`),
-  KEY `idx_t_product_deletemark` (`deletemark`)
+  CONSTRAINT `fk_t_product_color_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_info` (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -207,6 +181,32 @@ CREATE TABLE `t_product_favorites` (
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`pf_id`),
   UNIQUE KEY `idx_t_product_favorites_1` (`pf_u_id`,`pf_productid`,`pf_colorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_product_info
+-- ----------------------------
+DROP TABLE IF EXISTS `t_product_info`;
+CREATE TABLE `t_product_info` (
+  `p_id` char(36) NOT NULL COMMENT '商品id',
+  `p_number` varchar(255) DEFAULT NULL COMMENT '商品货号',
+  `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
+  `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
+  `p_images` varchar(255) DEFAULT NULL COMMENT '商品图片',
+  `p_type` int(11) DEFAULT '0' COMMENT '商品分类,关联t_product_classification',
+  `p_origin` varchar(50) DEFAULT NULL COMMENT '商品产地',
+  `p_weight` varchar(50) DEFAULT NULL COMMENT '商品毛重',
+  `p_materials` varchar(50) DEFAULT NULL COMMENT '商品材质',
+  `p_desc` varchar(255) DEFAULT NULL COMMENT '商品描述',
+  `p_price` decimal(10,0) DEFAULT NULL COMMENT '商品价格',
+  `p_discount` double DEFAULT NULL COMMENT '商品折扣',
+  `p_remark` varchar(255) DEFAULT NULL COMMENT '商品备注',
+  `p_creattime` datetime DEFAULT NULL COMMENT '商品上架时间',
+  `deletemark` datetime DEFAULT NULL,
+  PRIMARY KEY (`p_id`),
+  UNIQUE KEY `idx_t_product_number` (`p_number`),
+  KEY `idx_t_product_name` (`p_name`),
+  KEY `idx_t_product_deletemark` (`deletemark`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -323,4 +323,31 @@ CREATE TABLE `t_user_pay` (
   `u_pay_passwd` varchar(255) DEFAULT NULL COMMENT '支付密码',
   `u_checktype` tinyint(4) DEFAULT NULL COMMENT '验证方式,0是手机，1是邮箱',
   PRIMARY KEY (`u_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_warehouse_product
+-- ----------------------------
+DROP TABLE IF EXISTS `t_warehouse_product`;
+CREATE TABLE `t_warehouse_product` (
+  `wp_id` bigint(20) NOT NULL COMMENT '商品进出库ID',
+  `wp_productid` char(36) NOT NULL COMMENT '商品ID',
+  `wp_productcolorid` bigint(20) NOT NULL COMMENT '商品颜色ID',
+  `wp_amount` bigint(20) DEFAULT NULL COMMENT '数量',
+  `wp_createtime` datetime DEFAULT NULL COMMENT '操作时间',
+  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  PRIMARY KEY (`wp_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_warehouse_product_rejected
+-- ----------------------------
+DROP TABLE IF EXISTS `t_warehouse_product_rejected`;
+CREATE TABLE `t_warehouse_product_rejected` (
+  `pr_id` bigint(20) NOT NULL COMMENT '退货表编号',
+  `pr_productid` char(36) DEFAULT NULL COMMENT '商品ID',
+  `pr_productcolorid` bigint(20) DEFAULT NULL COMMENT '商品颜色ID',
+  `pr_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  PRIMARY KEY (`pr_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

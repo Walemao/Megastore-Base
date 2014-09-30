@@ -9,13 +9,13 @@ public class UserBase {
     private String realname;
     private int sex;
     private String birth;
-    private Boolean isval_email;
+    private boolean isval_email;
     private int provices;
     private int cities;
     private int districts;
     private String address;
     private String zipcode;
-    private Boolean isval_mobilephone;
+    private boolean isval_mobilephone;
     private String telphone;
 	public UUID getId() {
 		return id;
@@ -53,10 +53,10 @@ public class UserBase {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public Boolean getIsval_email() {
+	public boolean getIsval_email() {
 		return isval_email;
 	}
-	public void setIsval_email(Boolean isval_email) {
+	public void setIsval_email(boolean isval_email) {
 		this.isval_email = isval_email;
 	}
 	public int getProvices() {
@@ -89,10 +89,10 @@ public class UserBase {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-	public Boolean getIsval_mobilephone() {
+	public boolean getIsval_mobilephone() {
 		return isval_mobilephone;
 	}
-	public void setIsval_mobilephone(Boolean isval_mobilephone) {
+	public void setIsval_mobilephone(boolean isval_mobilephone) {
 		this.isval_mobilephone = isval_mobilephone;
 	}
 	public String getTelphone() {
