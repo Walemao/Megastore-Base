@@ -1,6 +1,10 @@
 /** Admin Login Page **/
+a, a.list-group-item, a:active, a:focus, a:hover {
+	color: #db4a39;
+}
 a:hover {
 	text-decoration: none;
+	cursor: pointer;
 }
 
 body.login {
@@ -444,3 +448,72 @@ a.btn-goto-font i {
 	-ms-transform-origin: 50% 0;
 	-webkit-transform-origin: 50% 0;
 }
+
+.dash-tile-2x {
+	height: 400px;
+}
+
+.dash-tile-2x .dash-tile-content {
+	padding: 15px;
+}
+
+.dash-tile-content {
+	margin: 0 -20px;
+}
+
+.nav-tabs>li>a{
+	-webkit-border-radius: 0!important;
+	-moz-border-radius: 0!important;
+	border-radius: 0!important;
+}
+
+.tab-content {
+	border: 1px solid #ddd;
+	border-top: none;
+	padding: 12px;
+	background: #fff;
+	height: 273px;
+	overflow-y: scroll;
+}
+
+.thumbnails {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.thumbnails>li {
+	float: left;
+	position: relative;
+	margin: 0 30px 20px 0;
+}
+
+.remove-margin {
+	margin: 0!important;
+}
+
+a.thumbnail {
+	margin-bottom: 0;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+}
+
+a.thumbnail:hover{
+	border-color: #db4a39;
+}
+
+.thumbnails .thumbnail-borderless, .thumbnails-borderless .thumbnail {
+	border: none;
+	padding: 5px;
+}
+
+.thumbnails .thumbnail-borderless:hover, .thumbnails-borderless .thumbnail:hover{
+	text-decoration: underline;
+}
+

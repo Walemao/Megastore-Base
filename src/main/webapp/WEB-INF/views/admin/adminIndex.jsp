@@ -138,7 +138,161 @@
 			    </div>
 			</div>
 
-
+            <!-- 第一行信息 -->
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="dash-tile dash-tile-2x">
+                        <div class="dash-tile-header">
+			                 <i class="icon-tasks"></i>
+			                           今日订单
+			             </div>
+			             <div class="dash-tile-content">
+			             </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6">
+                    <div class="dash-tile dash-tile-2x">
+                        <div class="dash-tile-header">
+			                 <i class="icon-user"></i>
+			                          用户概览
+			             </div>
+			             <div class="dash-tile-content">
+			                 <ul class="nav nav-tabs" role="tablist" data-toggle="tabs">
+                               <li role="presentation" class="active"><a href="#dash-tabs-admin">管理员</a></li>
+                               <li role="presentation"><a href="#dash-tabs-newusers">今日注册</a></li>
+                             </ul>
+			                 <div class="tab-content">
+			                   <div class="tab-pane active" id="dash-tabs-admin">
+			                       <ul class="thumbnails clearfix remove-margin" data-toggle="gallery-options">
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">tyjuncai</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">lijianbin</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">testAdmin</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">abc</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">admin1</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">admin2</a>
+			                          </li>
+			                       </ul>
+			                   </div>
+			                   <div class="tab-pane" id="dash-tabs-newusers">
+			                       <ul class="thumbnails clearfix remove-margin" data-toggle="gallery-options">
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user1</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user2</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user3</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user4</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user5</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user6</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user7</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user8</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user9</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user10</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user11</a>
+			                          </li>
+			                          <li>
+			                             <a class="thumbnail"><img src="<c:url value="/resources-admin/images/user_image.png"/>" class="img-circle"/></a>
+			                             <a class="thumbnail thumbnail-borderless text-center">user12</a>
+			                          </li>
+			                       </ul>
+			                   </div>
+			                 </div>
+			             </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第二行信息-->
+            <div class="row">
+			   <div class="col-sm-6">
+			       <div class="dash-tile dash-tile-2x">
+			           <div class="dash-tile-header">
+			                 <div class="dash-tile-options">
+			                     <div id="advanced-daterangepicker" class="btn btn-default">
+			                         <i class="icon-calendar"></i>
+			                         <span class="daterange">2014-09-26 至 2014-10-01</span>
+			                         <b class="caret"></b>
+			                     </div>
+			                 </div>
+			                 <i class="icon-bar-chart"></i>
+			                          销量统计
+			             </div>
+			             <div class="dash-tile-content">
+			             </div>
+			       </div>
+			   </div>
+			   
+			   <div class="col-sm-3">
+			       <div class="dash-tile dash-tile-2x">
+			           <div class="dash-tile-header">
+			                 <i class="icon-exchange"></i>
+			                          退货信息
+			             </div>
+			             <div class="dash-tile-content">
+			             </div>
+			       </div>
+			   </div>
+			   
+			   <div class="col-sm-3">
+			       <div class="dash-tile dash-tile-2x">
+			           <div class="dash-tile-header">
+			                 <i class="icon-comments"></i>
+			                          今日评论
+			             </div>
+			             <div class="dash-tile-content">
+			             </div>
+			       </div>
+			   </div>
+			</div>
+			
+			
 		</div>
 	</div>
 

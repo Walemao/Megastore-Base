@@ -5,13 +5,18 @@ $(function() {
 	});
 
 	a.click(function() {
-		$("html, body").animate({
+		$('html, body').animate({
 			scrollTop : 0
 		}, 300);
 	});
 
 	$('[data-toggle="tooltip"]').tooltip({
-		container : "body",
+		container : 'body',
 		animation : !1
 	});
+
+	$('[data-toggle="tabs"] a').click(function(a) {
+		a.preventDefault();
+		$(this).tab('show');
+	})
 });
