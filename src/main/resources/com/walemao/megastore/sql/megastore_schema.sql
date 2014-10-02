@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-02 15:46:07
+Date: 2014-10-02 16:57:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,7 +20,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `d_city`;
 CREATE TABLE `d_city` (
-  `cityid` smallint(6) NOT NULL,
+  `cityid` smallint(6) NOT NULL AUTO_INCREMENT,
   `cityname` varchar(50) DEFAULT NULL,
   `zipcode` varchar(6) DEFAULT NULL,
   `provinceid` tinyint(4) DEFAULT NULL,
@@ -28,11 +28,21 @@ CREATE TABLE `d_city` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Table structure for d_comments
+-- ----------------------------
+DROP TABLE IF EXISTS `d_comments`;
+CREATE TABLE `d_comments` (
+  `id` tinyint(1) NOT NULL AUTO_INCREMENT COMMENT '值',
+  `name` char(10) DEFAULT NULL COMMENT '评价名称',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
 -- Table structure for d_district
 -- ----------------------------
 DROP TABLE IF EXISTS `d_district`;
 CREATE TABLE `d_district` (
-  `districtid` smallint(6) NOT NULL,
+  `districtid` smallint(6) NOT NULL AUTO_INCREMENT,
   `districtname` varchar(50) DEFAULT NULL,
   `cityid` smallint(6) DEFAULT NULL,
   PRIMARY KEY (`districtid`)
@@ -79,6 +89,22 @@ CREATE TABLE `t_address` (
   `a_isdefault` tinyint(1) DEFAULT NULL COMMENT '是否默认',
   `a_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`a_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_comments
+-- ----------------------------
+DROP TABLE IF EXISTS `t_comments`;
+CREATE TABLE `t_comments` (
+  `c_id` char(36) NOT NULL COMMENT '评论表ID',
+  `c_u_id` char(36) NOT NULL COMMENT '用户ID',
+  `c_content` varchar(255) DEFAULT NULL COMMENT '评论内容',
+  `c_productid` char(36) DEFAULT NULL COMMENT '商品ID',
+  `c_type` tinyint(1) DEFAULT NULL COMMENT '评论类别（好评）详见d_comments',
+  `c_ordertime` date DEFAULT NULL COMMENT '购买时间',
+  `c_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  PRIMARY KEY (`c_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

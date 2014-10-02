@@ -3239,3 +3239,7 @@ INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2859, 
 INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2860, '哈巴河县', 338);
 INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2861, '青河县', 338);
 INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2862, '吉木乃县', 338);
+INSERT INTO `d_comments` (`id`, `name`) VALUES (1, '好评');
+INSERT INTO `d_comments` (`id`, `name`) VALUES (2, '中评');
+INSERT INTO `d_comments` (`id`, `name`) VALUES (3, '差评');
+
