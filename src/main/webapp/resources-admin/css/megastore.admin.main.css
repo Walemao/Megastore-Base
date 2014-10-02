@@ -593,4 +593,28 @@ a.thumbnail:hover{
 	font-size: 11px;
 }
 
+.datetimepicker-dropdown-bottom-right{
+	font-size: 12px;
+}
+
+.datetimepicker .table-condensed>thead>tr>th, .datetimepicker .table-condensed>tbody>tr>th, .datetimepicker .table-condensed>tfoot>tr>th,.datetimepicker .table-condensed>thead>tr>td, .datetimepicker .table-condensed>tbody>tr>td, .datetimepicker .table-condensed>tfoot>tr>td {
+	padding: 3px;
+}
+
+.datetimepicker td, .datetimepicker th {
+	width: 16px;
+	height: 16px;
+}
+
+.datetimepicker table tr td.active.active{
+	background-image: none;
+	background-color: #db4a39;
+	-webkit-border-radius: 0!important;
+	-moz-border-radius: 0!important;
+	border-radius: 0!important;
+}
+
+.datetimepicker table tr td.active.active:hover{
+	background-color: #db4a39;
+}
 

@@ -29,6 +29,32 @@ $(function() {
 		return false;
 	});
 	
+	$('#startDate').click(function(){
+		return false;
+	}).datetimepicker({
+		format: 'yyyy/mm/dd',
+		minView: 'month',
+        maxView: 'decade',
+        autoclose: true,
+        endDate: $('#endDate').val()
+	}).on('changeDate', function(ev){
+		$('#endDate').datetimepicker('setStartDate', new Date(ev.date.valueOf()));
+		$('.start-date-span').text($('#startDate').val());
+	});
+	
+	$('#endDate').click(function(){
+		return false;
+	}).datetimepicker({
+		format: 'yyyy/mm/dd',
+		minView: 'month',
+        maxView: 'decade',
+        autoclose: true,
+        startDate: $('#startDate').val()
+	}).on('changeDate', function(ev){
+		$('#startDate').datetimepicker('setEndDate', new Date(ev.date.valueOf()));
+		$('.end-date-span').text($('#endDate').val());
+	});
+	
 	$('body').click(function(){
 		$('.daterangepicker').hide();
 	});

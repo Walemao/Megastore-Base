@@ -14,11 +14,11 @@
        <div class="range-inputs">
           <div class="start-date" style="float: left;">
              <label for="startDate">From</label>
-             <input class="form-control" type="text" name="startDate" value="2014/09/28"/>
+             <input id="startDate" class="form-control" type="text" name="startDate" value="2014/09/26" data-date-format="yyyy/mm/dd" />
           </div>
           <div class="end-date" style="float: left;padding-left: 11px;">
              <label for="endDate">To</label>
-             <input class="form-control" type="text" name="endDate" value="2014/10/02"/>
+             <input id="endDate" class="form-control" type="text" name="endDate" value="2014/10/02" data-date-format="yyyy/mm/dd" />
           </div>
        </div>
    </div>

@@ -257,7 +257,7 @@
 			                 <div class="dash-tile-options">
 			                     <div id="advanced-daterangepicker" class="btn btn-default">
 			                         <i class="icon-calendar"></i>
-			                         <span class="daterange">2014-09-26 至 2014-10-01</span>
+			                         <span class="daterange"><span class="start-date-span">2014/09/26</span> 至 <span class="end-date-span">2014/10/01</span></span>
 			                         <b class="caret"></b>
 			                     </div>
 			                 </div>
