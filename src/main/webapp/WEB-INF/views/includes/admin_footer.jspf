@@ -2,4 +2,24 @@
 
 <a href="javascript:void(0);" id="to-top">
 	    <i class="icon-angle-up icon-large"></i>
-	</a>
+</a>
+<div class="daterangepicker dropdown-menu opensright" style="display: none; right: auto;">
+   <div class="ranges">
+       <ul>
+          <li class="active">最近7天</li>
+          <li>最近30天</li>
+          <li>最近60天</li>
+          <li>最近90天</li>
+       </ul>
+       <div class="range-inputs">
+          <div class="start-date" style="float: left;">
+             <label for="startDate">From</label>
+             <input class="form-control" type="text" name="startDate" value="2014/09/28"/>
+          </div>
+          <div class="end-date" style="float: left;padding-left: 11px;">
+             <label for="endDate">To</label>
+             <input class="form-control" type="text" name="endDate" value="2014/10/02"/>
+          </div>
+       </div>
+   </div>
+</div>

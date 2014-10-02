@@ -18,5 +18,19 @@ $(function() {
 	$('[data-toggle="tabs"] a').click(function(a) {
 		a.preventDefault();
 		$(this).tab('show');
-	})
+	});
+	
+	$('#advanced-daterangepicker').click(function(){
+		var top = $(this).offset().top;
+		var left = $(this).offset().left;
+		$('.daterangepicker').css("left", left);
+		$('.daterangepicker').css("top", top + 34);
+		$('.daterangepicker').show();
+		return false;
+	});
+	
+	$('body').click(function(){
+		$('.daterangepicker').hide();
+	});
+	
 });
