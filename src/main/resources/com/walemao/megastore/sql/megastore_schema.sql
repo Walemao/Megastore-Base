@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-09-30 22:20:55
+Date: 2014-10-02 15:46:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -352,6 +352,7 @@ CREATE TABLE `t_warehouse_product_rejected` (
   `pr_productid` char(36) DEFAULT NULL COMMENT '商品ID',
   `pr_productcolorid` bigint(20) DEFAULT NULL COMMENT '商品颜色ID',
   `pr_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `pr_remark` varchar(255) DEFAULT NULL COMMENT '退货理由',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`pr_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
