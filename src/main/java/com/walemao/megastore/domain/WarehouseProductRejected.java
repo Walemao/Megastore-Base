@@ -7,10 +7,17 @@ public class WarehouseProductRejected {
 	private UUID productid;
 	private int productColorId;
 	private String createtime;
+	private String remark;
 	
 	private ProductColor productColor;
 	private ProductInfo product;
-	
+
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 	public ProductColor getProductColor() {
 		return productColor;
 	}
