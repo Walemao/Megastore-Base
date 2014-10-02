@@ -26,7 +26,7 @@ public class FileUploadController
 		return "You can upload a file by posting to this same URL";
 	}
 	
-	@RequestMapping(value = "/upload", method = RequestMethod.GET)
+	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public String handleFileUpload(@RequestParam("name") String name,
 			@RequestParam("file") MultipartFile file) 
 	{
