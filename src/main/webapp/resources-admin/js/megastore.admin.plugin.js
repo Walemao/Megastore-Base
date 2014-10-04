@@ -60,3 +60,17 @@ $(function() {
 	});
 	
 });
+
+/**
+ * 重写dataTable搜索框
+ * 
+ * */
+function setDataTableSearchInput(){
+	var table_search_input = $('.dataTables_filter input');
+	var table_search_div = $('<div/>').addClass('input-group');
+	var table_search_span = $('<span/>').addClass('input-group-addon').html('<i class="icon-search"></i>');
+	table_search_div.append(table_search_input).append(table_search_span);
+	$('.dataTables_filter label').html(table_search_div);
+} 
+
+

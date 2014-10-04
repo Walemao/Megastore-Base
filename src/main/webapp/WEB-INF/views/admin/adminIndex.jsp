@@ -147,6 +147,60 @@
 			                           今日订单
 			             </div>
 			             <div class="dash-tile-content">
+			                  <table id="today-orders-table" class="table table-striped table-bordered dataTable">
+			                     <thead>
+			                        <tr>
+			                           <th>序号</th>
+			                           <th>订单</th>
+			                           <th>用户</th>
+			                           <th>状态</th>
+			                        </tr>
+			                     </thead>
+			                     <tbody>
+			                        <tr>
+			                           <td>1</td>
+			                           <td>order1</td>
+			                           <td>user1</td>
+			                           <td><span class="label label-default">Inactive</span></td>
+			                        </tr>
+			                        <tr>
+			                           <td>2</td>
+			                           <td>order2</td>
+			                           <td>user2</td>
+			                           <td><span class="label label-default">Inactive</span></td>
+			                        </tr>
+			                        <tr>
+			                           <td>3</td>
+			                           <td>order3</td>
+			                           <td>user3</td>
+			                           <td><span class="label label-default">Inactive</span></td>
+			                        </tr>
+			                        <tr>
+			                           <td>4</td>
+			                           <td>order4</td>
+			                           <td>user4</td>
+			                           <td><span class="label label-default">Inactive</span></td>
+			                        </tr>
+			                        <tr>
+			                           <td>5</td>
+			                           <td>order5</td>
+			                           <td>user5</td>
+			                           <td><span class="label label-default">Inactive</span></td>
+			                        </tr>
+			                        <tr>
+			                           <td>6</td>
+			                           <td>order6</td>
+			                           <td>user6</td>
+			                           <td><span class="label label-default">Inactive</span></td>
+			                        </tr>
+			                        <tr>
+			                           <td>7</td>
+			                           <td>order7</td>
+			                           <td>user7</td>
+			                           <td><span class="label label-default">Inactive</span></td>
+			                        </tr>
+			                     </tbody>
+			                  </table>
 			             </div>
                     </div>
                 </div>
@@ -300,4 +354,10 @@
 	<%@ include file="/WEB-INF/views/includes/admin_footer.jspf"%>
 </body>
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
+<script type="text/javascript">
+$(function(){	
+	$('#today-orders-table').DataTable({iDisplayLength:6, aLengthMenu:[[6,10,30,-1],[6,10,30,"All"]]});
+	setDataTableSearchInput();	
+});
+</script>
 </html>

@@ -1,4 +1,6 @@
 <script type="text/javascript" src="<c:url value="/resources-admin/js/jquery.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources-admin/js/jquery.dataTables.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/resources-admin/js/bootstrap.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/resources-admin/js/bootstrap-datetimepicker.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources-admin/js/bootstrap-dataTables.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/resources-admin/js/megastore.admin.plugin.js"/>"></script>

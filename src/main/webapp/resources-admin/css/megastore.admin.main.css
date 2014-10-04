@@ -451,7 +451,7 @@ a.btn-goto-font i {
 }
 
 .dash-tile-2x {
-	height: 407px;
+	min-height: 407px;
 }
 
 .dash-tile-2x .dash-tile-content {
@@ -617,4 +617,64 @@ a.thumbnail:hover{
 .datetimepicker table tr td.active.active:hover{
 	background-color: #db4a39;
 }
+
+/**  Admin DataTables Style **/
+.dataTables_wrapper .row {
+	margin: 0;
+}
+
+.dataTables_wrapper .col-xs-12{
+	padding: 0 !important;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 5px;
+}
+.pagination>li>a, .pagination>li>span{
+	padding: 5px 10px;
+    font-size: 12px;
+}
+
+.pagination>li>a, .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span, .pagination>li>span:focus, .pagination>li>span:hover {
+	color: #db4a39;
+}
+
+.pagination>li.active>a, .pagination>li.active>a:hover, .pagination>li.active>span {
+	color: #fff;
+	background-color: #db4a39;
+	border: 1px solid #db4a39;
+}
+
+div.dataTables_paginate ul.pagination {
+	margin: 2px 0;
+	white-space: nowrap;
+}
+
+.remove-margin {
+	margin: 0!important;
+}
+
+.dataTables_wrapper>div:nth-child(1), .dataTables_wrapper>div:nth-child(3) {
+	background-color: #f9f9f9;
+	padding: 8px 0 3px;
+	width: auto;
+	border: 1px solid #ddd;
+}
+
+.dataTables_length .input-sm{
+	padding: 6px 12px;
+    font-size: 14px;
+}
+
+span.input-group-addon {
+	background-color: #f9f9f9;
+}
+
+.input-group-addon .icon-search{
+	padding-left: 6px;
+}
+
+
+
+
 
