@@ -118,7 +118,7 @@
 			                         <i class="icon-th-list"></i>
 			                     </a>
 			                 </div>
-			                          退货数量
+			                          退换数量
 			             </div>
 			             <div class="dash-tile-icon"><i class="icon-exchange"></i></div>
 			             <div class="dash-tile-text">243</div>
@@ -130,7 +130,7 @@
 			                         <i class="icon-th-list"></i>
 			                     </a>
 			                 </div>
-			                          昨日退货
+			                          昨日退换
 			             </div>
 			             <div class="dash-tile-icon"><i class="icon-undo"></i></div>
 			             <div class="dash-tile-text">3</div>
@@ -327,7 +327,7 @@
 			       <div class="dash-tile dash-tile-2x">
 			           <div class="dash-tile-header">
 			                 <i class="icon-exchange"></i>
-			                          退货信息
+			                          退换信息
 			             </div>
 			             <div class="dash-tile-content">
 			             </div>
