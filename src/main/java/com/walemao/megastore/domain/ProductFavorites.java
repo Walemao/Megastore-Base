@@ -1,29 +1,27 @@
 package com.walemao.megastore.domain;
 
-import java.util.UUID;
-
 public class ProductFavorites {
-	private UUID id;
-	private UUID userid;
-	private UUID productid;
+	private int id;
+	private int userid;
+	private int productid;
 	private int colorid;
 	private String createtime;
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	public UUID getUserid() {
+	public int getUserid() {
 		return userid;
 	}
-	public void setUserid(UUID userid) {
+	public void setUserid(int userid) {
 		this.userid = userid;
 	}
-	public UUID getProductid() {
+	public int getProductid() {
 		return productid;
 	}
-	public void setProductid(UUID productid) {
+	public void setProductid(int productid) {
 		this.productid = productid;
 	}
 	public int getColorid() {

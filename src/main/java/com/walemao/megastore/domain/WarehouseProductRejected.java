@@ -1,10 +1,9 @@
 package com.walemao.megastore.domain;
 
-import java.util.UUID;
 
 public class WarehouseProductRejected {
 	private int id;
-	private UUID productid;
+	private int productid;
 	private int productColorId;
 	private String createtime;
 	private String remark;
@@ -36,10 +35,10 @@ public class WarehouseProductRejected {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public UUID getProductid() {
+	public int getProductid() {
 		return productid;
 	}
-	public void setProductid(UUID productid) {
+	public void setProductid(int productid) {
 		this.productid = productid;
 	}
 	public int getProductColorId() {

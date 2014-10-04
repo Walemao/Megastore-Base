@@ -1,10 +1,9 @@
 package com.walemao.megastore.domain;
 
-import java.util.UUID;
 
 public class OrderDetail {
-	private UUID id;
-	private UUID productid;
+	private int id;
+	private int productid;
 	private int colorid;
 	private int orderid;
 	private int amount;
@@ -12,16 +11,16 @@ public class OrderDetail {
 	
 	private ProductInfo product;
 	private ProductColor productcolor;
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	public UUID getProductid() {
+	public int getProductid() {
 		return productid;
 	}
-	public void setProductid(UUID productid) {
+	public void setProductid(int productid) {
 		this.productid = productid;
 	}
 	public int getColorid() {

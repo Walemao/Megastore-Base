@@ -1,9 +1,7 @@
 package com.walemao.megastore.domain;
 
-import java.util.UUID;
-
 public class User {
-    private UUID id;
+    private int id;
     private String username;
     private String password;
     private String mobilephone;
@@ -98,11 +96,11 @@ public class User {
 		this.enabled = enabled;
 	}
 
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
 	
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	

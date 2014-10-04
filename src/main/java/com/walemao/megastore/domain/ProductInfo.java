@@ -2,10 +2,9 @@ package com.walemao.megastore.domain;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
 
 public class ProductInfo {
-	private UUID id;
+	private int id;
 	private String number;
 	private String name;
 	private boolean recommend;
@@ -28,10 +27,10 @@ public class ProductInfo {
 	public void setProductColors(List<ProductColor> productColors) {
 		this.productColors = productColors;
 	}
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNumber() {

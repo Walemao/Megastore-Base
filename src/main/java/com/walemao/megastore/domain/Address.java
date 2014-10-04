@@ -1,10 +1,9 @@
 package com.walemao.megastore.domain;
 
-import java.util.UUID;
 
 public class Address {
-	private UUID id;
-	private UUID userid;
+	private int id;
+	private int userid;
 	private String consignee;
 	private int province;
 	private int city;
@@ -16,16 +15,16 @@ public class Address {
 	private boolean isDefault;
 	private String creattime;
 	
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	public UUID getUserid() {
+	public int getUserid() {
 		return userid;
 	}
-	public void setUserid(UUID userid) {
+	public void setUserid(int userid) {
 		this.userid = userid;
 	}
 	public String getConsignee() {

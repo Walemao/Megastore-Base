@@ -1,31 +1,29 @@
 package com.walemao.megastore.domain;
 
-import java.util.UUID;
-
 public class Comments {
-	private UUID id;
-	private UUID user;
+	private int id;
+	private int user;
 	private String content;
-	private UUID productid;
+	private int productid;
 	private int type;
 	private String ordertime;
 	private String createtime;
 	
 	private ProductInfo productInfo;
 
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public UUID getUser() {
+	public int getUser() {
 		return user;
 	}
 
-	public void setUser(UUID user) {
+	public void setUser(int user) {
 		this.user = user;
 	}
 
@@ -37,11 +35,11 @@ public class Comments {
 		this.content = content;
 	}
 
-	public UUID getProductid() {
+	public int getProductid() {
 		return productid;
 	}
 
-	public void setProductid(UUID productid) {
+	public void setProductid(int productid) {
 		this.productid = productid;
 	}
 

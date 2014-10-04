@@ -1,14 +1,14 @@
 package com.walemao.megastore.domain;
 
 import java.math.BigDecimal;
+
 import java.util.List;
-import java.util.UUID;
 
 public class Order {
 	private int id;
 	private String createtime;
-	private UUID addressid;
-	private UUID confirmid;
+	private int addressid;
+	private int confirmid;
 	private int state;
 	private BigDecimal fee;
 	private BigDecimal freight;
@@ -33,16 +33,16 @@ public class Order {
 	public void setCreatetime(String createtime) {
 		this.createtime = createtime;
 	}
-	public UUID getAddressid() {
+	public int getAddressid() {
 		return addressid;
 	}
-	public void setAddressid(UUID addressid) {
+	public void setAddressid(int addressid) {
 		this.addressid = addressid;
 	}
-	public UUID getConfirmid() {
+	public int getConfirmid() {
 		return confirmid;
 	}
-	public void setConfirmid(UUID confirmid) {
+	public void setConfirmid(int confirmid) {
 		this.confirmid = confirmid;
 	}
 	public int getState() {

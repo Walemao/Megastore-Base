@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-02 16:57:56
+Date: 2014-10-04 16:21:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `d_city` (
   `zipcode` varchar(6) DEFAULT NULL,
   `provinceid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`cityid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for d_comments
@@ -46,7 +46,7 @@ CREATE TABLE `d_district` (
   `districtname` varchar(50) DEFAULT NULL,
   `cityid` smallint(6) DEFAULT NULL,
   PRIMARY KEY (`districtid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2863 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for d_province
@@ -77,7 +77,7 @@ CREATE TABLE `d_user` (
 DROP TABLE IF EXISTS `t_address`;
 CREATE TABLE `t_address` (
   `a_id` char(36) NOT NULL COMMENT '地址ID',
-  `a_u_id` char(36) NOT NULL COMMENT '用户ID',
+  `a_u_id` bigint(20) NOT NULL COMMENT '用户ID',
   `a_consignee` char(50) DEFAULT NULL COMMENT '联系人',
   `a_province` tinyint(4) DEFAULT NULL COMMENT '省份',
   `a_citie` smallint(6) DEFAULT NULL COMMENT '城市',
@@ -97,9 +97,9 @@ CREATE TABLE `t_address` (
 DROP TABLE IF EXISTS `t_comments`;
 CREATE TABLE `t_comments` (
   `c_id` char(36) NOT NULL COMMENT '评论表ID',
-  `c_u_id` char(36) NOT NULL COMMENT '用户ID',
+  `c_u_id` bigint(20) NOT NULL COMMENT '用户ID',
   `c_content` varchar(255) DEFAULT NULL COMMENT '评论内容',
-  `c_productid` char(36) DEFAULT NULL COMMENT '商品ID',
+  `c_productid` bigint(20) DEFAULT NULL COMMENT '商品ID',
   `c_type` tinyint(1) DEFAULT NULL COMMENT '评论类别（好评）详见d_comments',
   `c_ordertime` date DEFAULT NULL COMMENT '购买时间',
   `c_createtime` datetime DEFAULT NULL COMMENT '创建时间',
@@ -112,7 +112,7 @@ CREATE TABLE `t_comments` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_complaints`;
 CREATE TABLE `t_complaints` (
-  `c_id` char(36) NOT NULL COMMENT '投诉咨询表ID',
+  `c_id` bigint(20) NOT NULL COMMENT '投诉咨询表ID',
   `c_subject` tinyint(2) DEFAULT NULL COMMENT '主题选择',
   `c_name` char(20) DEFAULT NULL COMMENT '姓名',
   `c_provinces` tinyint(4) DEFAULT NULL COMMENT '省份',
@@ -141,7 +141,7 @@ CREATE TABLE `t_log` (
 DROP TABLE IF EXISTS `t_order`;
 CREATE TABLE `t_order` (
   `o_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `o_u_id` char(36) DEFAULT NULL COMMENT '外键用户id',
+  `o_u_id` bigint(20) DEFAULT NULL COMMENT '外键用户id',
   `o_createtime` datetime DEFAULT NULL COMMENT '下单时间',
   `o_addressid` char(36) DEFAULT NULL COMMENT '地址id',
   `o_confirmid` char(36) DEFAULT NULL COMMENT '确认人id',
@@ -160,7 +160,7 @@ CREATE TABLE `t_order` (
 DROP TABLE IF EXISTS `t_order_detail`;
 CREATE TABLE `t_order_detail` (
   `od_id` char(36) NOT NULL COMMENT '订单记录id',
-  `od_productid` char(36) NOT NULL COMMENT '商品id',
+  `od_productid` bigint(20) NOT NULL COMMENT '商品id',
   `od_colorid` bigint(20) DEFAULT NULL COMMENT '颜色ID',
   `od_orderid` bigint(20) NOT NULL COMMENT '订单表id',
   `od_amount` int(11) DEFAULT '0' COMMENT '订单数量',
@@ -177,11 +177,11 @@ CREATE TABLE `t_order_detail` (
 DROP TABLE IF EXISTS `t_prodcut_color`;
 CREATE TABLE `t_prodcut_color` (
   `pd_id` bigint(20) NOT NULL COMMENT '商品颜色分类ID',
-  `pd_productid` char(36) NOT NULL COMMENT '商品ID，关联t_product',
+  `pd_productid` bigint(20) NOT NULL COMMENT '商品ID，关联t_product',
   `pd_name` varchar(255) DEFAULT NULL COMMENT '商品颜色名称',
   `pd_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`pd_id`),
-  KEY `fk_t_product_color_1` (`pd_productid`),
+  KEY `idx_t_product_color_1` (`pd_productid`) USING BTREE,
   CONSTRAINT `fk_t_product_color_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_info` (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -190,8 +190,8 @@ CREATE TABLE `t_prodcut_color` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_product_classification`;
 CREATE TABLE `t_product_classification` (
-  `pc_id` int(11) NOT NULL,
-  `pc_name` varchar(255) DEFAULT NULL,
+  `pc_id` int(11) NOT NULL COMMENT '商品分类ID',
+  `pc_name` varchar(50) DEFAULT NULL COMMENT '分类名称',
   PRIMARY KEY (`pc_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -201,7 +201,7 @@ CREATE TABLE `t_product_classification` (
 DROP TABLE IF EXISTS `t_product_favorites`;
 CREATE TABLE `t_product_favorites` (
   `pf_id` char(36) NOT NULL COMMENT '收藏表ID',
-  `pf_u_id` char(36) NOT NULL COMMENT '用户ID',
+  `pf_u_id` bigint(20) NOT NULL COMMENT '用户ID',
   `pf_productid` char(36) NOT NULL COMMENT '商品ID',
   `pf_colorid` bigint(20) DEFAULT NULL COMMENT '颜色ID',
   `pf_creattime` datetime DEFAULT NULL COMMENT '创建时间',
@@ -215,7 +215,7 @@ CREATE TABLE `t_product_favorites` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_product_info`;
 CREATE TABLE `t_product_info` (
-  `p_id` char(36) NOT NULL COMMENT '商品id',
+  `p_id` bigint(20) DEFAULT NULL COMMENT '商品id',
   `p_number` varchar(255) DEFAULT NULL COMMENT '商品货号',
   `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
   `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
@@ -230,10 +230,10 @@ CREATE TABLE `t_product_info` (
   `p_remark` varchar(255) DEFAULT NULL COMMENT '商品备注',
   `p_creattime` datetime DEFAULT NULL COMMENT '商品上架时间',
   `deletemark` datetime DEFAULT NULL,
-  PRIMARY KEY (`p_id`),
   UNIQUE KEY `idx_t_product_number` (`p_number`),
   KEY `idx_t_product_name` (`p_name`),
-  KEY `idx_t_product_deletemark` (`deletemark`)
+  KEY `idx_t_product_deletemark` (`deletemark`),
+  KEY `p_id` (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -242,7 +242,7 @@ CREATE TABLE `t_product_info` (
 DROP TABLE IF EXISTS `t_proposal`;
 CREATE TABLE `t_proposal` (
   `P_ID` char(36) NOT NULL,
-  `p_u_id` char(36) DEFAULT NULL COMMENT '用户ID',
+  `p_u_id` bigint(20) DEFAULT NULL COMMENT '用户ID',
   `p_subject` tinyint(2) DEFAULT NULL COMMENT '建议留言类型',
   `p_name` char(20) DEFAULT NULL COMMENT '姓名',
   `p_provinces` tinyint(4) DEFAULT NULL COMMENT '省份',
@@ -260,7 +260,7 @@ CREATE TABLE `t_proposal` (
 DROP TABLE IF EXISTS `t_shopping_cart`;
 CREATE TABLE `t_shopping_cart` (
   `sc_id` char(36) NOT NULL COMMENT '购物车ID-跟用户ID一致',
-  `sc_u_id` char(36) NOT NULL COMMENT '用户ID',
+  `sc_u_id` bigint(20) NOT NULL COMMENT '用户ID',
   `sc_productid` char(36) NOT NULL COMMENT '商品ID',
   `sc_productcolorid` bigint(20) NOT NULL COMMENT '商品颜色ID',
   `sc_amount` int(11) DEFAULT NULL COMMENT '数量',
@@ -275,13 +275,12 @@ CREATE TABLE `t_shopping_cart` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
-  `u_id` char(36) NOT NULL COMMENT '用户id',
+  `u_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户id',
   `u_username` varchar(255) DEFAULT NULL COMMENT '用户名',
   `u_password` varchar(255) DEFAULT NULL COMMENT '密码',
   `u_mobilephone` char(11) DEFAULT NULL COMMENT '手机',
   `u_email` varchar(255) DEFAULT NULL COMMENT '邮箱',
   `u_createtime` datetime DEFAULT NULL COMMENT '创建时间',
-  `u_logintime` datetime DEFAULT NULL COMMENT '登录时间',
   `u_remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `u_type` tinyint(4) DEFAULT NULL COMMENT '类型',
   `u_level` tinyint(1) DEFAULT NULL COMMENT '会员等级',
@@ -292,7 +291,7 @@ CREATE TABLE `t_user` (
   KEY `idx_t_user_2` (`u_level`),
   KEY `idx_t_user_deletemark` (`deletemark`),
   KEY `idx_t_user_username` (`u_username`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_user_authority
@@ -310,7 +309,7 @@ CREATE TABLE `t_user_authority` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_user_base`;
 CREATE TABLE `t_user_base` (
-  `u_id` char(36) NOT NULL COMMENT '用户id',
+  `u_id` bigint(20) NOT NULL COMMENT '用户id',
   `u_head_portrait` varchar(255) DEFAULT NULL COMMENT '头像',
   `u_nickname` varchar(50) DEFAULT NULL COMMENT '昵称',
   `u_realname` varchar(50) DEFAULT NULL COMMENT '真实姓名',
@@ -345,11 +344,22 @@ CREATE TABLE `t_user_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Table structure for t_user_login
+-- ----------------------------
+DROP TABLE IF EXISTS `t_user_login`;
+CREATE TABLE `t_user_login` (
+  `ul_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户登陆表ID',
+  `ul_u_id` bigint(20) NOT NULL COMMENT '用户ID',
+  `ul_lastlogin` datetime DEFAULT NULL COMMENT '登录时间',
+  PRIMARY KEY (`ul_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
 -- Table structure for t_user_pay
 -- ----------------------------
 DROP TABLE IF EXISTS `t_user_pay`;
 CREATE TABLE `t_user_pay` (
-  `u_id` char(36) NOT NULL COMMENT '用户ID',
+  `u_id` bigint(20) NOT NULL COMMENT '用户ID',
   `u_pay_passwd` varchar(255) DEFAULT NULL COMMENT '支付密码',
   `u_checktype` tinyint(4) DEFAULT NULL COMMENT '验证方式,0是手机，1是邮箱',
   PRIMARY KEY (`u_id`)
@@ -375,7 +385,7 @@ CREATE TABLE `t_warehouse_product` (
 DROP TABLE IF EXISTS `t_warehouse_product_rejected`;
 CREATE TABLE `t_warehouse_product_rejected` (
   `pr_id` bigint(20) NOT NULL COMMENT '退货表编号',
-  `pr_productid` char(36) DEFAULT NULL COMMENT '商品ID',
+  `pr_productid` bigint(20) DEFAULT NULL COMMENT '商品ID',
   `pr_productcolorid` bigint(20) DEFAULT NULL COMMENT '商品颜色ID',
   `pr_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `pr_remark` varchar(255) DEFAULT NULL COMMENT '退货理由',
