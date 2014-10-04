@@ -1,3245 +1,5139 @@
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (1, '北京市');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (2, '天津市');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (3, '河北省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (4, '山西省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (5, '内蒙古自治区');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (6, '辽宁省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (7, '吉林省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (8, '黑龙江省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (9, '上海市');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (10, '江苏省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (11, '浙江省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (12, '安徽省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (13, '福建省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (14, '江西省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (15, '山东省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (16, '河南省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (17, '湖北省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (18, '湖南省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (19, '广东省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (20, '广西壮族自治区');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (21, '海南省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (22, '重庆市');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (23, '四川省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (24, '贵州省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (25, '云南省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (26, '西藏自治区');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (27, '陕西省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (28, '甘肃省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (29, '青海省');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (30, '宁夏回族自治区');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (31, '新疆维吾尔自治区');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (32, '香港特别行政区');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (33, '澳门特别行政区');
-INSERT INTO `d_province` (`ProvinceID`, `ProvinceName`) VALUES (34, '台湾省');
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (1, '北京市', '100000', 1);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (2, '天津市', '100000', 2);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (3, '石家庄市', '050000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (4, '唐山市', '063000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (5, '秦皇岛市', '066000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (6, '邯郸市', '056000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (7, '邢台市', '054000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (8, '保定市', '071000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (9, '张家口市', '075000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (10, '承德市', '067000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (11, '沧州市', '061000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (12, '廊坊市', '065000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (13, '衡水市', '053000', 3);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (14, '太原市', '030000', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (15, '大同市', '037000', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (16, '阳泉市', '045000', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (17, '长治市', '046000', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (18, '晋城市', '048000', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (19, '朔州市', '036000', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (20, '晋中市', '030600', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (21, '运城市', '044000', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (22, '忻州市', '034000', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (23, '临汾市', '041000', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (24, '吕梁市', '030500', 4);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (25, '呼和浩特市', '010000', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (26, '包头市', '014000', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (27, '乌海市', '016000', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (28, '赤峰市', '024000', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (29, '通辽市', '028000', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (30, '鄂尔多斯市', '010300', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (31, '呼伦贝尔市', '021000', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (32, '巴彦淖尔市', '014400', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (33, '乌兰察布市', '011800', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (34, '兴安盟', '137500', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (35, '锡林郭勒盟', '011100', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (36, '阿拉善盟', '016000', 5);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (37, '沈阳市', '110000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (38, '大连市', '116000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (39, '鞍山市', '114000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (40, '抚顺市', '113000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (41, '本溪市', '117000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (42, '丹东市', '118000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (43, '锦州市', '121000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (44, '营口市', '115000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (45, '阜新市', '123000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (46, '辽阳市', '111000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (47, '盘锦市', '124000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (48, '铁岭市', '112000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (49, '朝阳市', '122000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (50, '葫芦岛市', '125000', 6);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (51, '长春市', '130000', 7);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (52, '吉林市', '132000', 7);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (53, '四平市', '136000', 7);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (54, '辽源市', '136200', 7);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (55, '通化市', '134000', 7);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (56, '白山市', '134300', 7);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (57, '松原市', '131100', 7);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (58, '白城市', '137000', 7);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (59, '延边朝鲜族自治州', '133000', 7);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (60, '哈尔滨市', '150000', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (61, '齐齐哈尔市', '161000', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (62, '鸡西市', '158100', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (63, '鹤岗市', '154100', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (64, '双鸭山市', '155100', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (65, '大庆市', '163000', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (66, '伊春市', '152300', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (67, '佳木斯市', '154000', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (68, '七台河市', '154600', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (69, '牡丹江市', '157000', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (70, '黑河市', '164300', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (71, '绥化市', '152000', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (72, '大兴安岭地区', '165000', 8);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (73, '上海市', '200000', 9);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (74, '南京市', '210000', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (75, '无锡市', '214000', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (76, '徐州市', '221000', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (77, '常州市', '213000', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (78, '苏州市', '215000', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (79, '南通市', '226000', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (80, '连云港市', '222000', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (81, '淮安市', '223200', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (82, '盐城市', '224000', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (83, '扬州市', '225000', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (84, '镇江市', '212000', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (85, '泰州市', '225300', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (86, '宿迁市', '223800', 10);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (87, '杭州市', '310000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (88, '宁波市', '315000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (89, '温州市', '325000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (90, '嘉兴市', '314000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (91, '湖州市', '313000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (92, '绍兴市', '312000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (93, '金华市', '321000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (94, '衢州市', '324000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (95, '舟山市', '316000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (96, '台州市', '318000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (97, '丽水市', '323000', 11);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (98, '合肥市', '230000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (99, '芜湖市', '241000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (100, '蚌埠市', '233000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (101, '淮南市', '232000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (102, '马鞍山市', '243000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (103, '淮北市', '235000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (104, '铜陵市', '244000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (105, '安庆市', '246000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (106, '黄山市', '242700', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (107, '滁州市', '239000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (108, '阜阳市', '236100', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (109, '宿州市', '234100', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (110, '巢湖市', '238000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (111, '六安市', '237000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (112, '亳州市', '236800', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (113, '池州市', '247100', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (114, '宣城市', '366000', 12);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (115, '福州市', '350000', 13);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (116, '厦门市', '361000', 13);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (117, '莆田市', '351100', 13);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (118, '三明市', '365000', 13);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (119, '泉州市', '362000', 13);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (120, '漳州市', '363000', 13);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (121, '南平市', '353000', 13);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (122, '龙岩市', '364000', 13);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (123, '宁德市', '352100', 13);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (124, '南昌市', '330000', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (125, '景德镇市', '333000', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (126, '萍乡市', '337000', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (127, '九江市', '332000', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (128, '新余市', '338000', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (129, '鹰潭市', '335000', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (130, '赣州市', '341000', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (131, '吉安市', '343000', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (132, '宜春市', '336000', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (133, '抚州市', '332900', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (134, '上饶市', '334000', 14);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (135, '济南市', '250000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (136, '青岛市', '266000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (137, '淄博市', '255000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (138, '枣庄市', '277100', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (139, '东营市', '257000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (140, '烟台市', '264000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (141, '潍坊市', '261000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (142, '济宁市', '272100', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (143, '泰安市', '271000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (144, '威海市', '265700', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (145, '日照市', '276800', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (146, '莱芜市', '271100', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (147, '临沂市', '276000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (148, '德州市', '253000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (149, '聊城市', '252000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (150, '滨州市', '256600', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (151, '荷泽市', '255000', 15);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (152, '郑州市', '450000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (153, '开封市', '475000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (154, '洛阳市', '471000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (155, '平顶山市', '467000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (156, '安阳市', '454900', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (157, '鹤壁市', '456600', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (158, '新乡市', '453000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (159, '焦作市', '454100', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (160, '濮阳市', '457000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (161, '许昌市', '461000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (162, '漯河市', '462000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (163, '三门峡市', '472000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (164, '南阳市', '473000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (165, '商丘市', '476000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (166, '信阳市', '464000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (167, '周口市', '466000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (168, '驻马店市', '463000', 16);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (169, '武汉市', '430000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (170, '黄石市', '435000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (171, '十堰市', '442000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (172, '宜昌市', '443000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (173, '襄樊市', '441000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (174, '鄂州市', '436000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (175, '荆门市', '448000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (176, '孝感市', '432100', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (177, '荆州市', '434000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (178, '黄冈市', '438000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (179, '咸宁市', '437000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (180, '随州市', '441300', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (181, '恩施土家族苗族自治州', '445000', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (182, '神农架', '442400', 17);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (183, '长沙市', '410000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (184, '株洲市', '412000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (185, '湘潭市', '411100', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (186, '衡阳市', '421000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (187, '邵阳市', '422000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (188, '岳阳市', '414000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (189, '常德市', '415000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (190, '张家界市', '427000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (191, '益阳市', '413000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (192, '郴州市', '423000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (193, '永州市', '425000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (194, '怀化市', '418000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (195, '娄底市', '417000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (196, '湘西土家族苗族自治州', '416000', 18);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (197, '广州市', '510000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (198, '韶关市', '521000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (199, '深圳市', '518000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (200, '珠海市', '519000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (201, '汕头市', '515000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (202, '佛山市', '528000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (203, '江门市', '529000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (204, '湛江市', '524000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (205, '茂名市', '525000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (206, '肇庆市', '526000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (207, '惠州市', '516000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (208, '梅州市', '514000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (209, '汕尾市', '516600', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (210, '河源市', '517000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (211, '阳江市', '529500', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (212, '清远市', '511500', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (213, '东莞市', '511700', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (214, '中山市', '528400', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (215, '潮州市', '515600', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (216, '揭阳市', '522000', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (217, '云浮市', '527300', 19);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (218, '南宁市', '530000', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (219, '柳州市', '545000', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (220, '桂林市', '541000', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (221, '梧州市', '543000', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (222, '北海市', '536000', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (223, '防城港市', '538000', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (224, '钦州市', '535000', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (225, '贵港市', '537100', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (226, '玉林市', '537000', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (227, '百色市', '533000', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (228, '贺州市', '542800', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (229, '河池市', '547000', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (230, '来宾市', '546100', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (231, '崇左市', '532200', 20);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (232, '海口市', '570000', 21);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (233, '三亚市', '572000', 21);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (234, '重庆市', '400000', 22);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (235, '成都市', '610000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (236, '自贡市', '643000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (237, '攀枝花市', '617000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (238, '泸州市', '646100', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (239, '德阳市', '618000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (240, '绵阳市', '621000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (241, '广元市', '628000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (242, '遂宁市', '629000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (243, '内江市', '641000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (244, '乐山市', '614000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (245, '南充市', '637000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (246, '眉山市', '612100', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (247, '宜宾市', '644000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (248, '广安市', '638000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (249, '达州市', '635000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (250, '雅安市', '625000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (251, '巴中市', '635500', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (252, '资阳市', '641300', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (253, '阿坝藏族羌族自治州', '624600', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (254, '甘孜藏族自治州', '626000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (255, '凉山彝族自治州', '615000', 23);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (256, '贵阳市', '55000', 24);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (257, '六盘水市', '553000', 24);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (258, '遵义市', '563000', 24);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (259, '安顺市', '561000', 24);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (260, '铜仁地区', '554300', 24);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (261, '黔西南布依族苗族自治州', '551500', 24);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (262, '毕节地区', '551700', 24);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (263, '黔东南苗族侗族自治州', '551500', 24);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (264, '黔南布依族苗族自治州', '550100', 24);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (265, '昆明市', '650000', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (266, '曲靖市', '655000', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (267, '玉溪市', '653100', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (268, '保山市', '678000', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (269, '昭通市', '657000', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (270, '丽江市', '674100', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (271, '思茅市', '665000', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (272, '临沧市', '677000', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (273, '楚雄彝族自治州', '675000', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (274, '红河哈尼族彝族自治州', '654400', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (275, '文山壮族苗族自治州', '663000', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (276, '西双版纳傣族自治州', '666200', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (277, '大理白族自治州', '671000', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (278, '德宏傣族景颇族自治州', '678400', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (279, '怒江傈僳族自治州', '671400', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (280, '迪庆藏族自治州', '674400', 25);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (281, '拉萨市', '850000', 26);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (282, '昌都地区', '854000', 26);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (283, '山南地区', '856000', 26);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (284, '日喀则地区', '857000', 26);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (285, '那曲地区', '852000', 26);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (286, '阿里地区', '859100', 26);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (287, '林芝地区', '860100', 26);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (288, '西安市', '710000', 27);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (289, '铜川市', '727000', 27);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (290, '宝鸡市', '721000', 27);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (291, '咸阳市', '712000', 27);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (292, '渭南市', '714000', 27);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (293, '延安市', '716000', 27);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (294, '汉中市', '723000', 27);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (295, '榆林市', '719000', 27);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (296, '安康市', '725000', 27);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (297, '商洛市', '711500', 27);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (298, '兰州市', '730000', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (299, '嘉峪关市', '735100', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (300, '金昌市', '737100', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (301, '白银市', '730900', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (302, '天水市', '741000', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (303, '武威市', '733000', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (304, '张掖市', '734000', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (305, '平凉市', '744000', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (306, '酒泉市', '735000', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (307, '庆阳市', '744500', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (308, '定西市', '743000', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (309, '陇南市', '742100', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (310, '临夏回族自治州', '731100', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (311, '甘南藏族自治州', '747000', 28);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (312, '西宁市', '810000', 29);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (313, '海东地区', '810600', 29);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (314, '海北藏族自治州', '810300', 29);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (315, '黄南藏族自治州', '811300', 29);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (316, '海南藏族自治州', '813000', 29);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (317, '果洛藏族自治州', '814000', 29);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (318, '玉树藏族自治州', '815000', 29);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (319, '海西蒙古族藏族自治州', '817000', 29);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (320, '银川市', '750000', 30);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (321, '石嘴山市', '753000', 30);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (322, '吴忠市', '751100', 30);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (323, '固原市', '756000', 30);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (324, '中卫市', '751700', 30);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (325, '乌鲁木齐市', '830000', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (326, '克拉玛依市', '834000', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (327, '吐鲁番地区', '838000', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (328, '哈密地区', '839000', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (329, '昌吉回族自治州', '831100', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (330, '博尔塔拉蒙古自治州', '833400', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (331, '巴音郭楞蒙古自治州', '841000', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (332, '阿克苏地区', '843000', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (333, '克孜勒苏柯尔克孜自治州', '835600', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (334, '喀什地区', '844000', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (335, '和田地区', '848000', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (336, '伊犁哈萨克自治州', '833200', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (337, '塔城地区', '834700', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (338, '阿勒泰地区', '836500', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (339, '石河子市', '832000', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (340, '阿拉尔市', '843300', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (341, '图木舒克市', '843900', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (342, '五家渠市', '831300', 31);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (343, '香港特别行政区', '000000', 32);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (344, '澳门特别行政区', '000000', 33);
-INSERT INTO `d_city` (`cityid`, `cityname`, `zipcode`, `provinceid`) VALUES (345, '台湾省', '000000', 34);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1, '东城区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2, '西城区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (3, '崇文区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (4, '宣武区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (5, '朝阳区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (6, '丰台区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (7, '石景山区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (8, '海淀区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (9, '门头沟区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (10, '房山区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (11, '通州区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (12, '顺义区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (13, '昌平区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (14, '大兴区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (15, '怀柔区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (16, '平谷区', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (17, '密云县', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (18, '延庆县', 1);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (19, '和平区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (20, '河东区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (21, '河西区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (22, '南开区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (23, '河北区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (24, '红桥区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (25, '塘沽区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (26, '汉沽区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (27, '大港区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (28, '东丽区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (29, '西青区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (30, '津南区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (31, '北辰区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (32, '武清区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (33, '宝坻区', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (34, '宁河县', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (35, '静海县', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (36, '蓟县', 2);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (37, '长安区', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (38, '桥东区', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (39, '桥西区', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (40, '新华区', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (41, '井陉矿区', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (42, '裕华区', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (43, '井陉县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (44, '正定县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (45, '栾城县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (46, '行唐县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (47, '灵寿县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (48, '高邑县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (49, '深泽县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (50, '赞皇县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (51, '无极县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (52, '平山县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (53, '元氏县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (54, '赵县', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (55, '辛集市', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (56, '藁城市', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (57, '晋州市', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (58, '新乐市', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (59, '鹿泉市', 3);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (60, '路南区', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (61, '路北区', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (62, '古冶区', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (63, '开平区', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (64, '丰南区', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (65, '丰润区', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (66, '滦县', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (67, '滦南县', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (68, '乐亭县', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (69, '迁西县', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (70, '玉田县', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (71, '唐海县', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (72, '遵化市', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (73, '迁安市', 4);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (74, '海港区', 5);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (75, '山海关区', 5);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (76, '北戴河区', 5);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (77, '青龙满族自治县', 5);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (78, '昌黎县', 5);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (79, '抚宁县', 5);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (80, '卢龙县', 5);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (81, '邯山区', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (82, '丛台区', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (83, '复兴区', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (84, '峰峰矿区', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (85, '邯郸县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (86, '临漳县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (87, '成安县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (88, '大名县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (89, '涉县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (90, '磁县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (91, '肥乡县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (92, '永年县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (93, '邱县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (94, '鸡泽县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (95, '广平县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (96, '馆陶县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (97, '魏县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (98, '曲周县', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (99, '武安市', 6);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (100, '桥东区', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (101, '桥西区', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (102, '邢台县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (103, '临城县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (104, '内丘县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (105, '柏乡县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (106, '隆尧县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (107, '任县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (108, '南和县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (109, '宁晋县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (110, '巨鹿县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (111, '新河县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (112, '广宗县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (113, '平乡县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (114, '威县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (115, '清河县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (116, '临西县', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (117, '南宫市', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (118, '沙河市', 7);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (119, '新市区', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (120, '北市区', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (121, '南市区', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (122, '满城县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (123, '清苑县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (124, '涞水县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (125, '阜平县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (126, '徐水县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (127, '定兴县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (128, '唐县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (129, '高阳县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (130, '容城县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (131, '涞源县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (132, '望都县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (133, '安新县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (134, '易县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (135, '曲阳县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (136, '蠡县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (137, '顺平县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (138, '博野县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (139, '雄县', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (140, '涿州市', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (141, '定州市', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (142, '安国市', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (143, '高碑店市', 8);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (144, '桥东区', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (145, '桥西区', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (146, '宣化区', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (147, '下花园区', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (148, '宣化县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (149, '张北县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (150, '康保县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (151, '沽源县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (152, '尚义县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (153, '蔚县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (154, '阳原县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (155, '怀安县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (156, '万全县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (157, '怀来县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (158, '涿鹿县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (159, '赤城县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (160, '崇礼县', 9);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (161, '双桥区', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (162, '双滦区', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (163, '鹰手营子矿区', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (164, '承德县', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (165, '兴隆县', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (166, '平泉县', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (167, '滦平县', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (168, '隆化县', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (169, '丰宁满族自治县', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (170, '宽城满族自治县', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (171, '围场满族蒙古族自治县', 10);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (172, '新华区', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (173, '运河区', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (174, '沧县', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (175, '青县', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (176, '东光县', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (177, '海兴县', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (178, '盐山县', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (179, '肃宁县', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (180, '南皮县', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (181, '吴桥县', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (182, '献县', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (183, '孟村回族自治县', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (184, '泊头市', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (185, '任丘市', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (186, '黄骅市', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (187, '河间市', 11);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (188, '安次区', 12);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (189, '广阳区', 12);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (190, '固安县', 12);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (191, '永清县', 12);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (192, '香河县', 12);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (193, '大城县', 12);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (194, '文安县', 12);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (195, '大厂回族自治县', 12);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (196, '霸州市', 12);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (197, '三河市', 12);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (198, '桃城区', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (199, '枣强县', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (200, '武邑县', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (201, '武强县', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (202, '饶阳县', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (203, '安平县', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (204, '故城县', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (205, '景县', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (206, '阜城县', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (207, '冀州市', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (208, '深州市', 13);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (209, '小店区', 14);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (210, '迎泽区', 14);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (211, '杏花岭区', 14);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (212, '尖草坪区', 14);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (213, '万柏林区', 14);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (214, '晋源区', 14);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (215, '清徐县', 14);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (216, '阳曲县', 14);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (217, '娄烦县', 14);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (218, '古交市', 14);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (219, '城区', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (220, '矿区', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (221, '南郊区', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (222, '新荣区', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (223, '阳高县', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (224, '天镇县', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (225, '广灵县', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (226, '灵丘县', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (227, '浑源县', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (228, '左云县', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (229, '大同县', 15);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (230, '城区', 16);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (231, '矿区', 16);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (232, '郊区', 16);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (233, '平定县', 16);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (234, '盂县', 16);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (235, '城区', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (236, '郊区', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (237, '长治县', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (238, '襄垣县', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (239, '屯留县', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (240, '平顺县', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (241, '黎城县', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (242, '壶关县', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (243, '长子县', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (244, '武乡县', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (245, '沁县', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (246, '沁源县', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (247, '潞城市', 17);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (248, '城区', 18);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (249, '沁水县', 18);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (250, '阳城县', 18);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (251, '陵川县', 18);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (252, '泽州县', 18);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (253, '高平市', 18);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (254, '朔城区', 19);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (255, '平鲁区', 19);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (256, '山阴县', 19);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (257, '应县', 19);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (258, '右玉县', 19);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (259, '怀仁县', 19);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (260, '榆次区', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (261, '榆社县', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (262, '左权县', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (263, '和顺县', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (264, '昔阳县', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (265, '寿阳县', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (266, '太谷县', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (267, '祁县', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (268, '平遥县', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (269, '灵石县', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (270, '介休市', 20);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (271, '盐湖区', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (272, '临猗县', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (273, '万荣县', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (274, '闻喜县', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (275, '稷山县', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (276, '新绛县', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (277, '绛县', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (278, '垣曲县', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (279, '夏县', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (280, '平陆县', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (281, '芮城县', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (282, '永济市', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (283, '河津市', 21);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (284, '忻府区', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (285, '定襄县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (286, '五台县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (287, '代县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (288, '繁峙县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (289, '宁武县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (290, '静乐县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (291, '神池县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (292, '五寨县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (293, '岢岚县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (294, '河曲县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (295, '保德县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (296, '偏关县', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (297, '原平市', 22);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (298, '尧都区', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (299, '曲沃县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (300, '翼城县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (301, '襄汾县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (302, '洪洞县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (303, '古县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (304, '安泽县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (305, '浮山县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (306, '吉县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (307, '乡宁县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (308, '大宁县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (309, '隰县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (310, '永和县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (311, '蒲县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (312, '汾西县', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (313, '侯马市', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (314, '霍州市', 23);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (315, '离石区', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (316, '文水县', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (317, '交城县', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (318, '兴县', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (319, '临县', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (320, '柳林县', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (321, '石楼县', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (322, '岚县', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (323, '方山县', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (324, '中阳县', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (325, '交口县', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (326, '孝义市', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (327, '汾阳市', 24);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (328, '新城区', 25);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (329, '回民区', 25);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (330, '玉泉区', 25);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (331, '赛罕区', 25);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (332, '土默特左旗', 25);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (333, '托克托县', 25);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (334, '和林格尔县', 25);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (335, '清水河县', 25);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (336, '武川县', 25);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (337, '东河区', 26);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (338, '昆都仑区', 26);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (339, '青山区', 26);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (340, '石拐区', 26);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (341, '白云矿区', 26);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (342, '九原区', 26);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (343, '土默特右旗', 26);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (344, '固阳县', 26);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (345, '达尔罕茂明安联合旗', 26);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (346, '海勃湾区', 27);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (347, '海南区', 27);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (348, '乌达区', 27);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (349, '红山区', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (350, '元宝山区', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (351, '松山区', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (352, '阿鲁科尔沁旗', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (353, '巴林左旗', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (354, '巴林右旗', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (355, '林西县', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (356, '克什克腾旗', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (357, '翁牛特旗', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (358, '喀喇沁旗', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (359, '宁城县', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (360, '敖汉旗', 28);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (361, '科尔沁区', 29);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (362, '科尔沁左翼中旗', 29);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (363, '科尔沁左翼后旗', 29);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (364, '开鲁县', 29);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (365, '库伦旗', 29);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (366, '奈曼旗', 29);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (367, '扎鲁特旗', 29);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (368, '霍林郭勒市', 29);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (369, '东胜区', 30);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (370, '达拉特旗', 30);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (371, '准格尔旗', 30);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (372, '鄂托克前旗', 30);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (373, '鄂托克旗', 30);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (374, '杭锦旗', 30);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (375, '乌审旗', 30);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (376, '伊金霍洛旗', 30);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (377, '海拉尔区', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (378, '阿荣旗', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (379, '莫力达瓦达斡尔族自治旗', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (380, '鄂伦春自治旗', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (381, '鄂温克族自治旗', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (382, '陈巴尔虎旗', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (383, '新巴尔虎左旗', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (384, '新巴尔虎右旗', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (385, '满洲里市', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (386, '牙克石市', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (387, '扎兰屯市', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (388, '额尔古纳市', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (389, '根河市', 31);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (390, '临河区', 32);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (391, '五原县', 32);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (392, '磴口县', 32);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (393, '乌拉特前旗', 32);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (394, '乌拉特中旗', 32);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (395, '乌拉特后旗', 32);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (396, '杭锦后旗', 32);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (397, '集宁区', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (398, '卓资县', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (399, '化德县', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (400, '商都县', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (401, '兴和县', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (402, '凉城县', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (403, '察哈尔右翼前旗', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (404, '察哈尔右翼中旗', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (405, '察哈尔右翼后旗', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (406, '四子王旗', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (407, '丰镇市', 33);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (408, '乌兰浩特市', 34);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (409, '阿尔山市', 34);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (410, '科尔沁右翼前旗', 34);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (411, '科尔沁右翼中旗', 34);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (412, '扎赉特旗', 34);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (413, '突泉县', 34);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (414, '二连浩特市', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (415, '锡林浩特市', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (416, '阿巴嘎旗', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (417, '苏尼特左旗', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (418, '苏尼特右旗', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (419, '东乌珠穆沁旗', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (420, '西乌珠穆沁旗', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (421, '太仆寺旗', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (422, '镶黄旗', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (423, '正镶白旗', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (424, '正蓝旗', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (425, '多伦县', 35);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (426, '阿拉善左旗', 36);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (427, '阿拉善右旗', 36);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (428, '额济纳旗', 36);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (429, '和平区', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (430, '沈河区', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (431, '大东区', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (432, '皇姑区', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (433, '铁西区', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (434, '苏家屯区', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (435, '东陵区', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (436, '新城子区', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (437, '于洪区', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (438, '辽中县', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (439, '康平县', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (440, '法库县', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (441, '新民市', 37);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (442, '中山区', 38);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (443, '西岗区', 38);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (444, '沙河口区', 38);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (445, '甘井子区', 38);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (446, '旅顺口区', 38);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (447, '金州区', 38);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (448, '长海县', 38);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (449, '瓦房店市', 38);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (450, '普兰店市', 38);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (451, '庄河市', 38);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (452, '铁东区', 39);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (453, '铁西区', 39);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (454, '立山区', 39);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (455, '千山区', 39);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (456, '台安县', 39);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (457, '岫岩满族自治县', 39);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (458, '海城市', 39);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (459, '新抚区', 40);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (460, '东洲区', 40);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (461, '望花区', 40);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (462, '顺城区', 40);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (463, '抚顺县', 40);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (464, '新宾满族自治县', 40);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (465, '清原满族自治县', 40);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (466, '平山区', 41);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (467, '溪湖区', 41);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (468, '明山区', 41);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (469, '南芬区', 41);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (470, '本溪满族自治县', 41);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (471, '桓仁满族自治县', 41);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (472, '元宝区', 42);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (473, '振兴区', 42);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (474, '振安区', 42);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (475, '宽甸满族自治县', 42);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (476, '东港市', 42);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (477, '凤城市', 42);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (478, '古塔区', 43);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (479, '凌河区', 43);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (480, '太和区', 43);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (481, '黑山县', 43);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (482, '义县', 43);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (483, '凌海市', 43);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (484, '北宁市', 43);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (485, '站前区', 44);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (486, '西市区', 44);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (487, '鲅鱼圈区', 44);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (488, '老边区', 44);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (489, '盖州市', 44);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (490, '大石桥市', 44);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (491, '海州区', 45);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (492, '新邱区', 45);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (493, '太平区', 45);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (494, '清河门区', 45);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (495, '细河区', 45);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (496, '阜新蒙古族自治县', 45);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (497, '彰武县', 45);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (498, '白塔区', 46);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (499, '文圣区', 46);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (500, '宏伟区', 46);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (501, '弓长岭区', 46);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (502, '太子河区', 46);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (503, '辽阳县', 46);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (504, '灯塔市', 46);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (505, '双台子区', 47);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (506, '兴隆台区', 47);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (507, '大洼县', 47);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (508, '盘山县', 47);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (509, '银州区', 48);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (510, '清河区', 48);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (511, '铁岭县', 48);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (512, '西丰县', 48);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (513, '昌图县', 48);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (514, '调兵山市', 48);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (515, '开原市', 48);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (516, '双塔区', 49);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (517, '龙城区', 49);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (518, '朝阳县', 49);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (519, '建平县', 49);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (520, '喀喇沁左翼蒙古族自治县', 49);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (521, '北票市', 49);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (522, '凌源市', 49);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (523, '连山区', 50);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (524, '龙港区', 50);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (525, '南票区', 50);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (526, '绥中县', 50);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (527, '建昌县', 50);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (528, '兴城市', 50);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (529, '南关区', 51);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (530, '宽城区', 51);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (531, '朝阳区', 51);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (532, '二道区', 51);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (533, '绿园区', 51);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (534, '双阳区', 51);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (535, '农安县', 51);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (536, '九台市', 51);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (537, '榆树市', 51);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (538, '德惠市', 51);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (539, '昌邑区', 52);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (540, '龙潭区', 52);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (541, '船营区', 52);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (542, '丰满区', 52);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (543, '永吉县', 52);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (544, '蛟河市', 52);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (545, '桦甸市', 52);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (546, '舒兰市', 52);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (547, '磐石市', 52);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (548, '铁西区', 53);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (549, '铁东区', 53);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (550, '梨树县', 53);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (551, '伊通满族自治县', 53);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (552, '公主岭市', 53);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (553, '双辽市', 53);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (554, '龙山区', 54);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (555, '西安区', 54);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (556, '东丰县', 54);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (557, '东辽县', 54);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (558, '东昌区', 55);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (559, '二道江区', 55);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (560, '通化县', 55);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (561, '辉南县', 55);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (562, '柳河县', 55);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (563, '梅河口市', 55);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (564, '集安市', 55);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (565, '八道江区', 56);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (566, '抚松县', 56);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (567, '靖宇县', 56);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (568, '长白朝鲜族自治县', 56);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (569, '江源县', 56);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (570, '临江市', 56);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (571, '宁江区', 57);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (572, '前郭尔罗斯蒙古族自治县', 57);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (573, '长岭县', 57);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (574, '乾安县', 57);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (575, '扶余县', 57);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (576, '洮北区', 58);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (577, '镇赉县', 58);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (578, '通榆县', 58);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (579, '洮南市', 58);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (580, '大安市', 58);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (581, '延吉市', 59);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (582, '图们市', 59);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (583, '敦化市', 59);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (584, '珲春市', 59);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (585, '龙井市', 59);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (586, '和龙市', 59);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (587, '汪清县', 59);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (588, '安图县', 59);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (589, '道里区', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (590, '南岗区', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (591, '道外区', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (592, '香坊区', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (593, '动力区', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (594, '平房区', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (595, '松北区', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (596, '呼兰区', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (597, '依兰县', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (598, '方正县', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (599, '宾县', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (600, '巴彦县', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (601, '木兰县', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (602, '通河县', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (603, '延寿县', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (604, '阿城市', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (605, '双城市', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (606, '尚志市', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (607, '五常市', 60);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (608, '龙沙区', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (609, '建华区', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (610, '铁锋区', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (611, '昂昂溪区', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (612, '富拉尔基区', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (613, '碾子山区', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (614, '梅里斯达斡尔族区', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (615, '龙江县', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (616, '依安县', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (617, '泰来县', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (618, '甘南县', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (619, '富裕县', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (620, '克山县', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (621, '克东县', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (622, '拜泉县', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (623, '讷河市', 61);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (624, '鸡冠区', 62);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (625, '恒山区', 62);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (626, '滴道区', 62);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (627, '梨树区', 62);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (628, '城子河区', 62);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (629, '麻山区', 62);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (630, '鸡东县', 62);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (631, '虎林市', 62);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (632, '密山市', 62);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (633, '向阳区', 63);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (634, '工农区', 63);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (635, '南山区', 63);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (636, '兴安区', 63);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (637, '东山区', 63);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (638, '兴山区', 63);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (639, '萝北县', 63);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (640, '绥滨县', 63);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (641, '尖山区', 64);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (642, '岭东区', 64);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (643, '四方台区', 64);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (644, '宝山区', 64);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (645, '集贤县', 64);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (646, '友谊县', 64);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (647, '宝清县', 64);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (648, '饶河县', 64);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (649, '萨尔图区', 65);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (650, '龙凤区', 65);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (651, '让胡路区', 65);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (652, '红岗区', 65);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (653, '大同区', 65);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (654, '肇州县', 65);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (655, '肇源县', 65);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (656, '林甸县', 65);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (657, '杜尔伯特蒙古族自治县', 65);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (658, '伊春区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (659, '南岔区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (660, '友好区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (661, '西林区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (662, '翠峦区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (663, '新青区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (664, '美溪区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (665, '金山屯区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (666, '五营区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (667, '乌马河区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (668, '汤旺河区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (669, '带岭区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (670, '乌伊岭区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (671, '红星区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (672, '上甘岭区', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (673, '嘉荫县', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (674, '铁力市', 66);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (675, '永红区', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (676, '向阳区', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (677, '前进区', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (678, '东风区', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (679, '郊区', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (680, '桦南县', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (681, '桦川县', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (682, '汤原县', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (683, '抚远县', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (684, '同江市', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (685, '富锦市', 67);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (686, '新兴区', 68);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (687, '桃山区', 68);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (688, '茄子河区', 68);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (689, '勃利县', 68);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (690, '东安区', 69);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (691, '阳明区', 69);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (692, '爱民区', 69);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (693, '西安区', 69);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (694, '东宁县', 69);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (695, '林口县', 69);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (696, '绥芬河市', 69);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (697, '海林市', 69);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (698, '宁安市', 69);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (699, '穆棱市', 69);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (700, '爱辉区', 70);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (701, '嫩江县', 70);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (702, '逊克县', 70);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (703, '孙吴县', 70);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (704, '北安市', 70);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (705, '五大连池市', 70);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (706, '北林区', 71);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (707, '望奎县', 71);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (708, '兰西县', 71);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (709, '青冈县', 71);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (710, '庆安县', 71);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (711, '明水县', 71);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (712, '绥棱县', 71);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (713, '安达市', 71);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (714, '肇东市', 71);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (715, '海伦市', 71);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (716, '呼玛县', 72);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (717, '塔河县', 72);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (718, '漠河县', 72);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (719, '黄浦区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (720, '卢湾区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (721, '徐汇区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (722, '长宁区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (723, '静安区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (724, '普陀区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (725, '闸北区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (726, '虹口区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (727, '杨浦区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (728, '闵行区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (729, '宝山区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (730, '嘉定区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (731, '浦东新区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (732, '金山区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (733, '松江区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (734, '青浦区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (735, '南汇区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (736, '奉贤区', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (737, '崇明县', 73);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (738, '玄武区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (739, '白下区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (740, '秦淮区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (741, '建邺区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (742, '鼓楼区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (743, '下关区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (744, '浦口区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (745, '栖霞区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (746, '雨花台区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (747, '江宁区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (748, '六合区', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (749, '溧水县', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (750, '高淳县', 74);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (751, '崇安区', 75);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (752, '南长区', 75);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (753, '北塘区', 75);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (754, '锡山区', 75);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (755, '惠山区', 75);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (756, '滨湖区', 75);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (757, '江阴市', 75);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (758, '宜兴市', 75);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (759, '鼓楼区', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (760, '云龙区', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (761, '九里区', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (762, '贾汪区', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (763, '泉山区', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (764, '丰县', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (765, '沛县', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (766, '铜山县', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (767, '睢宁县', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (768, '新沂市', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (769, '邳州市', 76);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (770, '天宁区', 77);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (771, '钟楼区', 77);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (772, '戚墅堰区', 77);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (773, '新北区', 77);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (774, '武进区', 77);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (775, '溧阳市', 77);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (776, '金坛市', 77);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (777, '沧浪区', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (778, '平江区', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (779, '金阊区', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (780, '虎丘区', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (781, '吴中区', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (782, '相城区', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (783, '常熟市', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (784, '张家港市', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (785, '昆山市', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (786, '吴江市', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (787, '太仓市', 78);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (788, '崇川区', 79);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (789, '港闸区', 79);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (790, '海安县', 79);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (791, '如东县', 79);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (792, '启东市', 79);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (793, '如皋市', 79);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (794, '通州市', 79);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (795, '海门市', 79);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (796, '连云区', 80);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (797, '新浦区', 80);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (798, '海州区', 80);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (799, '赣榆县', 80);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (800, '东海县', 80);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (801, '灌云县', 80);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (802, '灌南县', 80);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (803, '清河区', 81);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (804, '楚州区', 81);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (805, '淮阴区', 81);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (806, '清浦区', 81);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (807, '涟水县', 81);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (808, '洪泽县', 81);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (809, '盱眙县', 81);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (810, '金湖县', 81);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (811, '亭湖区', 82);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (812, '盐都区', 82);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (813, '响水县', 82);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (814, '滨海县', 82);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (815, '阜宁县', 82);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (816, '射阳县', 82);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (817, '建湖县', 82);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (818, '东台市', 82);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (819, '大丰市', 82);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (820, '广陵区', 83);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (821, '邗江区', 83);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (822, '维扬区', 83);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (823, '宝应县', 83);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (824, '仪征市', 83);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (825, '高邮市', 83);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (826, '江都市', 83);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (827, '京口区', 84);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (828, '润州区', 84);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (829, '丹徒区', 84);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (830, '丹阳市', 84);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (831, '扬中市', 84);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (832, '句容市', 84);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (833, '海陵区', 85);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (834, '高港区', 85);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (835, '兴化市', 85);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (836, '靖江市', 85);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (837, '泰兴市', 85);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (838, '姜堰市', 85);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (839, '宿城区', 86);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (840, '宿豫区', 86);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (841, '沭阳县', 86);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (842, '泗阳县', 86);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (843, '泗洪县', 86);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (844, '上城区', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (845, '下城区', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (846, '江干区', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (847, '拱墅区', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (848, '西湖区', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (849, '滨江区', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (850, '萧山区', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (851, '余杭区', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (852, '桐庐县', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (853, '淳安县', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (854, '建德市', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (855, '富阳市', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (856, '临安市', 87);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (857, '海曙区', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (858, '江东区', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (859, '江北区', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (860, '北仑区', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (861, '镇海区', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (862, '鄞州区', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (863, '象山县', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (864, '宁海县', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (865, '余姚市', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (866, '慈溪市', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (867, '奉化市', 88);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (868, '鹿城区', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (869, '龙湾区', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (870, '瓯海区', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (871, '洞头县', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (872, '永嘉县', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (873, '平阳县', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (874, '苍南县', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (875, '文成县', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (876, '泰顺县', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (877, '瑞安市', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (878, '乐清市', 89);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (879, '秀城区', 90);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (880, '秀洲区', 90);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (881, '嘉善县', 90);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (882, '海盐县', 90);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (883, '海宁市', 90);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (884, '平湖市', 90);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (885, '桐乡市', 90);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (886, '吴兴区', 91);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (887, '南浔区', 91);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (888, '德清县', 91);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (889, '长兴县', 91);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (890, '安吉县', 91);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (891, '越城区', 92);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (892, '绍兴县', 92);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (893, '新昌县', 92);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (894, '诸暨市', 92);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (895, '上虞市', 92);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (896, '嵊州市', 92);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (897, '婺城区', 93);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (898, '金东区', 93);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (899, '武义县', 93);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (900, '浦江县', 93);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (901, '磐安县', 93);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (902, '兰溪市', 93);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (903, '义乌市', 93);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (904, '东阳市', 93);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (905, '永康市', 93);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (906, '柯城区', 94);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (907, '衢江区', 94);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (908, '常山县', 94);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (909, '开化县', 94);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (910, '龙游县', 94);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (911, '江山市', 94);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (912, '定海区', 95);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (913, '普陀区', 95);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (914, '岱山县', 95);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (915, '嵊泗县', 95);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (916, '椒江区', 96);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (917, '黄岩区', 96);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (918, '路桥区', 96);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (919, '玉环县', 96);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (920, '三门县', 96);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (921, '天台县', 96);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (922, '仙居县', 96);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (923, '温岭市', 96);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (924, '临海市', 96);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (925, '莲都区', 97);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (926, '青田县', 97);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (927, '缙云县', 97);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (928, '遂昌县', 97);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (929, '松阳县', 97);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (930, '云和县', 97);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (931, '庆元县', 97);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (932, '景宁畲族自治县', 97);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (933, '龙泉市', 97);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (934, '瑶海区', 98);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (935, '庐阳区', 98);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (936, '蜀山区', 98);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (937, '包河区', 98);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (938, '长丰县', 98);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (939, '肥东县', 98);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (940, '肥西县', 98);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (941, '镜湖区', 99);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (942, '马塘区', 99);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (943, '新芜区', 99);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (944, '鸠江区', 99);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (945, '芜湖县', 99);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (946, '繁昌县', 99);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (947, '南陵县', 99);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (948, '龙子湖区', 100);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (949, '蚌山区', 100);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (950, '禹会区', 100);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (951, '淮上区', 100);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (952, '怀远县', 100);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (953, '五河县', 100);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (954, '固镇县', 100);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (955, '大通区', 101);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (956, '田家庵区', 101);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (957, '谢家集区', 101);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (958, '八公山区', 101);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (959, '潘集区', 101);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (960, '凤台县', 101);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (961, '金家庄区', 102);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (962, '花山区', 102);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (963, '雨山区', 102);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (964, '当涂县', 102);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (965, '杜集区', 103);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (966, '相山区', 103);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (967, '烈山区', 103);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (968, '濉溪县', 103);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (969, '铜官山区', 104);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (970, '狮子山区', 104);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (971, '郊区', 104);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (972, '铜陵县', 104);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (973, '迎江区', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (974, '大观区', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (975, '郊区', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (976, '怀宁县', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (977, '枞阳县', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (978, '潜山县', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (979, '太湖县', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (980, '宿松县', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (981, '望江县', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (982, '岳西县', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (983, '桐城市', 105);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (984, '屯溪区', 106);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (985, '黄山区', 106);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (986, '徽州区', 106);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (987, '歙县', 106);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (988, '休宁县', 106);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (989, '黟县', 106);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (990, '祁门县', 106);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (991, '琅琊区', 107);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (992, '南谯区', 107);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (993, '来安县', 107);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (994, '全椒县', 107);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (995, '定远县', 107);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (996, '凤阳县', 107);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (997, '天长市', 107);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (998, '明光市', 107);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (999, '颍州区', 108);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1000, '颍东区', 108);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1001, '颍泉区', 108);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1002, '临泉县', 108);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1003, '太和县', 108);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1004, '阜南县', 108);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1005, '颍上县', 108);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1006, '界首市', 108);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1007, '埇桥区', 109);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1008, '砀山县', 109);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1009, '萧县', 109);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1010, '灵璧县', 109);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1011, '泗县', 109);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1012, '居巢区', 110);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1013, '庐江县', 110);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1014, '无为县', 110);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1015, '含山县', 110);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1016, '和县', 110);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1017, '金安区', 111);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1018, '裕安区', 111);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1019, '寿县', 111);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1020, '霍邱县', 111);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1021, '舒城县', 111);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1022, '金寨县', 111);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1023, '霍山县', 111);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1024, '谯城区', 112);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1025, '涡阳县', 112);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1026, '蒙城县', 112);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1027, '利辛县', 112);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1028, '贵池区', 113);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1029, '东至县', 113);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1030, '石台县', 113);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1031, '青阳县', 113);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1032, '宣州区', 114);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1033, '郎溪县', 114);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1034, '广德县', 114);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1035, '泾县', 114);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1036, '绩溪县', 114);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1037, '旌德县', 114);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1038, '宁国市', 114);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1039, '鼓楼区', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1040, '台江区', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1041, '仓山区', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1042, '马尾区', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1043, '晋安区', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1044, '闽侯县', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1045, '连江县', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1046, '罗源县', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1047, '闽清县', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1048, '永泰县', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1049, '平潭县', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1050, '福清市', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1051, '长乐市', 115);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1052, '思明区', 116);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1053, '海沧区', 116);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1054, '湖里区', 116);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1055, '集美区', 116);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1056, '同安区', 116);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1057, '翔安区', 116);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1058, '城厢区', 117);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1059, '涵江区', 117);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1060, '荔城区', 117);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1061, '秀屿区', 117);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1062, '仙游县', 117);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1063, '梅列区', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1064, '三元区', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1065, '明溪县', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1066, '清流县', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1067, '宁化县', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1068, '大田县', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1069, '尤溪县', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1070, '沙县', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1071, '将乐县', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1072, '泰宁县', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1073, '建宁县', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1074, '永安市', 118);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1075, '鲤城区', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1076, '丰泽区', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1077, '洛江区', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1078, '泉港区', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1079, '惠安县', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1080, '安溪县', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1081, '永春县', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1082, '德化县', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1083, '金门县', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1084, '石狮市', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1085, '晋江市', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1086, '南安市', 119);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1087, '芗城区', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1088, '龙文区', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1089, '云霄县', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1090, '漳浦县', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1091, '诏安县', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1092, '长泰县', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1093, '东山县', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1094, '南靖县', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1095, '平和县', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1096, '华安县', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1097, '龙海市', 120);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1098, '延平区', 121);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1099, '顺昌县', 121);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1100, '浦城县', 121);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1101, '光泽县', 121);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1102, '松溪县', 121);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1103, '政和县', 121);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1104, '邵武市', 121);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1105, '武夷山市', 121);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1106, '建瓯市', 121);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1107, '建阳市', 121);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1108, '新罗区', 122);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1109, '长汀县', 122);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1110, '永定县', 122);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1111, '上杭县', 122);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1112, '武平县', 122);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1113, '连城县', 122);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1114, '漳平市', 122);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1115, '蕉城区', 123);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1116, '霞浦县', 123);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1117, '古田县', 123);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1118, '屏南县', 123);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1119, '寿宁县', 123);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1120, '周宁县', 123);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1121, '柘荣县', 123);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1122, '福安市', 123);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1123, '福鼎市', 123);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1124, '东湖区', 124);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1125, '西湖区', 124);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1126, '青云谱区', 124);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1127, '湾里区', 124);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1128, '青山湖区', 124);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1129, '南昌县', 124);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1130, '新建县', 124);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1131, '安义县', 124);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1132, '进贤县', 124);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1133, '昌江区', 125);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1134, '珠山区', 125);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1135, '浮梁县', 125);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1136, '乐平市', 125);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1137, '安源区', 126);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1138, '湘东区', 126);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1139, '莲花县', 126);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1140, '上栗县', 126);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1141, '芦溪县', 126);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1142, '庐山区', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1143, '浔阳区', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1144, '九江县', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1145, '武宁县', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1146, '修水县', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1147, '永修县', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1148, '德安县', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1149, '星子县', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1150, '都昌县', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1151, '湖口县', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1152, '彭泽县', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1153, '瑞昌市', 127);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1154, '渝水区', 128);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1155, '分宜县', 128);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1156, '月湖区', 129);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1157, '余江县', 129);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1158, '贵溪市', 129);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1159, '章贡区', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1160, '赣县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1161, '信丰县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1162, '大余县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1163, '上犹县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1164, '崇义县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1165, '安远县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1166, '龙南县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1167, '定南县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1168, '全南县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1169, '宁都县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1170, '于都县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1171, '兴国县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1172, '会昌县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1173, '寻乌县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1174, '石城县', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1175, '瑞金市', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1176, '南康市', 130);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1177, '吉州区', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1178, '青原区', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1179, '吉安县', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1180, '吉水县', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1181, '峡江县', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1182, '新干县', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1183, '永丰县', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1184, '泰和县', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1185, '遂川县', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1186, '万安县', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1187, '安福县', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1188, '永新县', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1189, '井冈山市', 131);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1190, '袁州区', 132);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1191, '奉新县', 132);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1192, '万载县', 132);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1193, '上高县', 132);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1194, '宜丰县', 132);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1195, '靖安县', 132);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1196, '铜鼓县', 132);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1197, '丰城市', 132);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1198, '樟树市', 132);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1199, '高安市', 132);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1200, '临川区', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1201, '南城县', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1202, '黎川县', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1203, '南丰县', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1204, '崇仁县', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1205, '乐安县', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1206, '宜黄县', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1207, '金溪县', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1208, '资溪县', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1209, '东乡县', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1210, '广昌县', 133);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1211, '信州区', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1212, '上饶县', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1213, '广丰县', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1214, '玉山县', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1215, '铅山县', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1216, '横峰县', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1217, '弋阳县', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1218, '余干县', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1219, '鄱阳县', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1220, '万年县', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1221, '婺源县', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1222, '德兴市', 134);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1223, '历下区', 135);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1224, '市中区', 135);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1225, '槐荫区', 135);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1226, '天桥区', 135);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1227, '历城区', 135);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1228, '长清区', 135);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1229, '平阴县', 135);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1230, '济阳县', 135);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1231, '商河县', 135);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1232, '章丘市', 135);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1233, '市南区', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1234, '市北区', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1235, '四方区', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1236, '黄岛区', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1237, '崂山区', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1238, '李沧区', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1239, '城阳区', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1240, '胶州市', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1241, '即墨市', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1242, '平度市', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1243, '胶南市', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1244, '莱西市', 136);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1245, '淄川区', 137);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1246, '张店区', 137);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1247, '博山区', 137);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1248, '临淄区', 137);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1249, '周村区', 137);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1250, '桓台县', 137);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1251, '高青县', 137);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1252, '沂源县', 137);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1253, '市中区', 138);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1254, '薛城区', 138);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1255, '峄城区', 138);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1256, '台儿庄区', 138);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1257, '山亭区', 138);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1258, '滕州市', 138);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1259, '东营区', 139);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1260, '河口区', 139);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1261, '垦利县', 139);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1262, '利津县', 139);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1263, '广饶县', 139);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1264, '芝罘区', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1265, '福山区', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1266, '牟平区', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1267, '莱山区', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1268, '长岛县', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1269, '龙口市', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1270, '莱阳市', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1271, '莱州市', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1272, '蓬莱市', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1273, '招远市', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1274, '栖霞市', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1275, '海阳市', 140);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1276, '潍城区', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1277, '寒亭区', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1278, '坊子区', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1279, '奎文区', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1280, '临朐县', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1281, '昌乐县', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1282, '青州市', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1283, '诸城市', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1284, '寿光市', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1285, '安丘市', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1286, '高密市', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1287, '昌邑市', 141);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1288, '市中区', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1289, '任城区', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1290, '微山县', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1291, '鱼台县', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1292, '金乡县', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1293, '嘉祥县', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1294, '汶上县', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1295, '泗水县', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1296, '梁山县', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1297, '曲阜市', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1298, '兖州市', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1299, '邹城市', 142);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1300, '泰山区', 143);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1301, '岱岳区', 143);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1302, '宁阳县', 143);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1303, '东平县', 143);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1304, '新泰市', 143);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1305, '肥城市', 143);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1306, '环翠区', 144);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1307, '文登市', 144);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1308, '荣成市', 144);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1309, '乳山市', 144);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1310, '东港区', 145);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1311, '岚山区', 145);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1312, '五莲县', 145);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1313, '莒县', 145);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1314, '莱城区', 146);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1315, '钢城区', 146);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1316, '兰山区', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1317, '罗庄区', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1318, '河东区', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1319, '沂南县', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1320, '郯城县', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1321, '沂水县', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1322, '苍山县', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1323, '费县', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1324, '平邑县', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1325, '莒南县', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1326, '蒙阴县', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1327, '临沭县', 147);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1328, '德城区', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1329, '陵县', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1330, '宁津县', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1331, '庆云县', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1332, '临邑县', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1333, '齐河县', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1334, '平原县', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1335, '夏津县', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1336, '武城县', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1337, '乐陵市', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1338, '禹城市', 148);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1339, '东昌府区', 149);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1340, '阳谷县', 149);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1341, '莘县', 149);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1342, '茌平县', 149);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1343, '东阿县', 149);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1344, '冠县', 149);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1345, '高唐县', 149);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1346, '临清市', 149);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1347, '滨城区', 150);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1348, '惠民县', 150);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1349, '阳信县', 150);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1350, '无棣县', 150);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1351, '沾化县', 150);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1352, '博兴县', 150);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1353, '邹平县', 150);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1354, '牡丹区', 151);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1355, '曹县', 151);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1356, '单县', 151);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1357, '成武县', 151);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1358, '巨野县', 151);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1359, '郓城县', 151);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1360, '鄄城县', 151);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1361, '定陶县', 151);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1362, '东明县', 151);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1363, '中原区', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1364, '二七区', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1365, '管城回族区', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1366, '金水区', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1367, '上街区', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1368, '惠济区', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1369, '中牟县', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1370, '巩义市', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1371, '荥阳市', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1372, '新密市', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1373, '新郑市', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1374, '登封市', 152);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1375, '龙亭区', 153);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1376, '顺河回族区', 153);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1377, '鼓楼区', 153);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1378, '南关区', 153);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1379, '郊区', 153);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1380, '杞县', 153);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1381, '通许县', 153);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1382, '尉氏县', 153);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1383, '开封县', 153);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1384, '兰考县', 153);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1385, '老城区', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1386, '西工区', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1387, '廛河回族区', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1388, '涧西区', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1389, '吉利区', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1390, '洛龙区', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1391, '孟津县', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1392, '新安县', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1393, '栾川县', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1394, '嵩县', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1395, '汝阳县', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1396, '宜阳县', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1397, '洛宁县', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1398, '伊川县', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1399, '偃师市', 154);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1400, '新华区', 155);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1401, '卫东区', 155);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1402, '石龙区', 155);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1403, '湛河区', 155);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1404, '宝丰县', 155);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1405, '叶县', 155);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1406, '鲁山县', 155);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1407, '郏县', 155);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1408, '舞钢市', 155);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1409, '汝州市', 155);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1410, '文峰区', 156);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1411, '北关区', 156);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1412, '殷都区', 156);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1413, '龙安区', 156);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1414, '安阳县', 156);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1415, '汤阴县', 156);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1416, '滑县', 156);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1417, '内黄县', 156);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1418, '林州市', 156);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1419, '鹤山区', 157);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1420, '山城区', 157);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1421, '淇滨区', 157);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1422, '浚县', 157);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1423, '淇县', 157);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1424, '红旗区', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1425, '卫滨区', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1426, '凤泉区', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1427, '牧野区', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1428, '新乡县', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1429, '获嘉县', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1430, '原阳县', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1431, '延津县', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1432, '封丘县', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1433, '长垣县', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1434, '卫辉市', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1435, '辉县市', 158);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1436, '解放区', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1437, '中站区', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1438, '马村区', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1439, '山阳区', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1440, '修武县', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1441, '博爱县', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1442, '武陟县', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1443, '温县', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1444, '济源市', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1445, '沁阳市', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1446, '孟州市', 159);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1447, '华龙区', 160);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1448, '清丰县', 160);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1449, '南乐县', 160);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1450, '范县', 160);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1451, '台前县', 160);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1452, '濮阳县', 160);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1453, '魏都区', 161);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1454, '许昌县', 161);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1455, '鄢陵县', 161);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1456, '襄城县', 161);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1457, '禹州市', 161);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1458, '长葛市', 161);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1459, '源汇区', 162);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1460, '郾城区', 162);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1461, '召陵区', 162);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1462, '舞阳县', 162);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1463, '临颍县', 162);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1464, '市辖区', 163);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1465, '湖滨区', 163);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1466, '渑池县', 163);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1467, '陕县', 163);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1468, '卢氏县', 163);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1469, '义马市', 163);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1470, '灵宝市', 163);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1471, '宛城区', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1472, '卧龙区', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1473, '南召县', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1474, '方城县', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1475, '西峡县', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1476, '镇平县', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1477, '内乡县', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1478, '淅川县', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1479, '社旗县', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1480, '唐河县', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1481, '新野县', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1482, '桐柏县', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1483, '邓州市', 164);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1484, '梁园区', 165);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1485, '睢阳区', 165);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1486, '民权县', 165);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1487, '睢县', 165);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1488, '宁陵县', 165);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1489, '柘城县', 165);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1490, '虞城县', 165);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1491, '夏邑县', 165);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1492, '永城市', 165);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1493, '浉河区', 166);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1494, '平桥区', 166);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1495, '罗山县', 166);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1496, '光山县', 166);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1497, '新县', 166);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1498, '商城县', 166);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1499, '固始县', 166);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1500, '潢川县', 166);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1501, '淮滨县', 166);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1502, '息县', 166);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1503, '川汇区', 167);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1504, '扶沟县', 167);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1505, '西华县', 167);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1506, '商水县', 167);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1507, '沈丘县', 167);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1508, '郸城县', 167);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1509, '淮阳县', 167);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1510, '太康县', 167);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1511, '鹿邑县', 167);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1512, '项城市', 167);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1513, '驿城区', 168);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1514, '西平县', 168);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1515, '上蔡县', 168);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1516, '平舆县', 168);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1517, '正阳县', 168);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1518, '确山县', 168);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1519, '泌阳县', 168);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1520, '汝南县', 168);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1521, '遂平县', 168);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1522, '新蔡县', 168);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1523, '江岸区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1524, '江汉区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1525, '硚口区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1526, '汉阳区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1527, '武昌区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1528, '青山区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1529, '洪山区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1530, '东西湖区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1531, '汉南区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1532, '蔡甸区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1533, '江夏区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1534, '黄陂区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1535, '新洲区', 169);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1536, '黄石港区', 170);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1537, '西塞山区', 170);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1538, '下陆区', 170);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1539, '铁山区', 170);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1540, '阳新县', 170);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1541, '大冶市', 170);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1542, '茅箭区', 171);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1543, '张湾区', 171);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1544, '郧县', 171);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1545, '郧西县', 171);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1546, '竹山县', 171);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1547, '竹溪县', 171);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1548, '房县', 171);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1549, '丹江口市', 171);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1550, '西陵区', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1551, '伍家岗区', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1552, '点军区', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1553, '猇亭区', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1554, '夷陵区', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1555, '远安县', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1556, '兴山县', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1557, '秭归县', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1558, '长阳土家族自治县', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1559, '五峰土家族自治县', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1560, '宜都市', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1561, '当阳市', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1562, '枝江市', 172);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1563, '襄城区', 173);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1564, '樊城区', 173);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1565, '襄阳区', 173);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1566, '南漳县', 173);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1567, '谷城县', 173);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1568, '保康县', 173);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1569, '老河口市', 173);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1570, '枣阳市', 173);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1571, '宜城市', 173);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1572, '梁子湖区', 174);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1573, '华容区', 174);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1574, '鄂城区', 174);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1575, '东宝区', 175);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1576, '掇刀区', 175);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1577, '京山县', 175);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1578, '沙洋县', 175);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1579, '钟祥市', 175);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1580, '孝南区', 176);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1581, '孝昌县', 176);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1582, '大悟县', 176);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1583, '云梦县', 176);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1584, '应城市', 176);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1585, '安陆市', 176);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1586, '汉川市', 176);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1587, '沙市区', 177);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1588, '荆州区', 177);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1589, '公安县', 177);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1590, '监利县', 177);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1591, '江陵县', 177);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1592, '石首市', 177);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1593, '洪湖市', 177);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1594, '松滋市', 177);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1595, '黄州区', 178);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1596, '团风县', 178);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1597, '红安县', 178);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1598, '罗田县', 178);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1599, '英山县', 178);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1600, '浠水县', 178);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1601, '蕲春县', 178);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1602, '黄梅县', 178);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1603, '麻城市', 178);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1604, '武穴市', 178);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1605, '咸安区', 179);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1606, '嘉鱼县', 179);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1607, '通城县', 179);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1608, '崇阳县', 179);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1609, '通山县', 179);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1610, '赤壁市', 179);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1611, '曾都区', 180);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1612, '广水市', 180);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1613, '恩施市', 181);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1614, '利川市', 181);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1615, '建始县', 181);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1616, '巴东县', 181);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1617, '宣恩县', 181);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1618, '咸丰县', 181);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1619, '来凤县', 181);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1620, '鹤峰县', 181);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1621, '仙桃市', 182);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1622, '潜江市', 182);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1623, '天门市', 182);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1624, '神农架林区', 182);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1625, '芙蓉区', 183);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1626, '天心区', 183);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1627, '岳麓区', 183);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1628, '开福区', 183);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1629, '雨花区', 183);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1630, '长沙县', 183);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1631, '望城县', 183);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1632, '宁乡县', 183);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1633, '浏阳市', 183);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1634, '荷塘区', 184);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1635, '芦淞区', 184);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1636, '石峰区', 184);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1637, '天元区', 184);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1638, '株洲县', 184);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1639, '攸县', 184);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1640, '茶陵县', 184);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1641, '炎陵县', 184);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1642, '醴陵市', 184);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1643, '雨湖区', 185);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1644, '岳塘区', 185);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1645, '湘潭县', 185);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1646, '湘乡市', 185);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1647, '韶山市', 185);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1648, '珠晖区', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1649, '雁峰区', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1650, '石鼓区', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1651, '蒸湘区', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1652, '南岳区', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1653, '衡阳县', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1654, '衡南县', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1655, '衡山县', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1656, '衡东县', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1657, '祁东县', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1658, '耒阳市', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1659, '常宁市', 186);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1660, '双清区', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1661, '大祥区', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1662, '北塔区', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1663, '邵东县', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1664, '新邵县', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1665, '邵阳县', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1666, '隆回县', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1667, '洞口县', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1668, '绥宁县', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1669, '新宁县', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1670, '城步苗族自治县', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1671, '武冈市', 187);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1672, '岳阳楼区', 188);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1673, '云溪区', 188);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1674, '君山区', 188);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1675, '岳阳县', 188);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1676, '华容县', 188);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1677, '湘阴县', 188);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1678, '平江县', 188);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1679, '汨罗市', 188);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1680, '临湘市', 188);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1681, '武陵区', 189);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1682, '鼎城区', 189);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1683, '安乡县', 189);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1684, '汉寿县', 189);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1685, '澧县', 189);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1686, '临澧县', 189);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1687, '桃源县', 189);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1688, '石门县', 189);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1689, '津市市', 189);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1690, '永定区', 190);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1691, '武陵源区', 190);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1692, '慈利县', 190);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1693, '桑植县', 190);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1694, '资阳区', 191);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1695, '赫山区', 191);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1696, '南县', 191);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1697, '桃江县', 191);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1698, '安化县', 191);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1699, '沅江市', 191);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1700, '北湖区', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1701, '苏仙区', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1702, '桂阳县', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1703, '宜章县', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1704, '永兴县', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1705, '嘉禾县', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1706, '临武县', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1707, '汝城县', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1708, '桂东县', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1709, '安仁县', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1710, '资兴市', 192);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1711, '芝山区', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1712, '冷水滩区', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1713, '祁阳县', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1714, '东安县', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1715, '双牌县', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1716, '道县', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1717, '江永县', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1718, '宁远县', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1719, '蓝山县', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1720, '新田县', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1721, '江华瑶族自治县', 193);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1722, '鹤城区', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1723, '中方县', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1724, '沅陵县', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1725, '辰溪县', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1726, '溆浦县', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1727, '会同县', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1728, '麻阳苗族自治县', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1729, '新晃侗族自治县', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1730, '芷江侗族自治县', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1731, '靖州苗族侗族自治县', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1732, '通道侗族自治县', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1733, '洪江市', 194);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1734, '娄星区', 195);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1735, '双峰县', 195);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1736, '新化县', 195);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1737, '冷水江市', 195);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1738, '涟源市', 195);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1739, '吉首市', 196);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1740, '泸溪县', 196);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1741, '凤凰县', 196);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1742, '花垣县', 196);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1743, '保靖县', 196);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1744, '古丈县', 196);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1745, '永顺县', 196);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1746, '龙山县', 196);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1747, '东山区', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1748, '荔湾区', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1749, '越秀区', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1750, '海珠区', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1751, '天河区', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1752, '芳村区', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1753, '白云区', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1754, '黄埔区', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1755, '番禺区', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1756, '花都区', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1757, '增城市', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1758, '从化市', 197);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1759, '武江区', 198);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1760, '浈江区', 198);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1761, '曲江区', 198);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1762, '始兴县', 198);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1763, '仁化县', 198);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1764, '翁源县', 198);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1765, '乳源瑶族自治县', 198);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1766, '新丰县', 198);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1767, '乐昌市', 198);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1768, '南雄市', 198);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1769, '罗湖区', 199);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1770, '福田区', 199);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1771, '南山区', 199);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1772, '宝安区', 199);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1773, '龙岗区', 199);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1774, '盐田区', 199);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1775, '香洲区', 200);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1776, '斗门区', 200);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1777, '金湾区', 200);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1778, '龙湖区', 201);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1779, '金平区', 201);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1780, '濠江区', 201);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1781, '潮阳区', 201);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1782, '潮南区', 201);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1783, '澄海区', 201);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1784, '南澳县', 201);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1785, '禅城区', 202);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1786, '南海区', 202);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1787, '顺德区', 202);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1788, '三水区', 202);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1789, '高明区', 202);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1790, '蓬江区', 203);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1791, '江海区', 203);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1792, '新会区', 203);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1793, '台山市', 203);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1794, '开平市', 203);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1795, '鹤山市', 203);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1796, '恩平市', 203);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1797, '赤坎区', 204);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1798, '霞山区', 204);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1799, '坡头区', 204);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1800, '麻章区', 204);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1801, '遂溪县', 204);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1802, '徐闻县', 204);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1803, '廉江市', 204);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1804, '雷州市', 204);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1805, '吴川市', 204);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1806, '茂南区', 205);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1807, '茂港区', 205);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1808, '电白县', 205);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1809, '高州市', 205);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1810, '化州市', 205);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1811, '信宜市', 205);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1812, '端州区', 206);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1813, '鼎湖区', 206);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1814, '广宁县', 206);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1815, '怀集县', 206);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1816, '封开县', 206);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1817, '德庆县', 206);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1818, '高要市', 206);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1819, '四会市', 206);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1820, '惠城区', 207);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1821, '惠阳区', 207);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1822, '博罗县', 207);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1823, '惠东县', 207);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1824, '龙门县', 207);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1825, '梅江区', 208);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1826, '梅县', 208);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1827, '大埔县', 208);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1828, '丰顺县', 208);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1829, '五华县', 208);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1830, '平远县', 208);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1831, '蕉岭县', 208);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1832, '兴宁市', 208);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1833, '城区', 209);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1834, '海丰县', 209);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1835, '陆河县', 209);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1836, '陆丰市', 209);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1837, '源城区', 210);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1838, '紫金县', 210);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1839, '龙川县', 210);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1840, '连平县', 210);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1841, '和平县', 210);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1842, '东源县', 210);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1843, '江城区', 211);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1844, '阳西县', 211);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1845, '阳东县', 211);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1846, '阳春市', 211);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1847, '清城区', 212);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1848, '佛冈县', 212);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1849, '阳山县', 212);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1850, '连山壮族瑶族自治县', 212);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1851, '连南瑶族自治县', 212);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1852, '清新县', 212);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1853, '英德市', 212);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1854, '连州市', 212);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1855, '湘桥区', 215);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1856, '潮安县', 215);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1857, '饶平县', 215);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1858, '榕城区', 216);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1859, '揭东县', 216);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1860, '揭西县', 216);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1861, '惠来县', 216);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1862, '普宁市', 216);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1863, '云城区', 217);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1864, '新兴县', 217);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1865, '郁南县', 217);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1866, '云安县', 217);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1867, '罗定市', 217);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1868, '兴宁区', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1869, '青秀区', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1870, '江南区', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1871, '西乡塘区', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1872, '良庆区', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1873, '邕宁区', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1874, '武鸣县', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1875, '隆安县', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1876, '马山县', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1877, '上林县', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1878, '宾阳县', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1879, '横县', 218);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1880, '城中区', 219);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1881, '鱼峰区', 219);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1882, '柳南区', 219);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1883, '柳北区', 219);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1884, '柳江县', 219);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1885, '柳城县', 219);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1886, '鹿寨县', 219);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1887, '融安县', 219);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1888, '融水苗族自治县', 219);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1889, '三江侗族自治县', 219);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1890, '秀峰区', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1891, '叠彩区', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1892, '象山区', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1893, '七星区', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1894, '雁山区', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1895, '阳朔县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1896, '临桂县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1897, '灵川县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1898, '全州县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1899, '兴安县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1900, '永福县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1901, '灌阳县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1902, '龙胜各族自治县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1903, '资源县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1904, '平乐县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1905, '荔蒲县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1906, '恭城瑶族自治县', 220);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1907, '万秀区', 221);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1908, '蝶山区', 221);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1909, '长洲区', 221);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1910, '苍梧县', 221);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1911, '藤县', 221);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1912, '蒙山县', 221);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1913, '岑溪市', 221);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1914, '海城区', 222);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1915, '银海区', 222);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1916, '铁山港区', 222);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1917, '合浦县', 222);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1918, '港口区', 223);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1919, '防城区', 223);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1920, '上思县', 223);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1921, '东兴市', 223);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1922, '钦南区', 224);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1923, '钦北区', 224);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1924, '灵山县', 224);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1925, '浦北县', 224);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1926, '港北区', 225);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1927, '港南区', 225);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1928, '覃塘区', 225);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1929, '平南县', 225);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1930, '桂平市', 225);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1931, '玉州区', 226);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1932, '容县', 226);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1933, '陆川县', 226);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1934, '博白县', 226);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1935, '兴业县', 226);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1936, '北流市', 226);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1937, '右江区', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1938, '田阳县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1939, '田东县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1940, '平果县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1941, '德保县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1942, '靖西县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1943, '那坡县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1944, '凌云县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1945, '乐业县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1946, '田林县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1947, '西林县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1948, '隆林各族自治县', 227);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1949, '八步区', 228);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1950, '昭平县', 228);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1951, '钟山县', 228);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1952, '富川瑶族自治县', 228);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1953, '金城江区', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1954, '南丹县', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1955, '天峨县', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1956, '凤山县', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1957, '东兰县', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1958, '罗城仫佬族自治县', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1959, '环江毛南族自治县', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1960, '巴马瑶族自治县', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1961, '都安瑶族自治县', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1962, '大化瑶族自治县', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1963, '宜州市', 229);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1964, '兴宾区', 230);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1965, '忻城县', 230);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1966, '象州县', 230);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1967, '武宣县', 230);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1968, '金秀瑶族自治县', 230);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1969, '合山市', 230);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1970, '江洲区', 231);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1971, '扶绥县', 231);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1972, '宁明县', 231);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1973, '龙州县', 231);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1974, '大新县', 231);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1975, '天等县', 231);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1976, '凭祥市', 231);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1977, '秀英区', 232);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1978, '龙华区', 232);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1979, '琼山区', 232);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1980, '美兰区', 232);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1981, '五指山市', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1982, '琼海市', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1983, '儋州市', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1984, '文昌市', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1985, '万宁市', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1986, '东方市', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1987, '定安县', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1988, '屯昌县', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1989, '澄迈县', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1990, '临高县', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1991, '白沙黎族自治县', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1992, '昌江黎族自治县', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1993, '乐东黎族自治县', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1994, '陵水黎族自治县', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1995, '保亭黎族苗族自治县', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1996, '琼中黎族苗族自治县', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1997, '西沙群岛', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1998, '南沙群岛', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (1999, '中沙群岛的岛礁及其海域', 233);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2000, '万州区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2001, '涪陵区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2002, '渝中区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2003, '大渡口区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2004, '江北区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2005, '沙坪坝区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2006, '九龙坡区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2007, '南岸区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2008, '北碚区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2009, '万盛区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2010, '双桥区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2011, '渝北区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2012, '巴南区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2013, '黔江区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2014, '长寿区', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2015, '綦江县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2016, '潼南县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2017, '铜梁县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2018, '大足县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2019, '荣昌县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2020, '璧山县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2021, '梁平县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2022, '城口县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2023, '丰都县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2024, '垫江县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2025, '武隆县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2026, '忠县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2027, '开县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2028, '云阳县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2029, '奉节县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2030, '巫山县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2031, '巫溪县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2032, '石柱土家族自治县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2033, '秀山土家族苗族自治县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2034, '酉阳土家族苗族自治县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2035, '彭水苗族土家族自治县', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2036, '江津市', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2037, '合川市', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2038, '永川市', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2039, '南川市', 234);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2040, '锦江区', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2041, '青羊区', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2042, '金牛区', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2043, '武侯区', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2044, '成华区', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2045, '龙泉驿区', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2046, '青白江区', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2047, '新都区', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2048, '温江区', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2049, '金堂县', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2050, '双流县', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2051, '郫县', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2052, '大邑县', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2053, '蒲江县', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2054, '新津县', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2055, '都江堰市', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2056, '彭州市', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2057, '邛崃市', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2058, '崇州市', 235);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2059, '自流井区', 236);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2060, '贡井区', 236);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2061, '大安区', 236);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2062, '沿滩区', 236);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2063, '荣县', 236);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2064, '富顺县', 236);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2065, '东区', 237);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2066, '西区', 237);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2067, '仁和区', 237);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2068, '米易县', 237);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2069, '盐边县', 237);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2070, '江阳区', 238);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2071, '纳溪区', 238);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2072, '龙马潭区', 238);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2073, '泸县', 238);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2074, '合江县', 238);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2075, '叙永县', 238);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2076, '古蔺县', 238);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2077, '旌阳区', 239);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2078, '中江县', 239);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2079, '罗江县', 239);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2080, '广汉市', 239);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2081, '什邡市', 239);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2082, '绵竹市', 239);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2083, '涪城区', 240);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2084, '游仙区', 240);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2085, '三台县', 240);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2086, '盐亭县', 240);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2087, '安县', 240);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2088, '梓潼县', 240);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2089, '北川羌族自治县', 240);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2090, '平武县', 240);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2091, '江油市', 240);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2092, '市中区', 241);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2093, '元坝区', 241);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2094, '朝天区', 241);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2095, '旺苍县', 241);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2096, '青川县', 241);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2097, '剑阁县', 241);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2098, '苍溪县', 241);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2099, '船山区', 242);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2100, '安居区', 242);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2101, '蓬溪县', 242);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2102, '射洪县', 242);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2103, '大英县', 242);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2104, '市中区', 243);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2105, '东兴区', 243);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2106, '威远县', 243);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2107, '资中县', 243);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2108, '隆昌县', 243);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2109, '市中区', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2110, '沙湾区', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2111, '五通桥区', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2112, '金口河区', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2113, '犍为县', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2114, '井研县', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2115, '夹江县', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2116, '沐川县', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2117, '峨边彝族自治县', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2118, '马边彝族自治县', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2119, '峨眉山市', 244);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2120, '顺庆区', 245);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2121, '高坪区', 245);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2122, '嘉陵区', 245);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2123, '南部县', 245);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2124, '营山县', 245);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2125, '蓬安县', 245);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2126, '仪陇县', 245);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2127, '西充县', 245);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2128, '阆中市', 245);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2129, '东坡区', 246);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2130, '仁寿县', 246);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2131, '彭山县', 246);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2132, '洪雅县', 246);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2133, '丹棱县', 246);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2134, '青神县', 246);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2135, '翠屏区', 247);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2136, '宜宾县', 247);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2137, '南溪县', 247);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2138, '江安县', 247);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2139, '长宁县', 247);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2140, '高县', 247);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2141, '珙县', 247);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2142, '筠连县', 247);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2143, '兴文县', 247);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2144, '屏山县', 247);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2145, '广安区', 248);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2146, '岳池县', 248);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2147, '武胜县', 248);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2148, '邻水县', 248);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2149, '华蓥市', 248);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2150, '通川区', 249);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2151, '达县', 249);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2152, '宣汉县', 249);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2153, '开江县', 249);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2154, '大竹县', 249);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2155, '渠县', 249);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2156, '万源市', 249);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2157, '雨城区', 250);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2158, '名山县', 250);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2159, '荥经县', 250);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2160, '汉源县', 250);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2161, '石棉县', 250);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2162, '天全县', 250);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2163, '芦山县', 250);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2164, '宝兴县', 250);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2165, '巴州区', 251);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2166, '通江县', 251);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2167, '南江县', 251);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2168, '平昌县', 251);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2169, '雁江区', 252);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2170, '安岳县', 252);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2171, '乐至县', 252);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2172, '简阳市', 252);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2173, '汶川县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2174, '理县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2175, '茂县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2176, '松潘县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2177, '九寨沟县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2178, '金川县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2179, '小金县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2180, '黑水县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2181, '马尔康县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2182, '壤塘县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2183, '阿坝县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2184, '若尔盖县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2185, '红原县', 253);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2186, '康定县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2187, '泸定县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2188, '丹巴县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2189, '九龙县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2190, '雅江县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2191, '道孚县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2192, '炉霍县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2193, '甘孜县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2194, '新龙县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2195, '德格县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2196, '白玉县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2197, '石渠县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2198, '色达县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2199, '理塘县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2200, '巴塘县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2201, '乡城县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2202, '稻城县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2203, '得荣县', 254);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2204, '西昌市', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2205, '木里藏族自治县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2206, '盐源县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2207, '德昌县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2208, '会理县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2209, '会东县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2210, '宁南县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2211, '普格县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2212, '布拖县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2213, '金阳县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2214, '昭觉县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2215, '喜德县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2216, '冕宁县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2217, '越西县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2218, '甘洛县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2219, '美姑县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2220, '雷波县', 255);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2221, '南明区', 256);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2222, '云岩区', 256);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2223, '花溪区', 256);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2224, '乌当区', 256);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2225, '白云区', 256);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2226, '小河区', 256);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2227, '开阳县', 256);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2228, '息烽县', 256);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2229, '修文县', 256);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2230, '清镇市', 256);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2231, '钟山区', 257);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2232, '六枝特区', 257);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2233, '水城县', 257);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2234, '盘县', 257);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2235, '红花岗区', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2236, '汇川区', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2237, '遵义县', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2238, '桐梓县', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2239, '绥阳县', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2240, '正安县', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2241, '道真仡佬族苗族自治县', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2242, '务川仡佬族苗族自治县', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2243, '凤冈县', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2244, '湄潭县', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2245, '余庆县', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2246, '习水县', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2247, '赤水市', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2248, '仁怀市', 258);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2249, '西秀区', 259);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2250, '平坝县', 259);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2251, '普定县', 259);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2252, '镇宁布依族苗族自治县', 259);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2253, '关岭布依族苗族自治县', 259);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2254, '紫云苗族布依族自治县', 259);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2255, '铜仁市', 260);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2256, '江口县', 260);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2257, '玉屏侗族自治县', 260);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2258, '石阡县', 260);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2259, '思南县', 260);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2260, '印江土家族苗族自治县', 260);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2261, '德江县', 260);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2262, '沿河土家族自治县', 260);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2263, '松桃苗族自治县', 260);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2264, '万山特区', 260);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2265, '兴义市', 261);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2266, '兴仁县', 261);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2267, '普安县', 261);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2268, '晴隆县', 261);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2269, '贞丰县', 261);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2270, '望谟县', 261);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2271, '册亨县', 261);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2272, '安龙县', 261);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2273, '毕节市', 262);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2274, '大方县', 262);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2275, '黔西县', 262);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2276, '金沙县', 262);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2277, '织金县', 262);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2278, '纳雍县', 262);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2279, '威宁彝族回族苗族自治县', 262);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2280, '赫章县', 262);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2281, '凯里市', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2282, '黄平县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2283, '施秉县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2284, '三穗县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2285, '镇远县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2286, '岑巩县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2287, '天柱县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2288, '锦屏县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2289, '剑河县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2290, '台江县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2291, '黎平县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2292, '榕江县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2293, '从江县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2294, '雷山县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2295, '麻江县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2296, '丹寨县', 263);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2297, '都匀市', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2298, '福泉市', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2299, '荔波县', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2300, '贵定县', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2301, '瓮安县', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2302, '独山县', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2303, '平塘县', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2304, '罗甸县', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2305, '长顺县', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2306, '龙里县', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2307, '惠水县', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2308, '三都水族自治县', 264);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2309, '五华区', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2310, '盘龙区', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2311, '官渡区', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2312, '西山区', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2313, '东川区', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2314, '呈贡县', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2315, '晋宁县', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2316, '富民县', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2317, '宜良县', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2318, '石林彝族自治县', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2319, '嵩明县', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2320, '禄劝彝族苗族自治县', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2321, '寻甸回族彝族自治县', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2322, '安宁市', 265);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2323, '麒麟区', 266);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2324, '马龙县', 266);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2325, '陆良县', 266);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2326, '师宗县', 266);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2327, '罗平县', 266);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2328, '富源县', 266);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2329, '会泽县', 266);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2330, '沾益县', 266);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2331, '宣威市', 266);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2332, '红塔区', 267);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2333, '江川县', 267);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2334, '澄江县', 267);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2335, '通海县', 267);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2336, '华宁县', 267);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2337, '易门县', 267);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2338, '峨山彝族自治县', 267);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2339, '新平彝族傣族自治县', 267);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2340, '元江哈尼族彝族傣族自治县', 267);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2341, '隆阳区', 268);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2342, '施甸县', 268);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2343, '腾冲县', 268);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2344, '龙陵县', 268);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2345, '昌宁县', 268);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2346, '昭阳区', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2347, '鲁甸县', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2348, '巧家县', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2349, '盐津县', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2350, '大关县', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2351, '永善县', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2352, '绥江县', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2353, '镇雄县', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2354, '彝良县', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2355, '威信县', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2356, '水富县', 269);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2357, '古城区', 270);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2358, '玉龙纳西族自治县', 270);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2359, '永胜县', 270);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2360, '华坪县', 270);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2361, '宁蒗彝族自治县', 270);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2362, '翠云区', 271);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2363, '普洱哈尼族彝族自治县', 271);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2364, '墨江哈尼族自治县', 271);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2365, '景东彝族自治县', 271);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2366, '景谷傣族彝族自治县', 271);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2367, '镇沅彝族哈尼族拉祜族自治县', 271);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2368, '江城哈尼族彝族自治县', 271);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2369, '孟连傣族拉祜族佤族自治县', 271);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2370, '澜沧拉祜族自治县', 271);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2371, '西盟佤族自治县', 271);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2372, '临翔区', 272);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2373, '凤庆县', 272);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2374, '云县', 272);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2375, '永德县', 272);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2376, '镇康县', 272);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2377, '双江拉祜族佤族布朗族傣族自治县', 272);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2378, '耿马傣族佤族自治县', 272);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2379, '沧源佤族自治县', 272);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2380, '楚雄市', 273);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2381, '双柏县', 273);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2382, '牟定县', 273);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2383, '南华县', 273);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2384, '姚安县', 273);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2385, '大姚县', 273);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2386, '永仁县', 273);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2387, '元谋县', 273);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2388, '武定县', 273);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2389, '禄丰县', 273);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2390, '个旧市', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2391, '开远市', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2392, '蒙自县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2393, '屏边苗族自治县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2394, '建水县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2395, '石屏县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2396, '弥勒县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2397, '泸西县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2398, '元阳县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2399, '红河县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2400, '金平苗族瑶族傣族自治县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2401, '绿春县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2402, '河口瑶族自治县', 274);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2403, '文山县', 275);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2404, '砚山县', 275);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2405, '西畴县', 275);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2406, '麻栗坡县', 275);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2407, '马关县', 275);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2408, '丘北县', 275);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2409, '广南县', 275);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2410, '富宁县', 275);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2411, '景洪市', 276);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2412, '勐海县', 276);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2413, '勐腊县', 276);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2414, '大理市', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2415, '漾濞彝族自治县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2416, '祥云县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2417, '宾川县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2418, '弥渡县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2419, '南涧彝族自治县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2420, '巍山彝族回族自治县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2421, '永平县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2422, '云龙县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2423, '洱源县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2424, '剑川县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2425, '鹤庆县', 277);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2426, '瑞丽市', 278);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2427, '潞西市', 278);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2428, '梁河县', 278);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2429, '盈江县', 278);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2430, '陇川县', 278);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2431, '泸水县', 279);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2432, '福贡县', 279);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2433, '贡山独龙族怒族自治县', 279);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2434, '兰坪白族普米族自治县', 279);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2435, '香格里拉县', 280);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2436, '德钦县', 280);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2437, '维西傈僳族自治县', 280);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2438, '城关区', 281);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2439, '林周县', 281);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2440, '当雄县', 281);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2441, '尼木县', 281);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2442, '曲水县', 281);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2443, '堆龙德庆县', 281);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2444, '达孜县', 281);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2445, '墨竹工卡县', 281);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2446, '昌都县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2447, '江达县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2448, '贡觉县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2449, '类乌齐县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2450, '丁青县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2451, '察雅县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2452, '八宿县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2453, '左贡县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2454, '芒康县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2455, '洛隆县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2456, '边坝县', 282);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2457, '乃东县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2458, '扎囊县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2459, '贡嘎县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2460, '桑日县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2461, '琼结县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2462, '曲松县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2463, '措美县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2464, '洛扎县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2465, '加查县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2466, '隆子县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2467, '错那县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2468, '浪卡子县', 283);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2469, '日喀则市', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2470, '南木林县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2471, '江孜县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2472, '定日县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2473, '萨迦县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2474, '拉孜县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2475, '昂仁县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2476, '谢通门县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2477, '白朗县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2478, '仁布县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2479, '康马县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2480, '定结县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2481, '仲巴县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2482, '亚东县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2483, '吉隆县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2484, '聂拉木县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2485, '萨嘎县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2486, '岗巴县', 284);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2487, '那曲县', 285);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2488, '嘉黎县', 285);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2489, '比如县', 285);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2490, '聂荣县', 285);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2491, '安多县', 285);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2492, '申扎县', 285);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2493, '索县', 285);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2494, '班戈县', 285);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2495, '巴青县', 285);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2496, '尼玛县', 285);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2497, '普兰县', 286);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2498, '札达县', 286);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2499, '噶尔县', 286);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2500, '日土县', 286);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2501, '革吉县', 286);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2502, '改则县', 286);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2503, '措勤县', 286);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2504, '林芝县', 287);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2505, '工布江达县', 287);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2506, '米林县', 287);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2507, '墨脱县', 287);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2508, '波密县', 287);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2509, '察隅县', 287);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2510, '朗县', 287);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2511, '新城区', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2512, '碑林区', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2513, '莲湖区', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2514, '灞桥区', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2515, '未央区', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2516, '雁塔区', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2517, '阎良区', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2518, '临潼区', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2519, '长安区', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2520, '蓝田县', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2521, '周至县', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2522, '户县', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2523, '高陵县', 288);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2524, '王益区', 289);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2525, '印台区', 289);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2526, '耀州区', 289);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2527, '宜君县', 289);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2528, '渭滨区', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2529, '金台区', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2530, '陈仓区', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2531, '凤翔县', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2532, '岐山县', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2533, '扶风县', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2534, '眉县', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2535, '陇县', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2536, '千阳县', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2537, '麟游县', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2538, '凤县', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2539, '太白县', 290);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2540, '秦都区', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2541, '杨凌区', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2542, '渭城区', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2543, '三原县', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2544, '泾阳县', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2545, '乾县', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2546, '礼泉县', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2547, '永寿县', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2548, '彬县', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2549, '长武县', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2550, '旬邑县', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2551, '淳化县', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2552, '武功县', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2553, '兴平市', 291);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2554, '临渭区', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2555, '华县', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2556, '潼关县', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2557, '大荔县', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2558, '合阳县', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2559, '澄城县', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2560, '蒲城县', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2561, '白水县', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2562, '富平县', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2563, '韩城市', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2564, '华阴市', 292);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2565, '宝塔区', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2566, '延长县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2567, '延川县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2568, '子长县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2569, '安塞县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2570, '志丹县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2571, '吴旗县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2572, '甘泉县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2573, '富县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2574, '洛川县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2575, '宜川县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2576, '黄龙县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2577, '黄陵县', 293);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2578, '汉台区', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2579, '南郑县', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2580, '城固县', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2581, '洋县', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2582, '西乡县', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2583, '勉县', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2584, '宁强县', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2585, '略阳县', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2586, '镇巴县', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2587, '留坝县', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2588, '佛坪县', 294);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2589, '榆阳区', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2590, '神木县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2591, '府谷县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2592, '横山县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2593, '靖边县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2594, '定边县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2595, '绥德县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2596, '米脂县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2597, '佳县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2598, '吴堡县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2599, '清涧县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2600, '子洲县', 295);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2601, '汉滨区', 296);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2602, '汉阴县', 296);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2603, '石泉县', 296);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2604, '宁陕县', 296);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2605, '紫阳县', 296);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2606, '岚皋县', 296);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2607, '平利县', 296);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2608, '镇坪县', 296);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2609, '旬阳县', 296);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2610, '白河县', 296);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2611, '商州区', 297);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2612, '洛南县', 297);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2613, '丹凤县', 297);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2614, '商南县', 297);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2615, '山阳县', 297);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2616, '镇安县', 297);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2617, '柞水县', 297);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2618, '城关区', 298);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2619, '七里河区', 298);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2620, '西固区', 298);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2621, '安宁区', 298);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2622, '红古区', 298);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2623, '永登县', 298);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2624, '皋兰县', 298);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2625, '榆中县', 298);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2626, '金川区', 300);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2627, '永昌县', 300);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2628, '白银区', 301);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2629, '平川区', 301);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2630, '靖远县', 301);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2631, '会宁县', 301);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2632, '景泰县', 301);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2633, '秦城区', 302);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2634, '北道区', 302);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2635, '清水县', 302);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2636, '秦安县', 302);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2637, '甘谷县', 302);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2638, '武山县', 302);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2639, '张家川回族自治县', 302);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2640, '凉州区', 303);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2641, '民勤县', 303);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2642, '古浪县', 303);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2643, '天祝藏族自治县', 303);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2644, '甘州区', 304);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2645, '肃南裕固族自治县', 304);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2646, '民乐县', 304);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2647, '临泽县', 304);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2648, '高台县', 304);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2649, '山丹县', 304);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2650, '崆峒区', 305);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2651, '泾川县', 305);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2652, '灵台县', 305);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2653, '崇信县', 305);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2654, '华亭县', 305);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2655, '庄浪县', 305);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2656, '静宁县', 305);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2657, '肃州区', 306);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2658, '金塔县', 306);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2659, '安西县', 306);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2660, '肃北蒙古族自治县', 306);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2661, '阿克塞哈萨克族自治县', 306);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2662, '玉门市', 306);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2663, '敦煌市', 306);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2664, '西峰区', 307);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2665, '庆城县', 307);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2666, '环县', 307);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2667, '华池县', 307);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2668, '合水县', 307);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2669, '正宁县', 307);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2670, '宁县', 307);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2671, '镇原县', 307);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2672, '安定区', 308);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2673, '通渭县', 308);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2674, '陇西县', 308);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2675, '渭源县', 308);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2676, '临洮县', 308);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2677, '漳县', 308);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2678, '岷县', 308);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2679, '武都区', 309);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2680, '成县', 309);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2681, '文县', 309);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2682, '宕昌县', 309);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2683, '康县', 309);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2684, '西和县', 309);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2685, '礼县', 309);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2686, '徽县', 309);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2687, '两当县', 309);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2688, '临夏市', 310);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2689, '临夏县', 310);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2690, '康乐县', 310);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2691, '永靖县', 310);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2692, '广河县', 310);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2693, '和政县', 310);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2694, '东乡族自治县', 310);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2695, '积石山保安族东乡族撒拉族自治县', 310);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2696, '合作市', 311);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2697, '临潭县', 311);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2698, '卓尼县', 311);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2699, '舟曲县', 311);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2700, '迭部县', 311);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2701, '玛曲县', 311);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2702, '碌曲县', 311);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2703, '夏河县', 311);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2704, '城东区', 312);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2705, '城中区', 312);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2706, '城西区', 312);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2707, '城北区', 312);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2708, '大通回族土族自治县', 312);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2709, '湟中县', 312);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2710, '湟源县', 312);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2711, '平安县', 313);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2712, '民和回族土族自治县', 313);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2713, '乐都县', 313);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2714, '互助土族自治县', 313);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2715, '化隆回族自治县', 313);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2716, '循化撒拉族自治县', 313);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2717, '门源回族自治县', 314);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2718, '祁连县', 314);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2719, '海晏县', 314);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2720, '刚察县', 314);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2721, '同仁县', 315);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2722, '尖扎县', 315);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2723, '泽库县', 315);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2724, '河南蒙古族自治县', 315);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2725, '共和县', 316);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2726, '同德县', 316);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2727, '贵德县', 316);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2728, '兴海县', 316);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2729, '贵南县', 316);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2730, '玛沁县', 317);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2731, '班玛县', 317);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2732, '甘德县', 317);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2733, '达日县', 317);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2734, '久治县', 317);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2735, '玛多县', 317);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2736, '玉树县', 318);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2737, '杂多县', 318);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2738, '称多县', 318);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2739, '治多县', 318);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2740, '囊谦县', 318);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2741, '曲麻莱县', 318);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2742, '格尔木市', 319);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2743, '德令哈市', 319);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2744, '乌兰县', 319);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2745, '都兰县', 319);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2746, '天峻县', 319);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2747, '兴庆区', 320);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2748, '西夏区', 320);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2749, '金凤区', 320);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2750, '永宁县', 320);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2751, '贺兰县', 320);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2752, '灵武市', 320);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2753, '大武口区', 321);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2754, '惠农区', 321);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2755, '平罗县', 321);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2756, '利通区', 322);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2757, '盐池县', 322);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2758, '同心县', 322);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2759, '青铜峡市', 322);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2760, '原州区', 323);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2761, '西吉县', 323);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2762, '隆德县', 323);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2763, '泾源县', 323);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2764, '彭阳县', 323);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2765, '沙坡头区', 324);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2766, '中宁县', 324);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2767, '海原县', 324);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2768, '天山区', 325);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2769, '沙依巴克区', 325);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2770, '新市区', 325);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2771, '水磨沟区', 325);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2772, '头屯河区', 325);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2773, '达坂城区', 325);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2774, '东山区', 325);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2775, '乌鲁木齐县', 325);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2776, '独山子区', 326);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2777, '克拉玛依区', 326);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2778, '白碱滩区', 326);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2779, '乌尔禾区', 326);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2780, '吐鲁番市', 327);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2781, '鄯善县', 327);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2782, '托克逊县', 327);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2783, '哈密市', 328);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2784, '巴里坤哈萨克自治县', 328);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2785, '伊吾县', 328);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2786, '昌吉市', 329);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2787, '阜康市', 329);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2788, '米泉市', 329);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2789, '呼图壁县', 329);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2790, '玛纳斯县', 329);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2791, '奇台县', 329);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2792, '吉木萨尔县', 329);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2793, '木垒哈萨克自治县', 329);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2794, '博乐市', 330);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2795, '精河县', 330);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2796, '温泉县', 330);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2797, '库尔勒市', 331);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2798, '轮台县', 331);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2799, '尉犁县', 331);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2800, '若羌县', 331);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2801, '且末县', 331);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2802, '焉耆回族自治县', 331);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2803, '和静县', 331);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2804, '和硕县', 331);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2805, '博湖县', 331);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2806, '阿克苏市', 332);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2807, '温宿县', 332);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2808, '库车县', 332);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2809, '沙雅县', 332);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2810, '新和县', 332);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2811, '拜城县', 332);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2812, '乌什县', 332);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2813, '阿瓦提县', 332);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2814, '柯坪县', 332);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2815, '阿图什市', 333);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2816, '阿克陶县', 333);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2817, '阿合奇县', 333);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2818, '乌恰县', 333);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2819, '喀什市', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2820, '疏附县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2821, '疏勒县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2822, '英吉沙县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2823, '泽普县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2824, '莎车县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2825, '叶城县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2826, '麦盖提县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2827, '岳普湖县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2828, '伽师县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2829, '巴楚县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2830, '塔什库尔干塔吉克自治县', 334);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2831, '和田市', 335);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2832, '和田县', 335);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2833, '墨玉县', 335);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2834, '皮山县', 335);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2835, '洛浦县', 335);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2836, '策勒县', 335);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2837, '于田县', 335);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2838, '民丰县', 335);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2839, '伊宁市', 336);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2840, '奎屯市', 336);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2841, '伊宁县', 336);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2842, '察布查尔锡伯自治县', 336);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2843, '霍城县', 336);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2844, '巩留县', 336);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2845, '新源县', 336);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2846, '昭苏县', 336);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2847, '特克斯县', 336);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2848, '尼勒克县', 336);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2849, '塔城市', 337);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2850, '乌苏市', 337);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2851, '额敏县', 337);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2852, '沙湾县', 337);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2853, '托里县', 337);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2854, '裕民县', 337);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2855, '和布克赛尔蒙古自治县', 337);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2856, '阿勒泰市', 338);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2857, '布尔津县', 338);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2858, '富蕴县', 338);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2859, '福海县', 338);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2860, '哈巴河县', 338);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2861, '青河县', 338);
-INSERT INTO `d_district` (`districtid`, `districtname`, `cityid`) VALUES (2862, '吉木乃县', 338);
-INSERT INTO `d_comments` (`id`, `name`) VALUES (1, '好评');
-INSERT INTO `d_comments` (`id`, `name`) VALUES (2, '中评');
-INSERT INTO `d_comments` (`id`, `name`) VALUES (3, '差评');
+INSERT INTO `d_province` (
+	`ProvinceID`,
+	`ProvinceName`
+)
+VALUES
+	(1, '北京市'),
+	(2, '天津市'),
+	(3, '河北省'),
+	(4, '山西省'),
+	(5, '内蒙古自治区'),
+	(6, '辽宁省'),
+	(7, '吉林省'),
+	(8, '黑龙江省'),
+	(9, '上海市'),
+	(10, '江苏省'),
+	(11, '浙江省'),
+	(12, '安徽省'),
+	(13, '福建省'),
+	(14, '江西省'),
+	(15, '山东省'),
+	(16, '河南省'),
+	(17, '湖北省'),
+	(18, '湖南省'),
+	(19, '广东省'),
+	(20, '广西壮族自治区'),
+	(21, '海南省'),
+	(22, '重庆市'),
+	(23, '四川省'),
+	(24, '贵州省'),
+	(25, '云南省'),
+	(26, '西藏自治区'),
+	(27, '陕西省'),
+	(28, '甘肃省'),
+	(29, '青海省'),
+	(30, '宁夏回族自治区'),
+	(
+		31,
+		'新疆维吾尔自治区'
+	),
+	(32, '香港特别行政区'),
+	(33, '澳门特别行政区'),
+	(34, '台湾省');
 
+INSERT INTO `d_city` (
+	`cityid`,
+	`cityname`,
+	`zipcode`,
+	`provinceid`
+)
+VALUES
+	(1, '北京市', '100000', 1),
+	(2, '天津市', '100000', 2),
+	(
+		3,
+		'石家庄市',
+		'050000',
+		3
+	),
+	(4, '唐山市', '063000', 3),
+	(
+		5,
+		'秦皇岛市',
+		'066000',
+		3
+	),
+	(6, '邯郸市', '056000', 3),
+	(7, '邢台市', '054000', 3),
+	(8, '保定市', '071000', 3),
+	(
+		9,
+		'张家口市',
+		'075000',
+		3
+	),
+	(10, '承德市', '067000', 3),
+	(11, '沧州市', '061000', 3),
+	(12, '廊坊市', '065000', 3),
+	(13, '衡水市', '053000', 3),
+	(14, '太原市', '030000', 4),
+	(15, '大同市', '037000', 4),
+	(16, '阳泉市', '045000', 4),
+	(17, '长治市', '046000', 4),
+	(18, '晋城市', '048000', 4),
+	(19, '朔州市', '036000', 4),
+	(20, '晋中市', '030600', 4),
+	(21, '运城市', '044000', 4),
+	(22, '忻州市', '034000', 4),
+	(23, '临汾市', '041000', 4),
+	(24, '吕梁市', '030500', 4),
+	(
+		25,
+		'呼和浩特市',
+		'010000',
+		5
+	),
+	(26, '包头市', '014000', 5),
+	(27, '乌海市', '016000', 5),
+	(28, '赤峰市', '024000', 5),
+	(29, '通辽市', '028000', 5),
+	(
+		30,
+		'鄂尔多斯市',
+		'010300',
+		5
+	),
+	(
+		31,
+		'呼伦贝尔市',
+		'021000',
+		5
+	),
+	(
+		32,
+		'巴彦淖尔市',
+		'014400',
+		5
+	),
+	(
+		33,
+		'乌兰察布市',
+		'011800',
+		5
+	),
+	(34, '兴安盟', '137500', 5),
+	(
+		35,
+		'锡林郭勒盟',
+		'011100',
+		5
+	),
+	(
+		36,
+		'阿拉善盟',
+		'016000',
+		5
+	),
+	(37, '沈阳市', '110000', 6),
+	(38, '大连市', '116000', 6),
+	(39, '鞍山市', '114000', 6),
+	(40, '抚顺市', '113000', 6),
+	(41, '本溪市', '117000', 6),
+	(42, '丹东市', '118000', 6),
+	(43, '锦州市', '121000', 6),
+	(44, '营口市', '115000', 6),
+	(45, '阜新市', '123000', 6),
+	(46, '辽阳市', '111000', 6),
+	(47, '盘锦市', '124000', 6),
+	(48, '铁岭市', '112000', 6),
+	(49, '朝阳市', '122000', 6),
+	(
+		50,
+		'葫芦岛市',
+		'125000',
+		6
+	),
+	(51, '长春市', '130000', 7),
+	(52, '吉林市', '132000', 7),
+	(53, '四平市', '136000', 7),
+	(54, '辽源市', '136200', 7),
+	(55, '通化市', '134000', 7),
+	(56, '白山市', '134300', 7),
+	(57, '松原市', '131100', 7),
+	(58, '白城市', '137000', 7),
+	(
+		59,
+		'延边朝鲜族自治州',
+		'133000',
+		7
+	),
+	(
+		60,
+		'哈尔滨市',
+		'150000',
+		8
+	),
+	(
+		61,
+		'齐齐哈尔市',
+		'161000',
+		8
+	),
+	(62, '鸡西市', '158100', 8),
+	(63, '鹤岗市', '154100', 8),
+	(
+		64,
+		'双鸭山市',
+		'155100',
+		8
+	),
+	(65, '大庆市', '163000', 8),
+	(66, '伊春市', '152300', 8),
+	(
+		67,
+		'佳木斯市',
+		'154000',
+		8
+	),
+	(
+		68,
+		'七台河市',
+		'154600',
+		8
+	),
+	(
+		69,
+		'牡丹江市',
+		'157000',
+		8
+	),
+	(70, '黑河市', '164300', 8),
+	(71, '绥化市', '152000', 8),
+	(
+		72,
+		'大兴安岭地区',
+		'165000',
+		8
+	),
+	(73, '上海市', '200000', 9),
+	(74, '南京市', '210000', 10),
+	(75, '无锡市', '214000', 10),
+	(76, '徐州市', '221000', 10),
+	(77, '常州市', '213000', 10),
+	(78, '苏州市', '215000', 10),
+	(79, '南通市', '226000', 10),
+	(
+		80,
+		'连云港市',
+		'222000',
+		10
+	),
+	(81, '淮安市', '223200', 10),
+	(82, '盐城市', '224000', 10),
+	(83, '扬州市', '225000', 10),
+	(84, '镇江市', '212000', 10),
+	(85, '泰州市', '225300', 10),
+	(86, '宿迁市', '223800', 10),
+	(87, '杭州市', '310000', 11),
+	(88, '宁波市', '315000', 11),
+	(89, '温州市', '325000', 11),
+	(90, '嘉兴市', '314000', 11),
+	(91, '湖州市', '313000', 11),
+	(92, '绍兴市', '312000', 11),
+	(93, '金华市', '321000', 11),
+	(94, '衢州市', '324000', 11),
+	(95, '舟山市', '316000', 11),
+	(96, '台州市', '318000', 11),
+	(97, '丽水市', '323000', 11),
+	(98, '合肥市', '230000', 12),
+	(99, '芜湖市', '241000', 12),
+	(
+		100,
+		'蚌埠市',
+		'233000',
+		12
+	),
+	(
+		101,
+		'淮南市',
+		'232000',
+		12
+	),
+	(
+		102,
+		'马鞍山市',
+		'243000',
+		12
+	),
+	(
+		103,
+		'淮北市',
+		'235000',
+		12
+	),
+	(
+		104,
+		'铜陵市',
+		'244000',
+		12
+	),
+	(
+		105,
+		'安庆市',
+		'246000',
+		12
+	),
+	(
+		106,
+		'黄山市',
+		'242700',
+		12
+	),
+	(
+		107,
+		'滁州市',
+		'239000',
+		12
+	),
+	(
+		108,
+		'阜阳市',
+		'236100',
+		12
+	),
+	(
+		109,
+		'宿州市',
+		'234100',
+		12
+	),
+	(
+		110,
+		'巢湖市',
+		'238000',
+		12
+	),
+	(
+		111,
+		'六安市',
+		'237000',
+		12
+	),
+	(
+		112,
+		'亳州市',
+		'236800',
+		12
+	),
+	(
+		113,
+		'池州市',
+		'247100',
+		12
+	),
+	(
+		114,
+		'宣城市',
+		'366000',
+		12
+	),
+	(
+		115,
+		'福州市',
+		'350000',
+		13
+	),
+	(
+		116,
+		'厦门市',
+		'361000',
+		13
+	),
+	(
+		117,
+		'莆田市',
+		'351100',
+		13
+	),
+	(
+		118,
+		'三明市',
+		'365000',
+		13
+	),
+	(
+		119,
+		'泉州市',
+		'362000',
+		13
+	),
+	(
+		120,
+		'漳州市',
+		'363000',
+		13
+	),
+	(
+		121,
+		'南平市',
+		'353000',
+		13
+	),
+	(
+		122,
+		'龙岩市',
+		'364000',
+		13
+	),
+	(
+		123,
+		'宁德市',
+		'352100',
+		13
+	),
+	(
+		124,
+		'南昌市',
+		'330000',
+		14
+	),
+	(
+		125,
+		'景德镇市',
+		'333000',
+		14
+	),
+	(
+		126,
+		'萍乡市',
+		'337000',
+		14
+	),
+	(
+		127,
+		'九江市',
+		'332000',
+		14
+	),
+	(
+		128,
+		'新余市',
+		'338000',
+		14
+	),
+	(
+		129,
+		'鹰潭市',
+		'335000',
+		14
+	),
+	(
+		130,
+		'赣州市',
+		'341000',
+		14
+	),
+	(
+		131,
+		'吉安市',
+		'343000',
+		14
+	),
+	(
+		132,
+		'宜春市',
+		'336000',
+		14
+	),
+	(
+		133,
+		'抚州市',
+		'332900',
+		14
+	),
+	(
+		134,
+		'上饶市',
+		'334000',
+		14
+	),
+	(
+		135,
+		'济南市',
+		'250000',
+		15
+	),
+	(
+		136,
+		'青岛市',
+		'266000',
+		15
+	),
+	(
+		137,
+		'淄博市',
+		'255000',
+		15
+	),
+	(
+		138,
+		'枣庄市',
+		'277100',
+		15
+	),
+	(
+		139,
+		'东营市',
+		'257000',
+		15
+	),
+	(
+		140,
+		'烟台市',
+		'264000',
+		15
+	),
+	(
+		141,
+		'潍坊市',
+		'261000',
+		15
+	),
+	(
+		142,
+		'济宁市',
+		'272100',
+		15
+	),
+	(
+		143,
+		'泰安市',
+		'271000',
+		15
+	),
+	(
+		144,
+		'威海市',
+		'265700',
+		15
+	),
+	(
+		145,
+		'日照市',
+		'276800',
+		15
+	),
+	(
+		146,
+		'莱芜市',
+		'271100',
+		15
+	),
+	(
+		147,
+		'临沂市',
+		'276000',
+		15
+	),
+	(
+		148,
+		'德州市',
+		'253000',
+		15
+	),
+	(
+		149,
+		'聊城市',
+		'252000',
+		15
+	),
+	(
+		150,
+		'滨州市',
+		'256600',
+		15
+	),
+	(
+		151,
+		'荷泽市',
+		'255000',
+		15
+	),
+	(
+		152,
+		'郑州市',
+		'450000',
+		16
+	),
+	(
+		153,
+		'开封市',
+		'475000',
+		16
+	),
+	(
+		154,
+		'洛阳市',
+		'471000',
+		16
+	),
+	(
+		155,
+		'平顶山市',
+		'467000',
+		16
+	),
+	(
+		156,
+		'安阳市',
+		'454900',
+		16
+	),
+	(
+		157,
+		'鹤壁市',
+		'456600',
+		16
+	),
+	(
+		158,
+		'新乡市',
+		'453000',
+		16
+	),
+	(
+		159,
+		'焦作市',
+		'454100',
+		16
+	),
+	(
+		160,
+		'濮阳市',
+		'457000',
+		16
+	),
+	(
+		161,
+		'许昌市',
+		'461000',
+		16
+	),
+	(
+		162,
+		'漯河市',
+		'462000',
+		16
+	),
+	(
+		163,
+		'三门峡市',
+		'472000',
+		16
+	),
+	(
+		164,
+		'南阳市',
+		'473000',
+		16
+	),
+	(
+		165,
+		'商丘市',
+		'476000',
+		16
+	),
+	(
+		166,
+		'信阳市',
+		'464000',
+		16
+	),
+	(
+		167,
+		'周口市',
+		'466000',
+		16
+	),
+	(
+		168,
+		'驻马店市',
+		'463000',
+		16
+	),
+	(
+		169,
+		'武汉市',
+		'430000',
+		17
+	),
+	(
+		170,
+		'黄石市',
+		'435000',
+		17
+	),
+	(
+		171,
+		'十堰市',
+		'442000',
+		17
+	),
+	(
+		172,
+		'宜昌市',
+		'443000',
+		17
+	),
+	(
+		173,
+		'襄樊市',
+		'441000',
+		17
+	),
+	(
+		174,
+		'鄂州市',
+		'436000',
+		17
+	),
+	(
+		175,
+		'荆门市',
+		'448000',
+		17
+	),
+	(
+		176,
+		'孝感市',
+		'432100',
+		17
+	),
+	(
+		177,
+		'荆州市',
+		'434000',
+		17
+	),
+	(
+		178,
+		'黄冈市',
+		'438000',
+		17
+	),
+	(
+		179,
+		'咸宁市',
+		'437000',
+		17
+	),
+	(
+		180,
+		'随州市',
+		'441300',
+		17
+	),
+	(
+		181,
+		'恩施土家族苗族自治州',
+		'445000',
+		17
+	),
+	(
+		182,
+		'神农架',
+		'442400',
+		17
+	),
+	(
+		183,
+		'长沙市',
+		'410000',
+		18
+	),
+	(
+		184,
+		'株洲市',
+		'412000',
+		18
+	),
+	(
+		185,
+		'湘潭市',
+		'411100',
+		18
+	),
+	(
+		186,
+		'衡阳市',
+		'421000',
+		18
+	),
+	(
+		187,
+		'邵阳市',
+		'422000',
+		18
+	),
+	(
+		188,
+		'岳阳市',
+		'414000',
+		18
+	),
+	(
+		189,
+		'常德市',
+		'415000',
+		18
+	),
+	(
+		190,
+		'张家界市',
+		'427000',
+		18
+	),
+	(
+		191,
+		'益阳市',
+		'413000',
+		18
+	),
+	(
+		192,
+		'郴州市',
+		'423000',
+		18
+	),
+	(
+		193,
+		'永州市',
+		'425000',
+		18
+	),
+	(
+		194,
+		'怀化市',
+		'418000',
+		18
+	),
+	(
+		195,
+		'娄底市',
+		'417000',
+		18
+	),
+	(
+		196,
+		'湘西土家族苗族自治州',
+		'416000',
+		18
+	),
+	(
+		197,
+		'广州市',
+		'510000',
+		19
+	),
+	(
+		198,
+		'韶关市',
+		'521000',
+		19
+	),
+	(
+		199,
+		'深圳市',
+		'518000',
+		19
+	),
+	(
+		200,
+		'珠海市',
+		'519000',
+		19
+	),
+	(
+		201,
+		'汕头市',
+		'515000',
+		19
+	),
+	(
+		202,
+		'佛山市',
+		'528000',
+		19
+	),
+	(
+		203,
+		'江门市',
+		'529000',
+		19
+	),
+	(
+		204,
+		'湛江市',
+		'524000',
+		19
+	),
+	(
+		205,
+		'茂名市',
+		'525000',
+		19
+	),
+	(
+		206,
+		'肇庆市',
+		'526000',
+		19
+	),
+	(
+		207,
+		'惠州市',
+		'516000',
+		19
+	),
+	(
+		208,
+		'梅州市',
+		'514000',
+		19
+	),
+	(
+		209,
+		'汕尾市',
+		'516600',
+		19
+	),
+	(
+		210,
+		'河源市',
+		'517000',
+		19
+	),
+	(
+		211,
+		'阳江市',
+		'529500',
+		19
+	),
+	(
+		212,
+		'清远市',
+		'511500',
+		19
+	),
+	(
+		213,
+		'东莞市',
+		'511700',
+		19
+	),
+	(
+		214,
+		'中山市',
+		'528400',
+		19
+	),
+	(
+		215,
+		'潮州市',
+		'515600',
+		19
+	),
+	(
+		216,
+		'揭阳市',
+		'522000',
+		19
+	),
+	(
+		217,
+		'云浮市',
+		'527300',
+		19
+	),
+	(
+		218,
+		'南宁市',
+		'530000',
+		20
+	),
+	(
+		219,
+		'柳州市',
+		'545000',
+		20
+	),
+	(
+		220,
+		'桂林市',
+		'541000',
+		20
+	),
+	(
+		221,
+		'梧州市',
+		'543000',
+		20
+	),
+	(
+		222,
+		'北海市',
+		'536000',
+		20
+	),
+	(
+		223,
+		'防城港市',
+		'538000',
+		20
+	),
+	(
+		224,
+		'钦州市',
+		'535000',
+		20
+	),
+	(
+		225,
+		'贵港市',
+		'537100',
+		20
+	),
+	(
+		226,
+		'玉林市',
+		'537000',
+		20
+	),
+	(
+		227,
+		'百色市',
+		'533000',
+		20
+	),
+	(
+		228,
+		'贺州市',
+		'542800',
+		20
+	),
+	(
+		229,
+		'河池市',
+		'547000',
+		20
+	),
+	(
+		230,
+		'来宾市',
+		'546100',
+		20
+	),
+	(
+		231,
+		'崇左市',
+		'532200',
+		20
+	),
+	(
+		232,
+		'海口市',
+		'570000',
+		21
+	),
+	(
+		233,
+		'三亚市',
+		'572000',
+		21
+	),
+	(
+		234,
+		'重庆市',
+		'400000',
+		22
+	),
+	(
+		235,
+		'成都市',
+		'610000',
+		23
+	),
+	(
+		236,
+		'自贡市',
+		'643000',
+		23
+	),
+	(
+		237,
+		'攀枝花市',
+		'617000',
+		23
+	),
+	(
+		238,
+		'泸州市',
+		'646100',
+		23
+	),
+	(
+		239,
+		'德阳市',
+		'618000',
+		23
+	),
+	(
+		240,
+		'绵阳市',
+		'621000',
+		23
+	),
+	(
+		241,
+		'广元市',
+		'628000',
+		23
+	),
+	(
+		242,
+		'遂宁市',
+		'629000',
+		23
+	),
+	(
+		243,
+		'内江市',
+		'641000',
+		23
+	),
+	(
+		244,
+		'乐山市',
+		'614000',
+		23
+	),
+	(
+		245,
+		'南充市',
+		'637000',
+		23
+	),
+	(
+		246,
+		'眉山市',
+		'612100',
+		23
+	),
+	(
+		247,
+		'宜宾市',
+		'644000',
+		23
+	),
+	(
+		248,
+		'广安市',
+		'638000',
+		23
+	),
+	(
+		249,
+		'达州市',
+		'635000',
+		23
+	),
+	(
+		250,
+		'雅安市',
+		'625000',
+		23
+	),
+	(
+		251,
+		'巴中市',
+		'635500',
+		23
+	),
+	(
+		252,
+		'资阳市',
+		'641300',
+		23
+	),
+	(
+		253,
+		'阿坝藏族羌族自治州',
+		'624600',
+		23
+	),
+	(
+		254,
+		'甘孜藏族自治州',
+		'626000',
+		23
+	),
+	(
+		255,
+		'凉山彝族自治州',
+		'615000',
+		23
+	),
+	(256, '贵阳市', '55000', 24),
+	(
+		257,
+		'六盘水市',
+		'553000',
+		24
+	),
+	(
+		258,
+		'遵义市',
+		'563000',
+		24
+	),
+	(
+		259,
+		'安顺市',
+		'561000',
+		24
+	),
+	(
+		260,
+		'铜仁地区',
+		'554300',
+		24
+	),
+	(
+		261,
+		'黔西南布依族苗族自治州',
+		'551500',
+		24
+	),
+	(
+		262,
+		'毕节地区',
+		'551700',
+		24
+	),
+	(
+		263,
+		'黔东南苗族侗族自治州',
+		'551500',
+		24
+	),
+	(
+		264,
+		'黔南布依族苗族自治州',
+		'550100',
+		24
+	),
+	(
+		265,
+		'昆明市',
+		'650000',
+		25
+	),
+	(
+		266,
+		'曲靖市',
+		'655000',
+		25
+	),
+	(
+		267,
+		'玉溪市',
+		'653100',
+		25
+	),
+	(
+		268,
+		'保山市',
+		'678000',
+		25
+	),
+	(
+		269,
+		'昭通市',
+		'657000',
+		25
+	),
+	(
+		270,
+		'丽江市',
+		'674100',
+		25
+	),
+	(
+		271,
+		'思茅市',
+		'665000',
+		25
+	),
+	(
+		272,
+		'临沧市',
+		'677000',
+		25
+	),
+	(
+		273,
+		'楚雄彝族自治州',
+		'675000',
+		25
+	),
+	(
+		274,
+		'红河哈尼族彝族自治州',
+		'654400',
+		25
+	),
+	(
+		275,
+		'文山壮族苗族自治州',
+		'663000',
+		25
+	),
+	(
+		276,
+		'西双版纳傣族自治州',
+		'666200',
+		25
+	),
+	(
+		277,
+		'大理白族自治州',
+		'671000',
+		25
+	),
+	(
+		278,
+		'德宏傣族景颇族自治州',
+		'678400',
+		25
+	),
+	(
+		279,
+		'怒江傈僳族自治州',
+		'671400',
+		25
+	),
+	(
+		280,
+		'迪庆藏族自治州',
+		'674400',
+		25
+	),
+	(
+		281,
+		'拉萨市',
+		'850000',
+		26
+	),
+	(
+		282,
+		'昌都地区',
+		'854000',
+		26
+	),
+	(
+		283,
+		'山南地区',
+		'856000',
+		26
+	),
+	(
+		284,
+		'日喀则地区',
+		'857000',
+		26
+	),
+	(
+		285,
+		'那曲地区',
+		'852000',
+		26
+	),
+	(
+		286,
+		'阿里地区',
+		'859100',
+		26
+	),
+	(
+		287,
+		'林芝地区',
+		'860100',
+		26
+	),
+	(
+		288,
+		'西安市',
+		'710000',
+		27
+	),
+	(
+		289,
+		'铜川市',
+		'727000',
+		27
+	),
+	(
+		290,
+		'宝鸡市',
+		'721000',
+		27
+	),
+	(
+		291,
+		'咸阳市',
+		'712000',
+		27
+	),
+	(
+		292,
+		'渭南市',
+		'714000',
+		27
+	),
+	(
+		293,
+		'延安市',
+		'716000',
+		27
+	),
+	(
+		294,
+		'汉中市',
+		'723000',
+		27
+	),
+	(
+		295,
+		'榆林市',
+		'719000',
+		27
+	),
+	(
+		296,
+		'安康市',
+		'725000',
+		27
+	),
+	(
+		297,
+		'商洛市',
+		'711500',
+		27
+	),
+	(
+		298,
+		'兰州市',
+		'730000',
+		28
+	),
+	(
+		299,
+		'嘉峪关市',
+		'735100',
+		28
+	),
+	(
+		300,
+		'金昌市',
+		'737100',
+		28
+	),
+	(
+		301,
+		'白银市',
+		'730900',
+		28
+	),
+	(
+		302,
+		'天水市',
+		'741000',
+		28
+	),
+	(
+		303,
+		'武威市',
+		'733000',
+		28
+	),
+	(
+		304,
+		'张掖市',
+		'734000',
+		28
+	),
+	(
+		305,
+		'平凉市',
+		'744000',
+		28
+	),
+	(
+		306,
+		'酒泉市',
+		'735000',
+		28
+	),
+	(
+		307,
+		'庆阳市',
+		'744500',
+		28
+	),
+	(
+		308,
+		'定西市',
+		'743000',
+		28
+	),
+	(
+		309,
+		'陇南市',
+		'742100',
+		28
+	),
+	(
+		310,
+		'临夏回族自治州',
+		'731100',
+		28
+	),
+	(
+		311,
+		'甘南藏族自治州',
+		'747000',
+		28
+	),
+	(
+		312,
+		'西宁市',
+		'810000',
+		29
+	),
+	(
+		313,
+		'海东地区',
+		'810600',
+		29
+	),
+	(
+		314,
+		'海北藏族自治州',
+		'810300',
+		29
+	),
+	(
+		315,
+		'黄南藏族自治州',
+		'811300',
+		29
+	),
+	(
+		316,
+		'海南藏族自治州',
+		'813000',
+		29
+	),
+	(
+		317,
+		'果洛藏族自治州',
+		'814000',
+		29
+	),
+	(
+		318,
+		'玉树藏族自治州',
+		'815000',
+		29
+	),
+	(
+		319,
+		'海西蒙古族藏族自治州',
+		'817000',
+		29
+	),
+	(
+		320,
+		'银川市',
+		'750000',
+		30
+	),
+	(
+		321,
+		'石嘴山市',
+		'753000',
+		30
+	),
+	(
+		322,
+		'吴忠市',
+		'751100',
+		30
+	),
+	(
+		323,
+		'固原市',
+		'756000',
+		30
+	),
+	(
+		324,
+		'中卫市',
+		'751700',
+		30
+	),
+	(
+		325,
+		'乌鲁木齐市',
+		'830000',
+		31
+	),
+	(
+		326,
+		'克拉玛依市',
+		'834000',
+		31
+	),
+	(
+		327,
+		'吐鲁番地区',
+		'838000',
+		31
+	),
+	(
+		328,
+		'哈密地区',
+		'839000',
+		31
+	),
+	(
+		329,
+		'昌吉回族自治州',
+		'831100',
+		31
+	),
+	(
+		330,
+		'博尔塔拉蒙古自治州',
+		'833400',
+		31
+	),
+	(
+		331,
+		'巴音郭楞蒙古自治州',
+		'841000',
+		31
+	),
+	(
+		332,
+		'阿克苏地区',
+		'843000',
+		31
+	),
+	(
+		333,
+		'克孜勒苏柯尔克孜自治州',
+		'835600',
+		31
+	),
+	(
+		334,
+		'喀什地区',
+		'844000',
+		31
+	),
+	(
+		335,
+		'和田地区',
+		'848000',
+		31
+	),
+	(
+		336,
+		'伊犁哈萨克自治州',
+		'833200',
+		31
+	),
+	(
+		337,
+		'塔城地区',
+		'834700',
+		31
+	),
+	(
+		338,
+		'阿勒泰地区',
+		'836500',
+		31
+	),
+	(
+		339,
+		'石河子市',
+		'832000',
+		31
+	),
+	(
+		340,
+		'阿拉尔市',
+		'843300',
+		31
+	),
+	(
+		341,
+		'图木舒克市',
+		'843900',
+		31
+	),
+	(
+		342,
+		'五家渠市',
+		'831300',
+		31
+	),
+	(
+		343,
+		'香港特别行政区',
+		'000000',
+		32
+	),
+	(
+		344,
+		'澳门特别行政区',
+		'000000',
+		33
+	),
+	(
+		345,
+		'台湾省',
+		'000000',
+		34
+	);
+
+INSERT INTO `d_district` (
+	`districtid`,
+	`districtname`,
+	`cityid`
+)
+VALUES
+	(1, '东城区', 1),
+	(2, '西城区', 1),
+	(3, '崇文区', 1),
+	(4, '宣武区', 1),
+	(5, '朝阳区', 1),
+	(6, '丰台区', 1),
+	(7, '石景山区', 1),
+	(8, '海淀区', 1),
+	(9, '门头沟区', 1),
+	(10, '房山区', 1),
+	(11, '通州区', 1),
+	(12, '顺义区', 1),
+	(13, '昌平区', 1),
+	(14, '大兴区', 1),
+	(15, '怀柔区', 1),
+	(16, '平谷区', 1),
+	(17, '密云县', 1),
+	(18, '延庆县', 1),
+	(19, '和平区', 2),
+	(20, '河东区', 2),
+	(21, '河西区', 2),
+	(22, '南开区', 2),
+	(23, '河北区', 2),
+	(24, '红桥区', 2),
+	(25, '塘沽区', 2),
+	(26, '汉沽区', 2),
+	(27, '大港区', 2),
+	(28, '东丽区', 2),
+	(29, '西青区', 2),
+	(30, '津南区', 2),
+	(31, '北辰区', 2),
+	(32, '武清区', 2),
+	(33, '宝坻区', 2),
+	(34, '宁河县', 2),
+	(35, '静海县', 2),
+	(36, '蓟县', 2),
+	(37, '长安区', 3),
+	(38, '桥东区', 3),
+	(39, '桥西区', 3),
+	(40, '新华区', 3),
+	(41, '井陉矿区', 3),
+	(42, '裕华区', 3),
+	(43, '井陉县', 3),
+	(44, '正定县', 3),
+	(45, '栾城县', 3),
+	(46, '行唐县', 3),
+	(47, '灵寿县', 3),
+	(48, '高邑县', 3),
+	(49, '深泽县', 3),
+	(50, '赞皇县', 3),
+	(51, '无极县', 3),
+	(52, '平山县', 3),
+	(53, '元氏县', 3),
+	(54, '赵县', 3),
+	(55, '辛集市', 3),
+	(56, '藁城市', 3),
+	(57, '晋州市', 3),
+	(58, '新乐市', 3),
+	(59, '鹿泉市', 3),
+	(60, '路南区', 4),
+	(61, '路北区', 4),
+	(62, '古冶区', 4),
+	(63, '开平区', 4),
+	(64, '丰南区', 4),
+	(65, '丰润区', 4),
+	(66, '滦县', 4),
+	(67, '滦南县', 4),
+	(68, '乐亭县', 4),
+	(69, '迁西县', 4),
+	(70, '玉田县', 4),
+	(71, '唐海县', 4),
+	(72, '遵化市', 4),
+	(73, '迁安市', 4),
+	(74, '海港区', 5),
+	(75, '山海关区', 5),
+	(76, '北戴河区', 5),
+	(
+		77,
+		'青龙满族自治县',
+		5
+	),
+	(78, '昌黎县', 5),
+	(79, '抚宁县', 5),
+	(80, '卢龙县', 5),
+	(81, '邯山区', 6),
+	(82, '丛台区', 6),
+	(83, '复兴区', 6),
+	(84, '峰峰矿区', 6),
+	(85, '邯郸县', 6),
+	(86, '临漳县', 6),
+	(87, '成安县', 6),
+	(88, '大名县', 6),
+	(89, '涉县', 6),
+	(90, '磁县', 6),
+	(91, '肥乡县', 6),
+	(92, '永年县', 6),
+	(93, '邱县', 6),
+	(94, '鸡泽县', 6),
+	(95, '广平县', 6),
+	(96, '馆陶县', 6),
+	(97, '魏县', 6),
+	(98, '曲周县', 6),
+	(99, '武安市', 6),
+	(100, '桥东区', 7),
+	(101, '桥西区', 7),
+	(102, '邢台县', 7),
+	(103, '临城县', 7),
+	(104, '内丘县', 7),
+	(105, '柏乡县', 7),
+	(106, '隆尧县', 7),
+	(107, '任县', 7),
+	(108, '南和县', 7),
+	(109, '宁晋县', 7),
+	(110, '巨鹿县', 7),
+	(111, '新河县', 7),
+	(112, '广宗县', 7),
+	(113, '平乡县', 7),
+	(114, '威县', 7),
+	(115, '清河县', 7),
+	(116, '临西县', 7),
+	(117, '南宫市', 7),
+	(118, '沙河市', 7),
+	(119, '新市区', 8),
+	(120, '北市区', 8),
+	(121, '南市区', 8),
+	(122, '满城县', 8),
+	(123, '清苑县', 8),
+	(124, '涞水县', 8),
+	(125, '阜平县', 8),
+	(126, '徐水县', 8),
+	(127, '定兴县', 8),
+	(128, '唐县', 8),
+	(129, '高阳县', 8),
+	(130, '容城县', 8),
+	(131, '涞源县', 8),
+	(132, '望都县', 8),
+	(133, '安新县', 8),
+	(134, '易县', 8),
+	(135, '曲阳县', 8),
+	(136, '蠡县', 8),
+	(137, '顺平县', 8),
+	(138, '博野县', 8),
+	(139, '雄县', 8),
+	(140, '涿州市', 8),
+	(141, '定州市', 8),
+	(142, '安国市', 8),
+	(143, '高碑店市', 8),
+	(144, '桥东区', 9),
+	(145, '桥西区', 9),
+	(146, '宣化区', 9),
+	(147, '下花园区', 9),
+	(148, '宣化县', 9),
+	(149, '张北县', 9),
+	(150, '康保县', 9),
+	(151, '沽源县', 9),
+	(152, '尚义县', 9),
+	(153, '蔚县', 9),
+	(154, '阳原县', 9),
+	(155, '怀安县', 9),
+	(156, '万全县', 9),
+	(157, '怀来县', 9),
+	(158, '涿鹿县', 9),
+	(159, '赤城县', 9),
+	(160, '崇礼县', 9),
+	(161, '双桥区', 10),
+	(162, '双滦区', 10),
+	(
+		163,
+		'鹰手营子矿区',
+		10
+	),
+	(164, '承德县', 10),
+	(165, '兴隆县', 10),
+	(166, '平泉县', 10),
+	(167, '滦平县', 10),
+	(168, '隆化县', 10),
+	(
+		169,
+		'丰宁满族自治县',
+		10
+	),
+	(
+		170,
+		'宽城满族自治县',
+		10
+	),
+	(
+		171,
+		'围场满族蒙古族自治县',
+		10
+	),
+	(172, '新华区', 11),
+	(173, '运河区', 11),
+	(174, '沧县', 11),
+	(175, '青县', 11),
+	(176, '东光县', 11),
+	(177, '海兴县', 11),
+	(178, '盐山县', 11),
+	(179, '肃宁县', 11),
+	(180, '南皮县', 11),
+	(181, '吴桥县', 11),
+	(182, '献县', 11),
+	(
+		183,
+		'孟村回族自治县',
+		11
+	),
+	(184, '泊头市', 11),
+	(185, '任丘市', 11),
+	(186, '黄骅市', 11),
+	(187, '河间市', 11),
+	(188, '安次区', 12),
+	(189, '广阳区', 12),
+	(190, '固安县', 12),
+	(191, '永清县', 12),
+	(192, '香河县', 12),
+	(193, '大城县', 12),
+	(194, '文安县', 12),
+	(
+		195,
+		'大厂回族自治县',
+		12
+	),
+	(196, '霸州市', 12),
+	(197, '三河市', 12),
+	(198, '桃城区', 13),
+	(199, '枣强县', 13),
+	(200, '武邑县', 13),
+	(201, '武强县', 13),
+	(202, '饶阳县', 13),
+	(203, '安平县', 13),
+	(204, '故城县', 13),
+	(205, '景县', 13),
+	(206, '阜城县', 13),
+	(207, '冀州市', 13),
+	(208, '深州市', 13),
+	(209, '小店区', 14),
+	(210, '迎泽区', 14),
+	(211, '杏花岭区', 14),
+	(212, '尖草坪区', 14),
+	(213, '万柏林区', 14),
+	(214, '晋源区', 14),
+	(215, '清徐县', 14),
+	(216, '阳曲县', 14),
+	(217, '娄烦县', 14),
+	(218, '古交市', 14),
+	(219, '城区', 15),
+	(220, '矿区', 15),
+	(221, '南郊区', 15),
+	(222, '新荣区', 15),
+	(223, '阳高县', 15),
+	(224, '天镇县', 15),
+	(225, '广灵县', 15),
+	(226, '灵丘县', 15),
+	(227, '浑源县', 15),
+	(228, '左云县', 15),
+	(229, '大同县', 15),
+	(230, '城区', 16),
+	(231, '矿区', 16),
+	(232, '郊区', 16),
+	(233, '平定县', 16),
+	(234, '盂县', 16),
+	(235, '城区', 17),
+	(236, '郊区', 17),
+	(237, '长治县', 17),
+	(238, '襄垣县', 17),
+	(239, '屯留县', 17),
+	(240, '平顺县', 17),
+	(241, '黎城县', 17),
+	(242, '壶关县', 17),
+	(243, '长子县', 17),
+	(244, '武乡县', 17),
+	(245, '沁县', 17),
+	(246, '沁源县', 17),
+	(247, '潞城市', 17),
+	(248, '城区', 18),
+	(249, '沁水县', 18),
+	(250, '阳城县', 18),
+	(251, '陵川县', 18),
+	(252, '泽州县', 18),
+	(253, '高平市', 18),
+	(254, '朔城区', 19),
+	(255, '平鲁区', 19),
+	(256, '山阴县', 19),
+	(257, '应县', 19),
+	(258, '右玉县', 19),
+	(259, '怀仁县', 19),
+	(260, '榆次区', 20),
+	(261, '榆社县', 20),
+	(262, '左权县', 20),
+	(263, '和顺县', 20),
+	(264, '昔阳县', 20),
+	(265, '寿阳县', 20),
+	(266, '太谷县', 20),
+	(267, '祁县', 20),
+	(268, '平遥县', 20),
+	(269, '灵石县', 20),
+	(270, '介休市', 20),
+	(271, '盐湖区', 21),
+	(272, '临猗县', 21),
+	(273, '万荣县', 21),
+	(274, '闻喜县', 21),
+	(275, '稷山县', 21),
+	(276, '新绛县', 21),
+	(277, '绛县', 21),
+	(278, '垣曲县', 21),
+	(279, '夏县', 21),
+	(280, '平陆县', 21),
+	(281, '芮城县', 21),
+	(282, '永济市', 21),
+	(283, '河津市', 21),
+	(284, '忻府区', 22),
+	(285, '定襄县', 22),
+	(286, '五台县', 22),
+	(287, '代县', 22),
+	(288, '繁峙县', 22),
+	(289, '宁武县', 22),
+	(290, '静乐县', 22),
+	(291, '神池县', 22),
+	(292, '五寨县', 22),
+	(293, '岢岚县', 22),
+	(294, '河曲县', 22),
+	(295, '保德县', 22),
+	(296, '偏关县', 22),
+	(297, '原平市', 22),
+	(298, '尧都区', 23),
+	(299, '曲沃县', 23),
+	(300, '翼城县', 23),
+	(301, '襄汾县', 23),
+	(302, '洪洞县', 23),
+	(303, '古县', 23),
+	(304, '安泽县', 23),
+	(305, '浮山县', 23),
+	(306, '吉县', 23),
+	(307, '乡宁县', 23),
+	(308, '大宁县', 23),
+	(309, '隰县', 23),
+	(310, '永和县', 23),
+	(311, '蒲县', 23),
+	(312, '汾西县', 23),
+	(313, '侯马市', 23),
+	(314, '霍州市', 23),
+	(315, '离石区', 24),
+	(316, '文水县', 24),
+	(317, '交城县', 24),
+	(318, '兴县', 24),
+	(319, '临县', 24),
+	(320, '柳林县', 24),
+	(321, '石楼县', 24),
+	(322, '岚县', 24),
+	(323, '方山县', 24),
+	(324, '中阳县', 24),
+	(325, '交口县', 24),
+	(326, '孝义市', 24),
+	(327, '汾阳市', 24),
+	(328, '新城区', 25),
+	(329, '回民区', 25),
+	(330, '玉泉区', 25),
+	(331, '赛罕区', 25),
+	(332, '土默特左旗', 25),
+	(333, '托克托县', 25),
+	(334, '和林格尔县', 25),
+	(335, '清水河县', 25),
+	(336, '武川县', 25),
+	(337, '东河区', 26),
+	(338, '昆都仑区', 26),
+	(339, '青山区', 26),
+	(340, '石拐区', 26),
+	(341, '白云矿区', 26),
+	(342, '九原区', 26),
+	(343, '土默特右旗', 26),
+	(344, '固阳县', 26),
+	(
+		345,
+		'达尔罕茂明安联合旗',
+		26
+	),
+	(346, '海勃湾区', 27),
+	(347, '海南区', 27),
+	(348, '乌达区', 27),
+	(349, '红山区', 28),
+	(350, '元宝山区', 28),
+	(351, '松山区', 28),
+	(
+		352,
+		'阿鲁科尔沁旗',
+		28
+	),
+	(353, '巴林左旗', 28),
+	(354, '巴林右旗', 28),
+	(355, '林西县', 28),
+	(356, '克什克腾旗', 28),
+	(357, '翁牛特旗', 28),
+	(358, '喀喇沁旗', 28),
+	(359, '宁城县', 28),
+	(360, '敖汉旗', 28),
+	(361, '科尔沁区', 29),
+	(
+		362,
+		'科尔沁左翼中旗',
+		29
+	),
+	(
+		363,
+		'科尔沁左翼后旗',
+		29
+	),
+	(364, '开鲁县', 29),
+	(365, '库伦旗', 29),
+	(366, '奈曼旗', 29),
+	(367, '扎鲁特旗', 29),
+	(368, '霍林郭勒市', 29),
+	(369, '东胜区', 30),
+	(370, '达拉特旗', 30),
+	(371, '准格尔旗', 30),
+	(372, '鄂托克前旗', 30),
+	(373, '鄂托克旗', 30),
+	(374, '杭锦旗', 30),
+	(375, '乌审旗', 30),
+	(376, '伊金霍洛旗', 30),
+	(377, '海拉尔区', 31),
+	(378, '阿荣旗', 31),
+	(
+		379,
+		'莫力达瓦达斡尔族自治旗',
+		31
+	),
+	(
+		380,
+		'鄂伦春自治旗',
+		31
+	),
+	(
+		381,
+		'鄂温克族自治旗',
+		31
+	),
+	(382, '陈巴尔虎旗', 31),
+	(
+		383,
+		'新巴尔虎左旗',
+		31
+	),
+	(
+		384,
+		'新巴尔虎右旗',
+		31
+	),
+	(385, '满洲里市', 31),
+	(386, '牙克石市', 31),
+	(387, '扎兰屯市', 31),
+	(388, '额尔古纳市', 31),
+	(389, '根河市', 31),
+	(390, '临河区', 32),
+	(391, '五原县', 32),
+	(392, '磴口县', 32),
+	(393, '乌拉特前旗', 32),
+	(394, '乌拉特中旗', 32),
+	(395, '乌拉特后旗', 32),
+	(396, '杭锦后旗', 32),
+	(397, '集宁区', 33),
+	(398, '卓资县', 33),
+	(399, '化德县', 33),
+	(400, '商都县', 33),
+	(401, '兴和县', 33),
+	(402, '凉城县', 33),
+	(
+		403,
+		'察哈尔右翼前旗',
+		33
+	),
+	(
+		404,
+		'察哈尔右翼中旗',
+		33
+	),
+	(
+		405,
+		'察哈尔右翼后旗',
+		33
+	),
+	(406, '四子王旗', 33),
+	(407, '丰镇市', 33),
+	(408, '乌兰浩特市', 34),
+	(409, '阿尔山市', 34),
+	(
+		410,
+		'科尔沁右翼前旗',
+		34
+	),
+	(
+		411,
+		'科尔沁右翼中旗',
+		34
+	),
+	(412, '扎赉特旗', 34),
+	(413, '突泉县', 34),
+	(414, '二连浩特市', 35),
+	(415, '锡林浩特市', 35),
+	(416, '阿巴嘎旗', 35),
+	(417, '苏尼特左旗', 35),
+	(418, '苏尼特右旗', 35),
+	(
+		419,
+		'东乌珠穆沁旗',
+		35
+	),
+	(
+		420,
+		'西乌珠穆沁旗',
+		35
+	),
+	(421, '太仆寺旗', 35),
+	(422, '镶黄旗', 35),
+	(423, '正镶白旗', 35),
+	(424, '正蓝旗', 35),
+	(425, '多伦县', 35),
+	(426, '阿拉善左旗', 36),
+	(427, '阿拉善右旗', 36),
+	(428, '额济纳旗', 36),
+	(429, '和平区', 37),
+	(430, '沈河区', 37),
+	(431, '大东区', 37),
+	(432, '皇姑区', 37),
+	(433, '铁西区', 37),
+	(434, '苏家屯区', 37),
+	(435, '东陵区', 37),
+	(436, '新城子区', 37),
+	(437, '于洪区', 37),
+	(438, '辽中县', 37),
+	(439, '康平县', 37),
+	(440, '法库县', 37),
+	(441, '新民市', 37),
+	(442, '中山区', 38),
+	(443, '西岗区', 38),
+	(444, '沙河口区', 38),
+	(445, '甘井子区', 38),
+	(446, '旅顺口区', 38),
+	(447, '金州区', 38),
+	(448, '长海县', 38),
+	(449, '瓦房店市', 38),
+	(450, '普兰店市', 38),
+	(451, '庄河市', 38),
+	(452, '铁东区', 39),
+	(453, '铁西区', 39),
+	(454, '立山区', 39),
+	(455, '千山区', 39),
+	(456, '台安县', 39),
+	(
+		457,
+		'岫岩满族自治县',
+		39
+	),
+	(458, '海城市', 39),
+	(459, '新抚区', 40),
+	(460, '东洲区', 40),
+	(461, '望花区', 40),
+	(462, '顺城区', 40),
+	(463, '抚顺县', 40),
+	(
+		464,
+		'新宾满族自治县',
+		40
+	),
+	(
+		465,
+		'清原满族自治县',
+		40
+	),
+	(466, '平山区', 41),
+	(467, '溪湖区', 41),
+	(468, '明山区', 41),
+	(469, '南芬区', 41),
+	(
+		470,
+		'本溪满族自治县',
+		41
+	),
+	(
+		471,
+		'桓仁满族自治县',
+		41
+	),
+	(472, '元宝区', 42),
+	(473, '振兴区', 42),
+	(474, '振安区', 42),
+	(
+		475,
+		'宽甸满族自治县',
+		42
+	),
+	(476, '东港市', 42),
+	(477, '凤城市', 42),
+	(478, '古塔区', 43),
+	(479, '凌河区', 43),
+	(480, '太和区', 43),
+	(481, '黑山县', 43),
+	(482, '义县', 43),
+	(483, '凌海市', 43),
+	(484, '北宁市', 43),
+	(485, '站前区', 44),
+	(486, '西市区', 44),
+	(487, '鲅鱼圈区', 44),
+	(488, '老边区', 44),
+	(489, '盖州市', 44),
+	(490, '大石桥市', 44),
+	(491, '海州区', 45),
+	(492, '新邱区', 45),
+	(493, '太平区', 45),
+	(494, '清河门区', 45),
+	(495, '细河区', 45),
+	(
+		496,
+		'阜新蒙古族自治县',
+		45
+	),
+	(497, '彰武县', 45),
+	(498, '白塔区', 46),
+	(499, '文圣区', 46),
+	(500, '宏伟区', 46),
+	(501, '弓长岭区', 46),
+	(502, '太子河区', 46),
+	(503, '辽阳县', 46),
+	(504, '灯塔市', 46),
+	(505, '双台子区', 47),
+	(506, '兴隆台区', 47),
+	(507, '大洼县', 47),
+	(508, '盘山县', 47),
+	(509, '银州区', 48),
+	(510, '清河区', 48),
+	(511, '铁岭县', 48),
+	(512, '西丰县', 48),
+	(513, '昌图县', 48),
+	(514, '调兵山市', 48),
+	(515, '开原市', 48),
+	(516, '双塔区', 49),
+	(517, '龙城区', 49),
+	(518, '朝阳县', 49),
+	(519, '建平县', 49),
+	(
+		520,
+		'喀喇沁左翼蒙古族自治县',
+		49
+	),
+	(521, '北票市', 49),
+	(522, '凌源市', 49),
+	(523, '连山区', 50),
+	(524, '龙港区', 50),
+	(525, '南票区', 50),
+	(526, '绥中县', 50),
+	(527, '建昌县', 50),
+	(528, '兴城市', 50),
+	(529, '南关区', 51),
+	(530, '宽城区', 51),
+	(531, '朝阳区', 51),
+	(532, '二道区', 51),
+	(533, '绿园区', 51),
+	(534, '双阳区', 51),
+	(535, '农安县', 51),
+	(536, '九台市', 51),
+	(537, '榆树市', 51),
+	(538, '德惠市', 51),
+	(539, '昌邑区', 52),
+	(540, '龙潭区', 52),
+	(541, '船营区', 52),
+	(542, '丰满区', 52),
+	(543, '永吉县', 52),
+	(544, '蛟河市', 52),
+	(545, '桦甸市', 52),
+	(546, '舒兰市', 52),
+	(547, '磐石市', 52),
+	(548, '铁西区', 53),
+	(549, '铁东区', 53),
+	(550, '梨树县', 53),
+	(
+		551,
+		'伊通满族自治县',
+		53
+	),
+	(552, '公主岭市', 53),
+	(553, '双辽市', 53),
+	(554, '龙山区', 54),
+	(555, '西安区', 54),
+	(556, '东丰县', 54),
+	(557, '东辽县', 54),
+	(558, '东昌区', 55),
+	(559, '二道江区', 55),
+	(560, '通化县', 55),
+	(561, '辉南县', 55),
+	(562, '柳河县', 55),
+	(563, '梅河口市', 55),
+	(564, '集安市', 55),
+	(565, '八道江区', 56),
+	(566, '抚松县', 56),
+	(567, '靖宇县', 56),
+	(
+		568,
+		'长白朝鲜族自治县',
+		56
+	),
+	(569, '江源县', 56),
+	(570, '临江市', 56),
+	(571, '宁江区', 57),
+	(
+		572,
+		'前郭尔罗斯蒙古族自治县',
+		57
+	),
+	(573, '长岭县', 57),
+	(574, '乾安县', 57),
+	(575, '扶余县', 57),
+	(576, '洮北区', 58),
+	(577, '镇赉县', 58),
+	(578, '通榆县', 58),
+	(579, '洮南市', 58),
+	(580, '大安市', 58),
+	(581, '延吉市', 59),
+	(582, '图们市', 59),
+	(583, '敦化市', 59),
+	(584, '珲春市', 59),
+	(585, '龙井市', 59),
+	(586, '和龙市', 59),
+	(587, '汪清县', 59),
+	(588, '安图县', 59),
+	(589, '道里区', 60),
+	(590, '南岗区', 60),
+	(591, '道外区', 60),
+	(592, '香坊区', 60),
+	(593, '动力区', 60),
+	(594, '平房区', 60),
+	(595, '松北区', 60),
+	(596, '呼兰区', 60),
+	(597, '依兰县', 60),
+	(598, '方正县', 60),
+	(599, '宾县', 60),
+	(600, '巴彦县', 60),
+	(601, '木兰县', 60),
+	(602, '通河县', 60),
+	(603, '延寿县', 60),
+	(604, '阿城市', 60),
+	(605, '双城市', 60),
+	(606, '尚志市', 60),
+	(607, '五常市', 60),
+	(608, '龙沙区', 61),
+	(609, '建华区', 61),
+	(610, '铁锋区', 61),
+	(611, '昂昂溪区', 61),
+	(612, '富拉尔基区', 61),
+	(613, '碾子山区', 61),
+	(
+		614,
+		'梅里斯达斡尔族区',
+		61
+	),
+	(615, '龙江县', 61),
+	(616, '依安县', 61),
+	(617, '泰来县', 61),
+	(618, '甘南县', 61),
+	(619, '富裕县', 61),
+	(620, '克山县', 61),
+	(621, '克东县', 61),
+	(622, '拜泉县', 61),
+	(623, '讷河市', 61),
+	(624, '鸡冠区', 62),
+	(625, '恒山区', 62),
+	(626, '滴道区', 62),
+	(627, '梨树区', 62),
+	(628, '城子河区', 62),
+	(629, '麻山区', 62),
+	(630, '鸡东县', 62),
+	(631, '虎林市', 62),
+	(632, '密山市', 62),
+	(633, '向阳区', 63),
+	(634, '工农区', 63),
+	(635, '南山区', 63),
+	(636, '兴安区', 63),
+	(637, '东山区', 63),
+	(638, '兴山区', 63),
+	(639, '萝北县', 63),
+	(640, '绥滨县', 63),
+	(641, '尖山区', 64),
+	(642, '岭东区', 64),
+	(643, '四方台区', 64),
+	(644, '宝山区', 64),
+	(645, '集贤县', 64),
+	(646, '友谊县', 64),
+	(647, '宝清县', 64),
+	(648, '饶河县', 64),
+	(649, '萨尔图区', 65),
+	(650, '龙凤区', 65),
+	(651, '让胡路区', 65),
+	(652, '红岗区', 65),
+	(653, '大同区', 65),
+	(654, '肇州县', 65),
+	(655, '肇源县', 65),
+	(656, '林甸县', 65),
+	(
+		657,
+		'杜尔伯特蒙古族自治县',
+		65
+	),
+	(658, '伊春区', 66),
+	(659, '南岔区', 66),
+	(660, '友好区', 66),
+	(661, '西林区', 66),
+	(662, '翠峦区', 66),
+	(663, '新青区', 66),
+	(664, '美溪区', 66),
+	(665, '金山屯区', 66),
+	(666, '五营区', 66),
+	(667, '乌马河区', 66),
+	(668, '汤旺河区', 66),
+	(669, '带岭区', 66),
+	(670, '乌伊岭区', 66),
+	(671, '红星区', 66),
+	(672, '上甘岭区', 66),
+	(673, '嘉荫县', 66),
+	(674, '铁力市', 66),
+	(675, '永红区', 67),
+	(676, '向阳区', 67),
+	(677, '前进区', 67),
+	(678, '东风区', 67),
+	(679, '郊区', 67),
+	(680, '桦南县', 67),
+	(681, '桦川县', 67),
+	(682, '汤原县', 67),
+	(683, '抚远县', 67),
+	(684, '同江市', 67),
+	(685, '富锦市', 67),
+	(686, '新兴区', 68),
+	(687, '桃山区', 68),
+	(688, '茄子河区', 68),
+	(689, '勃利县', 68),
+	(690, '东安区', 69),
+	(691, '阳明区', 69),
+	(692, '爱民区', 69),
+	(693, '西安区', 69),
+	(694, '东宁县', 69),
+	(695, '林口县', 69),
+	(696, '绥芬河市', 69),
+	(697, '海林市', 69),
+	(698, '宁安市', 69),
+	(699, '穆棱市', 69),
+	(700, '爱辉区', 70),
+	(701, '嫩江县', 70),
+	(702, '逊克县', 70),
+	(703, '孙吴县', 70),
+	(704, '北安市', 70),
+	(705, '五大连池市', 70),
+	(706, '北林区', 71),
+	(707, '望奎县', 71),
+	(708, '兰西县', 71),
+	(709, '青冈县', 71),
+	(710, '庆安县', 71),
+	(711, '明水县', 71),
+	(712, '绥棱县', 71),
+	(713, '安达市', 71),
+	(714, '肇东市', 71),
+	(715, '海伦市', 71),
+	(716, '呼玛县', 72),
+	(717, '塔河县', 72),
+	(718, '漠河县', 72),
+	(719, '黄浦区', 73),
+	(720, '卢湾区', 73),
+	(721, '徐汇区', 73),
+	(722, '长宁区', 73),
+	(723, '静安区', 73),
+	(724, '普陀区', 73),
+	(725, '闸北区', 73),
+	(726, '虹口区', 73),
+	(727, '杨浦区', 73),
+	(728, '闵行区', 73),
+	(729, '宝山区', 73),
+	(730, '嘉定区', 73),
+	(731, '浦东新区', 73),
+	(732, '金山区', 73),
+	(733, '松江区', 73),
+	(734, '青浦区', 73),
+	(735, '南汇区', 73),
+	(736, '奉贤区', 73),
+	(737, '崇明县', 73),
+	(738, '玄武区', 74),
+	(739, '白下区', 74),
+	(740, '秦淮区', 74),
+	(741, '建邺区', 74),
+	(742, '鼓楼区', 74),
+	(743, '下关区', 74),
+	(744, '浦口区', 74),
+	(745, '栖霞区', 74),
+	(746, '雨花台区', 74),
+	(747, '江宁区', 74),
+	(748, '六合区', 74),
+	(749, '溧水县', 74),
+	(750, '高淳县', 74),
+	(751, '崇安区', 75),
+	(752, '南长区', 75),
+	(753, '北塘区', 75),
+	(754, '锡山区', 75),
+	(755, '惠山区', 75),
+	(756, '滨湖区', 75),
+	(757, '江阴市', 75),
+	(758, '宜兴市', 75),
+	(759, '鼓楼区', 76),
+	(760, '云龙区', 76),
+	(761, '九里区', 76),
+	(762, '贾汪区', 76),
+	(763, '泉山区', 76),
+	(764, '丰县', 76),
+	(765, '沛县', 76),
+	(766, '铜山县', 76),
+	(767, '睢宁县', 76),
+	(768, '新沂市', 76),
+	(769, '邳州市', 76),
+	(770, '天宁区', 77),
+	(771, '钟楼区', 77),
+	(772, '戚墅堰区', 77),
+	(773, '新北区', 77),
+	(774, '武进区', 77),
+	(775, '溧阳市', 77),
+	(776, '金坛市', 77),
+	(777, '沧浪区', 78),
+	(778, '平江区', 78),
+	(779, '金阊区', 78),
+	(780, '虎丘区', 78),
+	(781, '吴中区', 78),
+	(782, '相城区', 78),
+	(783, '常熟市', 78),
+	(784, '张家港市', 78),
+	(785, '昆山市', 78),
+	(786, '吴江市', 78),
+	(787, '太仓市', 78),
+	(788, '崇川区', 79),
+	(789, '港闸区', 79),
+	(790, '海安县', 79),
+	(791, '如东县', 79),
+	(792, '启东市', 79),
+	(793, '如皋市', 79),
+	(794, '通州市', 79),
+	(795, '海门市', 79),
+	(796, '连云区', 80),
+	(797, '新浦区', 80),
+	(798, '海州区', 80),
+	(799, '赣榆县', 80),
+	(800, '东海县', 80),
+	(801, '灌云县', 80),
+	(802, '灌南县', 80),
+	(803, '清河区', 81),
+	(804, '楚州区', 81),
+	(805, '淮阴区', 81),
+	(806, '清浦区', 81),
+	(807, '涟水县', 81),
+	(808, '洪泽县', 81),
+	(809, '盱眙县', 81),
+	(810, '金湖县', 81),
+	(811, '亭湖区', 82),
+	(812, '盐都区', 82),
+	(813, '响水县', 82),
+	(814, '滨海县', 82),
+	(815, '阜宁县', 82),
+	(816, '射阳县', 82),
+	(817, '建湖县', 82),
+	(818, '东台市', 82),
+	(819, '大丰市', 82),
+	(820, '广陵区', 83),
+	(821, '邗江区', 83),
+	(822, '维扬区', 83),
+	(823, '宝应县', 83),
+	(824, '仪征市', 83),
+	(825, '高邮市', 83),
+	(826, '江都市', 83),
+	(827, '京口区', 84),
+	(828, '润州区', 84),
+	(829, '丹徒区', 84),
+	(830, '丹阳市', 84),
+	(831, '扬中市', 84),
+	(832, '句容市', 84),
+	(833, '海陵区', 85),
+	(834, '高港区', 85),
+	(835, '兴化市', 85),
+	(836, '靖江市', 85),
+	(837, '泰兴市', 85),
+	(838, '姜堰市', 85),
+	(839, '宿城区', 86),
+	(840, '宿豫区', 86),
+	(841, '沭阳县', 86),
+	(842, '泗阳县', 86),
+	(843, '泗洪县', 86),
+	(844, '上城区', 87),
+	(845, '下城区', 87),
+	(846, '江干区', 87),
+	(847, '拱墅区', 87),
+	(848, '西湖区', 87),
+	(849, '滨江区', 87),
+	(850, '萧山区', 87),
+	(851, '余杭区', 87),
+	(852, '桐庐县', 87),
+	(853, '淳安县', 87),
+	(854, '建德市', 87),
+	(855, '富阳市', 87),
+	(856, '临安市', 87),
+	(857, '海曙区', 88),
+	(858, '江东区', 88),
+	(859, '江北区', 88),
+	(860, '北仑区', 88),
+	(861, '镇海区', 88),
+	(862, '鄞州区', 88),
+	(863, '象山县', 88),
+	(864, '宁海县', 88),
+	(865, '余姚市', 88),
+	(866, '慈溪市', 88),
+	(867, '奉化市', 88),
+	(868, '鹿城区', 89),
+	(869, '龙湾区', 89),
+	(870, '瓯海区', 89),
+	(871, '洞头县', 89),
+	(872, '永嘉县', 89),
+	(873, '平阳县', 89),
+	(874, '苍南县', 89),
+	(875, '文成县', 89),
+	(876, '泰顺县', 89),
+	(877, '瑞安市', 89),
+	(878, '乐清市', 89),
+	(879, '秀城区', 90),
+	(880, '秀洲区', 90),
+	(881, '嘉善县', 90),
+	(882, '海盐县', 90),
+	(883, '海宁市', 90),
+	(884, '平湖市', 90),
+	(885, '桐乡市', 90),
+	(886, '吴兴区', 91),
+	(887, '南浔区', 91),
+	(888, '德清县', 91),
+	(889, '长兴县', 91),
+	(890, '安吉县', 91),
+	(891, '越城区', 92),
+	(892, '绍兴县', 92),
+	(893, '新昌县', 92),
+	(894, '诸暨市', 92),
+	(895, '上虞市', 92),
+	(896, '嵊州市', 92),
+	(897, '婺城区', 93),
+	(898, '金东区', 93),
+	(899, '武义县', 93),
+	(900, '浦江县', 93),
+	(901, '磐安县', 93),
+	(902, '兰溪市', 93),
+	(903, '义乌市', 93),
+	(904, '东阳市', 93),
+	(905, '永康市', 93),
+	(906, '柯城区', 94),
+	(907, '衢江区', 94),
+	(908, '常山县', 94),
+	(909, '开化县', 94),
+	(910, '龙游县', 94),
+	(911, '江山市', 94),
+	(912, '定海区', 95),
+	(913, '普陀区', 95),
+	(914, '岱山县', 95),
+	(915, '嵊泗县', 95),
+	(916, '椒江区', 96),
+	(917, '黄岩区', 96),
+	(918, '路桥区', 96),
+	(919, '玉环县', 96),
+	(920, '三门县', 96),
+	(921, '天台县', 96),
+	(922, '仙居县', 96),
+	(923, '温岭市', 96),
+	(924, '临海市', 96),
+	(925, '莲都区', 97),
+	(926, '青田县', 97),
+	(927, '缙云县', 97),
+	(928, '遂昌县', 97),
+	(929, '松阳县', 97),
+	(930, '云和县', 97),
+	(931, '庆元县', 97),
+	(
+		932,
+		'景宁畲族自治县',
+		97
+	),
+	(933, '龙泉市', 97),
+	(934, '瑶海区', 98),
+	(935, '庐阳区', 98),
+	(936, '蜀山区', 98),
+	(937, '包河区', 98),
+	(938, '长丰县', 98),
+	(939, '肥东县', 98),
+	(940, '肥西县', 98),
+	(941, '镜湖区', 99),
+	(942, '马塘区', 99),
+	(943, '新芜区', 99),
+	(944, '鸠江区', 99),
+	(945, '芜湖县', 99),
+	(946, '繁昌县', 99),
+	(947, '南陵县', 99),
+	(948, '龙子湖区', 100),
+	(949, '蚌山区', 100),
+	(950, '禹会区', 100),
+	(951, '淮上区', 100),
+	(952, '怀远县', 100),
+	(953, '五河县', 100),
+	(954, '固镇县', 100),
+	(955, '大通区', 101),
+	(956, '田家庵区', 101),
+	(957, '谢家集区', 101),
+	(958, '八公山区', 101),
+	(959, '潘集区', 101),
+	(960, '凤台县', 101),
+	(961, '金家庄区', 102),
+	(962, '花山区', 102),
+	(963, '雨山区', 102),
+	(964, '当涂县', 102),
+	(965, '杜集区', 103),
+	(966, '相山区', 103),
+	(967, '烈山区', 103),
+	(968, '濉溪县', 103),
+	(969, '铜官山区', 104),
+	(970, '狮子山区', 104),
+	(971, '郊区', 104),
+	(972, '铜陵县', 104),
+	(973, '迎江区', 105),
+	(974, '大观区', 105),
+	(975, '郊区', 105),
+	(976, '怀宁县', 105),
+	(977, '枞阳县', 105),
+	(978, '潜山县', 105),
+	(979, '太湖县', 105),
+	(980, '宿松县', 105),
+	(981, '望江县', 105),
+	(982, '岳西县', 105),
+	(983, '桐城市', 105),
+	(984, '屯溪区', 106),
+	(985, '黄山区', 106),
+	(986, '徽州区', 106),
+	(987, '歙县', 106),
+	(988, '休宁县', 106),
+	(989, '黟县', 106),
+	(990, '祁门县', 106),
+	(991, '琅琊区', 107),
+	(992, '南谯区', 107),
+	(993, '来安县', 107),
+	(994, '全椒县', 107),
+	(995, '定远县', 107),
+	(996, '凤阳县', 107),
+	(997, '天长市', 107),
+	(998, '明光市', 107),
+	(999, '颍州区', 108),
+	(1000, '颍东区', 108),
+	(1001, '颍泉区', 108),
+	(1002, '临泉县', 108),
+	(1003, '太和县', 108),
+	(1004, '阜南县', 108),
+	(1005, '颍上县', 108),
+	(1006, '界首市', 108),
+	(1007, '埇桥区', 109),
+	(1008, '砀山县', 109),
+	(1009, '萧县', 109),
+	(1010, '灵璧县', 109),
+	(1011, '泗县', 109),
+	(1012, '居巢区', 110),
+	(1013, '庐江县', 110),
+	(1014, '无为县', 110),
+	(1015, '含山县', 110),
+	(1016, '和县', 110),
+	(1017, '金安区', 111),
+	(1018, '裕安区', 111),
+	(1019, '寿县', 111),
+	(1020, '霍邱县', 111),
+	(1021, '舒城县', 111),
+	(1022, '金寨县', 111),
+	(1023, '霍山县', 111),
+	(1024, '谯城区', 112),
+	(1025, '涡阳县', 112),
+	(1026, '蒙城县', 112),
+	(1027, '利辛县', 112),
+	(1028, '贵池区', 113),
+	(1029, '东至县', 113),
+	(1030, '石台县', 113),
+	(1031, '青阳县', 113),
+	(1032, '宣州区', 114),
+	(1033, '郎溪县', 114),
+	(1034, '广德县', 114),
+	(1035, '泾县', 114),
+	(1036, '绩溪县', 114),
+	(1037, '旌德县', 114),
+	(1038, '宁国市', 114),
+	(1039, '鼓楼区', 115),
+	(1040, '台江区', 115),
+	(1041, '仓山区', 115),
+	(1042, '马尾区', 115),
+	(1043, '晋安区', 115),
+	(1044, '闽侯县', 115),
+	(1045, '连江县', 115),
+	(1046, '罗源县', 115),
+	(1047, '闽清县', 115),
+	(1048, '永泰县', 115),
+	(1049, '平潭县', 115),
+	(1050, '福清市', 115),
+	(1051, '长乐市', 115),
+	(1052, '思明区', 116),
+	(1053, '海沧区', 116),
+	(1054, '湖里区', 116),
+	(1055, '集美区', 116),
+	(1056, '同安区', 116),
+	(1057, '翔安区', 116),
+	(1058, '城厢区', 117),
+	(1059, '涵江区', 117),
+	(1060, '荔城区', 117),
+	(1061, '秀屿区', 117),
+	(1062, '仙游县', 117),
+	(1063, '梅列区', 118),
+	(1064, '三元区', 118),
+	(1065, '明溪县', 118),
+	(1066, '清流县', 118),
+	(1067, '宁化县', 118),
+	(1068, '大田县', 118),
+	(1069, '尤溪县', 118),
+	(1070, '沙县', 118),
+	(1071, '将乐县', 118),
+	(1072, '泰宁县', 118),
+	(1073, '建宁县', 118),
+	(1074, '永安市', 118),
+	(1075, '鲤城区', 119),
+	(1076, '丰泽区', 119),
+	(1077, '洛江区', 119),
+	(1078, '泉港区', 119),
+	(1079, '惠安县', 119),
+	(1080, '安溪县', 119),
+	(1081, '永春县', 119),
+	(1082, '德化县', 119),
+	(1083, '金门县', 119),
+	(1084, '石狮市', 119),
+	(1085, '晋江市', 119),
+	(1086, '南安市', 119),
+	(1087, '芗城区', 120),
+	(1088, '龙文区', 120),
+	(1089, '云霄县', 120),
+	(1090, '漳浦县', 120),
+	(1091, '诏安县', 120),
+	(1092, '长泰县', 120),
+	(1093, '东山县', 120),
+	(1094, '南靖县', 120),
+	(1095, '平和县', 120),
+	(1096, '华安县', 120),
+	(1097, '龙海市', 120),
+	(1098, '延平区', 121),
+	(1099, '顺昌县', 121),
+	(1100, '浦城县', 121),
+	(1101, '光泽县', 121),
+	(1102, '松溪县', 121),
+	(1103, '政和县', 121),
+	(1104, '邵武市', 121),
+	(1105, '武夷山市', 121),
+	(1106, '建瓯市', 121),
+	(1107, '建阳市', 121),
+	(1108, '新罗区', 122),
+	(1109, '长汀县', 122),
+	(1110, '永定县', 122),
+	(1111, '上杭县', 122),
+	(1112, '武平县', 122),
+	(1113, '连城县', 122),
+	(1114, '漳平市', 122),
+	(1115, '蕉城区', 123),
+	(1116, '霞浦县', 123),
+	(1117, '古田县', 123),
+	(1118, '屏南县', 123),
+	(1119, '寿宁县', 123),
+	(1120, '周宁县', 123),
+	(1121, '柘荣县', 123),
+	(1122, '福安市', 123),
+	(1123, '福鼎市', 123),
+	(1124, '东湖区', 124),
+	(1125, '西湖区', 124),
+	(1126, '青云谱区', 124),
+	(1127, '湾里区', 124),
+	(1128, '青山湖区', 124),
+	(1129, '南昌县', 124),
+	(1130, '新建县', 124),
+	(1131, '安义县', 124),
+	(1132, '进贤县', 124),
+	(1133, '昌江区', 125),
+	(1134, '珠山区', 125),
+	(1135, '浮梁县', 125),
+	(1136, '乐平市', 125),
+	(1137, '安源区', 126),
+	(1138, '湘东区', 126),
+	(1139, '莲花县', 126),
+	(1140, '上栗县', 126),
+	(1141, '芦溪县', 126),
+	(1142, '庐山区', 127),
+	(1143, '浔阳区', 127),
+	(1144, '九江县', 127),
+	(1145, '武宁县', 127),
+	(1146, '修水县', 127),
+	(1147, '永修县', 127),
+	(1148, '德安县', 127),
+	(1149, '星子县', 127),
+	(1150, '都昌县', 127),
+	(1151, '湖口县', 127),
+	(1152, '彭泽县', 127),
+	(1153, '瑞昌市', 127),
+	(1154, '渝水区', 128),
+	(1155, '分宜县', 128),
+	(1156, '月湖区', 129),
+	(1157, '余江县', 129),
+	(1158, '贵溪市', 129),
+	(1159, '章贡区', 130),
+	(1160, '赣县', 130),
+	(1161, '信丰县', 130),
+	(1162, '大余县', 130),
+	(1163, '上犹县', 130),
+	(1164, '崇义县', 130),
+	(1165, '安远县', 130),
+	(1166, '龙南县', 130),
+	(1167, '定南县', 130),
+	(1168, '全南县', 130),
+	(1169, '宁都县', 130),
+	(1170, '于都县', 130),
+	(1171, '兴国县', 130),
+	(1172, '会昌县', 130),
+	(1173, '寻乌县', 130),
+	(1174, '石城县', 130),
+	(1175, '瑞金市', 130),
+	(1176, '南康市', 130),
+	(1177, '吉州区', 131),
+	(1178, '青原区', 131),
+	(1179, '吉安县', 131),
+	(1180, '吉水县', 131),
+	(1181, '峡江县', 131),
+	(1182, '新干县', 131),
+	(1183, '永丰县', 131),
+	(1184, '泰和县', 131),
+	(1185, '遂川县', 131),
+	(1186, '万安县', 131),
+	(1187, '安福县', 131),
+	(1188, '永新县', 131),
+	(1189, '井冈山市', 131),
+	(1190, '袁州区', 132),
+	(1191, '奉新县', 132),
+	(1192, '万载县', 132),
+	(1193, '上高县', 132),
+	(1194, '宜丰县', 132),
+	(1195, '靖安县', 132),
+	(1196, '铜鼓县', 132),
+	(1197, '丰城市', 132),
+	(1198, '樟树市', 132),
+	(1199, '高安市', 132),
+	(1200, '临川区', 133),
+	(1201, '南城县', 133),
+	(1202, '黎川县', 133),
+	(1203, '南丰县', 133),
+	(1204, '崇仁县', 133),
+	(1205, '乐安县', 133),
+	(1206, '宜黄县', 133),
+	(1207, '金溪县', 133),
+	(1208, '资溪县', 133),
+	(1209, '东乡县', 133),
+	(1210, '广昌县', 133),
+	(1211, '信州区', 134),
+	(1212, '上饶县', 134),
+	(1213, '广丰县', 134),
+	(1214, '玉山县', 134),
+	(1215, '铅山县', 134),
+	(1216, '横峰县', 134),
+	(1217, '弋阳县', 134),
+	(1218, '余干县', 134),
+	(1219, '鄱阳县', 134),
+	(1220, '万年县', 134),
+	(1221, '婺源县', 134),
+	(1222, '德兴市', 134),
+	(1223, '历下区', 135),
+	(1224, '市中区', 135),
+	(1225, '槐荫区', 135),
+	(1226, '天桥区', 135),
+	(1227, '历城区', 135),
+	(1228, '长清区', 135),
+	(1229, '平阴县', 135),
+	(1230, '济阳县', 135),
+	(1231, '商河县', 135),
+	(1232, '章丘市', 135),
+	(1233, '市南区', 136),
+	(1234, '市北区', 136),
+	(1235, '四方区', 136),
+	(1236, '黄岛区', 136),
+	(1237, '崂山区', 136),
+	(1238, '李沧区', 136),
+	(1239, '城阳区', 136),
+	(1240, '胶州市', 136),
+	(1241, '即墨市', 136),
+	(1242, '平度市', 136),
+	(1243, '胶南市', 136),
+	(1244, '莱西市', 136),
+	(1245, '淄川区', 137),
+	(1246, '张店区', 137),
+	(1247, '博山区', 137),
+	(1248, '临淄区', 137),
+	(1249, '周村区', 137),
+	(1250, '桓台县', 137),
+	(1251, '高青县', 137),
+	(1252, '沂源县', 137),
+	(1253, '市中区', 138),
+	(1254, '薛城区', 138),
+	(1255, '峄城区', 138),
+	(1256, '台儿庄区', 138),
+	(1257, '山亭区', 138),
+	(1258, '滕州市', 138),
+	(1259, '东营区', 139),
+	(1260, '河口区', 139),
+	(1261, '垦利县', 139),
+	(1262, '利津县', 139),
+	(1263, '广饶县', 139),
+	(1264, '芝罘区', 140),
+	(1265, '福山区', 140),
+	(1266, '牟平区', 140),
+	(1267, '莱山区', 140),
+	(1268, '长岛县', 140),
+	(1269, '龙口市', 140),
+	(1270, '莱阳市', 140),
+	(1271, '莱州市', 140),
+	(1272, '蓬莱市', 140),
+	(1273, '招远市', 140),
+	(1274, '栖霞市', 140),
+	(1275, '海阳市', 140),
+	(1276, '潍城区', 141),
+	(1277, '寒亭区', 141),
+	(1278, '坊子区', 141),
+	(1279, '奎文区', 141),
+	(1280, '临朐县', 141),
+	(1281, '昌乐县', 141),
+	(1282, '青州市', 141),
+	(1283, '诸城市', 141),
+	(1284, '寿光市', 141),
+	(1285, '安丘市', 141),
+	(1286, '高密市', 141),
+	(1287, '昌邑市', 141),
+	(1288, '市中区', 142),
+	(1289, '任城区', 142),
+	(1290, '微山县', 142),
+	(1291, '鱼台县', 142),
+	(1292, '金乡县', 142),
+	(1293, '嘉祥县', 142),
+	(1294, '汶上县', 142),
+	(1295, '泗水县', 142),
+	(1296, '梁山县', 142),
+	(1297, '曲阜市', 142),
+	(1298, '兖州市', 142),
+	(1299, '邹城市', 142),
+	(1300, '泰山区', 143),
+	(1301, '岱岳区', 143),
+	(1302, '宁阳县', 143),
+	(1303, '东平县', 143),
+	(1304, '新泰市', 143),
+	(1305, '肥城市', 143),
+	(1306, '环翠区', 144),
+	(1307, '文登市', 144),
+	(1308, '荣成市', 144),
+	(1309, '乳山市', 144),
+	(1310, '东港区', 145),
+	(1311, '岚山区', 145),
+	(1312, '五莲县', 145),
+	(1313, '莒县', 145),
+	(1314, '莱城区', 146),
+	(1315, '钢城区', 146),
+	(1316, '兰山区', 147),
+	(1317, '罗庄区', 147),
+	(1318, '河东区', 147),
+	(1319, '沂南县', 147),
+	(1320, '郯城县', 147),
+	(1321, '沂水县', 147),
+	(1322, '苍山县', 147),
+	(1323, '费县', 147),
+	(1324, '平邑县', 147),
+	(1325, '莒南县', 147),
+	(1326, '蒙阴县', 147),
+	(1327, '临沭县', 147),
+	(1328, '德城区', 148),
+	(1329, '陵县', 148),
+	(1330, '宁津县', 148),
+	(1331, '庆云县', 148),
+	(1332, '临邑县', 148),
+	(1333, '齐河县', 148),
+	(1334, '平原县', 148),
+	(1335, '夏津县', 148),
+	(1336, '武城县', 148),
+	(1337, '乐陵市', 148),
+	(1338, '禹城市', 148),
+	(1339, '东昌府区', 149),
+	(1340, '阳谷县', 149),
+	(1341, '莘县', 149),
+	(1342, '茌平县', 149),
+	(1343, '东阿县', 149),
+	(1344, '冠县', 149),
+	(1345, '高唐县', 149),
+	(1346, '临清市', 149),
+	(1347, '滨城区', 150),
+	(1348, '惠民县', 150),
+	(1349, '阳信县', 150),
+	(1350, '无棣县', 150),
+	(1351, '沾化县', 150),
+	(1352, '博兴县', 150),
+	(1353, '邹平县', 150),
+	(1354, '牡丹区', 151),
+	(1355, '曹县', 151),
+	(1356, '单县', 151),
+	(1357, '成武县', 151),
+	(1358, '巨野县', 151),
+	(1359, '郓城县', 151),
+	(1360, '鄄城县', 151),
+	(1361, '定陶县', 151),
+	(1362, '东明县', 151),
+	(1363, '中原区', 152),
+	(1364, '二七区', 152),
+	(1365, '管城回族区', 152),
+	(1366, '金水区', 152),
+	(1367, '上街区', 152),
+	(1368, '惠济区', 152),
+	(1369, '中牟县', 152),
+	(1370, '巩义市', 152),
+	(1371, '荥阳市', 152),
+	(1372, '新密市', 152),
+	(1373, '新郑市', 152),
+	(1374, '登封市', 152),
+	(1375, '龙亭区', 153),
+	(1376, '顺河回族区', 153),
+	(1377, '鼓楼区', 153),
+	(1378, '南关区', 153),
+	(1379, '郊区', 153),
+	(1380, '杞县', 153),
+	(1381, '通许县', 153),
+	(1382, '尉氏县', 153),
+	(1383, '开封县', 153),
+	(1384, '兰考县', 153),
+	(1385, '老城区', 154),
+	(1386, '西工区', 154),
+	(1387, '廛河回族区', 154),
+	(1388, '涧西区', 154),
+	(1389, '吉利区', 154),
+	(1390, '洛龙区', 154),
+	(1391, '孟津县', 154),
+	(1392, '新安县', 154),
+	(1393, '栾川县', 154),
+	(1394, '嵩县', 154),
+	(1395, '汝阳县', 154),
+	(1396, '宜阳县', 154),
+	(1397, '洛宁县', 154),
+	(1398, '伊川县', 154),
+	(1399, '偃师市', 154),
+	(1400, '新华区', 155),
+	(1401, '卫东区', 155),
+	(1402, '石龙区', 155),
+	(1403, '湛河区', 155),
+	(1404, '宝丰县', 155),
+	(1405, '叶县', 155),
+	(1406, '鲁山县', 155),
+	(1407, '郏县', 155),
+	(1408, '舞钢市', 155),
+	(1409, '汝州市', 155),
+	(1410, '文峰区', 156),
+	(1411, '北关区', 156),
+	(1412, '殷都区', 156),
+	(1413, '龙安区', 156),
+	(1414, '安阳县', 156),
+	(1415, '汤阴县', 156),
+	(1416, '滑县', 156),
+	(1417, '内黄县', 156),
+	(1418, '林州市', 156),
+	(1419, '鹤山区', 157),
+	(1420, '山城区', 157),
+	(1421, '淇滨区', 157),
+	(1422, '浚县', 157),
+	(1423, '淇县', 157),
+	(1424, '红旗区', 158),
+	(1425, '卫滨区', 158),
+	(1426, '凤泉区', 158),
+	(1427, '牧野区', 158),
+	(1428, '新乡县', 158),
+	(1429, '获嘉县', 158),
+	(1430, '原阳县', 158),
+	(1431, '延津县', 158),
+	(1432, '封丘县', 158),
+	(1433, '长垣县', 158),
+	(1434, '卫辉市', 158),
+	(1435, '辉县市', 158),
+	(1436, '解放区', 159),
+	(1437, '中站区', 159),
+	(1438, '马村区', 159),
+	(1439, '山阳区', 159),
+	(1440, '修武县', 159),
+	(1441, '博爱县', 159),
+	(1442, '武陟县', 159),
+	(1443, '温县', 159),
+	(1444, '济源市', 159),
+	(1445, '沁阳市', 159),
+	(1446, '孟州市', 159),
+	(1447, '华龙区', 160),
+	(1448, '清丰县', 160),
+	(1449, '南乐县', 160),
+	(1450, '范县', 160),
+	(1451, '台前县', 160),
+	(1452, '濮阳县', 160),
+	(1453, '魏都区', 161),
+	(1454, '许昌县', 161),
+	(1455, '鄢陵县', 161),
+	(1456, '襄城县', 161),
+	(1457, '禹州市', 161),
+	(1458, '长葛市', 161),
+	(1459, '源汇区', 162),
+	(1460, '郾城区', 162),
+	(1461, '召陵区', 162),
+	(1462, '舞阳县', 162),
+	(1463, '临颍县', 162),
+	(1464, '市辖区', 163),
+	(1465, '湖滨区', 163),
+	(1466, '渑池县', 163),
+	(1467, '陕县', 163),
+	(1468, '卢氏县', 163),
+	(1469, '义马市', 163),
+	(1470, '灵宝市', 163),
+	(1471, '宛城区', 164),
+	(1472, '卧龙区', 164),
+	(1473, '南召县', 164),
+	(1474, '方城县', 164),
+	(1475, '西峡县', 164),
+	(1476, '镇平县', 164),
+	(1477, '内乡县', 164),
+	(1478, '淅川县', 164),
+	(1479, '社旗县', 164),
+	(1480, '唐河县', 164),
+	(1481, '新野县', 164),
+	(1482, '桐柏县', 164),
+	(1483, '邓州市', 164),
+	(1484, '梁园区', 165),
+	(1485, '睢阳区', 165),
+	(1486, '民权县', 165),
+	(1487, '睢县', 165),
+	(1488, '宁陵县', 165),
+	(1489, '柘城县', 165),
+	(1490, '虞城县', 165),
+	(1491, '夏邑县', 165),
+	(1492, '永城市', 165),
+	(1493, '浉河区', 166),
+	(1494, '平桥区', 166),
+	(1495, '罗山县', 166),
+	(1496, '光山县', 166),
+	(1497, '新县', 166),
+	(1498, '商城县', 166),
+	(1499, '固始县', 166),
+	(1500, '潢川县', 166),
+	(1501, '淮滨县', 166),
+	(1502, '息县', 166),
+	(1503, '川汇区', 167),
+	(1504, '扶沟县', 167),
+	(1505, '西华县', 167),
+	(1506, '商水县', 167),
+	(1507, '沈丘县', 167),
+	(1508, '郸城县', 167),
+	(1509, '淮阳县', 167),
+	(1510, '太康县', 167),
+	(1511, '鹿邑县', 167),
+	(1512, '项城市', 167),
+	(1513, '驿城区', 168),
+	(1514, '西平县', 168),
+	(1515, '上蔡县', 168),
+	(1516, '平舆县', 168),
+	(1517, '正阳县', 168),
+	(1518, '确山县', 168),
+	(1519, '泌阳县', 168),
+	(1520, '汝南县', 168),
+	(1521, '遂平县', 168),
+	(1522, '新蔡县', 168),
+	(1523, '江岸区', 169),
+	(1524, '江汉区', 169),
+	(1525, '硚口区', 169),
+	(1526, '汉阳区', 169),
+	(1527, '武昌区', 169),
+	(1528, '青山区', 169),
+	(1529, '洪山区', 169),
+	(1530, '东西湖区', 169),
+	(1531, '汉南区', 169),
+	(1532, '蔡甸区', 169),
+	(1533, '江夏区', 169),
+	(1534, '黄陂区', 169),
+	(1535, '新洲区', 169),
+	(1536, '黄石港区', 170),
+	(1537, '西塞山区', 170),
+	(1538, '下陆区', 170),
+	(1539, '铁山区', 170),
+	(1540, '阳新县', 170),
+	(1541, '大冶市', 170),
+	(1542, '茅箭区', 171),
+	(1543, '张湾区', 171),
+	(1544, '郧县', 171),
+	(1545, '郧西县', 171),
+	(1546, '竹山县', 171),
+	(1547, '竹溪县', 171),
+	(1548, '房县', 171),
+	(1549, '丹江口市', 171),
+	(1550, '西陵区', 172),
+	(1551, '伍家岗区', 172),
+	(1552, '点军区', 172),
+	(1553, '猇亭区', 172),
+	(1554, '夷陵区', 172),
+	(1555, '远安县', 172),
+	(1556, '兴山县', 172),
+	(1557, '秭归县', 172),
+	(
+		1558,
+		'长阳土家族自治县',
+		172
+	),
+	(
+		1559,
+		'五峰土家族自治县',
+		172
+	),
+	(1560, '宜都市', 172),
+	(1561, '当阳市', 172),
+	(1562, '枝江市', 172),
+	(1563, '襄城区', 173),
+	(1564, '樊城区', 173),
+	(1565, '襄阳区', 173),
+	(1566, '南漳县', 173),
+	(1567, '谷城县', 173),
+	(1568, '保康县', 173),
+	(1569, '老河口市', 173),
+	(1570, '枣阳市', 173),
+	(1571, '宜城市', 173),
+	(1572, '梁子湖区', 174),
+	(1573, '华容区', 174),
+	(1574, '鄂城区', 174),
+	(1575, '东宝区', 175),
+	(1576, '掇刀区', 175),
+	(1577, '京山县', 175),
+	(1578, '沙洋县', 175),
+	(1579, '钟祥市', 175),
+	(1580, '孝南区', 176),
+	(1581, '孝昌县', 176),
+	(1582, '大悟县', 176),
+	(1583, '云梦县', 176),
+	(1584, '应城市', 176),
+	(1585, '安陆市', 176),
+	(1586, '汉川市', 176),
+	(1587, '沙市区', 177),
+	(1588, '荆州区', 177),
+	(1589, '公安县', 177),
+	(1590, '监利县', 177),
+	(1591, '江陵县', 177),
+	(1592, '石首市', 177),
+	(1593, '洪湖市', 177),
+	(1594, '松滋市', 177),
+	(1595, '黄州区', 178),
+	(1596, '团风县', 178),
+	(1597, '红安县', 178),
+	(1598, '罗田县', 178),
+	(1599, '英山县', 178),
+	(1600, '浠水县', 178),
+	(1601, '蕲春县', 178),
+	(1602, '黄梅县', 178),
+	(1603, '麻城市', 178),
+	(1604, '武穴市', 178),
+	(1605, '咸安区', 179),
+	(1606, '嘉鱼县', 179),
+	(1607, '通城县', 179),
+	(1608, '崇阳县', 179),
+	(1609, '通山县', 179),
+	(1610, '赤壁市', 179),
+	(1611, '曾都区', 180),
+	(1612, '广水市', 180),
+	(1613, '恩施市', 181),
+	(1614, '利川市', 181),
+	(1615, '建始县', 181),
+	(1616, '巴东县', 181),
+	(1617, '宣恩县', 181),
+	(1618, '咸丰县', 181),
+	(1619, '来凤县', 181),
+	(1620, '鹤峰县', 181),
+	(1621, '仙桃市', 182),
+	(1622, '潜江市', 182),
+	(1623, '天门市', 182),
+	(1624, '神农架林区', 182),
+	(1625, '芙蓉区', 183),
+	(1626, '天心区', 183),
+	(1627, '岳麓区', 183),
+	(1628, '开福区', 183),
+	(1629, '雨花区', 183),
+	(1630, '长沙县', 183),
+	(1631, '望城县', 183),
+	(1632, '宁乡县', 183),
+	(1633, '浏阳市', 183),
+	(1634, '荷塘区', 184),
+	(1635, '芦淞区', 184),
+	(1636, '石峰区', 184),
+	(1637, '天元区', 184),
+	(1638, '株洲县', 184),
+	(1639, '攸县', 184),
+	(1640, '茶陵县', 184),
+	(1641, '炎陵县', 184),
+	(1642, '醴陵市', 184),
+	(1643, '雨湖区', 185),
+	(1644, '岳塘区', 185),
+	(1645, '湘潭县', 185),
+	(1646, '湘乡市', 185),
+	(1647, '韶山市', 185),
+	(1648, '珠晖区', 186),
+	(1649, '雁峰区', 186),
+	(1650, '石鼓区', 186),
+	(1651, '蒸湘区', 186),
+	(1652, '南岳区', 186),
+	(1653, '衡阳县', 186),
+	(1654, '衡南县', 186),
+	(1655, '衡山县', 186),
+	(1656, '衡东县', 186),
+	(1657, '祁东县', 186),
+	(1658, '耒阳市', 186),
+	(1659, '常宁市', 186),
+	(1660, '双清区', 187),
+	(1661, '大祥区', 187),
+	(1662, '北塔区', 187),
+	(1663, '邵东县', 187),
+	(1664, '新邵县', 187),
+	(1665, '邵阳县', 187),
+	(1666, '隆回县', 187),
+	(1667, '洞口县', 187),
+	(1668, '绥宁县', 187),
+	(1669, '新宁县', 187),
+	(
+		1670,
+		'城步苗族自治县',
+		187
+	),
+	(1671, '武冈市', 187),
+	(1672, '岳阳楼区', 188),
+	(1673, '云溪区', 188),
+	(1674, '君山区', 188),
+	(1675, '岳阳县', 188),
+	(1676, '华容县', 188),
+	(1677, '湘阴县', 188),
+	(1678, '平江县', 188),
+	(1679, '汨罗市', 188),
+	(1680, '临湘市', 188),
+	(1681, '武陵区', 189),
+	(1682, '鼎城区', 189),
+	(1683, '安乡县', 189),
+	(1684, '汉寿县', 189),
+	(1685, '澧县', 189),
+	(1686, '临澧县', 189),
+	(1687, '桃源县', 189),
+	(1688, '石门县', 189),
+	(1689, '津市市', 189),
+	(1690, '永定区', 190),
+	(1691, '武陵源区', 190),
+	(1692, '慈利县', 190),
+	(1693, '桑植县', 190),
+	(1694, '资阳区', 191),
+	(1695, '赫山区', 191),
+	(1696, '南县', 191),
+	(1697, '桃江县', 191),
+	(1698, '安化县', 191),
+	(1699, '沅江市', 191),
+	(1700, '北湖区', 192),
+	(1701, '苏仙区', 192),
+	(1702, '桂阳县', 192),
+	(1703, '宜章县', 192),
+	(1704, '永兴县', 192),
+	(1705, '嘉禾县', 192),
+	(1706, '临武县', 192),
+	(1707, '汝城县', 192),
+	(1708, '桂东县', 192),
+	(1709, '安仁县', 192),
+	(1710, '资兴市', 192),
+	(1711, '芝山区', 193),
+	(1712, '冷水滩区', 193),
+	(1713, '祁阳县', 193),
+	(1714, '东安县', 193),
+	(1715, '双牌县', 193),
+	(1716, '道县', 193),
+	(1717, '江永县', 193),
+	(1718, '宁远县', 193),
+	(1719, '蓝山县', 193),
+	(1720, '新田县', 193),
+	(
+		1721,
+		'江华瑶族自治县',
+		193
+	),
+	(1722, '鹤城区', 194),
+	(1723, '中方县', 194),
+	(1724, '沅陵县', 194),
+	(1725, '辰溪县', 194),
+	(1726, '溆浦县', 194),
+	(1727, '会同县', 194),
+	(
+		1728,
+		'麻阳苗族自治县',
+		194
+	),
+	(
+		1729,
+		'新晃侗族自治县',
+		194
+	),
+	(
+		1730,
+		'芷江侗族自治县',
+		194
+	),
+	(
+		1731,
+		'靖州苗族侗族自治县',
+		194
+	),
+	(
+		1732,
+		'通道侗族自治县',
+		194
+	),
+	(1733, '洪江市', 194),
+	(1734, '娄星区', 195),
+	(1735, '双峰县', 195),
+	(1736, '新化县', 195),
+	(1737, '冷水江市', 195),
+	(1738, '涟源市', 195),
+	(1739, '吉首市', 196),
+	(1740, '泸溪县', 196),
+	(1741, '凤凰县', 196),
+	(1742, '花垣县', 196),
+	(1743, '保靖县', 196),
+	(1744, '古丈县', 196),
+	(1745, '永顺县', 196),
+	(1746, '龙山县', 196),
+	(1747, '东山区', 197),
+	(1748, '荔湾区', 197),
+	(1749, '越秀区', 197),
+	(1750, '海珠区', 197),
+	(1751, '天河区', 197),
+	(1752, '芳村区', 197),
+	(1753, '白云区', 197),
+	(1754, '黄埔区', 197),
+	(1755, '番禺区', 197),
+	(1756, '花都区', 197),
+	(1757, '增城市', 197),
+	(1758, '从化市', 197),
+	(1759, '武江区', 198),
+	(1760, '浈江区', 198),
+	(1761, '曲江区', 198),
+	(1762, '始兴县', 198),
+	(1763, '仁化县', 198),
+	(1764, '翁源县', 198),
+	(
+		1765,
+		'乳源瑶族自治县',
+		198
+	),
+	(1766, '新丰县', 198),
+	(1767, '乐昌市', 198),
+	(1768, '南雄市', 198),
+	(1769, '罗湖区', 199),
+	(1770, '福田区', 199),
+	(1771, '南山区', 199),
+	(1772, '宝安区', 199),
+	(1773, '龙岗区', 199),
+	(1774, '盐田区', 199),
+	(1775, '香洲区', 200),
+	(1776, '斗门区', 200),
+	(1777, '金湾区', 200),
+	(1778, '龙湖区', 201),
+	(1779, '金平区', 201),
+	(1780, '濠江区', 201),
+	(1781, '潮阳区', 201),
+	(1782, '潮南区', 201),
+	(1783, '澄海区', 201),
+	(1784, '南澳县', 201),
+	(1785, '禅城区', 202),
+	(1786, '南海区', 202),
+	(1787, '顺德区', 202),
+	(1788, '三水区', 202),
+	(1789, '高明区', 202),
+	(1790, '蓬江区', 203),
+	(1791, '江海区', 203),
+	(1792, '新会区', 203),
+	(1793, '台山市', 203),
+	(1794, '开平市', 203),
+	(1795, '鹤山市', 203),
+	(1796, '恩平市', 203),
+	(1797, '赤坎区', 204),
+	(1798, '霞山区', 204),
+	(1799, '坡头区', 204),
+	(1800, '麻章区', 204),
+	(1801, '遂溪县', 204),
+	(1802, '徐闻县', 204),
+	(1803, '廉江市', 204),
+	(1804, '雷州市', 204),
+	(1805, '吴川市', 204),
+	(1806, '茂南区', 205),
+	(1807, '茂港区', 205),
+	(1808, '电白县', 205),
+	(1809, '高州市', 205),
+	(1810, '化州市', 205),
+	(1811, '信宜市', 205),
+	(1812, '端州区', 206),
+	(1813, '鼎湖区', 206),
+	(1814, '广宁县', 206),
+	(1815, '怀集县', 206),
+	(1816, '封开县', 206),
+	(1817, '德庆县', 206),
+	(1818, '高要市', 206),
+	(1819, '四会市', 206),
+	(1820, '惠城区', 207),
+	(1821, '惠阳区', 207),
+	(1822, '博罗县', 207),
+	(1823, '惠东县', 207),
+	(1824, '龙门县', 207),
+	(1825, '梅江区', 208),
+	(1826, '梅县', 208),
+	(1827, '大埔县', 208),
+	(1828, '丰顺县', 208),
+	(1829, '五华县', 208),
+	(1830, '平远县', 208),
+	(1831, '蕉岭县', 208),
+	(1832, '兴宁市', 208),
+	(1833, '城区', 209),
+	(1834, '海丰县', 209),
+	(1835, '陆河县', 209),
+	(1836, '陆丰市', 209),
+	(1837, '源城区', 210),
+	(1838, '紫金县', 210),
+	(1839, '龙川县', 210),
+	(1840, '连平县', 210),
+	(1841, '和平县', 210),
+	(1842, '东源县', 210),
+	(1843, '江城区', 211),
+	(1844, '阳西县', 211),
+	(1845, '阳东县', 211),
+	(1846, '阳春市', 211),
+	(1847, '清城区', 212),
+	(1848, '佛冈县', 212),
+	(1849, '阳山县', 212),
+	(
+		1850,
+		'连山壮族瑶族自治县',
+		212
+	),
+	(
+		1851,
+		'连南瑶族自治县',
+		212
+	),
+	(1852, '清新县', 212),
+	(1853, '英德市', 212),
+	(1854, '连州市', 212),
+	(1855, '湘桥区', 215),
+	(1856, '潮安县', 215),
+	(1857, '饶平县', 215),
+	(1858, '榕城区', 216),
+	(1859, '揭东县', 216),
+	(1860, '揭西县', 216),
+	(1861, '惠来县', 216),
+	(1862, '普宁市', 216),
+	(1863, '云城区', 217),
+	(1864, '新兴县', 217),
+	(1865, '郁南县', 217),
+	(1866, '云安县', 217),
+	(1867, '罗定市', 217),
+	(1868, '兴宁区', 218),
+	(1869, '青秀区', 218),
+	(1870, '江南区', 218),
+	(1871, '西乡塘区', 218),
+	(1872, '良庆区', 218),
+	(1873, '邕宁区', 218),
+	(1874, '武鸣县', 218),
+	(1875, '隆安县', 218),
+	(1876, '马山县', 218),
+	(1877, '上林县', 218),
+	(1878, '宾阳县', 218),
+	(1879, '横县', 218),
+	(1880, '城中区', 219),
+	(1881, '鱼峰区', 219),
+	(1882, '柳南区', 219),
+	(1883, '柳北区', 219),
+	(1884, '柳江县', 219),
+	(1885, '柳城县', 219),
+	(1886, '鹿寨县', 219),
+	(1887, '融安县', 219),
+	(
+		1888,
+		'融水苗族自治县',
+		219
+	),
+	(
+		1889,
+		'三江侗族自治县',
+		219
+	),
+	(1890, '秀峰区', 220),
+	(1891, '叠彩区', 220),
+	(1892, '象山区', 220),
+	(1893, '七星区', 220),
+	(1894, '雁山区', 220),
+	(1895, '阳朔县', 220),
+	(1896, '临桂县', 220),
+	(1897, '灵川县', 220),
+	(1898, '全州县', 220),
+	(1899, '兴安县', 220),
+	(1900, '永福县', 220),
+	(1901, '灌阳县', 220),
+	(
+		1902,
+		'龙胜各族自治县',
+		220
+	),
+	(1903, '资源县', 220),
+	(1904, '平乐县', 220),
+	(1905, '荔蒲县', 220),
+	(
+		1906,
+		'恭城瑶族自治县',
+		220
+	),
+	(1907, '万秀区', 221),
+	(1908, '蝶山区', 221),
+	(1909, '长洲区', 221),
+	(1910, '苍梧县', 221),
+	(1911, '藤县', 221),
+	(1912, '蒙山县', 221),
+	(1913, '岑溪市', 221),
+	(1914, '海城区', 222),
+	(1915, '银海区', 222),
+	(1916, '铁山港区', 222),
+	(1917, '合浦县', 222),
+	(1918, '港口区', 223),
+	(1919, '防城区', 223),
+	(1920, '上思县', 223),
+	(1921, '东兴市', 223),
+	(1922, '钦南区', 224),
+	(1923, '钦北区', 224),
+	(1924, '灵山县', 224),
+	(1925, '浦北县', 224),
+	(1926, '港北区', 225),
+	(1927, '港南区', 225),
+	(1928, '覃塘区', 225),
+	(1929, '平南县', 225),
+	(1930, '桂平市', 225),
+	(1931, '玉州区', 226),
+	(1932, '容县', 226),
+	(1933, '陆川县', 226),
+	(1934, '博白县', 226),
+	(1935, '兴业县', 226),
+	(1936, '北流市', 226),
+	(1937, '右江区', 227),
+	(1938, '田阳县', 227),
+	(1939, '田东县', 227),
+	(1940, '平果县', 227),
+	(1941, '德保县', 227),
+	(1942, '靖西县', 227),
+	(1943, '那坡县', 227),
+	(1944, '凌云县', 227),
+	(1945, '乐业县', 227),
+	(1946, '田林县', 227),
+	(1947, '西林县', 227),
+	(
+		1948,
+		'隆林各族自治县',
+		227
+	),
+	(1949, '八步区', 228),
+	(1950, '昭平县', 228),
+	(1951, '钟山县', 228),
+	(
+		1952,
+		'富川瑶族自治县',
+		228
+	),
+	(1953, '金城江区', 229),
+	(1954, '南丹县', 229),
+	(1955, '天峨县', 229),
+	(1956, '凤山县', 229),
+	(1957, '东兰县', 229),
+	(
+		1958,
+		'罗城仫佬族自治县',
+		229
+	),
+	(
+		1959,
+		'环江毛南族自治县',
+		229
+	),
+	(
+		1960,
+		'巴马瑶族自治县',
+		229
+	),
+	(
+		1961,
+		'都安瑶族自治县',
+		229
+	),
+	(
+		1962,
+		'大化瑶族自治县',
+		229
+	),
+	(1963, '宜州市', 229),
+	(1964, '兴宾区', 230),
+	(1965, '忻城县', 230),
+	(1966, '象州县', 230),
+	(1967, '武宣县', 230),
+	(
+		1968,
+		'金秀瑶族自治县',
+		230
+	),
+	(1969, '合山市', 230),
+	(1970, '江洲区', 231),
+	(1971, '扶绥县', 231),
+	(1972, '宁明县', 231),
+	(1973, '龙州县', 231),
+	(1974, '大新县', 231),
+	(1975, '天等县', 231),
+	(1976, '凭祥市', 231),
+	(1977, '秀英区', 232),
+	(1978, '龙华区', 232),
+	(1979, '琼山区', 232),
+	(1980, '美兰区', 232),
+	(1981, '五指山市', 233),
+	(1982, '琼海市', 233),
+	(1983, '儋州市', 233),
+	(1984, '文昌市', 233),
+	(1985, '万宁市', 233),
+	(1986, '东方市', 233),
+	(1987, '定安县', 233),
+	(1988, '屯昌县', 233),
+	(1989, '澄迈县', 233),
+	(1990, '临高县', 233),
+	(
+		1991,
+		'白沙黎族自治县',
+		233
+	),
+	(
+		1992,
+		'昌江黎族自治县',
+		233
+	),
+	(
+		1993,
+		'乐东黎族自治县',
+		233
+	),
+	(
+		1994,
+		'陵水黎族自治县',
+		233
+	),
+	(
+		1995,
+		'保亭黎族苗族自治县',
+		233
+	),
+	(
+		1996,
+		'琼中黎族苗族自治县',
+		233
+	),
+	(1997, '西沙群岛', 233),
+	(1998, '南沙群岛', 233),
+	(
+		1999,
+		'中沙群岛的岛礁及其海域',
+		233
+	),
+	(2000, '万州区', 234),
+	(2001, '涪陵区', 234),
+	(2002, '渝中区', 234),
+	(2003, '大渡口区', 234),
+	(2004, '江北区', 234),
+	(2005, '沙坪坝区', 234),
+	(2006, '九龙坡区', 234),
+	(2007, '南岸区', 234),
+	(2008, '北碚区', 234),
+	(2009, '万盛区', 234),
+	(2010, '双桥区', 234),
+	(2011, '渝北区', 234),
+	(2012, '巴南区', 234),
+	(2013, '黔江区', 234),
+	(2014, '长寿区', 234),
+	(2015, '綦江县', 234),
+	(2016, '潼南县', 234),
+	(2017, '铜梁县', 234),
+	(2018, '大足县', 234),
+	(2019, '荣昌县', 234),
+	(2020, '璧山县', 234),
+	(2021, '梁平县', 234),
+	(2022, '城口县', 234),
+	(2023, '丰都县', 234),
+	(2024, '垫江县', 234),
+	(2025, '武隆县', 234),
+	(2026, '忠县', 234),
+	(2027, '开县', 234),
+	(2028, '云阳县', 234),
+	(2029, '奉节县', 234),
+	(2030, '巫山县', 234),
+	(2031, '巫溪县', 234),
+	(
+		2032,
+		'石柱土家族自治县',
+		234
+	),
+	(
+		2033,
+		'秀山土家族苗族自治县',
+		234
+	),
+	(
+		2034,
+		'酉阳土家族苗族自治县',
+		234
+	),
+	(
+		2035,
+		'彭水苗族土家族自治县',
+		234
+	),
+	(2036, '江津市', 234),
+	(2037, '合川市', 234),
+	(2038, '永川市', 234),
+	(2039, '南川市', 234),
+	(2040, '锦江区', 235),
+	(2041, '青羊区', 235),
+	(2042, '金牛区', 235),
+	(2043, '武侯区', 235),
+	(2044, '成华区', 235),
+	(2045, '龙泉驿区', 235),
+	(2046, '青白江区', 235),
+	(2047, '新都区', 235),
+	(2048, '温江区', 235),
+	(2049, '金堂县', 235),
+	(2050, '双流县', 235),
+	(2051, '郫县', 235),
+	(2052, '大邑县', 235),
+	(2053, '蒲江县', 235),
+	(2054, '新津县', 235),
+	(2055, '都江堰市', 235),
+	(2056, '彭州市', 235),
+	(2057, '邛崃市', 235),
+	(2058, '崇州市', 235),
+	(2059, '自流井区', 236),
+	(2060, '贡井区', 236),
+	(2061, '大安区', 236),
+	(2062, '沿滩区', 236),
+	(2063, '荣县', 236),
+	(2064, '富顺县', 236),
+	(2065, '东区', 237),
+	(2066, '西区', 237),
+	(2067, '仁和区', 237),
+	(2068, '米易县', 237),
+	(2069, '盐边县', 237),
+	(2070, '江阳区', 238),
+	(2071, '纳溪区', 238),
+	(2072, '龙马潭区', 238),
+	(2073, '泸县', 238),
+	(2074, '合江县', 238),
+	(2075, '叙永县', 238),
+	(2076, '古蔺县', 238),
+	(2077, '旌阳区', 239),
+	(2078, '中江县', 239),
+	(2079, '罗江县', 239),
+	(2080, '广汉市', 239),
+	(2081, '什邡市', 239),
+	(2082, '绵竹市', 239),
+	(2083, '涪城区', 240),
+	(2084, '游仙区', 240),
+	(2085, '三台县', 240),
+	(2086, '盐亭县', 240),
+	(2087, '安县', 240),
+	(2088, '梓潼县', 240),
+	(
+		2089,
+		'北川羌族自治县',
+		240
+	),
+	(2090, '平武县', 240),
+	(2091, '江油市', 240),
+	(2092, '市中区', 241),
+	(2093, '元坝区', 241),
+	(2094, '朝天区', 241),
+	(2095, '旺苍县', 241),
+	(2096, '青川县', 241),
+	(2097, '剑阁县', 241),
+	(2098, '苍溪县', 241),
+	(2099, '船山区', 242),
+	(2100, '安居区', 242),
+	(2101, '蓬溪县', 242),
+	(2102, '射洪县', 242),
+	(2103, '大英县', 242),
+	(2104, '市中区', 243),
+	(2105, '东兴区', 243),
+	(2106, '威远县', 243),
+	(2107, '资中县', 243),
+	(2108, '隆昌县', 243),
+	(2109, '市中区', 244),
+	(2110, '沙湾区', 244),
+	(2111, '五通桥区', 244),
+	(2112, '金口河区', 244),
+	(2113, '犍为县', 244),
+	(2114, '井研县', 244),
+	(2115, '夹江县', 244),
+	(2116, '沐川县', 244),
+	(
+		2117,
+		'峨边彝族自治县',
+		244
+	),
+	(
+		2118,
+		'马边彝族自治县',
+		244
+	),
+	(2119, '峨眉山市', 244),
+	(2120, '顺庆区', 245),
+	(2121, '高坪区', 245),
+	(2122, '嘉陵区', 245),
+	(2123, '南部县', 245),
+	(2124, '营山县', 245),
+	(2125, '蓬安县', 245),
+	(2126, '仪陇县', 245),
+	(2127, '西充县', 245),
+	(2128, '阆中市', 245),
+	(2129, '东坡区', 246),
+	(2130, '仁寿县', 246),
+	(2131, '彭山县', 246),
+	(2132, '洪雅县', 246),
+	(2133, '丹棱县', 246),
+	(2134, '青神县', 246),
+	(2135, '翠屏区', 247),
+	(2136, '宜宾县', 247),
+	(2137, '南溪县', 247),
+	(2138, '江安县', 247),
+	(2139, '长宁县', 247),
+	(2140, '高县', 247),
+	(2141, '珙县', 247),
+	(2142, '筠连县', 247),
+	(2143, '兴文县', 247),
+	(2144, '屏山县', 247),
+	(2145, '广安区', 248),
+	(2146, '岳池县', 248),
+	(2147, '武胜县', 248),
+	(2148, '邻水县', 248),
+	(2149, '华蓥市', 248),
+	(2150, '通川区', 249),
+	(2151, '达县', 249),
+	(2152, '宣汉县', 249),
+	(2153, '开江县', 249),
+	(2154, '大竹县', 249),
+	(2155, '渠县', 249),
+	(2156, '万源市', 249),
+	(2157, '雨城区', 250),
+	(2158, '名山县', 250),
+	(2159, '荥经县', 250),
+	(2160, '汉源县', 250),
+	(2161, '石棉县', 250),
+	(2162, '天全县', 250),
+	(2163, '芦山县', 250),
+	(2164, '宝兴县', 250),
+	(2165, '巴州区', 251),
+	(2166, '通江县', 251),
+	(2167, '南江县', 251),
+	(2168, '平昌县', 251),
+	(2169, '雁江区', 252),
+	(2170, '安岳县', 252),
+	(2171, '乐至县', 252),
+	(2172, '简阳市', 252),
+	(2173, '汶川县', 253),
+	(2174, '理县', 253),
+	(2175, '茂县', 253),
+	(2176, '松潘县', 253),
+	(2177, '九寨沟县', 253),
+	(2178, '金川县', 253),
+	(2179, '小金县', 253),
+	(2180, '黑水县', 253),
+	(2181, '马尔康县', 253),
+	(2182, '壤塘县', 253),
+	(2183, '阿坝县', 253),
+	(2184, '若尔盖县', 253),
+	(2185, '红原县', 253),
+	(2186, '康定县', 254),
+	(2187, '泸定县', 254),
+	(2188, '丹巴县', 254),
+	(2189, '九龙县', 254),
+	(2190, '雅江县', 254),
+	(2191, '道孚县', 254),
+	(2192, '炉霍县', 254),
+	(2193, '甘孜县', 254),
+	(2194, '新龙县', 254),
+	(2195, '德格县', 254),
+	(2196, '白玉县', 254),
+	(2197, '石渠县', 254),
+	(2198, '色达县', 254),
+	(2199, '理塘县', 254),
+	(2200, '巴塘县', 254),
+	(2201, '乡城县', 254),
+	(2202, '稻城县', 254),
+	(2203, '得荣县', 254),
+	(2204, '西昌市', 255),
+	(
+		2205,
+		'木里藏族自治县',
+		255
+	),
+	(2206, '盐源县', 255),
+	(2207, '德昌县', 255),
+	(2208, '会理县', 255),
+	(2209, '会东县', 255),
+	(2210, '宁南县', 255),
+	(2211, '普格县', 255),
+	(2212, '布拖县', 255),
+	(2213, '金阳县', 255),
+	(2214, '昭觉县', 255),
+	(2215, '喜德县', 255),
+	(2216, '冕宁县', 255),
+	(2217, '越西县', 255),
+	(2218, '甘洛县', 255),
+	(2219, '美姑县', 255),
+	(2220, '雷波县', 255),
+	(2221, '南明区', 256),
+	(2222, '云岩区', 256),
+	(2223, '花溪区', 256),
+	(2224, '乌当区', 256),
+	(2225, '白云区', 256),
+	(2226, '小河区', 256),
+	(2227, '开阳县', 256),
+	(2228, '息烽县', 256),
+	(2229, '修文县', 256),
+	(2230, '清镇市', 256),
+	(2231, '钟山区', 257),
+	(2232, '六枝特区', 257),
+	(2233, '水城县', 257),
+	(2234, '盘县', 257),
+	(2235, '红花岗区', 258),
+	(2236, '汇川区', 258),
+	(2237, '遵义县', 258),
+	(2238, '桐梓县', 258),
+	(2239, '绥阳县', 258),
+	(2240, '正安县', 258),
+	(
+		2241,
+		'道真仡佬族苗族自治县',
+		258
+	),
+	(
+		2242,
+		'务川仡佬族苗族自治县',
+		258
+	),
+	(2243, '凤冈县', 258),
+	(2244, '湄潭县', 258),
+	(2245, '余庆县', 258),
+	(2246, '习水县', 258),
+	(2247, '赤水市', 258),
+	(2248, '仁怀市', 258),
+	(2249, '西秀区', 259),
+	(2250, '平坝县', 259),
+	(2251, '普定县', 259),
+	(
+		2252,
+		'镇宁布依族苗族自治县',
+		259
+	),
+	(
+		2253,
+		'关岭布依族苗族自治县',
+		259
+	),
+	(
+		2254,
+		'紫云苗族布依族自治县',
+		259
+	),
+	(2255, '铜仁市', 260),
+	(2256, '江口县', 260),
+	(
+		2257,
+		'玉屏侗族自治县',
+		260
+	),
+	(2258, '石阡县', 260),
+	(2259, '思南县', 260),
+	(
+		2260,
+		'印江土家族苗族自治县',
+		260
+	),
+	(2261, '德江县', 260),
+	(
+		2262,
+		'沿河土家族自治县',
+		260
+	),
+	(
+		2263,
+		'松桃苗族自治县',
+		260
+	),
+	(2264, '万山特区', 260),
+	(2265, '兴义市', 261),
+	(2266, '兴仁县', 261),
+	(2267, '普安县', 261),
+	(2268, '晴隆县', 261),
+	(2269, '贞丰县', 261),
+	(2270, '望谟县', 261),
+	(2271, '册亨县', 261),
+	(2272, '安龙县', 261),
+	(2273, '毕节市', 262),
+	(2274, '大方县', 262),
+	(2275, '黔西县', 262),
+	(2276, '金沙县', 262),
+	(2277, '织金县', 262),
+	(2278, '纳雍县', 262),
+	(
+		2279,
+		'威宁彝族回族苗族自治县',
+		262
+	),
+	(2280, '赫章县', 262),
+	(2281, '凯里市', 263),
+	(2282, '黄平县', 263),
+	(2283, '施秉县', 263),
+	(2284, '三穗县', 263),
+	(2285, '镇远县', 263),
+	(2286, '岑巩县', 263),
+	(2287, '天柱县', 263),
+	(2288, '锦屏县', 263),
+	(2289, '剑河县', 263),
+	(2290, '台江县', 263),
+	(2291, '黎平县', 263),
+	(2292, '榕江县', 263),
+	(2293, '从江县', 263),
+	(2294, '雷山县', 263),
+	(2295, '麻江县', 263),
+	(2296, '丹寨县', 263),
+	(2297, '都匀市', 264),
+	(2298, '福泉市', 264),
+	(2299, '荔波县', 264),
+	(2300, '贵定县', 264),
+	(2301, '瓮安县', 264),
+	(2302, '独山县', 264),
+	(2303, '平塘县', 264),
+	(2304, '罗甸县', 264),
+	(2305, '长顺县', 264),
+	(2306, '龙里县', 264),
+	(2307, '惠水县', 264),
+	(
+		2308,
+		'三都水族自治县',
+		264
+	),
+	(2309, '五华区', 265),
+	(2310, '盘龙区', 265),
+	(2311, '官渡区', 265),
+	(2312, '西山区', 265),
+	(2313, '东川区', 265),
+	(2314, '呈贡县', 265),
+	(2315, '晋宁县', 265),
+	(2316, '富民县', 265),
+	(2317, '宜良县', 265),
+	(
+		2318,
+		'石林彝族自治县',
+		265
+	),
+	(2319, '嵩明县', 265),
+	(
+		2320,
+		'禄劝彝族苗族自治县',
+		265
+	),
+	(
+		2321,
+		'寻甸回族彝族自治县',
+		265
+	),
+	(2322, '安宁市', 265),
+	(2323, '麒麟区', 266),
+	(2324, '马龙县', 266),
+	(2325, '陆良县', 266),
+	(2326, '师宗县', 266),
+	(2327, '罗平县', 266),
+	(2328, '富源县', 266),
+	(2329, '会泽县', 266),
+	(2330, '沾益县', 266),
+	(2331, '宣威市', 266),
+	(2332, '红塔区', 267),
+	(2333, '江川县', 267),
+	(2334, '澄江县', 267),
+	(2335, '通海县', 267),
+	(2336, '华宁县', 267),
+	(2337, '易门县', 267),
+	(
+		2338,
+		'峨山彝族自治县',
+		267
+	),
+	(
+		2339,
+		'新平彝族傣族自治县',
+		267
+	),
+	(
+		2340,
+		'元江哈尼族彝族傣族自治县',
+		267
+	),
+	(2341, '隆阳区', 268),
+	(2342, '施甸县', 268),
+	(2343, '腾冲县', 268),
+	(2344, '龙陵县', 268),
+	(2345, '昌宁县', 268),
+	(2346, '昭阳区', 269),
+	(2347, '鲁甸县', 269),
+	(2348, '巧家县', 269),
+	(2349, '盐津县', 269),
+	(2350, '大关县', 269),
+	(2351, '永善县', 269),
+	(2352, '绥江县', 269),
+	(2353, '镇雄县', 269),
+	(2354, '彝良县', 269),
+	(2355, '威信县', 269),
+	(2356, '水富县', 269),
+	(2357, '古城区', 270),
+	(
+		2358,
+		'玉龙纳西族自治县',
+		270
+	),
+	(2359, '永胜县', 270),
+	(2360, '华坪县', 270),
+	(
+		2361,
+		'宁蒗彝族自治县',
+		270
+	),
+	(2362, '翠云区', 271),
+	(
+		2363,
+		'普洱哈尼族彝族自治县',
+		271
+	),
+	(
+		2364,
+		'墨江哈尼族自治县',
+		271
+	),
+	(
+		2365,
+		'景东彝族自治县',
+		271
+	),
+	(
+		2366,
+		'景谷傣族彝族自治县',
+		271
+	),
+	(
+		2367,
+		'镇沅彝族哈尼族拉祜族自治县',
+		271
+	),
+	(
+		2368,
+		'江城哈尼族彝族自治县',
+		271
+	),
+	(
+		2369,
+		'孟连傣族拉祜族佤族自治县',
+		271
+	),
+	(
+		2370,
+		'澜沧拉祜族自治县',
+		271
+	),
+	(
+		2371,
+		'西盟佤族自治县',
+		271
+	),
+	(2372, '临翔区', 272),
+	(2373, '凤庆县', 272),
+	(2374, '云县', 272),
+	(2375, '永德县', 272),
+	(2376, '镇康县', 272),
+	(
+		2377,
+		'双江拉祜族佤族布朗族傣族自治县',
+		272
+	),
+	(
+		2378,
+		'耿马傣族佤族自治县',
+		272
+	),
+	(
+		2379,
+		'沧源佤族自治县',
+		272
+	),
+	(2380, '楚雄市', 273),
+	(2381, '双柏县', 273),
+	(2382, '牟定县', 273),
+	(2383, '南华县', 273),
+	(2384, '姚安县', 273),
+	(2385, '大姚县', 273),
+	(2386, '永仁县', 273),
+	(2387, '元谋县', 273),
+	(2388, '武定县', 273),
+	(2389, '禄丰县', 273),
+	(2390, '个旧市', 274),
+	(2391, '开远市', 274),
+	(2392, '蒙自县', 274),
+	(
+		2393,
+		'屏边苗族自治县',
+		274
+	),
+	(2394, '建水县', 274),
+	(2395, '石屏县', 274),
+	(2396, '弥勒县', 274),
+	(2397, '泸西县', 274),
+	(2398, '元阳县', 274),
+	(2399, '红河县', 274),
+	(
+		2400,
+		'金平苗族瑶族傣族自治县',
+		274
+	),
+	(2401, '绿春县', 274),
+	(
+		2402,
+		'河口瑶族自治县',
+		274
+	),
+	(2403, '文山县', 275),
+	(2404, '砚山县', 275),
+	(2405, '西畴县', 275),
+	(2406, '麻栗坡县', 275),
+	(2407, '马关县', 275),
+	(2408, '丘北县', 275),
+	(2409, '广南县', 275),
+	(2410, '富宁县', 275),
+	(2411, '景洪市', 276),
+	(2412, '勐海县', 276),
+	(2413, '勐腊县', 276),
+	(2414, '大理市', 277),
+	(
+		2415,
+		'漾濞彝族自治县',
+		277
+	),
+	(2416, '祥云县', 277),
+	(2417, '宾川县', 277),
+	(2418, '弥渡县', 277),
+	(
+		2419,
+		'南涧彝族自治县',
+		277
+	),
+	(
+		2420,
+		'巍山彝族回族自治县',
+		277
+	),
+	(2421, '永平县', 277),
+	(2422, '云龙县', 277),
+	(2423, '洱源县', 277),
+	(2424, '剑川县', 277),
+	(2425, '鹤庆县', 277),
+	(2426, '瑞丽市', 278),
+	(2427, '潞西市', 278),
+	(2428, '梁河县', 278),
+	(2429, '盈江县', 278),
+	(2430, '陇川县', 278),
+	(2431, '泸水县', 279),
+	(2432, '福贡县', 279),
+	(
+		2433,
+		'贡山独龙族怒族自治县',
+		279
+	),
+	(
+		2434,
+		'兰坪白族普米族自治县',
+		279
+	),
+	(2435, '香格里拉县', 280),
+	(2436, '德钦县', 280),
+	(
+		2437,
+		'维西傈僳族自治县',
+		280
+	),
+	(2438, '城关区', 281),
+	(2439, '林周县', 281),
+	(2440, '当雄县', 281),
+	(2441, '尼木县', 281),
+	(2442, '曲水县', 281),
+	(2443, '堆龙德庆县', 281),
+	(2444, '达孜县', 281),
+	(2445, '墨竹工卡县', 281),
+	(2446, '昌都县', 282),
+	(2447, '江达县', 282),
+	(2448, '贡觉县', 282),
+	(2449, '类乌齐县', 282),
+	(2450, '丁青县', 282),
+	(2451, '察雅县', 282),
+	(2452, '八宿县', 282),
+	(2453, '左贡县', 282),
+	(2454, '芒康县', 282),
+	(2455, '洛隆县', 282),
+	(2456, '边坝县', 282),
+	(2457, '乃东县', 283),
+	(2458, '扎囊县', 283),
+	(2459, '贡嘎县', 283),
+	(2460, '桑日县', 283),
+	(2461, '琼结县', 283),
+	(2462, '曲松县', 283),
+	(2463, '措美县', 283),
+	(2464, '洛扎县', 283),
+	(2465, '加查县', 283),
+	(2466, '隆子县', 283),
+	(2467, '错那县', 283),
+	(2468, '浪卡子县', 283),
+	(2469, '日喀则市', 284),
+	(2470, '南木林县', 284),
+	(2471, '江孜县', 284),
+	(2472, '定日县', 284),
+	(2473, '萨迦县', 284),
+	(2474, '拉孜县', 284),
+	(2475, '昂仁县', 284),
+	(2476, '谢通门县', 284),
+	(2477, '白朗县', 284),
+	(2478, '仁布县', 284),
+	(2479, '康马县', 284),
+	(2480, '定结县', 284),
+	(2481, '仲巴县', 284),
+	(2482, '亚东县', 284),
+	(2483, '吉隆县', 284),
+	(2484, '聂拉木县', 284),
+	(2485, '萨嘎县', 284),
+	(2486, '岗巴县', 284),
+	(2487, '那曲县', 285),
+	(2488, '嘉黎县', 285),
+	(2489, '比如县', 285),
+	(2490, '聂荣县', 285),
+	(2491, '安多县', 285),
+	(2492, '申扎县', 285),
+	(2493, '索县', 285),
+	(2494, '班戈县', 285),
+	(2495, '巴青县', 285),
+	(2496, '尼玛县', 285),
+	(2497, '普兰县', 286),
+	(2498, '札达县', 286),
+	(2499, '噶尔县', 286),
+	(2500, '日土县', 286),
+	(2501, '革吉县', 286),
+	(2502, '改则县', 286),
+	(2503, '措勤县', 286),
+	(2504, '林芝县', 287),
+	(2505, '工布江达县', 287),
+	(2506, '米林县', 287),
+	(2507, '墨脱县', 287),
+	(2508, '波密县', 287),
+	(2509, '察隅县', 287),
+	(2510, '朗县', 287),
+	(2511, '新城区', 288),
+	(2512, '碑林区', 288),
+	(2513, '莲湖区', 288),
+	(2514, '灞桥区', 288),
+	(2515, '未央区', 288),
+	(2516, '雁塔区', 288),
+	(2517, '阎良区', 288),
+	(2518, '临潼区', 288),
+	(2519, '长安区', 288),
+	(2520, '蓝田县', 288),
+	(2521, '周至县', 288),
+	(2522, '户县', 288),
+	(2523, '高陵县', 288),
+	(2524, '王益区', 289),
+	(2525, '印台区', 289),
+	(2526, '耀州区', 289),
+	(2527, '宜君县', 289),
+	(2528, '渭滨区', 290),
+	(2529, '金台区', 290),
+	(2530, '陈仓区', 290),
+	(2531, '凤翔县', 290),
+	(2532, '岐山县', 290),
+	(2533, '扶风县', 290),
+	(2534, '眉县', 290),
+	(2535, '陇县', 290),
+	(2536, '千阳县', 290),
+	(2537, '麟游县', 290),
+	(2538, '凤县', 290),
+	(2539, '太白县', 290),
+	(2540, '秦都区', 291),
+	(2541, '杨凌区', 291),
+	(2542, '渭城区', 291),
+	(2543, '三原县', 291),
+	(2544, '泾阳县', 291),
+	(2545, '乾县', 291),
+	(2546, '礼泉县', 291),
+	(2547, '永寿县', 291),
+	(2548, '彬县', 291),
+	(2549, '长武县', 291),
+	(2550, '旬邑县', 291),
+	(2551, '淳化县', 291),
+	(2552, '武功县', 291),
+	(2553, '兴平市', 291),
+	(2554, '临渭区', 292),
+	(2555, '华县', 292),
+	(2556, '潼关县', 292),
+	(2557, '大荔县', 292),
+	(2558, '合阳县', 292),
+	(2559, '澄城县', 292),
+	(2560, '蒲城县', 292),
+	(2561, '白水县', 292),
+	(2562, '富平县', 292),
+	(2563, '韩城市', 292),
+	(2564, '华阴市', 292),
+	(2565, '宝塔区', 293),
+	(2566, '延长县', 293),
+	(2567, '延川县', 293),
+	(2568, '子长县', 293),
+	(2569, '安塞县', 293),
+	(2570, '志丹县', 293),
+	(2571, '吴旗县', 293),
+	(2572, '甘泉县', 293),
+	(2573, '富县', 293),
+	(2574, '洛川县', 293),
+	(2575, '宜川县', 293),
+	(2576, '黄龙县', 293),
+	(2577, '黄陵县', 293),
+	(2578, '汉台区', 294),
+	(2579, '南郑县', 294),
+	(2580, '城固县', 294),
+	(2581, '洋县', 294),
+	(2582, '西乡县', 294),
+	(2583, '勉县', 294),
+	(2584, '宁强县', 294),
+	(2585, '略阳县', 294),
+	(2586, '镇巴县', 294),
+	(2587, '留坝县', 294),
+	(2588, '佛坪县', 294),
+	(2589, '榆阳区', 295),
+	(2590, '神木县', 295),
+	(2591, '府谷县', 295),
+	(2592, '横山县', 295),
+	(2593, '靖边县', 295),
+	(2594, '定边县', 295),
+	(2595, '绥德县', 295),
+	(2596, '米脂县', 295),
+	(2597, '佳县', 295),
+	(2598, '吴堡县', 295),
+	(2599, '清涧县', 295),
+	(2600, '子洲县', 295),
+	(2601, '汉滨区', 296),
+	(2602, '汉阴县', 296),
+	(2603, '石泉县', 296),
+	(2604, '宁陕县', 296),
+	(2605, '紫阳县', 296),
+	(2606, '岚皋县', 296),
+	(2607, '平利县', 296),
+	(2608, '镇坪县', 296),
+	(2609, '旬阳县', 296),
+	(2610, '白河县', 296),
+	(2611, '商州区', 297),
+	(2612, '洛南县', 297),
+	(2613, '丹凤县', 297),
+	(2614, '商南县', 297),
+	(2615, '山阳县', 297),
+	(2616, '镇安县', 297),
+	(2617, '柞水县', 297),
+	(2618, '城关区', 298),
+	(2619, '七里河区', 298),
+	(2620, '西固区', 298),
+	(2621, '安宁区', 298),
+	(2622, '红古区', 298),
+	(2623, '永登县', 298),
+	(2624, '皋兰县', 298),
+	(2625, '榆中县', 298),
+	(2626, '金川区', 300),
+	(2627, '永昌县', 300),
+	(2628, '白银区', 301),
+	(2629, '平川区', 301),
+	(2630, '靖远县', 301),
+	(2631, '会宁县', 301),
+	(2632, '景泰县', 301),
+	(2633, '秦城区', 302),
+	(2634, '北道区', 302),
+	(2635, '清水县', 302),
+	(2636, '秦安县', 302),
+	(2637, '甘谷县', 302),
+	(2638, '武山县', 302),
+	(
+		2639,
+		'张家川回族自治县',
+		302
+	),
+	(2640, '凉州区', 303),
+	(2641, '民勤县', 303),
+	(2642, '古浪县', 303),
+	(
+		2643,
+		'天祝藏族自治县',
+		303
+	),
+	(2644, '甘州区', 304),
+	(
+		2645,
+		'肃南裕固族自治县',
+		304
+	),
+	(2646, '民乐县', 304),
+	(2647, '临泽县', 304),
+	(2648, '高台县', 304),
+	(2649, '山丹县', 304),
+	(2650, '崆峒区', 305),
+	(2651, '泾川县', 305),
+	(2652, '灵台县', 305),
+	(2653, '崇信县', 305),
+	(2654, '华亭县', 305),
+	(2655, '庄浪县', 305),
+	(2656, '静宁县', 305),
+	(2657, '肃州区', 306),
+	(2658, '金塔县', 306),
+	(2659, '安西县', 306),
+	(
+		2660,
+		'肃北蒙古族自治县',
+		306
+	),
+	(
+		2661,
+		'阿克塞哈萨克族自治县',
+		306
+	),
+	(2662, '玉门市', 306),
+	(2663, '敦煌市', 306),
+	(2664, '西峰区', 307),
+	(2665, '庆城县', 307),
+	(2666, '环县', 307),
+	(2667, '华池县', 307),
+	(2668, '合水县', 307),
+	(2669, '正宁县', 307),
+	(2670, '宁县', 307),
+	(2671, '镇原县', 307),
+	(2672, '安定区', 308),
+	(2673, '通渭县', 308),
+	(2674, '陇西县', 308),
+	(2675, '渭源县', 308),
+	(2676, '临洮县', 308),
+	(2677, '漳县', 308),
+	(2678, '岷县', 308),
+	(2679, '武都区', 309),
+	(2680, '成县', 309),
+	(2681, '文县', 309),
+	(2682, '宕昌县', 309),
+	(2683, '康县', 309),
+	(2684, '西和县', 309),
+	(2685, '礼县', 309),
+	(2686, '徽县', 309),
+	(2687, '两当县', 309),
+	(2688, '临夏市', 310),
+	(2689, '临夏县', 310),
+	(2690, '康乐县', 310),
+	(2691, '永靖县', 310),
+	(2692, '广河县', 310),
+	(2693, '和政县', 310),
+	(
+		2694,
+		'东乡族自治县',
+		310
+	),
+	(
+		2695,
+		'积石山保安族东乡族撒拉族自治县',
+		310
+	),
+	(2696, '合作市', 311),
+	(2697, '临潭县', 311),
+	(2698, '卓尼县', 311),
+	(2699, '舟曲县', 311),
+	(2700, '迭部县', 311),
+	(2701, '玛曲县', 311),
+	(2702, '碌曲县', 311),
+	(2703, '夏河县', 311),
+	(2704, '城东区', 312),
+	(2705, '城中区', 312),
+	(2706, '城西区', 312),
+	(2707, '城北区', 312),
+	(
+		2708,
+		'大通回族土族自治县',
+		312
+	),
+	(2709, '湟中县', 312),
+	(2710, '湟源县', 312),
+	(2711, '平安县', 313),
+	(
+		2712,
+		'民和回族土族自治县',
+		313
+	),
+	(2713, '乐都县', 313),
+	(
+		2714,
+		'互助土族自治县',
+		313
+	),
+	(
+		2715,
+		'化隆回族自治县',
+		313
+	),
+	(
+		2716,
+		'循化撒拉族自治县',
+		313
+	),
+	(
+		2717,
+		'门源回族自治县',
+		314
+	),
+	(2718, '祁连县', 314),
+	(2719, '海晏县', 314),
+	(2720, '刚察县', 314),
+	(2721, '同仁县', 315),
+	(2722, '尖扎县', 315),
+	(2723, '泽库县', 315),
+	(
+		2724,
+		'河南蒙古族自治县',
+		315
+	),
+	(2725, '共和县', 316),
+	(2726, '同德县', 316),
+	(2727, '贵德县', 316),
+	(2728, '兴海县', 316),
+	(2729, '贵南县', 316),
+	(2730, '玛沁县', 317),
+	(2731, '班玛县', 317),
+	(2732, '甘德县', 317),
+	(2733, '达日县', 317),
+	(2734, '久治县', 317),
+	(2735, '玛多县', 317),
+	(2736, '玉树县', 318),
+	(2737, '杂多县', 318),
+	(2738, '称多县', 318),
+	(2739, '治多县', 318),
+	(2740, '囊谦县', 318),
+	(2741, '曲麻莱县', 318),
+	(2742, '格尔木市', 319),
+	(2743, '德令哈市', 319),
+	(2744, '乌兰县', 319),
+	(2745, '都兰县', 319),
+	(2746, '天峻县', 319),
+	(2747, '兴庆区', 320),
+	(2748, '西夏区', 320),
+	(2749, '金凤区', 320),
+	(2750, '永宁县', 320),
+	(2751, '贺兰县', 320),
+	(2752, '灵武市', 320),
+	(2753, '大武口区', 321),
+	(2754, '惠农区', 321),
+	(2755, '平罗县', 321),
+	(2756, '利通区', 322),
+	(2757, '盐池县', 322),
+	(2758, '同心县', 322),
+	(2759, '青铜峡市', 322),
+	(2760, '原州区', 323),
+	(2761, '西吉县', 323),
+	(2762, '隆德县', 323),
+	(2763, '泾源县', 323),
+	(2764, '彭阳县', 323),
+	(2765, '沙坡头区', 324),
+	(2766, '中宁县', 324),
+	(2767, '海原县', 324),
+	(2768, '天山区', 325),
+	(2769, '沙依巴克区', 325),
+	(2770, '新市区', 325),
+	(2771, '水磨沟区', 325),
+	(2772, '头屯河区', 325),
+	(2773, '达坂城区', 325),
+	(2774, '东山区', 325),
+	(2775, '乌鲁木齐县', 325),
+	(2776, '独山子区', 326),
+	(2777, '克拉玛依区', 326),
+	(2778, '白碱滩区', 326),
+	(2779, '乌尔禾区', 326),
+	(2780, '吐鲁番市', 327),
+	(2781, '鄯善县', 327),
+	(2782, '托克逊县', 327),
+	(2783, '哈密市', 328),
+	(
+		2784,
+		'巴里坤哈萨克自治县',
+		328
+	),
+	(2785, '伊吾县', 328),
+	(2786, '昌吉市', 329),
+	(2787, '阜康市', 329),
+	(2788, '米泉市', 329),
+	(2789, '呼图壁县', 329),
+	(2790, '玛纳斯县', 329),
+	(2791, '奇台县', 329),
+	(2792, '吉木萨尔县', 329),
+	(
+		2793,
+		'木垒哈萨克自治县',
+		329
+	),
+	(2794, '博乐市', 330),
+	(2795, '精河县', 330),
+	(2796, '温泉县', 330),
+	(2797, '库尔勒市', 331),
+	(2798, '轮台县', 331),
+	(2799, '尉犁县', 331),
+	(2800, '若羌县', 331),
+	(2801, '且末县', 331),
+	(
+		2802,
+		'焉耆回族自治县',
+		331
+	),
+	(2803, '和静县', 331),
+	(2804, '和硕县', 331),
+	(2805, '博湖县', 331),
+	(2806, '阿克苏市', 332),
+	(2807, '温宿县', 332),
+	(2808, '库车县', 332),
+	(2809, '沙雅县', 332),
+	(2810, '新和县', 332),
+	(2811, '拜城县', 332),
+	(2812, '乌什县', 332),
+	(2813, '阿瓦提县', 332),
+	(2814, '柯坪县', 332),
+	(2815, '阿图什市', 333),
+	(2816, '阿克陶县', 333),
+	(2817, '阿合奇县', 333),
+	(2818, '乌恰县', 333),
+	(2819, '喀什市', 334),
+	(2820, '疏附县', 334),
+	(2821, '疏勒县', 334),
+	(2822, '英吉沙县', 334),
+	(2823, '泽普县', 334),
+	(2824, '莎车县', 334),
+	(2825, '叶城县', 334),
+	(2826, '麦盖提县', 334),
+	(2827, '岳普湖县', 334),
+	(2828, '伽师县', 334),
+	(2829, '巴楚县', 334),
+	(
+		2830,
+		'塔什库尔干塔吉克自治县',
+		334
+	),
+	(2831, '和田市', 335),
+	(2832, '和田县', 335),
+	(2833, '墨玉县', 335),
+	(2834, '皮山县', 335),
+	(2835, '洛浦县', 335),
+	(2836, '策勒县', 335),
+	(2837, '于田县', 335),
+	(2838, '民丰县', 335),
+	(2839, '伊宁市', 336),
+	(2840, '奎屯市', 336),
+	(2841, '伊宁县', 336),
+	(
+		2842,
+		'察布查尔锡伯自治县',
+		336
+	),
+	(2843, '霍城县', 336),
+	(2844, '巩留县', 336),
+	(2845, '新源县', 336),
+	(2846, '昭苏县', 336),
+	(2847, '特克斯县', 336),
+	(2848, '尼勒克县', 336),
+	(2849, '塔城市', 337),
+	(2850, '乌苏市', 337),
+	(2851, '额敏县', 337),
+	(2852, '沙湾县', 337),
+	(2853, '托里县', 337),
+	(2854, '裕民县', 337),
+	(
+		2855,
+		'和布克赛尔蒙古自治县',
+		337
+	),
+	(2856, '阿勒泰市', 338),
+	(2857, '布尔津县', 338),
+	(2858, '富蕴县', 338),
+	(2859, '福海县', 338),
+	(2860, '哈巴河县', 338),
+	(2861, '青河县', 338),
+	(2862, '吉木乃县', 338);
+
+INSERT INTO `d_comments` (`id`, `name`)
+VALUES
+	(1, '好评'),
+	(2, '中评'),
+	(3, '差评');
