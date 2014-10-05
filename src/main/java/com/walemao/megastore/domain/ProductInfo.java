@@ -1,6 +1,7 @@
 package com.walemao.megastore.domain;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 public class ProductInfo {
@@ -8,7 +9,8 @@ public class ProductInfo {
 	private String number;
 	private String name;
 	private boolean recommend;
-	private String images;
+	private String thumbnail;
+	private List<String> images;
 	private int type;
 	private String orgin;
 	private String weight;
@@ -17,10 +19,25 @@ public class ProductInfo {
 	private BigDecimal price;
 	private double discount;
 	private String remark;
-	private String creattime;
+	private Date creattime;
 	
 	private List<ProductColor> productColors;
 	
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public List<String> getImages() {
+		return images;
+	}
+	public void setCreattime(Date creattime) {
+		this.creattime = creattime;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+	public void setImages(List<String> images) {
+		this.images = images;
+	}
 	public List<ProductColor> getProductColors() {
 		return productColors;
 	}
@@ -50,12 +67,6 @@ public class ProductInfo {
 	}
 	public void setRecommend(boolean recommend) {
 		this.recommend = recommend;
-	}
-	public String getImages() {
-		return images;
-	}
-	public void setImages(String images) {
-		this.images = images;
 	}
 	public int getType() {
 		return type;
@@ -105,10 +116,7 @@ public class ProductInfo {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	public String getCreattime() {
+	public Date getCreattime() {
 		return creattime;
-	}
-	public void setCreattime(String creattime) {
-		this.creattime = creattime;
 	}
 }

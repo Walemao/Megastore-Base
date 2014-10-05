@@ -7,7 +7,5 @@ import com.walemao.megastore.domain.User;
 
 public interface UserDao {
 	public List<User> getUsers();
-	public User getUser(UUID uuid);
-	public Boolean Login(String userName,String passwd);
-	public Boolean Update(User user);
+	public User getUser(int id);
 }
