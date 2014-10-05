@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-04 16:21:49
+Date: 2014-10-05 19:29:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -215,11 +215,12 @@ CREATE TABLE `t_product_favorites` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_product_info`;
 CREATE TABLE `t_product_info` (
-  `p_id` bigint(20) DEFAULT NULL COMMENT '商品id',
+  `p_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品id',
   `p_number` varchar(255) DEFAULT NULL COMMENT '商品货号',
   `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
   `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
-  `p_images` varchar(255) DEFAULT NULL COMMENT '商品图片',
+  `p_thumbnail` longtext COMMENT '商品缩略图',
+  `p_images` longtext COMMENT '商品图片',
   `p_type` int(11) DEFAULT '0' COMMENT '商品分类,关联t_product_classification',
   `p_origin` varchar(50) DEFAULT NULL COMMENT '商品产地',
   `p_weight` varchar(50) DEFAULT NULL COMMENT '商品毛重',
@@ -230,6 +231,7 @@ CREATE TABLE `t_product_info` (
   `p_remark` varchar(255) DEFAULT NULL COMMENT '商品备注',
   `p_creattime` datetime DEFAULT NULL COMMENT '商品上架时间',
   `deletemark` datetime DEFAULT NULL,
+  PRIMARY KEY (`p_id`),
   UNIQUE KEY `idx_t_product_number` (`p_number`),
   KEY `idx_t_product_name` (`p_name`),
   KEY `idx_t_product_deletemark` (`deletemark`),
@@ -282,7 +284,7 @@ CREATE TABLE `t_user` (
   `u_email` varchar(255) DEFAULT NULL COMMENT '邮箱',
   `u_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `u_remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `u_type` tinyint(4) DEFAULT NULL COMMENT '类型',
+  `u_type` tinyint(1) DEFAULT NULL COMMENT '用户类型',
   `u_level` tinyint(1) DEFAULT NULL COMMENT '会员等级',
   `u_enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用，0是未启用，1是启用',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
@@ -310,7 +312,7 @@ CREATE TABLE `t_user_authority` (
 DROP TABLE IF EXISTS `t_user_base`;
 CREATE TABLE `t_user_base` (
   `u_id` bigint(20) NOT NULL COMMENT '用户id',
-  `u_head_portrait` varchar(255) DEFAULT NULL COMMENT '头像',
+  `u_head_portrait` longtext COMMENT '头像',
   `u_nickname` varchar(50) DEFAULT NULL COMMENT '昵称',
   `u_realname` varchar(50) DEFAULT NULL COMMENT '真实姓名',
   `u_sex` tinyint(1) DEFAULT NULL COMMENT '性别',
@@ -320,7 +322,7 @@ CREATE TABLE `t_user_base` (
   `u_cities` smallint(6) DEFAULT NULL COMMENT '城市',
   `u_districts` smallint(6) DEFAULT NULL COMMENT '地区',
   `u_address` varchar(255) DEFAULT NULL COMMENT '详细地址',
-  `u_zipcode` varchar(6) DEFAULT NULL COMMENT '邮政编码',
+  `u_zipcode` char(6) DEFAULT NULL COMMENT '邮政编码',
   `u_isval_mobilephone` tinyint(1) DEFAULT NULL COMMENT '是否验证手机',
   `u_telphone` varchar(20) DEFAULT NULL COMMENT '座机',
   PRIMARY KEY (`u_id`),

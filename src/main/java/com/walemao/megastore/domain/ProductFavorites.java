@@ -1,11 +1,13 @@
 package com.walemao.megastore.domain;
 
+import java.util.Date;
+
 public class ProductFavorites {
 	private int id;
 	private int userid;
 	private int productid;
 	private int colorid;
-	private String createtime;
+	private Date createtime;
 	public int getId() {
 		return id;
 	}
@@ -30,10 +32,10 @@ public class ProductFavorites {
 	public void setColorid(int colorid) {
 		this.colorid = colorid;
 	}
-	public String getCreatetime() {
+	public Date getCreatetime() {
 		return createtime;
 	}
-	public void setCreatetime(String createtime) {
+	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
 
