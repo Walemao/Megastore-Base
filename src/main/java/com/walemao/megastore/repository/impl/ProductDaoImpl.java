@@ -31,11 +31,12 @@ public class ProductDaoImpl implements ProductDao {
 	 */
 	@Override
 	public List<ProductInfo> getProducts(String parm, int type, Date startTime,
-			Date endTime) {
+			Date endTime, int mark) {
 		// TODO Auto-generated method stub
+		String args = mark == 0 ? "null" : "not null";
 		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_weight"
 				+ ",p_materials,p_desc,p_price,p_discount,p_remark,p_creattime from t_product_info"
-				+ " where deletemark is null";
+				+ " where deletemark is " + args;
 		List<Object> list = new ArrayList<Object>();
 		if (parm == null || parm.length() <= 0) {
 		} else {
@@ -53,7 +54,7 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	@Override
-	public void Insert(ProductInfo p) {
+	public void insert(ProductInfo p) {
 		// TODO Auto-generated method stub
 		final List<ProductColor> list = p.getProductColors();
 		String sql = "insert into t_product_info(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_weight,p_materials,p_desc,p_price,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -84,7 +85,7 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	@Override
-	public void Update(ProductInfo p) {
+	public void update(ProductInfo p) {
 		// TODO Auto-generated method stub
 		String sql = "Update t_product_info set p_number=?,p_name=?,p_recommend=?,p_thumbnail=?,p_images=?,p_type=?,p_origin=?,p_weight=?,p_materials=?,p_desc=?,p_price=?,p_discount=?,p_remark=? where p_id=?";
 		this.jdbcTemplate.update(
@@ -94,5 +95,19 @@ public class ProductDaoImpl implements ProductDao {
 						p.getOrgin(), p.getWeight(), p.getMaterials(),
 						p.getDesc(), p.getPrice(), p.getDiscount(),
 						p.getRemark(), p.getId() });
+	}
+
+	@Override
+	public void delete(ProductInfo p) {
+		// TODO Auto-generated method stub
+		String sql = "Update t_product_info set deletemark=now() where p_id=?";
+		this.jdbcTemplate.update(sql, new Object[] { p.getId() });
+	}
+
+	@Override
+	public void permanentlyDelete(ProductInfo p) {
+		// TODO Auto-generated method stub
+		String sql = "delete from t_product_info where p_id=?";
+		this.jdbcTemplate.update(sql, new Object[] { p.getId() });
 	}
 }
