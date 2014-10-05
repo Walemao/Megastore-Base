@@ -65,7 +65,7 @@ public class ProductDaoImpl implements ProductDao {
 						p.getDesc(), p.getPrice(), p.getDiscount(),
 						p.getRemark() });
 		sql = "insert into t_prodcut_color(pd_productid,pd_name,pd_createtime) values ("
-				+ id + ",?,str_to_date(pd_createtime,'%Y-%m-%d %T'))";
+				+ id + ",?,now())";
 		this.jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
 			@Override
 			public void setValues(java.sql.PreparedStatement ps, int i)

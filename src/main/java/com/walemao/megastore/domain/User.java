@@ -1,12 +1,14 @@
 package com.walemao.megastore.domain;
 
+import java.util.Date;
+
 public class User {
     private int id;
     private String username;
     private String password;
     private String mobilephone;
     private String email;
-    private String createTime;
+    private Date createTime;
     private String loginTime;
     private String remark;
     private int type;
@@ -48,11 +50,11 @@ public class User {
 		this.email = email;
 	}
 
-	public String getCreateTime() {
+	public Date getCreateTime() {
 		return createTime;
 	}
 
-	public void setCreateTime(String createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 
