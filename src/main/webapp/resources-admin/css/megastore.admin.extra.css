@@ -1,0 +1,47 @@
+h1, h2, h3 {
+	line-height: 40px;
+	font-weight: 700;
+}
+
+.btn i{
+	padding-right: 5px;
+}
+
+.page-header {
+	margin: 20px -20px;
+	padding: 10px 20px 9px;
+	background-color: #f3f3f3;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.page-header-top {
+	margin: -20px -20px 20px;
+	border-top: none;
+}
+
+.well {
+	background-color: #f9f9f9;
+}
+
+.product-list-table tr th, .product-list-table tr td{
+	text-align: center!important;
+}
+
+.product-list-table i{
+	padding-right: 5px;
+}
+
+.product-search-form .form-group{
+	margin-right: 20px;
+}
+
+.product-search-form .control-label {
+	font-weight: 500;
+}
+
+.product-type-edit{
+	color: #333;
+	font-size: 14px;
+	margin-left: 5px;
+}
