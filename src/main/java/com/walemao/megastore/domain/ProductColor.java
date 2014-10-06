@@ -5,7 +5,16 @@ import java.util.Date;
 public class ProductColor {
 	private int id;
 	private String name;
+	private int amount;
 	private Date createtime;
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
 
 	public int getId() {
 		return id;
@@ -30,4 +39,5 @@ public class ProductColor {
 	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
+
 }
