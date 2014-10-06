@@ -31,4 +31,32 @@ public class UserDaoImpl implements UserDao {
 		String sql = "select u_id,u_username,u_password,u_mobilephone,u_email,u_createtime,u_remark,u_type,u_level from t_user where u_id = ? limit 1" ;
 		return this.jdbcTemplate.query(sql, new Object[]{ id }, new UserMapper()).get(0);
 	}
+
+	@Override
+	public User getUser(String username) {
+		// TODO Auto-generated method stub
+		String sql = "select u_id,u_username,u_password,u_mobilephone,u_email,u_createtime,u_remark,u_type,u_level from t_user where u_username = ? limit 1" ;
+		return this.jdbcTemplate.query(sql, new Object[]{ username }, new UserMapper()).get(0);
+	}
+
+	@Override
+	public void updatePasswd(User user) {
+		// TODO Auto-generated method stub
+		String sql = "update t_user set u_password =? where u_username = ?" ;
+		this.jdbcTemplate.query(sql, new Object[]{ user.getPassword(),user.getUsername() }, new UserMapper());
+	}
+
+	@Override
+	public void updateEmail(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateMobilephone(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 }
