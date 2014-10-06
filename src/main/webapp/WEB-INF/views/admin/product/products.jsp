@@ -44,8 +44,10 @@
 					    <label class="control-label">选择时间：</label>
 					    <div id="advanced-daterangepicker" class="btn btn-default">
 			                         <i class="icon-calendar"></i>
-			                         <span class="daterange"><span class="start-date-span">2014/09/26</span> 至 <span class="end-date-span">2014/10/01</span></span>
+			                         <span class="daterange"><span class="start-date-span">${startDate}</span> 至 <span class="end-date-span">${endDate}</span></span>
 			                         <b class="caret"></b>
+			                         <input id="startDate" type="hidden" name="startDate" value="${startDate}" />
+			                         <input id="endDate" type="hidden" name="endDate" value="${endDate}">
 			            </div>
 					</div>
 					<button type="submit" class="btn btn-success"><i class="icon-search"></i>查询</button>

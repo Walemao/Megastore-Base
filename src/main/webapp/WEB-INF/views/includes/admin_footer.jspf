@@ -6,19 +6,19 @@
 <div class="daterangepicker dropdown-menu opensright" style="display: none; right: auto;">
    <div class="ranges">
        <ul>
-          <li class="active">最近7天</li>
-          <li>最近30天</li>
-          <li>最近60天</li>
-          <li>最近90天</li>
+          <li class="active 7days">最近7天</li>
+          <li class="30days">最近30天</li>
+          <li class="60days">最近60天</li>
+          <li class="90days">最近90天</li>
        </ul>
        <div class="range-inputs">
           <div class="start-date" style="float: left;">
-             <label for="startDate">From</label>
-             <input id="startDate" class="form-control" type="text" name="startDate" value="2014/09/26" data-date-format="yyyy/mm/dd" />
+             <label for="startDateChoose">From</label>
+             <input id="startDateChoose" class="form-control" type="text" name="startDateChoose" value="${startDate}" data-date-format="yyyy/mm/dd" />
           </div>
           <div class="end-date" style="float: left;padding-left: 11px;">
-             <label for="endDate">To</label>
-             <input id="endDate" class="form-control" type="text" name="endDate" value="2014/10/02" data-date-format="yyyy/mm/dd" />
+             <label for="endDateChoose">To</label>
+             <input id="endDateChoose" class="form-control" type="text" name="endDateChoose" value="${endDate}" data-date-format="yyyy/mm/dd" />
           </div>
        </div>
    </div>

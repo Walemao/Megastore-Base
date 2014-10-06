@@ -20,6 +20,7 @@ $(function() {
 		$(this).tab('show');
 	});
 	
+	//日期控件
 	$('#advanced-daterangepicker').click(function(){
 		var top = $(this).offset().top;
 		var left = $(this).offset().left;
@@ -29,30 +30,65 @@ $(function() {
 		return false;
 	});
 	
-	$('#startDate').click(function(){
+	$('#startDateChoose').click(function(){
 		return false;
 	}).datetimepicker({
 		format: 'yyyy/mm/dd',
 		minView: 'month',
         maxView: 'decade',
         autoclose: true,
-        endDate: $('#endDate').val()
+        endDate: $('#endDateChoose').val()
 	}).on('changeDate', function(ev){
-		$('#endDate').datetimepicker('setStartDate', new Date(ev.date.valueOf()));
-		$('.start-date-span').text($('#startDate').val());
+		$('#endDateChoose').datetimepicker('setStartDate', new Date(ev.date.valueOf()));
+		$('.start-date-span').text($('#startDateChoose').val());
+		$('#startDate').val($('#startDateChoose').val());
+		$('.ranges li').removeClass('active');
 	});
 	
-	$('#endDate').click(function(){
+	$('#endDateChoose').click(function(){
 		return false;
 	}).datetimepicker({
 		format: 'yyyy/mm/dd',
 		minView: 'month',
         maxView: 'decade',
         autoclose: true,
-        startDate: $('#startDate').val()
+        startDate: $('#startDateChoose').val()
 	}).on('changeDate', function(ev){
-		$('#startDate').datetimepicker('setEndDate', new Date(ev.date.valueOf()));
-		$('.end-date-span').text($('#endDate').val());
+		$('#startDateChoose').datetimepicker('setEndDate', new Date(ev.date.valueOf()));
+		$('.end-date-span').text($('#endDateChoose').val());
+		$('#endDate').val($('#endDateChoose').val());
+		$('.ranges li').removeClass('active');
+	});
+	
+	$('.ranges li').click(function(){
+		var current_date = new Date();
+		var current_date_str = dateFormat(new Date());
+		var start_date = null;
+		
+		if($(this).hasClass('7days')){
+			start_date = new Date(current_date.getTime() - 7 * 24 * 3600 * 1000);
+		}
+		if($(this).hasClass('30days')){
+			start_date = new Date(current_date.getTime() - 30 * 24 * 3600 * 1000);
+		}
+		if($(this).hasClass('60days')){
+			start_date = new Date(current_date.getTime() - 60 * 24 * 3600 * 1000);
+		}
+		if($(this).hasClass('90days')){
+			start_date = new Date(current_date.getTime() - 90 * 24 * 3600 * 1000);
+		}
+		
+		var start_date_str = dateFormat(start_date);
+		$('#startDateChoose').val(start_date_str);
+		$('#endDateChoose').val(current_date_str);
+		$('#startDateChoose').datetimepicker('setEndDate', current_date);
+		$('#endDateChoose').datetimepicker('setStartDate', start_date);
+		$('.start-date-span').text($('#startDateChoose').val());
+		$('#startDate').val($('#startDateChoose').val());
+		$('.end-date-span').text($('#endDateChoose').val());
+		$('#endDate').val($('#endDateChoose').val());
+		$(this).siblings().removeClass('active');
+		$(this).addClass('active');
 	});
 	
 	$('body').click(function(){
@@ -72,5 +108,17 @@ function setDataTableSearchInput(){
 	table_search_div.append(table_search_input).append(table_search_span);
 	$('.dataTables_filter label').html(table_search_div);
 } 
+
+/**
+ * 日期格式化
+ * 
+ * */
+function dateFormat(date){
+	var year = date.getFullYear();
+	var month = date.getMonth()+1;
+	var day = date.getDate();
+	
+	return year + '/' + month + '/' + day; 
+}
 
 

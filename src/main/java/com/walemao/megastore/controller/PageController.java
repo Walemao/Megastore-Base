@@ -11,12 +11,5 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PageController extends BaseController {
 	private Logger logger = LoggerFactory.getLogger(PageController.class);
 	
-	/**
-	 * 进入商品管理页面
-	 * 
-	 * */
-	@RequestMapping(value="/admin/products", method = RequestMethod.GET)
-	public String getProductPage(){
-		return "admin/product/products";
-	}
+	
 }
