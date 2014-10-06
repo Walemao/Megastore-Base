@@ -55,7 +55,7 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	@Override
-	public void insert(ProductInfo p) {
+	public int insert(ProductInfo p) {
 		// TODO Auto-generated method stub
 		final List<ProductColor> list = p.getProductColors();
 		String sql = "insert into t_product_info(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_weight,p_materials,p_desc,p_price,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -85,6 +85,7 @@ public class ProductDaoImpl implements ProductDao {
 				return list.size();
 			}
 		});
+		return id;
 	}
 
 	@Override
