@@ -6,11 +6,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.ProductClassification;
 import com.walemao.megastore.domain.mapper.ProductClassificationMapper;
 import com.walemao.megastore.repository.ProductClassficationDao;
-
+@Repository
 public class ProductClassficationDaoImpl implements ProductClassficationDao {
 	private Logger logger = LoggerFactory
 			.getLogger(ProductClassficationDaoImpl.class);
@@ -21,7 +22,7 @@ public class ProductClassficationDaoImpl implements ProductClassficationDao {
 	@Override
 	public List<ProductClassification> getProductClassifications() {
 		// TODO Auto-generated method stub
-		String sql = "select * from t_product_classification";
+		String sql = "select * from t_product_classification order by pc_id";
 		return this.jdbcTemplate.query(sql, new ProductClassificationMapper());
 	}
 

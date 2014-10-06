@@ -2,11 +2,12 @@ package com.walemao.megastore.repository.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.UserDetail;
 import com.walemao.megastore.domain.mapper.UserDetailMapper;
 import com.walemao.megastore.repository.UserDetailDao;
-
+@Repository
 public class UserDetailDaoImpl implements UserDetailDao {
 
 	@Autowired

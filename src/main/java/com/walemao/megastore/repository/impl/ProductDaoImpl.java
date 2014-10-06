@@ -10,12 +10,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.ProductColor;
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.domain.mapper.ProductMapper;
 import com.walemao.megastore.repository.ProductDao;
-
+@Repository
 public class ProductDaoImpl implements ProductDao {
 	private Logger logger = LoggerFactory.getLogger(ProductDaoImpl.class);
 
@@ -73,7 +74,7 @@ public class ProductDaoImpl implements ProductDao {
 					throws SQLException {
 				// TODO Auto-generated method stub
 				String name = list.get(i).getName();
-				int amount = ((ProductColor) list.get(i)).getAmount();
+				int amount = list.get(i).getAmount();
 				ps.setString(1, name);
 				ps.setInt(2, amount);
 			}
