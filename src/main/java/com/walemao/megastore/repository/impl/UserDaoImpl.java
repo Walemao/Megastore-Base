@@ -15,6 +15,7 @@ import com.walemao.megastore.repository.UserDao;
 
 @Repository
 public class UserDaoImpl implements UserDao {
+	@SuppressWarnings("unused")
 	private Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 
 	@Autowired
@@ -49,13 +50,17 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void updateEmail(User user) {
 		// TODO Auto-generated method stub
-		
+		String sql = "update t_user set u_email =? where u_username = ?" ;
+		this.jdbcTemplate.query(sql, new Object[]{ user.getEmail(),user.getUsername() }, new UserMapper());
+	
 	}
 
 	@Override
 	public void updateMobilephone(User user) {
 		// TODO Auto-generated method stub
-		
+		String sql = "update t_user set u_mobilephone =? where u_username = ?" ;
+		this.jdbcTemplate.query(sql, new Object[]{ user.getMobilephone(),user.getUsername() }, new UserMapper());
+	
 	}
 
 	

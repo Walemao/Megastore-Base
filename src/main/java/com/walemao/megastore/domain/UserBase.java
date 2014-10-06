@@ -1,12 +1,15 @@
 package com.walemao.megastore.domain;
 
+import java.util.Date;
+
 public class UserBase {
 	private int id;
+	private String username;
     private String head_portrait;
     private String nickname;
     private String realname;
     private int sex;
-    private String birth;
+    private Date birth;
     private boolean isval_email;
     private int provices;
     private int cities;
@@ -15,6 +18,13 @@ public class UserBase {
     private String zipcode;
     private boolean isval_mobilephone;
     private String telphone;
+    
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public int getId() {
 		return id;
 	}
@@ -45,10 +55,10 @@ public class UserBase {
 	public void setSex(int sex) {
 		this.sex = sex;
 	}
-	public String getBirth() {
+	public Date getBirth() {
 		return birth;
 	}
-	public void setBirth(String birth) {
+	public void setBirth(Date birth) {
 		this.birth = birth;
 	}
 	public boolean getIsval_email() {

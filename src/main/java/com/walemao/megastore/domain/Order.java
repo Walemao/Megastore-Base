@@ -8,13 +8,21 @@ public class Order {
 	private int id;
 	private Date createtime;
 	private int addressid;
-	private int confirmid;
+	private String confirm;
 	private int state;
 	private BigDecimal fee;
 	private BigDecimal freight;
 	private String remark;
 	private int paytype;
 	private List<OrderDetail> list;
+	
+	
+	public String getConfirm() {
+		return confirm;
+	}
+	public void setConfirm(String confirm) {
+		this.confirm = confirm;
+	}
 	public List<OrderDetail> getList() {
 		return list;
 	}
@@ -38,12 +46,6 @@ public class Order {
 	}
 	public void setAddressid(int addressid) {
 		this.addressid = addressid;
-	}
-	public int getConfirmid() {
-		return confirmid;
-	}
-	public void setConfirmid(int confirmid) {
-		this.confirmid = confirmid;
 	}
 	public int getState() {
 		return state;

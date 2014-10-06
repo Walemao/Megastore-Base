@@ -1,7 +1,9 @@
 package com.walemao.megastore.domain;
 
+
 public class UserDetail {
 	private int id;
+	private String username;
     private int material_status;
     private int education;
     private int professional;
@@ -9,6 +11,14 @@ public class UserDetail {
     private int income;
     private String interests;
     private String selfdesc;
+    
+    
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public int getId() {
 		return id;
 	}

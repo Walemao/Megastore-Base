@@ -15,7 +15,7 @@ public class OrderMapper implements RowMapper<Order>{
 		Order order = new Order();
 		order.setCreatetime(rs.getDate("o_createtime"));
 		order.setAddressid(rs.getInt("o_addressid"));
-		order.setConfirmid(rs.getInt("o_confirmid"));
+		order.setConfirm(rs.getString("o_confirm"));
 		order.setState(rs.getInt("o_state"));
 		order.setFee(rs.getBigDecimal("o_fee"));
 		order.setFreight(rs.getBigDecimal("o_freight"));

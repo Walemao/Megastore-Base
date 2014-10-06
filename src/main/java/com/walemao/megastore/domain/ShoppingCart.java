@@ -5,7 +5,6 @@ import java.util.Date;
 
 public class ShoppingCart {
 	private int id;
-	private int userid;
 	private int productid;
 	private int productColorId;
 	private int amount;
@@ -18,12 +17,6 @@ public class ShoppingCart {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public int getUserid() {
-		return userid;
-	}
-	public void setUserid(int userid) {
-		this.userid = userid;
 	}
 	public int getProductid() {
 		return productid;

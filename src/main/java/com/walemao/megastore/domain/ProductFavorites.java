@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class ProductFavorites {
 	private int id;
-	private int userid;
 	private int productid;
 	private int colorid;
 	private Date createtime;
@@ -13,12 +12,6 @@ public class ProductFavorites {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public int getUserid() {
-		return userid;
-	}
-	public void setUserid(int userid) {
-		this.userid = userid;
 	}
 	public int getProductid() {
 		return productid;

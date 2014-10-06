@@ -18,7 +18,7 @@ public class UserBaseMapper implements RowMapper<UserBase>{
 		userbase.setNickname(rs.getString("u_nickname"));
 		userbase.setRealname(rs.getString("u_realname"));
 		userbase.setSex(rs.getInt("u_sex"));
-		userbase.setBirth(rs.getString("u_birth"));
+		userbase.setBirth(rs.getDate("u_birth"));
 		userbase.setIsval_email(rs.getBoolean("u_isval_email"));
 		userbase.setProvices(rs.getInt("u_provices"));
 		userbase.setCities(rs.getInt("u_cities"));
