@@ -1,5 +1,7 @@
 package com.walemao.megastore.domain;
 
+import java.util.Date;
+
 
 public class ShoppingCart {
 	private int id;
@@ -7,7 +9,7 @@ public class ShoppingCart {
 	private int productid;
 	private int productColorId;
 	private int amount;
-	private String createtime;
+	private Date createtime;
 	
 	private ProductInfo productInfo;
 	private ProductColor productColor;
@@ -41,10 +43,10 @@ public class ShoppingCart {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	public String getCreatetime() {
+	public Date getCreatetime() {
 		return createtime;
 	}
-	public void setCreatetime(String createtime) {
+	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
 	public ProductInfo getProductInfo() {

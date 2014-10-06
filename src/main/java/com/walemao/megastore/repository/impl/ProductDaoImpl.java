@@ -48,6 +48,7 @@ public class ProductDaoImpl implements ProductDao {
 			list.add(startTime);
 			list.add(endTime);
 		}
+		sql += " order by p_creattime desc";
 		return this.jdbcTemplate
 				.query(sql, list.toArray(), new ProductMapper());
 	}

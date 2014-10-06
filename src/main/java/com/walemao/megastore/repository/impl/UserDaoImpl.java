@@ -21,7 +21,7 @@ public class UserDaoImpl implements UserDao {
 	private JdbcTemplate jdbcTemplate;
 
 	public List<User> getUsers() {
-		String sql = "select u_id,u_username,u_password,u_mobilephone,u_email,u_createtime,u_remark,u_type,u_level from t_user where deletemark is null";
+		String sql = "select u_id,u_username,u_password,u_mobilephone,u_email,u_createtime,u_remark,u_type,u_level from t_user where deletemark is null order by u_createtime desc";
 		return this.jdbcTemplate.query(sql, new UserMapper());
 	}
 

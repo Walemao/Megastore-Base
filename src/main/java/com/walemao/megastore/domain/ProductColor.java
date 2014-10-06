@@ -1,9 +1,11 @@
 package com.walemao.megastore.domain;
 
+import java.util.Date;
+
 public class ProductColor {
 	private int id;
 	private String name;
-	private String createtime;
+	private Date createtime;
 
 	public int getId() {
 		return id;
@@ -21,11 +23,11 @@ public class ProductColor {
 		this.name = name;
 	}
 
-	public String getCreatetime() {
+	public Date getCreatetime() {
 		return createtime;
 	}
 
-	public void setCreatetime(String createtime) {
+	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
 }
