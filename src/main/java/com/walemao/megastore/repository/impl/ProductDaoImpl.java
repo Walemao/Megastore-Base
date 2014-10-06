@@ -16,8 +16,9 @@ import com.walemao.megastore.domain.ProductColor;
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.domain.mapper.ProductMapper;
 import com.walemao.megastore.repository.ProductDao;
+
 @Repository
-public class ProductDaoImpl implements ProductDao {
+public class ProductDaoImpl extends CommonDao implements ProductDao {
 	private Logger logger = LoggerFactory.getLogger(ProductDaoImpl.class);
 
 	@Autowired
@@ -59,13 +60,16 @@ public class ProductDaoImpl implements ProductDao {
 		// TODO Auto-generated method stub
 		final List<ProductColor> list = p.getProductColors();
 		String sql = "insert into t_product_info(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_weight,p_materials,p_desc,p_price,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		int id = this.jdbcTemplate.update(
+
+		int id = this.addIntoDB(
 				sql,
 				new Object[] { p.getNumber(), p.getName(), p.isRecommend(),
 						p.getThumbnail(), p.getImages(), p.getType(),
 						p.getOrgin(), p.getWeight(), p.getMaterials(),
 						p.getDesc(), p.getPrice(), p.getDiscount(),
 						p.getRemark() });
+		p.setId(id);
+
 		sql = "insert into t_prodcut_color(pd_productid,pd_name,pd_amount,pd_createtime) values ("
 				+ id + ",?,?,now())";
 		this.jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
