@@ -20,10 +20,17 @@ public class ProductInfo {
 	private double discount;
 	private String remark;
 	private Date creattime;
+	private int amount;
 	
 	private ProductClassification productClassification;
 	private List<ProductColor> productColors;
 	
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
 	public ProductClassification getProductClassification() {
 		return productClassification;
 	}

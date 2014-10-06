@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-06 15:20:30
+Date: 2014-10-06 16:39:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -221,6 +221,7 @@ CREATE TABLE `t_product_info` (
   `p_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品id',
   `p_number` varchar(255) DEFAULT NULL COMMENT '商品货号',
   `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
+  `p_amount` int(11) DEFAULT '0' COMMENT '虚拟库存数量',
   `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
   `p_thumbnail` longtext COMMENT '商品缩略图',
   `p_images` longtext COMMENT '商品图片',
@@ -330,7 +331,7 @@ CREATE TABLE `t_user_base` (
   `u_isval_mobilephone` tinyint(1) DEFAULT NULL COMMENT '是否验证手机',
   `u_telphone` varchar(20) DEFAULT NULL COMMENT '座机',
   PRIMARY KEY (`u_id`),
-  UNIQUE KEY `idx_t_user_base_1` (`u_id`) USING BTREE
+  UNIQUE KEY `idx_t_user_base_1` (`u_username`) USING BTREE COMMENT '用户名唯一索引'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
