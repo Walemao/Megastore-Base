@@ -58,7 +58,7 @@ public class ProductController extends BaseController {
 	public String getProductInfo(@PathVariable("id") int id,
 			@ModelAttribute("productInfo") ProductInfo productInfo,
 			HttpServletRequest request) {
-
+        
 		return "admin/product/product";
 	}
 
@@ -71,6 +71,7 @@ public class ProductController extends BaseController {
 			@ModelAttribute("productInfo") ProductInfo productInfo,
 			String productType, int amount, HttpServletRequest request,
 			RedirectAttributes redirectAttributes) {
+		
 		productInfo.setCreattime(new Date());
         productInfo.setType(0);
         if(productInfo.getProductColors() == null){
@@ -79,6 +80,8 @@ public class ProductController extends BaseController {
         
 		try {
 			int id = this.productService.insert(productInfo);
+			redirectAttributes.addFlashAttribute("status", "success");
+			redirectAttributes.addFlashAttribute("messageStatus", "Success！");
 			redirectAttributes.addFlashAttribute("message", "添加商品成功！");
 			logger.debug("打印商品ID： {}", id);
 			return "redirect:/admin/product/" + id;
@@ -87,7 +90,9 @@ public class ProductController extends BaseController {
 			e.printStackTrace();
 		}
 		
-		request.setAttribute("message", "添加商品失败！");
+		redirectAttributes.addFlashAttribute("status", "danger");
+		redirectAttributes.addFlashAttribute("messageStatus", "Fail！");
+		redirectAttributes.addFlashAttribute("message", "添加商品失败！");
 		return "redirect:/admin/product?add";
 	}
 	

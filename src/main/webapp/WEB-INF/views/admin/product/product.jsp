@@ -29,8 +29,8 @@
 			<c:if test="${param.add == null }">
 				<c:set var="method" value="PUT" />
 			</c:if>
-			<form:form action="${productUrl}" method="${method}" class="form-horizontal form-box"
-				modelAttribute="productInfo">
+			<form:form action="${productUrl}" method="${method}"
+				class="form-horizontal form-box" modelAttribute="productInfo">
 				<h4 class="form-box-header">商品信息</h4>
 				<div class=" form-box-content">
 					<div class="form-group">
@@ -88,7 +88,7 @@
 						</div>
 						<label class="control-label col-md-2">库存数量：</label>
 						<div class="col-md-3">
-							<input type="number" name="amount" class="form-control input-sm"/>
+							<input type="number" name="amount" class="form-control input-sm" />
 						</div>
 					</div>
 
@@ -132,7 +132,14 @@
 					</div>
 				</div>
 			</form:form>
-
+			<c:if test="${status!=null}">
+			<div class="alert alert-${status} alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<strong><c:out value="${messageStatus}"></c:out></strong> <c:out value="${message}"></c:out>
+			</div>
+            </c:if>
 			<!-- 商品展示图片 -->
 		</div>
 	</div>
