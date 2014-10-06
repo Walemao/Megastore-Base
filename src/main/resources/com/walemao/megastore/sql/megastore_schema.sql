@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-05 20:26:37
+Date: 2014-10-06 10:38:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -144,14 +144,17 @@ CREATE TABLE `t_order` (
   `o_u_id` bigint(20) DEFAULT NULL COMMENT '外键用户id',
   `o_createtime` datetime DEFAULT NULL COMMENT '下单时间',
   `o_addressid` char(36) DEFAULT NULL COMMENT '地址id',
-  `o_confirmid` char(36) DEFAULT NULL COMMENT '确认人id',
+  `o_confirmid` bigint(20) DEFAULT NULL COMMENT '确认人id',
   `o_state` tinyint(1) DEFAULT NULL COMMENT '订单状态',
   `o_fee` decimal(12,0) DEFAULT NULL COMMENT '订单金额',
   `o_freight` decimal(12,0) DEFAULT NULL COMMENT '运费',
   `o_remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `o_paytype` tinyint(1) DEFAULT NULL COMMENT '支付方式',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
-  PRIMARY KEY (`o_id`)
+  PRIMARY KEY (`o_id`),
+  KEY `idx_t_order_1` (`o_state`) USING BTREE COMMENT '订单状态索引',
+  KEY `idx_t_order_2` (`o_paytype`) USING BTREE COMMENT '支付索引',
+  KEY `idx_t_order_3` (`deletemark`) USING BTREE COMMENT '删除标志索引'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

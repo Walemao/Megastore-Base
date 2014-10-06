@@ -10,9 +10,18 @@ import com.walemao.megastore.domain.Order;
 public class OrderMapper implements RowMapper<Order>{
 
 	@Override
-	public Order mapRow(ResultSet rs, int arg1) throws SQLException {
+	public Order mapRow(ResultSet rs, int rowNum) throws SQLException {
 		// TODO Auto-generated method stub
-		return null;
+		Order order = new Order();
+		order.setCreatetime(rs.getDate("o_createtime"));
+		order.setAddressid(rs.getInt("o_addressid"));
+		order.setConfirmid(rs.getInt("o_confirmid"));
+		order.setState(rs.getInt("o_state"));
+		order.setFee(rs.getBigDecimal("o_fee"));
+		order.setFreight(rs.getBigDecimal("o_freight"));
+		order.setRemark(rs.getString("o_remark"));
+		order.setPaytype(rs.getInt("o_paytype"));
+		return order;
 	}
 
 }

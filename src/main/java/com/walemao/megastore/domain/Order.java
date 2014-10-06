@@ -1,12 +1,12 @@
 package com.walemao.megastore.domain;
 
 import java.math.BigDecimal;
-
+import java.util.Date;
 import java.util.List;
 
 public class Order {
 	private int id;
-	private String createtime;
+	private Date createtime;
 	private int addressid;
 	private int confirmid;
 	private int state;
@@ -27,10 +27,10 @@ public class Order {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCreatetime() {
+	public Date getCreatetime() {
 		return createtime;
 	}
-	public void setCreatetime(String createtime) {
+	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
 	public int getAddressid() {
