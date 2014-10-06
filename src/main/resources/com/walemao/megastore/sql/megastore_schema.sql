@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-06 17:45:41
+Date: 2014-10-06 19:59:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -162,7 +162,7 @@ CREATE TABLE `t_order` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_order_detail`;
 CREATE TABLE `t_order_detail` (
-  `od_id` char(36) NOT NULL COMMENT '订单记录id',
+  `od_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '订单记录id',
   `od_productid` bigint(20) NOT NULL COMMENT '商品id',
   `od_colorid` bigint(20) DEFAULT NULL COMMENT '颜色ID',
   `od_orderid` bigint(20) NOT NULL COMMENT '订单表id',

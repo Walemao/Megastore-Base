@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Order {
 	private int id;
+	private String username;
 	private Date createtime;
 	private int addressid;
 	private String confirm;
@@ -17,6 +18,12 @@ public class Order {
 	private List<OrderDetail> list;
 	
 	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public String getConfirm() {
 		return confirm;
 	}
