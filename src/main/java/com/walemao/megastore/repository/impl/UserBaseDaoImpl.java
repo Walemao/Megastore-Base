@@ -37,7 +37,7 @@ public class UserBaseDaoImpl implements UserBaseDao {
 	@Override
 	public void update(UserBase u) {
 		// TODO Auto-generated method stub
-		String sql = "update t_user_base set u_head_portrait,u_nickname,u_realname,u_sex,u_birth,u_isval_email,u_provices,u_cities,u_districts,u_address,u_zipcode,u_isval_mobilephone,u_telphone where u_username=?";
+		String sql = "update t_user_base set u_head_portrait=?,u_nickname=?,u_realname=?,u_sex=?,u_birth=?,u_isval_email=?,u_provices=?,u_cities=?,u_districts=?,u_address=?,u_zipcode=?,u_isval_mobilephone=?,u_telphone=? where u_username=?";
 		this.jdbcTemplate.update(
 				sql,
 				new Object[] { u.getHead_portrait(), u.getNickname(),
