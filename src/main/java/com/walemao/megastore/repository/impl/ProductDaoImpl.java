@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.ProductColor;
 import com.walemao.megastore.domain.ProductInfo;
+import com.walemao.megastore.domain.mapper.ProductColorMapper;
 import com.walemao.megastore.domain.mapper.ProductMapper;
 import com.walemao.megastore.repository.ProductDao;
 
@@ -30,6 +31,20 @@ public class ProductDaoImpl extends CommonDao implements ProductDao {
 	 * @see
 	 * com.walemao.megastore.repository.ProductDao#getProducts(java.lang.String)
 	 */
+
+	@Override
+	public ProductInfo getProduct(int id) {
+		// TODO Auto-generated method stub
+		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_weight"
+				+ ",p_materials,p_desc,p_price,p_discount,p_remark,p_creattime from t_product_info where p_id = ? limit 1";
+		ProductInfo productInfo = this.jdbcTemplate.query(sql,
+				new Object[] { id }, new ProductMapper()).get(0);
+		sql = "select pd_id,pd_name,pd_amount,pd_createtime from t_prodcut_color where pd_productid = ? limit 1";
+		productInfo.setProductColors(this.jdbcTemplate.query(sql,
+				new Object[] { id }, new ProductColorMapper()));
+		return productInfo;
+	}
+
 	@Override
 	public List<ProductInfo> getProducts(String parm, int type, Date startTime,
 			Date endTime, int mark) {
@@ -118,4 +133,5 @@ public class ProductDaoImpl extends CommonDao implements ProductDao {
 		String sql = "delete from t_product_info where p_id=?";
 		this.jdbcTemplate.update(sql, new Object[] { p.getId() });
 	}
+
 }

@@ -7,6 +7,7 @@ import com.walemao.megastore.domain.ProductInfo;
 
 public interface ProductDao {
 	public List<ProductInfo> getProducts(String parm,int type,Date startTime,Date endTime,int mark);
+	public ProductInfo getProduct(int id);
 	public int insert(ProductInfo p);
 	public void update(ProductInfo p);
 	public void delete(ProductInfo p);
