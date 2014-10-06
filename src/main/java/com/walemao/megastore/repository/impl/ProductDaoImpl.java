@@ -34,12 +34,12 @@ public class ProductDaoImpl implements ProductDao {
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
 		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_weight"
-				+ ",p_materials,p_desc,p_price,p_discount,p_remark,p_creattime from t_product_info"
-				+ " where deletemark is " + args;
+				+ ",p_materials,p_desc,p_price,p_discount,p_remark,p_creattime,pc_name from t_product_info a left join t_product_classification b"
+				+ " on a.p_type = b.pc_id where a.deletemark is " + args;
 		List<Object> list = new ArrayList<Object>();
 		if (parm == null || parm.length() <= 0) {
 		} else {
-			sql += " and p_name like ? and type=?";
+			sql += " and p_name like ? and p_type=?";
 			list.add("%" + parm + "%");
 			list.add(type);
 		}

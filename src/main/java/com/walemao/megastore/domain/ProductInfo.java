@@ -21,8 +21,15 @@ public class ProductInfo {
 	private String remark;
 	private Date creattime;
 	
+	private ProductClassification productClassification;
 	private List<ProductColor> productColors;
 	
+	public ProductClassification getProductClassification() {
+		return productClassification;
+	}
+	public void setProductClassification(ProductClassification productClassification) {
+		this.productClassification = productClassification;
+	}
 	public String getThumbnail() {
 		return thumbnail;
 	}
