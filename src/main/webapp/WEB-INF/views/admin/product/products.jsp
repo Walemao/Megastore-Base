@@ -52,6 +52,7 @@
 					</div>
 					<button type="submit" class="btn btn-success"><i class="icon-search"></i>查询</button>
 				</form>
+				<a class="btn btn-default add-product-btn" href="<c:url value="/admin/product?add" />"><i class="icon-plus"></i>添加商品</a>
 			</div>
 			<table class="table product-list-table">
 				<thead>

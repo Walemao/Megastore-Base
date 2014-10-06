@@ -3,7 +3,7 @@ h1, h2, h3 {
 	font-weight: 700;
 }
 
-.btn i{
+.btn i {
 	padding-right: 5px;
 }
 
@@ -24,15 +24,20 @@ h1, h2, h3 {
 	background-color: #f9f9f9;
 }
 
-.product-list-table tr th, .product-list-table tr td{
-	text-align: center!important;
+.product-list-table tr th, .product-list-table tr td {
+	text-align: center !important;
 }
 
-.product-list-table i{
+.product-list-table i {
 	padding-right: 5px;
 }
 
-.product-search-form .form-group{
+.product-search-form {
+	float: left;
+	width: 90%;
+}
+
+.product-search-form .form-group {
 	margin-right: 20px;
 }
 
@@ -40,8 +45,56 @@ h1, h2, h3 {
 	font-weight: 500;
 }
 
-.product-type-edit{
+.product-type-edit {
 	color: #333;
 	font-size: 14px;
 	margin-left: 5px;
+}
+
+a.add-product-btn {
+	color: #fff;
+	background-color: #db4a39;
+}
+
+a.add-product-btn:hover {
+	color: #fff;
+	background-color: #c9302c;
+}
+
+.form-box {
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	background-color: #f9f9f9;
+}
+
+.form-box-header {
+	margin: 0;
+	padding: 20px;
+	border-bottom: 2px solid #ddd;
+	background-color: #f5f5f5;
+	font-weight: 700;
+	line-height: 20px;
+}
+
+.form-box-content {
+	padding: 0 15px;
+}
+
+.form-box .form-group {
+	margin: 0 -15px;
+	padding: 8px 5px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #eee;
+}
+
+.form-box .control-label {
+	font-weight: 400;
+}
+
+.form-box .form-actions {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	margin-top: -1px;
+	border-top: 2px solid #ddd;
+	background-color: #f5f5f5;
 }

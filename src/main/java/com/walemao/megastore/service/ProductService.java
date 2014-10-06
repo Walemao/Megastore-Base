@@ -1,5 +1,8 @@
 package com.walemao.megastore.service;
 
-public interface ProductService {
+import com.walemao.megastore.domain.ProductInfo;
 
+public interface ProductService {
+	public int insert(ProductInfo p);
+	
 }
