@@ -20,7 +20,6 @@ public class ProductMapper implements RowMapper<ProductInfo>{
 		pro.setId(rs.getInt("p_id"));
 		pro.setNumber(rs.getString("p_number"));
 		pro.setName(rs.getString("p_name"));
-		pro.setAmount(rs.getInt("p_amount"));
 		pro.setRecommend(rs.getBoolean("p_recommend"));
 		pro.setThumbnail(rs.getString("p_thumbnail"));
 		Gson gson = new Gson(); 
