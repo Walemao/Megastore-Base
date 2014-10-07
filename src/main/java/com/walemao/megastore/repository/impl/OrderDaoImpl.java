@@ -14,21 +14,22 @@ import com.walemao.megastore.domain.OrderDetail;
 import com.walemao.megastore.repository.OrderDao;
 
 @Repository
-public class OrderDaoImpl implements OrderDao {
+public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public void insert(Order o) {
+	public int insert(Order o) {
 		// TODO Auto-generated method stub
 		final List<OrderDetail> list = o.getList();
 		String sql = "insert into t_order(o_username,o_createtime,o_addressid,o_fee,o_freight,o_remark,o_paytype) values (?,now(),?,?,?,?,?,?)";
-		int id = this.jdbcTemplate.update(
+		int id = this.addIntoDB(
 				sql,
 				new Object[] { o.getUsername(), o.getAddressid(), o.getFee(),
 						o.getFreight(), o.getRemark(), o.getPaytype() });
-		sql = "insert into t_order_detail(od_productid,od_colorid,od_orderid,od_amount,od_reamark) values (?,?,"
+		o.setId(id);
+		sql = "insert into t_order_detail(od_productid,od_typeid,od_orderid,od_amount,od_reamark) values (?,?,"
 				+ id + ",?,?)";
 		this.jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
 			@Override
@@ -36,11 +37,11 @@ public class OrderDaoImpl implements OrderDao {
 					throws SQLException {
 				// TODO Auto-generated method stub
 				int productid = list.get(i).getProductid();
-				int colorid = list.get(i).getColorid();
+				int typeid = list.get(i).getTypeid();
 				int amount = list.get(i).getAmount();
 				String remark = list.get(i).getRemark();
 				ps.setInt(1, productid);
-				ps.setInt(2, colorid);
+				ps.setInt(2, typeid);
 				ps.setInt(3, amount);
 				ps.setString(4, remark);
 			}
@@ -51,6 +52,7 @@ public class OrderDaoImpl implements OrderDao {
 				return list.size();
 			}
 		});
+		return id;
 	}
 
 	@Override

@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.walemao.megastore.domain.ProductType;
 
-public class ProductColorMapper implements RowMapper<ProductType> {
+public class ProductTypeMapper implements RowMapper<ProductType> {
 
 	@Override
 	public ProductType mapRow(ResultSet rs, int rowNum) throws SQLException {

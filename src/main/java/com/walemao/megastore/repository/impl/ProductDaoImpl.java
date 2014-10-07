@@ -14,12 +14,12 @@ import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.ProductType;
 import com.walemao.megastore.domain.ProductInfo;
-import com.walemao.megastore.domain.mapper.ProductColorMapper;
+import com.walemao.megastore.domain.mapper.ProductTypeMapper;
 import com.walemao.megastore.domain.mapper.ProductMapper;
 import com.walemao.megastore.repository.ProductDao;
 
 @Repository
-public class ProductDaoImpl extends CommonDao implements ProductDao {
+public class ProductDaoImpl extends CommonDaoImpl implements ProductDao {
 	private Logger logger = LoggerFactory.getLogger(ProductDaoImpl.class);
 
 	@Autowired
@@ -39,9 +39,9 @@ public class ProductDaoImpl extends CommonDao implements ProductDao {
 				+ ",p_materials,p_desc,p_price,p_discount,p_remark,p_creattime from t_product_info where p_id = ? limit 1";
 		ProductInfo productInfo = this.jdbcTemplate.query(sql,
 				new Object[] { id }, new ProductMapper()).get(0);
-		sql = "select pd_id,pd_name,pd_amount,pd_createtime from t_prodcut_color where pd_productid = ? limit 1";
+		sql = "select pd_id,pd_name,pd_amount,pd_createtime from t_prodcut_type where pd_productid = ? limit 1";
 		productInfo.setProductColors(this.jdbcTemplate.query(sql,
-				new Object[] { id }, new ProductColorMapper()));
+				new Object[] { id }, new ProductTypeMapper()));
 		return productInfo;
 	}
 
@@ -85,7 +85,7 @@ public class ProductDaoImpl extends CommonDao implements ProductDao {
 						p.getRemark() });
 		p.setId(id);
 
-		sql = "insert into t_prodcut_color(pd_productid,pd_name,pd_amount,pd_createtime) values ("
+		sql = "insert into t_prodcut_type(pd_productid,pd_name,pd_amount,pd_createtime) values ("
 				+ id + ",?,?,now())";
 		this.jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
 			@Override

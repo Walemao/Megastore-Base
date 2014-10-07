@@ -11,7 +11,7 @@ import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
-public class CommonDao {
+public class CommonDaoImpl {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
