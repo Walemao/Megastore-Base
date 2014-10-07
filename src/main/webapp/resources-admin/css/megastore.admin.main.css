@@ -7,6 +7,10 @@ a:hover {
 	cursor: pointer;
 }
 
+.btn-danger{
+	background-color: #db4a39;
+}
+
 .alert, .btn, .dropdown-menu, .form-control, .input-group-addon, .label, .list-group-item:first-child, .list-group-item:last-child, .modal-content, .nav-pills>li>a, .nav-tabs>li>a, .navbar, .pager li>a, .pager li>span, .pagination>li:first-child>a, .pagination>li:first-child>span, .pagination>li:last-child>a, .pagination>li:last-child>span, .panel, .popover, .popover-title, .progress, .table-bordered, .table-bordered td, .table-bordered th, .thumbnail, .tooltip-inner, .well {
 	-webkit-border-radius: 0!important;
 	-moz-border-radius: 0!important;

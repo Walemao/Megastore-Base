@@ -98,3 +98,37 @@ a.add-product-btn:hover {
 	border-top: 2px solid #ddd;
 	background-color: #f5f5f5;
 }
+
+a.add-color-btn {
+	font-size: 12px;
+	color: #fff;
+	background-color: #db4a39;
+}
+
+a.add-color-btn:hover {
+	color: #fff;
+	background-color: #c9302c;
+}
+
+.modal .modal-title{
+	color: #db4a39;
+}
+
+.modal .btn-primary{
+	background-color: #db4a39;
+	border: none;
+}
+
+.modal .btn-primary:hover {
+	color: #fff;
+	background-color: #c9302c;
+}
+
+.modal i{
+	padding-right: 5px;
+}
+
+.modal .control-label{
+	font-weight: 400;
+}
+

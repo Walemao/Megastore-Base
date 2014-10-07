@@ -83,12 +83,8 @@
 
 					<div class="form-group">
 						<label class="control-label col-md-2">商品毛重：</label>
-						<div class="col-md-3">
+						<div class="col-md-4">
 							<form:input path="weight" cssClass="form-control input-sm" />
-						</div>
-						<label class="control-label col-md-2">库存数量：</label>
-						<div class="col-md-3">
-							<input type="number" name="amount" class="form-control input-sm" />
 						</div>
 					</div>
 
@@ -104,9 +100,9 @@
 					</div>
 
 					<div class="form-group">
-						<label class="control-label col-md-2">缩略图：</label>
+						<label class="control-label col-md-2">颜色分类：</label>
 						<div class="col-md-4">
-							<input type="file" name="thumbnailImg" class="form-control" />
+							<a class="btn btn-default add-color-btn" data-toggle="modal" data-target="#product-color-modal"><i class="icon-plus"></i>添加颜色分类</a>
 						</div>
 					</div>
 
@@ -140,15 +136,57 @@
 				<strong><c:out value="${messageStatus}"></c:out></strong> <c:out value="${message}"></c:out>
 			</div>
             </c:if>
-			<!-- 商品展示图片 -->
+            
+			<!-- 商品展示图片上传 -->
+			
 		</div>
-	</div>
 
+	</div>
+	
+	<!-- 颜色分类modal -->
+	<div id="product-color-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="icon-magic"></i>添加颜色分类</h4>
+            </div>
+          <div class="modal-body">
+            <form action="" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+               <div class="form-group">
+                  <label class="control-label col-md-3">分类名称：</label>
+                  <div class="col-md-9">
+                    <input type="text" name="typeName" class="form-control" />
+				  </div>
+               </div>
+               <div class="form-group">
+                  <label class="control-label col-md-3">分类库存：</label>
+                  <div class="col-md-9">
+                     <input type="number" name="amount" class="form-control" />
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="control-label col-md-3">缩略图：</label>
+                  <div class="col-md-9">
+                     <input type="file" name="thumbnail" class="form-control" />
+                  </div>
+               </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+             <button type="button" class="btn btn-primary">确定</button>
+          </div>
+       </div>
+     </div>
+    </div>
 	<!-- 引用页面底部模板 -->
 	<%@ include file="/WEB-INF/views/includes/admin_footer.jspf"%>
 </body>
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
 <script type="text/javascript">
-	
+    $('#product-color-modal').modal({
+	  keyboard: false
+	});
 </script>
 </html>
