@@ -1,5 +1,6 @@
 package com.walemao.megastore.domain;
 
+import java.util.Date;
 
 public class OrderDetail {
 	private int id;
@@ -8,55 +9,79 @@ public class OrderDetail {
 	private int orderid;
 	private int amount;
 	private String remark;
-	
+	private Date createtime;
+
 	private ProductInfo product;
 	private ProductType producttype;
-	
+
+	public Date getCreatetime() {
+		return createtime;
+	}
+
+	public void setCreatetime(Date createtime) {
+		this.createtime = createtime;
+	}
+
 	public int getTypeid() {
 		return typeid;
 	}
+
 	public void setTypeid(int typeid) {
 		this.typeid = typeid;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public int getProductid() {
 		return productid;
 	}
+
 	public void setProductid(int productid) {
 		this.productid = productid;
 	}
+
 	public int getOrderid() {
 		return orderid;
 	}
+
 	public void setOrderid(int orderid) {
 		this.orderid = orderid;
 	}
+
 	public int getAmount() {
 		return amount;
 	}
+
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+
 	public String getRemark() {
 		return remark;
 	}
+
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
+
 	public ProductInfo getProduct() {
 		return product;
 	}
+
 	public void setProduct(ProductInfo product) {
 		this.product = product;
 	}
+
 	public ProductType getProducttype() {
 		return producttype;
 	}
+
 	public void setProducttype(ProductType producttype) {
 		this.producttype = producttype;
 	}

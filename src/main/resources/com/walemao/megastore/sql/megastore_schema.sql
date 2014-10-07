@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-07 10:31:24
+Date: 2014-10-07 11:27:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -99,9 +99,8 @@ CREATE TABLE `t_comments` (
   `c_id` char(36) NOT NULL COMMENT '评论表ID',
   `c_username` varchar(50) NOT NULL COMMENT '用户名',
   `c_content` varchar(255) DEFAULT NULL COMMENT '评论内容',
-  `c_productid` bigint(20) DEFAULT NULL COMMENT '商品ID',
   `c_type` tinyint(1) DEFAULT NULL COMMENT '评论类别（好评）详见d_comments',
-  `c_ordertime` date DEFAULT NULL COMMENT '购买时间',
+  `c_orderdetailid` bigint(20) NOT NULL COMMENT '订单详情ID，可以获取到购买物品以及购买时间',
   `c_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`c_id`)
@@ -168,6 +167,7 @@ CREATE TABLE `t_order_detail` (
   `od_orderid` bigint(20) NOT NULL COMMENT '订单表id',
   `od_amount` int(11) DEFAULT '0' COMMENT '订单数量',
   `od_reamark` varchar(255) DEFAULT NULL COMMENT '备注',
+  `od_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`od_id`),
   UNIQUE KEY `idx_t_order_detail_2` (`od_productid`,`od_typeid`),

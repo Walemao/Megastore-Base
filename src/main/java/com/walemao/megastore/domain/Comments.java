@@ -2,14 +2,30 @@ package com.walemao.megastore.domain;
 
 public class Comments {
 	private int id;
-	private int user;
+	private String username;
 	private String content;
-	private int productid;
 	private int type;
-	private String ordertime;
+	private int orderdetailid;
 	private String createtime;
-	
+
 	private ProductInfo productInfo;
+	private OrderDetail orderdetail;
+
+	public OrderDetail getOrderdetail() {
+		return orderdetail;
+	}
+
+	public void setOrderdetail(OrderDetail orderdetail) {
+		this.orderdetail = orderdetail;
+	}
+
+	public int getOrderdetailid() {
+		return orderdetailid;
+	}
+
+	public void setOrderdetailid(int orderdetailid) {
+		this.orderdetailid = orderdetailid;
+	}
 
 	public int getId() {
 		return id;
@@ -19,12 +35,12 @@ public class Comments {
 		this.id = id;
 	}
 
-	public int getUser() {
-		return user;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUser(int user) {
-		this.user = user;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getContent() {
@@ -35,28 +51,12 @@ public class Comments {
 		this.content = content;
 	}
 
-	public int getProductid() {
-		return productid;
-	}
-
-	public void setProductid(int productid) {
-		this.productid = productid;
-	}
-
 	public int getType() {
 		return type;
 	}
 
 	public void setType(int type) {
 		this.type = type;
-	}
-
-	public String getOrdertime() {
-		return ordertime;
-	}
-
-	public void setOrdertime(String ordertime) {
-		this.ordertime = ordertime;
 	}
 
 	public String getCreatetime() {

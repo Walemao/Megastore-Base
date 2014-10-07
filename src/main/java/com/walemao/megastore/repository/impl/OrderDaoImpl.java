@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.Order;
 import com.walemao.megastore.domain.OrderDetail;
+import com.walemao.megastore.domain.mapper.OrderMapper;
 import com.walemao.megastore.repository.OrderDao;
 
 @Repository
@@ -29,8 +30,8 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 				new Object[] { o.getUsername(), o.getAddressid(), o.getFee(),
 						o.getFreight(), o.getRemark(), o.getPaytype() });
 		o.setId(id);
-		sql = "insert into t_order_detail(od_productid,od_typeid,od_orderid,od_amount,od_reamark) values (?,?,"
-				+ id + ",?,?)";
+		sql = "insert into t_order_detail(od_productid,od_typeid,od_orderid,od_amount,od_reamark,od_createtime) values (?,?,"
+				+ id + ",?,?,now())";
 		this.jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
 			@Override
 			public void setValues(java.sql.PreparedStatement ps, int i)
@@ -66,7 +67,9 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 	public List<Order> getAllOrders(String parm, Date startTime, Date endTime,
 			int mark) {
 		// TODO Auto-generated method stub
-		return null;
+		String args = mark == 0 ? "null" : "not null";
+		String sql = "select * from t_order where a.deletemark is " + args;
+		return this.jdbcTemplate.query(sql, new Object[]{},new OrderMapper());
 	}
 
 	@Override
