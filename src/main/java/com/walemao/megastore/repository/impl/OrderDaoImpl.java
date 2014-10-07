@@ -1,6 +1,7 @@
 package com.walemao.megastore.repository.impl;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -68,21 +69,44 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 			int mark) {
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
-		String sql = "select * from t_order where a.deletemark is " + args;
-		return this.jdbcTemplate.query(sql, new Object[]{},new OrderMapper());
+		String sql = "select o_id,o_username,o_createtime,o_addressid,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is "
+				+ args;
+		List<Object> list = new ArrayList<Object>();
+		if (parm == null || parm.length() <= 0) {
+		} else {
+			sql += " and o_id like ?";
+			list.add("%" + parm + "%");
+		}
+		if (startTime != null && endTime != null) {
+			sql += " and o_createtime between ? and ?";
+			list.add(startTime);
+			list.add(endTime);
+		}
+		sql += " order by o_createtime desc";
+		return this.jdbcTemplate.query(sql, list.toArray(), new OrderMapper());
 	}
 
 	@Override
 	public List<Order> getOrders(Date startTime, Date endTime, String username) {
 		// TODO Auto-generated method stub
-		return null;
+		String sql = "select o_id,o_username,o_createtime,o_addressid,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is null";
+		List<Object> list = new ArrayList<Object>();
+		if (startTime != null && endTime != null) {
+			sql += " and o_createtime between ? and ?";
+			list.add(startTime);
+			list.add(endTime);
+		}
+		sql += " and o_username=? order by o_createtime desc";
+		list.add(username);
+		return this.jdbcTemplate.query(sql, list.toArray(), new OrderMapper());
 	}
 
 	@Override
 	public Order getOrder(int orderId) {
 		// TODO Auto-generated method stub
-		
-		return null;
+		String sql = "select o_id,o_username,o_createtime,o_addressid,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where o_id=? limit 1";
+		return this.jdbcTemplate.query(sql, new Object[] { orderId },
+				new OrderMapper()).get(0);
 	}
 
 	@Override
