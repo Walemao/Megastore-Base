@@ -8,7 +8,7 @@ public class Order {
 	private int id;
 	private String username;
 	private Date createtime;
-	private int addressid;
+	private String addressinfo;
 	private String confirm;
 	private int state;
 	private BigDecimal fee;
@@ -48,11 +48,11 @@ public class Order {
 	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
-	public int getAddressid() {
-		return addressid;
+	public String getAddressinfo() {
+		return addressinfo;
 	}
-	public void setAddressid(int addressid) {
-		this.addressid = addressid;
+	public void setAddressinfo(String addressinfo) {
+		this.addressinfo = addressinfo;
 	}
 	public int getState() {
 		return state;

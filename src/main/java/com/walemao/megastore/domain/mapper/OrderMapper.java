@@ -14,7 +14,7 @@ public class OrderMapper implements RowMapper<Order>{
 		// TODO Auto-generated method stub
 		Order order = new Order();
 		order.setCreatetime(rs.getDate("o_createtime"));
-		order.setAddressid(rs.getInt("o_addressid"));
+		order.setAddressinfo(rs.getString("o_addressinfo"));
 		order.setConfirm(rs.getString("o_confirm"));
 		order.setState(rs.getInt("o_state"));
 		order.setFee(rs.getBigDecimal("o_fee"));

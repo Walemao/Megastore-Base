@@ -25,10 +25,10 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 	public int insert(Order o) {
 		// TODO Auto-generated method stub
 		final List<OrderDetail> list = o.getList();
-		String sql = "insert into t_order(o_username,o_createtime,o_addressid,o_fee,o_freight,o_remark,o_paytype) values (?,now(),?,?,?,?,?,?)";
+		String sql = "insert into t_order(o_username,o_createtime,o_addressinfo,o_fee,o_freight,o_remark,o_paytype) values (?,now(),?,?,?,?,?,?)";
 		int id = this.addIntoDB(
 				sql,
-				new Object[] { o.getUsername(), o.getAddressid(), o.getFee(),
+				new Object[] { o.getUsername(), o.getAddressinfo(), o.getFee(),
 						o.getFreight(), o.getRemark(), o.getPaytype() });
 		o.setId(id);
 		sql = "insert into t_order_detail(od_productid,od_typeid,od_orderid,od_amount,od_reamark,od_createtime) values (?,?,"
@@ -69,7 +69,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 			int mark) {
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
-		String sql = "select o_id,o_username,o_createtime,o_addressid,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is "
+		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is "
 				+ args;
 		List<Object> list = new ArrayList<Object>();
 		if (parm == null || parm.length() <= 0) {
@@ -89,7 +89,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 	@Override
 	public List<Order> getOrders(Date startTime, Date endTime, String username) {
 		// TODO Auto-generated method stub
-		String sql = "select o_id,o_username,o_createtime,o_addressid,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is null";
+		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is null";
 		List<Object> list = new ArrayList<Object>();
 		if (startTime != null && endTime != null) {
 			sql += " and o_createtime between ? and ?";
@@ -104,7 +104,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 	@Override
 	public Order getOrder(int orderId) {
 		// TODO Auto-generated method stub
-		String sql = "select o_id,o_username,o_createtime,o_addressid,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where o_id=? limit 1";
+		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where o_id=? limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { orderId },
 				new OrderMapper()).get(0);
 	}

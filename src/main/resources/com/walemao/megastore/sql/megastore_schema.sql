@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-07 11:27:32
+Date: 2014-10-07 15:52:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -142,7 +142,7 @@ CREATE TABLE `t_order` (
   `o_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `o_username` varchar(50) NOT NULL COMMENT '用户名',
   `o_createtime` datetime DEFAULT NULL COMMENT '下单时间',
-  `o_addressid` bigint(20) NOT NULL COMMENT '地址id',
+  `o_addressinfo` longtext NOT NULL COMMENT '地址详细信息',
   `o_confirm` varchar(50) DEFAULT NULL COMMENT '确认人名称',
   `o_state` tinyint(1) DEFAULT NULL COMMENT '订单状态',
   `o_fee` decimal(12,0) DEFAULT NULL COMMENT '订单金额',
