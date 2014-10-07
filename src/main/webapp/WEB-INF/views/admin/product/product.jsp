@@ -102,7 +102,7 @@
 					<div class="form-group">
 						<label class="control-label col-md-2">颜色分类：</label>
 						<div class="col-md-4 product-color-info">
-							<a class="btn btn-default add-color-btn" data-toggle="modal" data-target="#product-color-modal"><i class="icon-plus"></i>添加颜色分类</a>
+							<a class="btn btn-default add-color-btn" data-toggle="modal" data-target="#product-color-modal-add"><i class="icon-plus"></i>添加颜色分类</a>
 						</div>
 					</div>
 
@@ -143,8 +143,8 @@
 
 	</div>
 	
-	<!-- 颜色分类modal -->
-	<div id="product-color-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<!-- 颜色分类添加modal -->
+	<div id="product-color-modal-add" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	    <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -152,7 +152,7 @@
                 <h4 class="modal-title" id="myModalLabel"><i class="icon-magic"></i>添加颜色分类</h4>
             </div>
           <div class="modal-body">
-            <form id="product-color-form" action="<c:url value="/admin/product/color?${_csrf.parameterName}=${_csrf.token}" />" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+            <form id="product-color-form-add" action="<c:url value="/admin/product/color?${_csrf.parameterName}=${_csrf.token}" />" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
                <div class="form-group">
                   <label class="control-label col-md-3">分类名称：</label>
                   <div class="col-md-9">
@@ -162,7 +162,7 @@
                <div class="form-group">
                   <label class="control-label col-md-3">分类库存：</label>
                   <div class="col-md-9">
-                     <input type="number" name="amount" class="form-control" />
+                     <input id="amount"  type="number" name="amount" class="form-control" />
                   </div>
                </div>
                <div class="form-group">
@@ -180,24 +180,83 @@
        </div>
      </div>
     </div>
+    
+    <!-- 颜色分类编辑modal -->
+	<div id="product-color-modal-update" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="icon-magic"></i>修改颜色分类</h4>
+            </div>
+          <div class="modal-body">
+            <form id="product-color-form-update" action="<c:url value="/admin/product/color?${_csrf.parameterName}=${_csrf.token}" />" method="POST" class="form-horizontal" role="form">
+               <input type="hidden" name="_method" value="PUT">
+               <input type="hidden" id="thumbnailMD5" name="id" value="">
+               <div class="form-group">
+                  <label class="control-label col-md-3">分类名称：</label>
+                  <div class="col-md-9">
+                    <input type="text" name="typeName" class="form-control" />
+				  </div>
+               </div>
+               <div class="form-group">
+                  <label class="control-label col-md-3">分类库存：</label>
+                  <div class="col-md-9">
+                     <input type="number" name="amount" class="form-control" />
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="control-label col-md-3">缩略图：</label>
+                  <div class="col-md-9 color-img">
+                  </div>
+               </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+             <button type="button" class="btn btn-primary submit">确定</button>
+          </div>
+       </div>
+     </div>
+    </div>
+    
 	<!-- 引用页面底部模板 -->
 	<%@ include file="/WEB-INF/views/includes/admin_footer.jspf"%>
 </body>
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
 <script type="text/javascript">
-    $('#product-color-modal').modal('hide');
-    $('#product-color-modal').on('hidden.bs.modal', function(){
-    	$('#product-color-form input').val('');
+    $('#product-color-modal-add').modal('hide');
+    $('#product-color-modal-add').on('hidden.bs.modal', function(){
+    	$('#product-color-form-add input').val('');
     });
     
-    $('#product-color-modal .submit').on('click',function(){
-    	$('#product-color-form').ajaxSubmit(function(data){
+    $('#product-color-modal-add .submit').on('click',function(){
+    	$('#product-color-form-add').ajaxSubmit(function(data){
     		if(data.status == 'success'){
-    			appendProductColor(data.thumbnailUrl, $('#typeName').val(), 1);
-    			$('#product-color-modal').modal('hide');
+    			appendProductColor(data.thumbnailUrl, $('#typeName').val(), data.thumbnailMD5, $('#amount').val());
+    			$('#product-color-modal-add').modal('hide');
     		}
     	});
     });
+    	
+    $('#product-color-modal-update').on('shown.bs.modal', function(e){
+    	var $invoker = $(e.relatedTarget);
+    	var id = $invoker.parent().attr('data-id');
+    	var url = $invoker.parent().attr('data-url');
+    	var name = $invoker.parent().attr('data-name');
+    	var amount = $invoker.parent().attr('data-amount');
+    	$('#thumbnailMD5').val(id);
+    	$('#product-color-form-update input[name=typeName]').val(name);
+    	$('#product-color-form-update input[name=amount]').val(amount);
+    	var img =  $('<img/>').attr('src', url).attr('width','300');
+    	$('.color-img').append(img);
+    });
+    
+    $('#product-color-modal-update').on('hidden.bs.modal', function(){
+    	$('#product-color-form-update input').val('');
+    	$('.color-img').html('');
+    });
+    
   
 </script>
 </html>

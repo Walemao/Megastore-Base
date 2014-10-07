@@ -110,11 +110,11 @@ a.add-color-btn:hover {
 	background-color: #c9302c;
 }
 
-.modal .modal-title{
+.modal .modal-title {
 	color: #db4a39;
 }
 
-.modal .btn-primary{
+.modal .btn-primary {
 	background-color: #db4a39;
 	border: none;
 }
@@ -124,24 +124,24 @@ a.add-color-btn:hover {
 	background-color: #c9302c;
 }
 
-.modal i{
+.modal i {
 	padding-right: 5px;
 }
 
-.modal .control-label{
+.modal .control-label {
 	font-weight: 400;
 }
 
-.form-control-static .thumbnail{
+.form-control-static .thumbnail {
 	display: block;
 	width: 50px;
 	height: 50px;
 	float: left;
 }
 
-.form-control-static .color-text{
+.form-control-static .color-text {
 	display: block;
-	width:auto;
+	width: auto;
 	height: 50px;
 	line-height: 50px;
 	padding-left: 8px;
@@ -149,7 +149,7 @@ a.add-color-btn:hover {
 	float: left;
 }
 
-.form-control-static .color-delete{
+.form-control-static .color-delete {
 	display: block;
 	width: 20px;
 	float: left;
@@ -158,6 +158,15 @@ a.add-color-btn:hover {
 	cursor: pointer;
 }
 
-.form-control-static .color-delete:hover{
+.form-control-static .color-delete:hover {
 	color: #db4a39;
+}
+
+input.main-img-radio{
+	display: block;
+	width: 20px;
+	float: left;
+	text-align: center;
+	margin-top: 20px;
+	padding-right: 8px;
 }

@@ -13,7 +13,6 @@
 	<!-- Application Loggers -->
 	<logger name="com.walemao.megastore">
 		<level value="debug" />
-		<appender-ref ref="console.CONSOLE" />
 	</logger>
 
 	<!-- 3rdparty Loggers -->

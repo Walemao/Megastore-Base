@@ -25,6 +25,7 @@ import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.service.ProductService;
 import com.walemao.megastore.util.DateUtil;
 import com.walemao.megastore.util.FileUploadUtil;
+import com.walemao.megastore.util.StringMD5;
 
 @Controller
 public class ProductController extends BaseController {
@@ -114,7 +115,10 @@ public class ProductController extends BaseController {
 		Map<String, Object> requestMap = new HashMap<String, Object>();
 		try {
 			String thumbnailUrl = FileUploadUtil.uploadSingleFile(file, request);
+			String thumbnailMD5 = StringMD5.encode(thumbnailUrl);
+			
 			logger.debug("打印路径： {}", thumbnailUrl);
+			logger.debug("打印MD5： {}", thumbnailMD5);
 			
 			ProductType productType = new ProductType();
 			productType.setThumbnail(thumbnailUrl);
@@ -124,6 +128,7 @@ public class ProductController extends BaseController {
 			
 			requestMap.put("status", "success");
 			requestMap.put("thumbnailUrl", thumbnailUrl);
+			requestMap.put("thumbnailMD5", thumbnailMD5);
 			return requestMap;
 
 		} catch (Exception e) {
