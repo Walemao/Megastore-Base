@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.walemao.megastore.domain.Address;
+import com.walemao.megastore.domain.mapper.AddressMapper;
 import com.walemao.megastore.repository.AddressDao;
 
 public class AddressDaoImpl extends CommonDaoImpl implements AddressDao {
@@ -14,16 +15,11 @@ public class AddressDaoImpl extends CommonDaoImpl implements AddressDao {
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public List<Address> getAddresses() {
-		// TODO Auto-generated method stub
-
-		return null;
-	}
-
-	@Override
 	public List<Address> getAddresses(String username) {
 		// TODO Auto-generated method stub
-		return null;
+		String sql = "select a_id,a_username,a_consignee,a_province,a_city,a_district,a_address,a_zip_code,a_mobilephone,a_phone,a_createtime from t_address where a_username = ? order by a_createtime";
+		return this.jdbcTemplate.query(sql, new Object[] { username },
+				new AddressMapper());
 	}
 
 	@Override
@@ -41,13 +37,19 @@ public class AddressDaoImpl extends CommonDaoImpl implements AddressDao {
 	@Override
 	public void update(Address a) {
 		// TODO Auto-generated method stub
-
+		String sql = "update t_address set a_consignee=?,a_province=?,a_city=?,a_district=?,a_address=?,a_zip_code=?,a_mobilephone=?,a_phone=? where a_id=?";
+		this.jdbcTemplate.update(
+				sql,
+				new Object[] { a.getConsignee(), a.getProvince(), a.getCity(),
+						a.getDistrict(), a.getAddress(), a.getZipCode(),
+						a.getMobilephone(), a.getPhone(), a.getId() });
 	}
 
 	@Override
-	public void delete(Address a) {
+	public void delete(int id) {
 		// TODO Auto-generated method stub
-
+		String sql = "delete from t_address where a_id=?";
+		this.jdbcTemplate.update(sql, new Object[] { id });
 	}
 
 }
