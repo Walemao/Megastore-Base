@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-07 15:52:37
+Date: 2014-10-07 17:51:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -76,11 +76,11 @@ CREATE TABLE `d_user` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_address`;
 CREATE TABLE `t_address` (
-  `a_id` char(36) NOT NULL COMMENT '地址ID',
+  `a_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '地址ID',
   `a_username` varchar(50) NOT NULL COMMENT '用户名',
   `a_consignee` char(50) DEFAULT NULL COMMENT '联系人',
   `a_province` tinyint(4) DEFAULT NULL COMMENT '省份',
-  `a_citie` smallint(6) DEFAULT NULL COMMENT '城市',
+  `a_city` smallint(6) DEFAULT NULL COMMENT '城市',
   `a_district` smallint(6) DEFAULT NULL COMMENT '地区',
   `a_address` varchar(255) DEFAULT NULL COMMENT '地址',
   `a_zip_code` char(6) DEFAULT NULL COMMENT '邮政编码',
@@ -96,10 +96,11 @@ CREATE TABLE `t_address` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_comments`;
 CREATE TABLE `t_comments` (
-  `c_id` char(36) NOT NULL COMMENT '评论表ID',
+  `c_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '评论表ID',
   `c_username` varchar(50) NOT NULL COMMENT '用户名',
   `c_content` varchar(255) DEFAULT NULL COMMENT '评论内容',
   `c_type` tinyint(1) DEFAULT NULL COMMENT '评论类别（好评）详见d_comments',
+  `c_productid` bigint(20) NOT NULL COMMENT '商品ID',
   `c_orderdetailid` bigint(20) NOT NULL COMMENT '订单详情ID，可以获取到购买物品以及购买时间',
   `c_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
@@ -111,7 +112,7 @@ CREATE TABLE `t_comments` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_complaints`;
 CREATE TABLE `t_complaints` (
-  `c_id` bigint(20) NOT NULL COMMENT '投诉咨询表ID',
+  `c_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '投诉咨询表ID',
   `c_subject` tinyint(2) DEFAULT NULL COMMENT '主题选择',
   `c_name` char(20) DEFAULT NULL COMMENT '姓名',
   `c_provinces` tinyint(4) DEFAULT NULL COMMENT '省份',
@@ -129,7 +130,7 @@ CREATE TABLE `t_complaints` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_log`;
 CREATE TABLE `t_log` (
-  `l_id` bigint(20) NOT NULL COMMENT '日志ID',
+  `l_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '日志ID',
   `l_content` varchar(255) DEFAULT NULL COMMENT '日志内容',
   PRIMARY KEY (`l_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -179,9 +180,9 @@ CREATE TABLE `t_order_detail` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_prodcut_type`;
 CREATE TABLE `t_prodcut_type` (
-  `pd_id` bigint(20) NOT NULL COMMENT '商品型号ID',
+  `pd_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品型号ID',
   `pd_productid` bigint(20) NOT NULL COMMENT '商品ID，关联t_product',
-  `pd_name` varchar(255) NOT NULL COMMENT '商品颜色名称',
+  `pd_name` varchar(255) NOT NULL COMMENT '商品型号名称',
   `pd_thumbnail` longtext COMMENT '缩略图',
   `pd_amount` int(11) DEFAULT '0' COMMENT '商品虚拟库存',
   `pd_createtime` datetime DEFAULT NULL COMMENT '创建时间',
@@ -195,7 +196,7 @@ CREATE TABLE `t_prodcut_type` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_product_classify`;
 CREATE TABLE `t_product_classify` (
-  `pc_id` int(11) NOT NULL COMMENT '商品分类ID',
+  `pc_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品分类ID',
   `pc_name` varchar(50) DEFAULT NULL COMMENT '分类名称',
   PRIMARY KEY (`pc_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -205,7 +206,7 @@ CREATE TABLE `t_product_classify` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_product_favorites`;
 CREATE TABLE `t_product_favorites` (
-  `pf_id` char(36) NOT NULL COMMENT '收藏表ID',
+  `pf_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '收藏表ID',
   `pf_username` varchar(50) NOT NULL COMMENT '用户名',
   `pf_productid` char(36) NOT NULL COMMENT '商品ID',
   `pf_typeid` bigint(20) DEFAULT NULL COMMENT '商品型号ID',
@@ -248,7 +249,7 @@ CREATE TABLE `t_product_info` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_proposal`;
 CREATE TABLE `t_proposal` (
-  `P_ID` char(36) NOT NULL,
+  `p_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `p_username` varchar(50) NOT NULL COMMENT '用户名',
   `p_subject` tinyint(2) DEFAULT NULL COMMENT '建议留言类型',
   `p_name` char(20) DEFAULT NULL COMMENT '姓名',
@@ -258,7 +259,7 @@ CREATE TABLE `t_proposal` (
   `p_email` varchar(255) DEFAULT NULL COMMENT '电子邮箱',
   `p_content` varchar(255) DEFAULT NULL COMMENT '内容',
   `p_creattime` datetime DEFAULT NULL COMMENT '创建时间',
-  PRIMARY KEY (`P_ID`)
+  PRIMARY KEY (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -266,7 +267,7 @@ CREATE TABLE `t_proposal` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_shopping_cart`;
 CREATE TABLE `t_shopping_cart` (
-  `sc_id` char(36) NOT NULL COMMENT '购物车ID-跟用户ID一致',
+  `sc_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '购物车ID',
   `sc_username` varchar(50) NOT NULL COMMENT '用户名',
   `sc_productid` char(36) NOT NULL COMMENT '商品ID',
   `sc_typeid` bigint(20) NOT NULL COMMENT '商品型号ID',
@@ -380,7 +381,7 @@ CREATE TABLE `t_user_pay` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_warehouse_product`;
 CREATE TABLE `t_warehouse_product` (
-  `wp_id` bigint(20) NOT NULL COMMENT '商品进出库ID',
+  `wp_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品进出库ID',
   `wp_productid` char(36) NOT NULL COMMENT '商品ID',
   `wp_typeid` bigint(20) NOT NULL COMMENT '商品型号ID',
   `wp_amount` bigint(20) DEFAULT NULL COMMENT '数量',
@@ -394,7 +395,7 @@ CREATE TABLE `t_warehouse_product` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_warehouse_product_rejected`;
 CREATE TABLE `t_warehouse_product_rejected` (
-  `pr_id` bigint(20) NOT NULL COMMENT '退货表编号',
+  `pr_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '退货表编号',
   `pr_productid` bigint(20) NOT NULL COMMENT '商品ID',
   `pr_typeid` bigint(20) NOT NULL COMMENT '商品型号ID',
   `pr_createtime` datetime DEFAULT NULL COMMENT '创建时间',

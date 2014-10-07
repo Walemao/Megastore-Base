@@ -3,7 +3,7 @@ package com.walemao.megastore.domain;
 
 public class Address {
 	private int id;
-	private int userid;
+	private String username;
 	private String consignee;
 	private int province;
 	private int city;
@@ -21,11 +21,11 @@ public class Address {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getUserid() {
-		return userid;
+	public String getUsername() {
+		return username;
 	}
-	public void setUserid(int userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getConsignee() {
 		return consignee;

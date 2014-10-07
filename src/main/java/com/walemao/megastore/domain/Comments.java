@@ -1,15 +1,26 @@
 package com.walemao.megastore.domain;
 
+import java.util.Date;
+
 public class Comments {
 	private int id;
 	private String username;
 	private String content;
 	private int type;
+	private int productid;
 	private int orderdetailid;
-	private String createtime;
+	private Date createtime;
 
 	private ProductInfo productInfo;
 	private OrderDetail orderdetail;
+
+	public int getProductid() {
+		return productid;
+	}
+
+	public void setProductid(int productid) {
+		this.productid = productid;
+	}
 
 	public OrderDetail getOrderdetail() {
 		return orderdetail;
@@ -59,11 +70,11 @@ public class Comments {
 		this.type = type;
 	}
 
-	public String getCreatetime() {
+	public Date getCreatetime() {
 		return createtime;
 	}
 
-	public void setCreatetime(String createtime) {
+	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
 
