@@ -175,7 +175,7 @@
           </div>
           <div class="modal-footer">
              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-             <button type="button" class="btn btn-primary">确定</button>
+             <button type="button" class="btn btn-primary submit">确定</button>
           </div>
        </div>
      </div>
@@ -185,8 +185,10 @@
 </body>
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
 <script type="text/javascript">
-    $('#product-color-modal').modal({
-	  keyboard: false
-	});
+    $('#product-color-modal').modal('hide');
+    $('#product-color-modal .submit').on('click',function(){
+    	console.log('.......');
+    	$('#product-color-modal').modal('hide');
+    });
 </script>
 </html>
