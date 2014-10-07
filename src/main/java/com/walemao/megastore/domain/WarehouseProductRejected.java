@@ -10,7 +10,7 @@ public class WarehouseProductRejected {
 	private Date createtime;
 	private String remark;
 	
-	private ProductColor productColor;
+	private ProductType producttype;
 	private ProductInfo product;
 
 	public String getRemark() {
@@ -19,11 +19,11 @@ public class WarehouseProductRejected {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	public ProductColor getProductColor() {
-		return productColor;
+	public ProductType getProducttype() {
+		return producttype;
 	}
-	public void setProductColor(ProductColor productColor) {
-		this.productColor = productColor;
+	public void setProducttype(ProductType producttype) {
+		this.producttype = producttype;
 	}
 	public ProductInfo getProduct() {
 		return product;

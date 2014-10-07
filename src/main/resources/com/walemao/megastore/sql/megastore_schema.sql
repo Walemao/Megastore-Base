@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-06 19:59:13
+Date: 2014-10-07 09:53:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -164,22 +164,22 @@ DROP TABLE IF EXISTS `t_order_detail`;
 CREATE TABLE `t_order_detail` (
   `od_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '订单记录id',
   `od_productid` bigint(20) NOT NULL COMMENT '商品id',
-  `od_colorid` bigint(20) DEFAULT NULL COMMENT '颜色ID',
+  `od_typeid` bigint(20) DEFAULT NULL COMMENT '商品型号ID',
   `od_orderid` bigint(20) NOT NULL COMMENT '订单表id',
   `od_amount` int(11) DEFAULT '0' COMMENT '订单数量',
   `od_reamark` varchar(255) DEFAULT NULL COMMENT '备注',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`od_id`),
-  UNIQUE KEY `idx_t_order_detail_2` (`od_productid`,`od_colorid`),
-  KEY `idx_t_order_detail_1` (`od_productid`,`od_orderid`,`od_colorid`) USING BTREE
+  UNIQUE KEY `idx_t_order_detail_2` (`od_productid`,`od_typeid`),
+  KEY `idx_t_order_detail_1` (`od_productid`,`od_orderid`,`od_typeid`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for t_prodcut_color
+-- Table structure for t_prodcut_type
 -- ----------------------------
-DROP TABLE IF EXISTS `t_prodcut_color`;
-CREATE TABLE `t_prodcut_color` (
-  `pd_id` bigint(20) NOT NULL COMMENT '商品颜色分类ID',
+DROP TABLE IF EXISTS `t_prodcut_type`;
+CREATE TABLE `t_prodcut_type` (
+  `pd_id` bigint(20) NOT NULL COMMENT '商品型号ID',
   `pd_productid` bigint(20) NOT NULL COMMENT '商品ID，关联t_product',
   `pd_name` varchar(255) DEFAULT NULL COMMENT '商品颜色名称',
   `pd_amount` int(11) DEFAULT '0' COMMENT '商品虚拟库存',
@@ -190,10 +190,10 @@ CREATE TABLE `t_prodcut_color` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for t_product_classification
+-- Table structure for t_product_classify
 -- ----------------------------
-DROP TABLE IF EXISTS `t_product_classification`;
-CREATE TABLE `t_product_classification` (
+DROP TABLE IF EXISTS `t_product_classify`;
+CREATE TABLE `t_product_classify` (
   `pc_id` int(11) NOT NULL COMMENT '商品分类ID',
   `pc_name` varchar(50) DEFAULT NULL COMMENT '分类名称',
   PRIMARY KEY (`pc_id`)
@@ -207,11 +207,11 @@ CREATE TABLE `t_product_favorites` (
   `pf_id` char(36) NOT NULL COMMENT '收藏表ID',
   `pf_username` varchar(50) NOT NULL COMMENT '用户名',
   `pf_productid` char(36) NOT NULL COMMENT '商品ID',
-  `pf_colorid` bigint(20) DEFAULT NULL COMMENT '颜色ID',
+  `pf_typeid` bigint(20) DEFAULT NULL COMMENT '商品型号ID',
   `pf_creattime` datetime DEFAULT NULL COMMENT '创建时间',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`pf_id`),
-  UNIQUE KEY `idx_t_product_favorites_1` (`pf_username`,`pf_productid`,`pf_colorid`)
+  UNIQUE KEY `idx_t_product_favorites_1` (`pf_username`,`pf_productid`,`pf_typeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -225,7 +225,7 @@ CREATE TABLE `t_product_info` (
   `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
   `p_thumbnail` longtext COMMENT '商品缩略图',
   `p_images` longtext COMMENT '商品图片',
-  `p_type` int(11) DEFAULT '0' COMMENT '商品分类,关联t_product_classification',
+  `p_classify` int(11) DEFAULT '0' COMMENT '商品分类,关联t_product_classify',
   `p_origin` varchar(50) DEFAULT NULL COMMENT '商品产地',
   `p_weight` varchar(50) DEFAULT NULL COMMENT '商品毛重',
   `p_materials` varchar(50) DEFAULT NULL COMMENT '商品材质',
@@ -240,7 +240,7 @@ CREATE TABLE `t_product_info` (
   KEY `idx_t_product_name` (`p_name`),
   KEY `idx_t_product_deletemark` (`deletemark`),
   KEY `p_id` (`p_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_proposal
@@ -268,12 +268,12 @@ CREATE TABLE `t_shopping_cart` (
   `sc_id` char(36) NOT NULL COMMENT '购物车ID-跟用户ID一致',
   `sc_username` varchar(50) NOT NULL COMMENT '用户名',
   `sc_productid` char(36) NOT NULL COMMENT '商品ID',
-  `sc_productcolorid` bigint(20) NOT NULL COMMENT '商品颜色ID',
+  `sc_typeid` bigint(20) NOT NULL COMMENT '商品型号ID',
   `sc_amount` int(11) DEFAULT NULL COMMENT '数量',
   `sc_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`sc_id`),
-  UNIQUE KEY `idx_t_shopping_cart_1` (`sc_username`,`sc_productid`,`sc_productcolorid`)
+  UNIQUE KEY `idx_t_shopping_cart_1` (`sc_username`,`sc_productid`,`sc_typeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -381,7 +381,7 @@ DROP TABLE IF EXISTS `t_warehouse_product`;
 CREATE TABLE `t_warehouse_product` (
   `wp_id` bigint(20) NOT NULL COMMENT '商品进出库ID',
   `wp_productid` char(36) NOT NULL COMMENT '商品ID',
-  `wp_productcolorid` bigint(20) NOT NULL COMMENT '商品颜色ID',
+  `wp_typeid` bigint(20) NOT NULL COMMENT '商品型号ID',
   `wp_amount` bigint(20) DEFAULT NULL COMMENT '数量',
   `wp_createtime` datetime DEFAULT NULL COMMENT '操作时间',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
@@ -394,8 +394,8 @@ CREATE TABLE `t_warehouse_product` (
 DROP TABLE IF EXISTS `t_warehouse_product_rejected`;
 CREATE TABLE `t_warehouse_product_rejected` (
   `pr_id` bigint(20) NOT NULL COMMENT '退货表编号',
-  `pr_productid` bigint(20) DEFAULT NULL COMMENT '商品ID',
-  `pr_productcolorid` bigint(20) DEFAULT NULL COMMENT '商品颜色ID',
+  `pr_productid` bigint(20) NOT NULL COMMENT '商品ID',
+  `pr_typeid` bigint(20) NOT NULL COMMENT '商品型号ID',
   `pr_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `pr_remark` varchar(255) DEFAULT NULL COMMENT '退货理由',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',

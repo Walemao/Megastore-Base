@@ -2,7 +2,7 @@ package com.walemao.megastore.domain;
 
 import java.util.Date;
 
-public class ProductColor {
+public class ProductType {
 	private int id;
 	private String name;
 	private int amount;

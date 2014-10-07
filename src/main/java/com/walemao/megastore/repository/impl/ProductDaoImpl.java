@@ -12,7 +12,7 @@ import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.walemao.megastore.domain.ProductColor;
+import com.walemao.megastore.domain.ProductType;
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.domain.mapper.ProductColorMapper;
 import com.walemao.megastore.domain.mapper.ProductMapper;
@@ -73,7 +73,7 @@ public class ProductDaoImpl extends CommonDao implements ProductDao {
 	@Override
 	public int insert(ProductInfo p) {
 		// TODO Auto-generated method stub
-		final List<ProductColor> list = p.getProductColors();
+		final List<ProductType> list = p.getProductColors();
 		String sql = "insert into t_product_info(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_weight,p_materials,p_desc,p_price,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		int id = this.addIntoDB(

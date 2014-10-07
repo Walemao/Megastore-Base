@@ -5,7 +5,7 @@ import java.util.Date;
 public class ProductFavorites {
 	private int id;
 	private int productid;
-	private int colorid;
+	private int typeid;
 	private Date createtime;
 	public int getId() {
 		return id;
@@ -19,11 +19,11 @@ public class ProductFavorites {
 	public void setProductid(int productid) {
 		this.productid = productid;
 	}
-	public int getColorid() {
-		return colorid;
+	public int getTypeid() {
+		return typeid;
 	}
-	public void setColorid(int colorid) {
-		this.colorid = colorid;
+	public void setTypeid(int typeid) {
+		this.typeid = typeid;
 	}
 	public Date getCreatetime() {
 		return createtime;

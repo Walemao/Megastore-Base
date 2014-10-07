@@ -11,7 +11,7 @@ public class ShoppingCart {
 	private Date createtime;
 	
 	private ProductInfo productInfo;
-	private ProductColor productColor;
+	private ProductType productColor;
 	public int getId() {
 		return id;
 	}
@@ -48,10 +48,10 @@ public class ShoppingCart {
 	public void setProductInfo(ProductInfo productInfo) {
 		this.productInfo = productInfo;
 	}
-	public ProductColor getProductColor() {
+	public ProductType getProductColor() {
 		return productColor;
 	}
-	public void setProductColor(ProductColor productColor) {
+	public void setProductColor(ProductType productColor) {
 		this.productColor = productColor;
 	}
 }

@@ -4,13 +4,20 @@ package com.walemao.megastore.domain;
 public class OrderDetail {
 	private int id;
 	private int productid;
-	private int colorid;
+	private int typeid;
 	private int orderid;
 	private int amount;
 	private String remark;
 	
 	private ProductInfo product;
-	private ProductColor productcolor;
+	private ProductType producttype;
+	
+	public int getTypeid() {
+		return typeid;
+	}
+	public void setTypeid(int typeid) {
+		this.typeid = typeid;
+	}
 	public int getId() {
 		return id;
 	}
@@ -22,12 +29,6 @@ public class OrderDetail {
 	}
 	public void setProductid(int productid) {
 		this.productid = productid;
-	}
-	public int getColorid() {
-		return colorid;
-	}
-	public void setColorid(int colorid) {
-		this.colorid = colorid;
 	}
 	public int getOrderid() {
 		return orderid;
@@ -53,11 +54,10 @@ public class OrderDetail {
 	public void setProduct(ProductInfo product) {
 		this.product = product;
 	}
-	public ProductColor getProductcolor() {
-		return productcolor;
+	public ProductType getProducttype() {
+		return producttype;
 	}
-	public void setProductcolor(ProductColor productcolor) {
-		this.productcolor = productcolor;
+	public void setProducttype(ProductType producttype) {
+		this.producttype = producttype;
 	}
-	
 }

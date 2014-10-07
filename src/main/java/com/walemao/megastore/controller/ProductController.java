@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.walemao.megastore.domain.ProductColor;
+import com.walemao.megastore.domain.ProductType;
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.service.ProductService;
 import com.walemao.megastore.util.DateUtil;
@@ -75,7 +75,7 @@ public class ProductController extends BaseController {
 		productInfo.setCreattime(new Date());
         productInfo.setType(0);
         if(productInfo.getProductColors() == null){
-        	productInfo.setProductColors(new ArrayList<ProductColor>());
+        	productInfo.setProductColors(new ArrayList<ProductType>());
         }
         
 		try {

@@ -22,7 +22,7 @@ public class ProductInfo {
 	private Date creattime;
 	
 	private ProductClassification productClassification;
-	private List<ProductColor> productColors;
+	private List<ProductType> productColors;
 	
 	public ProductClassification getProductClassification() {
 		return productClassification;
@@ -45,10 +45,10 @@ public class ProductInfo {
 	public void setImages(List<String> images) {
 		this.images = images;
 	}
-	public List<ProductColor> getProductColors() {
+	public List<ProductType> getProductColors() {
 		return productColors;
 	}
-	public void setProductColors(List<ProductColor> productColors) {
+	public void setProductColors(List<ProductType> productColors) {
 		this.productColors = productColors;
 	}
 	public int getId() {

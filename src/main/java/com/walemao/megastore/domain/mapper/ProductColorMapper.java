@@ -5,14 +5,14 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.walemao.megastore.domain.ProductColor;
+import com.walemao.megastore.domain.ProductType;
 
-public class ProductColorMapper implements RowMapper<ProductColor> {
+public class ProductColorMapper implements RowMapper<ProductType> {
 
 	@Override
-	public ProductColor mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public ProductType mapRow(ResultSet rs, int rowNum) throws SQLException {
 		// TODO Auto-generated method stub
-		ProductColor productColor = new ProductColor();
+		ProductType productColor = new ProductType();
 		productColor.setId(rs.getInt("pd_id"));
 		productColor.setName(rs.getString("pd_name"));
 		productColor.setAmount(rs.getInt("pd_amount"));

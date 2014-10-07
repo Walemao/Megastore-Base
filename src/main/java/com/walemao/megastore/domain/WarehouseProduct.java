@@ -5,19 +5,13 @@ import java.util.Date;
 public class WarehouseProduct {
 	private int id;
 	private int productid;
-	private int productColorId;
+	private int typeid;
 	private int amount;
 	private Date createtime;
 	
-	private ProductColor productColor;
+	private ProductType productytpe;
 	private ProductInfo product;
 	
-	public ProductColor getProductColor() {
-		return productColor;
-	}
-	public void setProductColor(ProductColor productColor) {
-		this.productColor = productColor;
-	}
 	public ProductInfo getProduct() {
 		return product;
 	}
@@ -36,12 +30,6 @@ public class WarehouseProduct {
 	public void setProductid(int productid) {
 		this.productid = productid;
 	}
-	public int getProductColorId() {
-		return productColorId;
-	}
-	public void setProductColorId(int productColorId) {
-		this.productColorId = productColorId;
-	}
 	public int getAmount() {
 		return amount;
 	}
@@ -53,6 +41,18 @@ public class WarehouseProduct {
 	}
 	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
+	}
+	public int getTypeid() {
+		return typeid;
+	}
+	public void setTypeid(int typeid) {
+		this.typeid = typeid;
+	}
+	public ProductType getProductytpe() {
+		return productytpe;
+	}
+	public void setProductytpe(ProductType productytpe) {
+		this.productytpe = productytpe;
 	}
 	
 }
