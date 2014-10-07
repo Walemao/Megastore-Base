@@ -121,4 +121,24 @@ function dateFormat(date){
 	return year + '/' + month + '/' + day; 
 }
 
+/**
+ * 商品颜色分类动态生成
+ * 
+ * */
+function appendProductColor(thumbnail, name, id){
+	var p = $('<p/>').addClass('form-control-static').addClass('clearfix');
+	var a = $('<a/>').addClass('thumbnail');
+	var img = $('<img/>').attr('width','50').attr('height','50').attr('src', thumbnail);
+	var color_span = $('<span/>').addClass('color-text').text(name);
+	var delete_span = $('<span/>').addClass('color-delete').attr('data-toggle','tooltip').attr('data-original-title','删除').html('<i class="icon-trash"></i>');
+	a.append(img);
+	p.append(a).append(color_span).append(delete_span);
+	
+	$('.product-color-info').append(p);
+	$('[data-toggle="tooltip"]').tooltip({
+		container : 'body',
+		animation : !1
+	});
+}
+
 

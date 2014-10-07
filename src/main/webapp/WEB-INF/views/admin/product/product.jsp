@@ -101,7 +101,7 @@
 
 					<div class="form-group">
 						<label class="control-label col-md-2">颜色分类：</label>
-						<div class="col-md-4">
+						<div class="col-md-4 product-color-info">
 							<a class="btn btn-default add-color-btn" data-toggle="modal" data-target="#product-color-modal"><i class="icon-plus"></i>添加颜色分类</a>
 						</div>
 					</div>
@@ -156,7 +156,7 @@
                <div class="form-group">
                   <label class="control-label col-md-3">分类名称：</label>
                   <div class="col-md-9">
-                    <input type="text" name="typeName" class="form-control" />
+                    <input id="typeName" type="text" name="typeName" class="form-control" />
 				  </div>
                </div>
                <div class="form-group">
@@ -186,12 +186,18 @@
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
 <script type="text/javascript">
     $('#product-color-modal').modal('hide');
-    $('#product-color-modal .submit').on('click',function(){
-    	console.log('.......');
-    	$('#product-color-form').ajaxSubmit(function(data){
-    		console.log(data.status);
-    	});
-    	$('#product-color-modal').modal('hide');
+    $('#product-color-modal').on('hidden.bs.modal', function(){
+    	$('#product-color-form input').val('');
     });
+    
+    $('#product-color-modal .submit').on('click',function(){
+    	$('#product-color-form').ajaxSubmit(function(data){
+    		if(data.status == 'success'){
+    			appendProductColor(data.thumbnailUrl, $('#typeName').val(), 1);
+    			$('#product-color-modal').modal('hide');
+    		}
+    	});
+    });
+  
 </script>
 </html>

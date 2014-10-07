@@ -7,24 +7,21 @@ import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 
 public class FileUploadUtil {
 
-	private static String m_hostName = "/re";
+	private static String m_hostName = "";
 	private static SimpleDateFormat m_sDateFormat = new SimpleDateFormat(
-			"yyyy-MM-dd#hh_mm_ss");
-
-	private static String getSaveFilePath() {
-		// return ${host}/Upload/
-		return getHostName() + File.separator + "Upload" + File.separator;
-	}
+			"yyyy_MM_dd_hh_mm_ss");
 
 	private static String getHostName() {
 		return m_hostName;
 	}
 
-	private static boolean SetHostName(String name) {
+	private static boolean setHostName(String name) {
 		m_hostName = name;
 		// if the host is valid,return true;
 		return true;
@@ -69,22 +66,26 @@ public class FileUploadUtil {
 		byte[] bytes = file.getBytes();
 
 		// create directory to store file
-		SetHostName(request.getSession().getServletContext().getRealPath("/resources-admin/"));
-		File dir = new File(getSaveFilePath());
+		setHostName(request.getSession().getServletContext().getRealPath("/resources-admin/Upload/"));
+		File dir = new File(getHostName());
 		if (!dir.exists())
 			dir.mkdirs();
 
 		// create file on server
 		String fileName = createFileName(file);
-		File serverFile = new File(getSaveFilePath(), fileName);
+		File serverFile = new File(getHostName(), fileName);
 
 		BufferedOutputStream stream = new BufferedOutputStream(
 				new FileOutputStream(serverFile));
 
 		stream.write(bytes);
 		stream.close();
+		
+		String path = request.getContextPath();  
+        String basePath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort()+ path;
+		
 
-		return "/resources-admin/Upload" + fileName;
+		return basePath + "/resources-admin/Upload/" + fileName;
 	}
 
 }
