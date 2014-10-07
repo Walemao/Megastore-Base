@@ -2,6 +2,8 @@ package com.walemao.megastore.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,12 +15,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.walemao.megastore.domain.ProductType;
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.service.ProductService;
 import com.walemao.megastore.util.DateUtil;
+import com.walemao.megastore.util.FileUploadUtil;
 
 @Controller
 public class ProductController extends BaseController {
@@ -43,7 +49,7 @@ public class ProductController extends BaseController {
 	 * 进入商品添加页面
 	 * 
 	 * */
-	@RequestMapping(value = "/admin/product", params={ "add" }, method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/product", params = { "add" }, method = RequestMethod.GET)
 	public String addProductPage(
 			@ModelAttribute("productInfo") ProductInfo productInfo) {
 
@@ -58,7 +64,7 @@ public class ProductController extends BaseController {
 	public String getProductInfo(@PathVariable("id") int id,
 			@ModelAttribute("productInfo") ProductInfo productInfo,
 			HttpServletRequest request) {
-        
+
 		return "admin/product/product";
 	}
 
@@ -69,15 +75,14 @@ public class ProductController extends BaseController {
 	@RequestMapping(value = "/admin/product", method = RequestMethod.POST)
 	public String addProduct(
 			@ModelAttribute("productInfo") ProductInfo productInfo,
-			String productType, int amount, HttpServletRequest request,
-			RedirectAttributes redirectAttributes) {
-		
+			HttpServletRequest request, RedirectAttributes redirectAttributes) {
+
 		productInfo.setCreattime(new Date());
-        productInfo.setType(0);
-        if(productInfo.getProductColors() == null){
-        	productInfo.setProductColors(new ArrayList<ProductType>());
-        }
-        
+		productInfo.setType(0);
+		if (productInfo.getProductColors() == null) {
+			productInfo.setProductColors(new ArrayList<ProductType>());
+		}
+
 		try {
 			int id = this.productService.insert(productInfo);
 			redirectAttributes.addFlashAttribute("status", "success");
@@ -89,13 +94,48 @@ public class ProductController extends BaseController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		redirectAttributes.addFlashAttribute("status", "danger");
 		redirectAttributes.addFlashAttribute("messageStatus", "Fail！");
 		redirectAttributes.addFlashAttribute("message", "添加商品失败！");
 		return "redirect:/admin/product?add";
 	}
-	
+
+	/**
+	 * 添加商品颜色分类
+	 * 
+	 * */
+	@RequestMapping(value = "/admin/product/color", method = RequestMethod.POST)
+	public @ResponseBody Map<String, Object> addProductColor(String typeName,
+			@RequestParam(defaultValue = "0") int amount,
+			@RequestParam("thumbnail") MultipartFile file,
+			HttpServletRequest request) {
+
+		Map<String, Object> requestMap = new HashMap<String, Object>();
+		try {
+			String thumbnailUrl = FileUploadUtil.uploadSingleFile(file, request);
+			logger.debug("打印路径： {}", thumbnailUrl);
+			
+			ProductType productType = new ProductType();
+			productType.setThumbnail(thumbnailUrl);
+			productType.setName(typeName);
+			productType.setAmount(amount);
+			productType.setCreatetime(new Date());
+			
+			requestMap.put("status", "success");
+			requestMap.put("thumbnailUrl", thumbnailUrl);
+			return requestMap;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		requestMap.put("status", "danger");
+		requestMap.put("messageStatus", "Fail！");
+		requestMap.put("message", "添加失败！");
+		return requestMap;
+	}
+
 	/**
 	 * 修改商品
 	 * 

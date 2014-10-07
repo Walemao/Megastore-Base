@@ -152,7 +152,7 @@
                 <h4 class="modal-title" id="myModalLabel"><i class="icon-magic"></i>添加颜色分类</h4>
             </div>
           <div class="modal-body">
-            <form action="" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+            <form id="product-color-form" action="<c:url value="/admin/product/color?${_csrf.parameterName}=${_csrf.token}" />" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
                <div class="form-group">
                   <label class="control-label col-md-3">分类名称：</label>
                   <div class="col-md-9">
@@ -188,6 +188,9 @@
     $('#product-color-modal').modal('hide');
     $('#product-color-modal .submit').on('click',function(){
     	console.log('.......');
+    	$('#product-color-form').ajaxSubmit(function(data){
+    		console.log(data.status);
+    	});
     	$('#product-color-modal').modal('hide');
     });
 </script>
