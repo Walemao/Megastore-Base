@@ -1,5 +1,7 @@
 package com.walemao.megastore.domain;
 
+import java.util.Date;
+
 
 public class Address {
 	private int id;
@@ -13,7 +15,7 @@ public class Address {
 	private String mobilephone;
 	private String phone;
 	private boolean isDefault;
-	private String creattime;
+	private Date creattime;
 	
 	public int getId() {
 		return id;
@@ -81,10 +83,10 @@ public class Address {
 	public void setDefault(boolean isDefault) {
 		this.isDefault = isDefault;
 	}
-	public String getCreattime() {
+	public Date getCreattime() {
 		return creattime;
 	}
-	public void setCreattime(String creattime) {
+	public void setCreattime(Date creattime) {
 		this.creattime = creattime;
 	}
 }
