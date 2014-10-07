@@ -11,8 +11,10 @@ import org.springframework.stereotype.Repository;
 import com.walemao.megastore.domain.ProductClassification;
 import com.walemao.megastore.domain.mapper.ProductClassificationMapper;
 import com.walemao.megastore.repository.ProductClassficationDao;
+
 @Repository
-public class ProductClassficationDaoImpl implements ProductClassficationDao {
+public class ProductClassficationDaoImpl extends CommonDaoImpl implements
+		ProductClassficationDao {
 	private Logger logger = LoggerFactory
 			.getLogger(ProductClassficationDaoImpl.class);
 
@@ -27,10 +29,10 @@ public class ProductClassficationDaoImpl implements ProductClassficationDao {
 	}
 
 	@Override
-	public void insert(ProductClassification p) {
+	public int insert(ProductClassification p) {
 		// TODO Auto-generated method stub
 		String sql = "insert into t_product_classification(pc_name) values (?)";
-		this.jdbcTemplate.update(sql, new Object[] { p.getName() });
+		return this.addIntoDB(sql, new Object[] { p.getName() });
 	}
 
 	@Override

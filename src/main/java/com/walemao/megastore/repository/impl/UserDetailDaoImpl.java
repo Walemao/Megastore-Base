@@ -7,8 +7,9 @@ import org.springframework.stereotype.Repository;
 import com.walemao.megastore.domain.UserDetail;
 import com.walemao.megastore.domain.mapper.UserDetailMapper;
 import com.walemao.megastore.repository.UserDetailDao;
+
 @Repository
-public class UserDetailDaoImpl implements UserDetailDao {
+public class UserDetailDaoImpl extends CommonDaoImpl implements UserDetailDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -22,10 +23,10 @@ public class UserDetailDaoImpl implements UserDetailDao {
 	}
 
 	@Override
-	public void insert(UserDetail u) {
+	public int insert(UserDetail u) {
 		// TODO Auto-generated method stub
 		String sql = "insert into t_user_detail(u_username,u_matrial_status,u_education,u_professional,u_industry,u_income,u_interests,u_selfdesc) values(?,?,?,?,?,?,?,?)";
-		this.jdbcTemplate.update(
+		return this.addIntoDB(
 				sql,
 				new Object[] { u.getUsername(), u.getMaterial_status(),
 						u.getEducation(), u.getProfessional(), u.getIndustry(),

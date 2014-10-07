@@ -7,8 +7,9 @@ import org.springframework.stereotype.Repository;
 import com.walemao.megastore.domain.UserBase;
 import com.walemao.megastore.domain.mapper.UserBaseMapper;
 import com.walemao.megastore.repository.UserBaseDao;
+
 @Repository
-public class UserBaseDaoImpl implements UserBaseDao {
+public class UserBaseDaoImpl extends CommonDaoImpl implements UserBaseDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -22,10 +23,10 @@ public class UserBaseDaoImpl implements UserBaseDao {
 	}
 
 	@Override
-	public void insert(UserBase u) {
+	public int insert(UserBase u) {
 		// TODO Auto-generated method stub
 		String sql = "insert into t_user_base(u_username,u_head_portrait,u_nickname,u_realname,u_sex,u_birth,u_isval_email,u_provices,u_cities,u_districts,u_address,u_zipcode,u_isval_mobilephone,u_telphone) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		this.jdbcTemplate.update(
+		return this.addIntoDB(
 				sql,
 				new Object[] { u.getUsername(), u.getHead_portrait(),
 						u.getNickname(), u.getRealname(), u.getSex(),

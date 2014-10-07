@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-07 09:53:48
+Date: 2014-10-07 10:31:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -181,7 +181,8 @@ DROP TABLE IF EXISTS `t_prodcut_type`;
 CREATE TABLE `t_prodcut_type` (
   `pd_id` bigint(20) NOT NULL COMMENT '商品型号ID',
   `pd_productid` bigint(20) NOT NULL COMMENT '商品ID，关联t_product',
-  `pd_name` varchar(255) DEFAULT NULL COMMENT '商品颜色名称',
+  `pd_name` varchar(255) NOT NULL COMMENT '商品颜色名称',
+  `pd_thumbnail` longtext COMMENT '缩略图',
   `pd_amount` int(11) DEFAULT '0' COMMENT '商品虚拟库存',
   `pd_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`pd_id`),
