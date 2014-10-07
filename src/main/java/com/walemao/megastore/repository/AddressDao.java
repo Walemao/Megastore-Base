@@ -8,5 +8,6 @@ public interface AddressDao {
 	public List<Address> getAddresses(String username);
 	public int insert(Address a);
 	public void update(Address a);
+	public void changeDefault(Address a);
 	public void delete(int id);
 }

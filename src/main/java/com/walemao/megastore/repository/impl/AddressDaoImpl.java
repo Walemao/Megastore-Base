@@ -2,6 +2,7 @@ package com.walemao.megastore.repository.impl;
 
 import java.util.List;
 
+import org.omg.CORBA.OBJ_ADAPTER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -50,6 +51,16 @@ public class AddressDaoImpl extends CommonDaoImpl implements AddressDao {
 		// TODO Auto-generated method stub
 		String sql = "delete from t_address where a_id=?";
 		this.jdbcTemplate.update(sql, new Object[] { id });
+	}
+
+	@Override
+	public void changeDefault(Address a) {
+		// TODO Auto-generated method stub
+		String sql0 = "update t_address set a_isdefault=0 where a_username = ?";
+		this.jdbcTemplate.update(sql0, new Object[] { a.getUsername() });
+		String sql = "update t_address set a_isdefault = ? where a_id=?";
+		this.jdbcTemplate
+				.update(sql, new Object[] { a.isDefault(), a.getId() });
 	}
 
 }
