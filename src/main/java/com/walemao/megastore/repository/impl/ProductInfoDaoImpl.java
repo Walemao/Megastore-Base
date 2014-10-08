@@ -2,11 +2,13 @@ package com.walemao.megastore.repository.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.domain.mapper.ProductInfoMapper;
 import com.walemao.megastore.repository.ProductInfoDao;
 
+@Repository
 public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao {
 
 	@Autowired

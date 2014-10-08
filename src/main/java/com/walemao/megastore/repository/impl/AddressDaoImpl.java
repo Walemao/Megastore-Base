@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.Address;
 import com.walemao.megastore.domain.mapper.AddressMapper;
 import com.walemao.megastore.repository.AddressDao;
 
+@Repository
 public class AddressDaoImpl extends CommonDaoImpl implements AddressDao {
 
 	@Autowired

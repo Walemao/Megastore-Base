@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.OrderDetail;
 import com.walemao.megastore.domain.mapper.OrderDetailMapper;
 import com.walemao.megastore.repository.OrderDetailDao;
 
+@Repository
 public class OrderDetailDaoImpl implements OrderDetailDao {
 
 	@Autowired

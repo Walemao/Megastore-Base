@@ -6,11 +6,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.Comments;
 import com.walemao.megastore.domain.mapper.CommentsMapper;
 import com.walemao.megastore.repository.CommentsDao;
 
+@Repository
 public class CommentsDaoImpl extends CommonDaoImpl implements CommentsDao {
 
 	@Autowired
