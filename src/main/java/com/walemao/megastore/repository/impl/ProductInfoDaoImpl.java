@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.walemao.megastore.domain.ProductInfo;
+import com.walemao.megastore.domain.mapper.ProductInfoMapper;
 import com.walemao.megastore.repository.ProductInfoDao;
 
 public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao {
@@ -25,6 +26,17 @@ public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao 
 		// TODO Auto-generated method stub
 		String sql = "delete from t_product_info where pd_id=?";
 		this.jdbcTemplate.update(sql, new Object[] { id });
+	}
+
+	@Override
+	public ProductInfo getProductInfo(String md5) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT pd_id, pd_name, "
+				+ "	pd_thumbnail, pd_thummd5, pd_weight, "
+				+ "	pd_price, pd_amount, pd_createtime "
+				+ "FROM t_prodcut_info where pd_thummd5 = ? limit 1";
+		return this.jdbcTemplate.query(sql, new Object[] { md5 },
+				new ProductInfoMapper()).get(0);
 	}
 
 }

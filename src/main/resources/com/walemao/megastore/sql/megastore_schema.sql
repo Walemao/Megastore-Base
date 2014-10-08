@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-08 14:24:17
+Date: 2014-10-08 15:41:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -180,8 +180,8 @@ CREATE TABLE `t_order_detail` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_prodcut_info`;
 CREATE TABLE `t_prodcut_info` (
-  `pd_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品型号ID',
-  `pd_productid` bigint(20) NOT NULL COMMENT '商品ID，关联t_product',
+  `pd_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品编号',
+  `pd_productid` bigint(20) DEFAULT NULL COMMENT '商品ID，关联t_product',
   `pd_name` varchar(255) NOT NULL COMMENT '商品型号名称',
   `pd_thumbnail` longtext COMMENT '缩略图',
   `pd_thummd5` char(16) DEFAULT NULL COMMENT '图片MD5',
@@ -200,6 +200,7 @@ CREATE TABLE `t_prodcut_info` (
 DROP TABLE IF EXISTS `t_product_base`;
 CREATE TABLE `t_product_base` (
   `p_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品id',
+  `p_number` varchar(255) DEFAULT NULL COMMENT '商品货号',
   `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
   `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
   `p_thumbnail` longtext COMMENT '商品缩略图',
@@ -213,9 +214,10 @@ CREATE TABLE `t_product_base` (
   `p_creattime` datetime DEFAULT NULL COMMENT '商品上架时间',
   `deletemark` datetime DEFAULT NULL,
   PRIMARY KEY (`p_id`),
-  KEY `idx_t_product_name` (`p_name`),
-  KEY `idx_t_product_deletemark` (`deletemark`),
-  KEY `p_id` (`p_id`)
+  UNIQUE KEY `idx_t_product_base_1` (`p_number`),
+  KEY `idx_t_product_base_2` (`p_name`) USING BTREE,
+  KEY `idx_t_product_base_4` (`deletemark`) USING BTREE,
+  KEY `idx_t_product_base_3` (`p_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -294,10 +296,10 @@ CREATE TABLE `t_user` (
   `u_enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用，0是未启用，1是启用',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`u_id`),
+  UNIQUE KEY `idx_t_user_4` (`u_username`) USING BTREE,
   KEY `idx_t_user_1` (`u_type`) USING BTREE,
   KEY `idx_t_user_2` (`u_level`),
-  KEY `idx_t_user_deletemark` (`deletemark`),
-  KEY `idx_t_user_username` (`u_username`) USING BTREE
+  KEY `idx_t_user_3` (`deletemark`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -307,8 +309,7 @@ DROP TABLE IF EXISTS `t_user_authority`;
 CREATE TABLE `t_user_authority` (
   `username` varchar(255) NOT NULL COMMENT '用户名',
   `authority` varchar(255) NOT NULL COMMENT '权限',
-  UNIQUE KEY `idx_auth_username` (`username`,`authority`),
-  CONSTRAINT `fk_t_user_authority_1` FOREIGN KEY (`username`) REFERENCES `t_user` (`u_username`)
+  UNIQUE KEY `idx_auth_username` (`username`,`authority`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
