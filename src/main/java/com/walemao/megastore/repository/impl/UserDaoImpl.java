@@ -77,4 +77,31 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 						user.getMobilephone(), user.getEmail() });
 	}
 
+	@SuppressWarnings("deprecation")
+	@Override
+	public boolean CheckUsername(String username) {
+		// TODO Auto-generated method stub
+		String sql = "select 1 from t_user where u_username=? limit 1";
+		return this.jdbcTemplate.queryForInt(sql, new Object[] { username }) == 1 ? true
+				: false;
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public boolean CheckMobilephone(String mobilephone) {
+		// TODO Auto-generated method stub
+		String sql = "select 1 from t_user where u_mobilephone=? limit 1";
+		return this.jdbcTemplate.queryForInt(sql, new Object[] { mobilephone }) == 1 ? true
+				: false;
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public boolean CheckEmail(String email) {
+		// TODO Auto-generated method stub
+		String sql = "select 1 from t_user where u_email=? limit 1";
+		return this.jdbcTemplate.queryForInt(sql, new Object[] { email }) == 1 ? true
+				: false;
+	}
+
 }

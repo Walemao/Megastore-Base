@@ -12,4 +12,7 @@ public interface UserDao {
 	public void updateEmail(User user);
 	public void updateMobilephone(User user);
 	public int insert(User user);
+	public boolean CheckUsername(String username);
+	public boolean CheckMobilephone(String mobilephone);
+	public boolean CheckEmail(String email);
 }
