@@ -22,6 +22,15 @@ public class ProductBase {
 	private ProductClassification productClassification;
 	private List<ProductInfo> productInfos;
 	
+	public String getNumber() {
+		return number;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	public void setProductInfos(List<ProductInfo> productInfos) {
+		this.productInfos = productInfos;
+	}
 	public ProductClassification getProductClassification() {
 		return productClassification;
 	}
@@ -54,12 +63,6 @@ public class ProductBase {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getNumber() {
-		return number;
-	}
-	public void setNumber(String number) {
-		this.number = number;
 	}
 	public String getName() {
 		return name;

@@ -1,7 +1,5 @@
 package com.walemao.megastore.repository.impl;
 
-import java.math.BigDecimal;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,7 +7,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -36,7 +33,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	@Override
 	public ProductBase getProduct(int id) {
 		// TODO Auto-generated method stub
-		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin"
+		String sql = "select p_id,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin"
 				+ ",p_materials,p_desc,p_price,p_discount,p_remark,p_creattime from t_product_base where p_id = ? limit 1";
 		ProductBase productInfo = this.jdbcTemplate.query(sql,
 				new Object[] { id }, new ProductBaseMapper()).get(0);
@@ -51,7 +48,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 			Date endTime, int mark) {
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
-		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin"
+		String sql = "select p_id,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin"
 				+ ",p_materials,p_desc,p_discount,p_remark,p_creattime,pc_name from t_product_base a left join t_product_classification b"
 				+ " on a.p_type = b.pc_id where a.deletemark is " + args;
 		List<Object> list = new ArrayList<Object>();
@@ -74,8 +71,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	@Override
 	public int insert(ProductBase p) {
 		// TODO Auto-generated method stub
-		final List<ProductInfo> list = p.getProductInfos();
-		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_materials,p_desc,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_materials,p_desc,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?)";
 
 		int id = this.addIntoDB(
 				sql,
@@ -84,34 +80,19 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 						p.getOrgin(), p.getMaterials(), p.getDesc(),
 						p.getDiscount(), p.getRemark() });
 		p.setId(id);
-
-		sql = "insert into t_product_info(pd_productid,pd_name,pd_thumbnail,pd_thummd5,pd_weight,pd_price,pd_amount,pd_createtime) values ("
-				+ id + ",?,?,?,?,?,?,now())";
-		this.jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
-			@Override
-			public void setValues(java.sql.PreparedStatement ps, int i)
-					throws SQLException {
-				// TODO Auto-generated method stub
-				String name = list.get(i).getName();
-				String thumbnail = list.get(i).getThumbnail();
-				String thummd5 = list.get(i).getThummd5();
-				String weight = list.get(i).getWeight();
-				BigDecimal price = list.get(i).getPrice();
-				int amount = list.get(i).getAmount();
-				ps.setString(1, name);
-				ps.setString(2, thumbnail);
-				ps.setString(3, thummd5);
-				ps.setString(4, weight);
-				ps.setBigDecimal(5, price);
-				ps.setInt(6, amount);
+		List<ProductInfo> list = p.getProductInfos();
+		int length = list.size();
+		if (length > 0) {
+			StringBuffer sb = new StringBuffer();
+			sb.append("(");
+			for (int i = 0; i < length - 1; ++i) {
+				sb.append(list.get(i).getId() + ",");
 			}
-
-			@Override
-			public int getBatchSize() {
-				// TODO Auto-generated method stub
-				return list.size();
-			}
-		});
+			;
+			sb.append(list.get(length - 1).getId() + ")");
+			sql = "update t_product_info set pd_productid=? where pd_id in ?";
+			this.jdbcTemplate.update(sql, new Object[] { id, sb.toString() });
+		}
 		return id;
 	}
 

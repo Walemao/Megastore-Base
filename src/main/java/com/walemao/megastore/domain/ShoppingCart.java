@@ -5,8 +5,8 @@ import java.util.Date;
 
 public class ShoppingCart {
 	private int id;
-	private int productid;
-	private int productColorId;
+	private int productBaseId;
+	private int productInfoId;
 	private int amount;
 	private Date createtime;
 	
@@ -18,17 +18,17 @@ public class ShoppingCart {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getProductid() {
-		return productid;
+	public int getProductBaseId() {
+		return productBaseId;
 	}
-	public void setProductid(int productid) {
-		this.productid = productid;
+	public void setProductBaseId(int productBaseId) {
+		this.productBaseId = productBaseId;
 	}
-	public int getProductColorId() {
-		return productColorId;
+	public int getProductInfoId() {
+		return productInfoId;
 	}
-	public void setProductColorId(int productColorId) {
-		this.productColorId = productColorId;
+	public void setProductInfoId(int productInfoId) {
+		this.productInfoId = productInfoId;
 	}
 	public int getAmount() {
 		return amount;

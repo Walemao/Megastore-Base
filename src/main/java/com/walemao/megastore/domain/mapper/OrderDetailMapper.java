@@ -17,7 +17,6 @@ public class OrderDetailMapper implements RowMapper<OrderDetail> {
 		OrderDetail oDetail = new OrderDetail();
 		oDetail.setId(rs.getInt("od_id"));
 		ProductBase productInfo = new ProductBase();
-		productInfo.setNumber(rs.getString("p_number"));
 		productInfo.setName(rs.getString("p_name"));
 		oDetail.setProduct(productInfo);
 		ProductInfo productType= new ProductInfo();
