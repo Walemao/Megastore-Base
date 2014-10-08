@@ -46,7 +46,7 @@ public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao 
 	@Override
 	public void deleteUnused() {
 		// TODO Auto-generated method stub
-		String sql = "delete from t_product_info where pd_productid = -1";
+		String sql = "delete from t_product_info where pd_productid = 0";
 		this.jdbcTemplate.update(sql);
 	}
 

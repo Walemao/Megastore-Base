@@ -50,7 +50,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 		String args = mark == 0 ? "null" : "not null";
 		String sql = "select p_id,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin"
 				+ ",p_materials,p_desc,p_discount,p_remark,p_creattime,pc_name from t_product_base a left join t_product_classification b"
-				+ " on a.p_type = b.pc_id where a.p_id<>-1 and a.deletemark is " + args;
+				+ " on a.p_type = b.pc_id where a.p_id <> 0 and a.deletemark is " + args;
 		List<Object> list = new ArrayList<Object>();
 		if (parm == null || parm.length() <= 0) {
 		} else {
