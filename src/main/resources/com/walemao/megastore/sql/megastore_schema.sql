@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-08 17:10:46
+Date: 2014-10-08 20:32:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,11 +20,12 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `d_city`;
 CREATE TABLE `d_city` (
-  `cityid` smallint(6) NOT NULL AUTO_INCREMENT,
-  `cityname` varchar(50) DEFAULT NULL,
-  `zipcode` varchar(6) DEFAULT NULL,
-  `provinceid` tinyint(4) DEFAULT NULL,
-  PRIMARY KEY (`cityid`)
+  `cityid` smallint(6) NOT NULL AUTO_INCREMENT COMMENT '城市ID',
+  `cityname` varchar(50) DEFAULT NULL COMMENT '城市名称',
+  `zipcode` varchar(6) DEFAULT NULL COMMENT '邮政编码',
+  `provinceid` tinyint(4) DEFAULT NULL COMMENT '省份ID',
+  PRIMARY KEY (`cityid`),
+  KEY `idx_city_1` (`provinceid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -42,10 +43,11 @@ CREATE TABLE `d_comments` (
 -- ----------------------------
 DROP TABLE IF EXISTS `d_district`;
 CREATE TABLE `d_district` (
-  `districtid` smallint(6) NOT NULL AUTO_INCREMENT,
-  `districtname` varchar(50) DEFAULT NULL,
-  `cityid` smallint(6) DEFAULT NULL,
-  PRIMARY KEY (`districtid`)
+  `districtid` smallint(6) NOT NULL AUTO_INCREMENT COMMENT '地区ID',
+  `districtname` varchar(50) DEFAULT NULL COMMENT '地区名称',
+  `cityid` smallint(6) DEFAULT NULL COMMENT '城市ID',
+  PRIMARY KEY (`districtid`),
+  KEY `idx_district_1` (`cityid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2863 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -53,10 +55,10 @@ CREATE TABLE `d_district` (
 -- ----------------------------
 DROP TABLE IF EXISTS `d_province`;
 CREATE TABLE `d_province` (
-  `ProvinceID` tinyint(4) NOT NULL,
-  `ProvinceName` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`ProvinceID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `provinceid` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '省份ID',
+  `provincename` varchar(50) DEFAULT NULL COMMENT '省份名称',
+  PRIMARY KEY (`provinceid`)
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for d_user
@@ -233,7 +235,7 @@ CREATE TABLE `t_product_favorites` (
 DROP TABLE IF EXISTS `t_product_info`;
 CREATE TABLE `t_product_info` (
   `pd_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品编号',
-  `pd_productid` bigint(20) DEFAULT NULL COMMENT '商品ID，关联t_product',
+  `pd_productid` bigint(20) NOT NULL DEFAULT '-1' COMMENT '商品ID，关联t_product',
   `pd_name` varchar(255) NOT NULL COMMENT '商品型号名称',
   `pd_thumbnail` longtext COMMENT '缩略图',
   `pd_thummd5` char(16) DEFAULT NULL COMMENT '图片MD5',
@@ -244,8 +246,8 @@ CREATE TABLE `t_product_info` (
   PRIMARY KEY (`pd_id`),
   UNIQUE KEY `idx_t_product_info_2` (`pd_thummd5`) USING BTREE,
   KEY `idx_t_product_info_1` (`pd_productid`) USING BTREE,
-  CONSTRAINT `fk_t_product_color_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_base` (`p_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  CONSTRAINT `fk_product_info_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_base` (`p_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_proposal

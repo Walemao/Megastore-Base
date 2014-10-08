@@ -14,8 +14,8 @@ public class ProvinceMapper implements RowMapper<Province>{
 	public Province mapRow(ResultSet rs, int rowNum) throws SQLException {
 		// TODO Auto-generated method stub
 		Province province = new Province();
-		province.setId(rs.getInt(""));
-		province.setName(rs.getString(""));
+		province.setId(rs.getInt("provinceid"));
+		province.setName(rs.getString("provincename"));
 		return province;
 	}
 
