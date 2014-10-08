@@ -9,13 +9,13 @@ public class WarehouseProduct {
 	private int amount;
 	private Date createtime;
 	
-	private ProductType productytpe;
-	private ProductInfo product;
+	private ProductInfo productytpe;
+	private ProductBase product;
 	
-	public ProductInfo getProduct() {
+	public ProductBase getProduct() {
 		return product;
 	}
-	public void setProduct(ProductInfo product) {
+	public void setProduct(ProductBase product) {
 		this.product = product;
 	}
 	public int getId() {
@@ -48,10 +48,10 @@ public class WarehouseProduct {
 	public void setTypeid(int typeid) {
 		this.typeid = typeid;
 	}
-	public ProductType getProductytpe() {
+	public ProductInfo getProductytpe() {
 		return productytpe;
 	}
-	public void setProductytpe(ProductType productytpe) {
+	public void setProductytpe(ProductInfo productytpe) {
 		this.productytpe = productytpe;
 	}
 	

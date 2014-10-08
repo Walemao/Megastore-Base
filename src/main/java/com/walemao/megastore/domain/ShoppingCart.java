@@ -10,8 +10,8 @@ public class ShoppingCart {
 	private int amount;
 	private Date createtime;
 	
-	private ProductInfo productInfo;
-	private ProductType productColor;
+	private ProductBase productInfo;
+	private ProductInfo productColor;
 	public int getId() {
 		return id;
 	}
@@ -42,16 +42,16 @@ public class ShoppingCart {
 	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
-	public ProductInfo getProductInfo() {
+	public ProductBase getProductInfo() {
 		return productInfo;
 	}
-	public void setProductInfo(ProductInfo productInfo) {
+	public void setProductInfo(ProductBase productInfo) {
 		this.productInfo = productInfo;
 	}
-	public ProductType getProductColor() {
+	public ProductInfo getProductColor() {
 		return productColor;
 	}
-	public void setProductColor(ProductType productColor) {
+	public void setProductColor(ProductInfo productColor) {
 		this.productColor = productColor;
 	}
 }

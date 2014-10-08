@@ -10,8 +10,8 @@ public class WarehouseProductRejected {
 	private Date createtime;
 	private String remark;
 	
-	private ProductType producttype;
-	private ProductInfo product;
+	private ProductInfo producttype;
+	private ProductBase product;
 
 	public String getRemark() {
 		return remark;
@@ -19,16 +19,16 @@ public class WarehouseProductRejected {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	public ProductType getProducttype() {
+	public ProductInfo getProducttype() {
 		return producttype;
 	}
-	public void setProducttype(ProductType producttype) {
+	public void setProducttype(ProductInfo producttype) {
 		this.producttype = producttype;
 	}
-	public ProductInfo getProduct() {
+	public ProductBase getProduct() {
 		return product;
 	}
-	public void setProduct(ProductInfo product) {
+	public void setProduct(ProductBase product) {
 		this.product = product;
 	}
 	public int getId() {

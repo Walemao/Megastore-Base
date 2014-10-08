@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.walemao.megastore.domain.OrderDetail;
+import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.ProductInfo;
 
 public class OrderDetailMapper implements RowMapper<OrderDetail> {
@@ -15,10 +16,13 @@ public class OrderDetailMapper implements RowMapper<OrderDetail> {
 		// TODO Auto-generated method stub
 		OrderDetail oDetail = new OrderDetail();
 		oDetail.setId(rs.getInt("od_id"));
-		ProductInfo productInfo = new ProductInfo();
+		ProductBase productInfo = new ProductBase();
 		productInfo.setNumber(rs.getString("p_number"));
 		productInfo.setName(rs.getString("p_name"));
 		oDetail.setProduct(productInfo);
+		ProductInfo productType= new ProductInfo();
+		productType.setName(rs.getString(""));
+		productType.setThumbnail(rs.getString(""));
 		oDetail.setAmount(rs.getInt("od_amount"));
 		oDetail.setRemark(rs.getString("od_reamark"));
 		oDetail.setCreatetime(rs.getDate("od_createtime"));

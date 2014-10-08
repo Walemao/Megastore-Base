@@ -8,15 +8,15 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.google.gson.Gson;
 import com.walemao.megastore.domain.ProductClassification;
-import com.walemao.megastore.domain.ProductInfo;
+import com.walemao.megastore.domain.ProductBase;
 
-public class ProductMapper implements RowMapper<ProductInfo>{
+public class ProductBaseMapper implements RowMapper<ProductBase>{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public ProductInfo mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public ProductBase mapRow(ResultSet rs, int rowNum) throws SQLException {
 		// TODO Auto-generated method stub
-		ProductInfo pro = new ProductInfo();
+		ProductBase pro = new ProductBase();
 		pro.setId(rs.getInt("p_id"));
 		pro.setNumber(rs.getString("p_number"));
 		pro.setName(rs.getString("p_name"));
@@ -29,7 +29,6 @@ public class ProductMapper implements RowMapper<ProductInfo>{
 		pro.setProductClassification(productClassification);
 		pro.setType(rs.getInt("p_type"));
 		pro.setOrgin(rs.getString("p_origin"));
-		pro.setWeight(rs.getString("p_weight"));
 		pro.setMaterials(rs.getString("p_materials"));
 		pro.setDesc(rs.getString("p_desc"));
 		pro.setDiscount(rs.getDouble("p_discount"));

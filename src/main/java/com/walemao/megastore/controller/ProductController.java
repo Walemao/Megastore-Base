@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.walemao.megastore.domain.ProductType;
 import com.walemao.megastore.domain.ProductInfo;
+import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.service.ProductService;
 import com.walemao.megastore.util.DateUtil;
 import com.walemao.megastore.util.FileUploadUtil;
@@ -52,7 +52,7 @@ public class ProductController extends BaseController {
 	 * */
 	@RequestMapping(value = "/admin/product", params = { "add" }, method = RequestMethod.GET)
 	public String addProductPage(
-			@ModelAttribute("productInfo") ProductInfo productInfo) {
+			@ModelAttribute("productInfo") ProductBase productInfo) {
 
 		return "admin/product/product";
 	}
@@ -63,7 +63,7 @@ public class ProductController extends BaseController {
 	 * */
 	@RequestMapping(value = "/admin/product/{id}", method = RequestMethod.GET)
 	public String getProductInfo(@PathVariable("id") int id,
-			@ModelAttribute("productInfo") ProductInfo productInfo,
+			@ModelAttribute("productInfo") ProductBase productInfo,
 			HttpServletRequest request) {
 
 		return "admin/product/product";
@@ -75,13 +75,13 @@ public class ProductController extends BaseController {
 	 * */
 	@RequestMapping(value = "/admin/product", method = RequestMethod.POST)
 	public String addProduct(
-			@ModelAttribute("productInfo") ProductInfo productInfo,
+			@ModelAttribute("productInfo") ProductBase productInfo,
 			HttpServletRequest request, RedirectAttributes redirectAttributes) {
 
 		productInfo.setCreattime(new Date());
 		productInfo.setType(0);
-		if (productInfo.getProductColors() == null) {
-			productInfo.setProductColors(new ArrayList<ProductType>());
+		if (productInfo.getProductInfos() == null) {
+			productInfo.setProductColors(new ArrayList<ProductInfo>());
 		}
 
 		try {
@@ -120,7 +120,7 @@ public class ProductController extends BaseController {
 			logger.debug("打印路径： {}", thumbnailUrl);
 			logger.debug("打印MD5： {}", thumbnailMD5);
 			
-			ProductType productType = new ProductType();
+			ProductInfo productType = new ProductInfo();
 			productType.setThumbnail(thumbnailUrl);
 			productType.setName(typeName);
 			productType.setAmount(amount);
