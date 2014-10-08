@@ -33,7 +33,7 @@ public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao 
 	@Override
 	public ProductInfo getProductInfo(String md5) {
 		// TODO Auto-generated method stub
-		String sql = "SELECT pd_id, pd_name, "
+		String sql = "SELECT pd_id,pd_productid,pd_name, "
 				+ "	pd_thumbnail, pd_thummd5, pd_weight, "
 				+ "	pd_price, pd_amount, pd_createtime "
 				+ "FROM t_product_info where pd_thummd5 = ? limit 1";

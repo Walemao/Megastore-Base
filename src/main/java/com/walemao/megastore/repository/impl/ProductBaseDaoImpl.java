@@ -37,7 +37,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 				+ ",p_materials,p_desc,p_price,p_discount,p_remark,p_creattime from t_product_base where p_id = ? limit 1";
 		ProductBase productInfo = this.jdbcTemplate.query(sql,
 				new Object[] { id }, new ProductBaseMapper()).get(0);
-		sql = "select pd_id,pd_productid,pd_name,pd_thumbnail,pd_thummd5,pd_weight,pd_price,pd_amount,pd_createtime from t_product_info where pd_productid = ?";
+		sql = "select pd_id,pd_name,pd_thumbnail,pd_thummd5,pd_weight,pd_price,pd_amount,pd_createtime from t_product_info where pd_productid = ?";
 		productInfo.setProductColors(this.jdbcTemplate.query(sql,
 				new Object[] { id }, new ProductInfoMapper()));
 		return productInfo;
