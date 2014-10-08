@@ -32,7 +32,6 @@ public class ProductMapper implements RowMapper<ProductInfo>{
 		pro.setWeight(rs.getString("p_weight"));
 		pro.setMaterials(rs.getString("p_materials"));
 		pro.setDesc(rs.getString("p_desc"));
-		pro.setPrice(rs.getBigDecimal("p_price"));
 		pro.setDiscount(rs.getDouble("p_discount"));
 		pro.setRemark(rs.getString("p_remark"));
 		pro.setCreattime(rs.getDate("p_creattime"));

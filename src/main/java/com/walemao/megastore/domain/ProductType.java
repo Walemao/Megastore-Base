@@ -1,14 +1,33 @@
 package com.walemao.megastore.domain;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class ProductType {
 	private int id;
 	private int productid;
 	private String thumbnail;
+	private String thummd5;
+	private BigDecimal price;
 	private String name;
 	private int amount;
 	private Date createtime;
+
+	public String getThummd5() {
+		return thummd5;
+	}
+
+	public void setThummd5(String thummd5) {
+		this.thummd5 = thummd5;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
 
 	public int getProductid() {
 		return productid;

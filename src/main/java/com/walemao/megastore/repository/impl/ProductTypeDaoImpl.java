@@ -14,9 +14,10 @@ public class ProductTypeDaoImpl extends CommonDaoImpl implements ProductTypeDao 
 	@Override
 	public int insert(ProductType p) {
 		// TODO Auto-generated method stub
-		String sql = "insert into t_product_type(pd_productid,pd_name,pd_thumbnail,pd_amount,pd_createtime) values (?,?,?,?,now())";
-		return this.addIntoDB(sql, new Object[] { p.getProductid(),
-				p.getName(), p.getThumbnail(), p.getAmount() });
+		String sql = "insert into t_product_type(pd_productid,pd_name,pd_thumbnail,pd_thummd5,pd_price,pd_amount,pd_createtime) values (?,?,?,?,now())";
+		return this.addIntoDB(sql,
+				new Object[] { p.getProductid(), p.getName(), p.getThumbnail(),
+						p.getThummd5(), p.getPrice(), p.getAmount() });
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package com.walemao.megastore.repository.impl;
 
+import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -51,7 +52,7 @@ public class ProductDaoImpl extends CommonDaoImpl implements ProductDao {
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
 		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_weight"
-				+ ",p_materials,p_desc,p_price,p_discount,p_remark,p_creattime,pc_name from t_product_info a left join t_product_classification b"
+				+ ",p_materials,p_desc,p_discount,p_remark,p_creattime,pc_name from t_product_info a left join t_product_classification b"
 				+ " on a.p_type = b.pc_id where a.deletemark is " + args;
 		List<Object> list = new ArrayList<Object>();
 		if (parm == null || parm.length() <= 0) {
@@ -74,28 +75,33 @@ public class ProductDaoImpl extends CommonDaoImpl implements ProductDao {
 	public int insert(ProductInfo p) {
 		// TODO Auto-generated method stub
 		final List<ProductType> list = p.getProductColors();
-		String sql = "insert into t_product_info(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_weight,p_materials,p_desc,p_price,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into t_product_info(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_weight,p_materials,p_desc,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		int id = this.addIntoDB(
 				sql,
 				new Object[] { p.getNumber(), p.getName(), p.isRecommend(),
 						p.getThumbnail(), p.getImages(), p.getType(),
 						p.getOrgin(), p.getWeight(), p.getMaterials(),
-						p.getDesc(), p.getPrice(), p.getDiscount(),
-						p.getRemark() });
+						p.getDesc(), p.getDiscount(), p.getRemark() });
 		p.setId(id);
 
-		sql = "insert into t_prodcut_type(pd_productid,pd_name,pd_amount,pd_createtime) values ("
-				+ id + ",?,?,now())";
+		sql = "insert into t_prodcut_type(pd_productid,pd_name,pd_thumbnail,pd_thummd5,pd_price,pd_amount,pd_createtime) values ("
+				+ id + ",?,?,?,?,?,now())";
 		this.jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
 			@Override
 			public void setValues(java.sql.PreparedStatement ps, int i)
 					throws SQLException {
 				// TODO Auto-generated method stub
 				String name = list.get(i).getName();
+				String thumbnail = list.get(i).getThumbnail();
+				String thummd5 = list.get(i).getThummd5();
+				BigDecimal price = list.get(i).getPrice();
 				int amount = list.get(i).getAmount();
 				ps.setString(1, name);
-				ps.setInt(2, amount);
+				ps.setString(2, thumbnail);
+				ps.setString(3, thummd5);
+				ps.setBigDecimal(4, price);
+				ps.setInt(5, amount);
 			}
 
 			@Override
@@ -110,13 +116,13 @@ public class ProductDaoImpl extends CommonDaoImpl implements ProductDao {
 	@Override
 	public void update(ProductInfo p) {
 		// TODO Auto-generated method stub
-		String sql = "Update t_product_info set p_number=?,p_name=?,p_recommend=?,p_thumbnail=?,p_images=?,p_type=?,p_origin=?,p_weight=?,p_materials=?,p_desc=?,p_price=?,p_discount=?,p_remark=? where p_id=?";
+		String sql = "Update t_product_info set p_number=?,p_name=?,p_recommend=?,p_thumbnail=?,p_images=?,p_type=?,p_origin=?,p_weight=?,p_materials=?,p_desc=?,p_discount=?,p_remark=? where p_id=?";
 		this.jdbcTemplate.update(
 				sql,
 				new Object[] { p.getNumber(), p.getName(), p.isRecommend(),
 						p.getThumbnail(), p.getImages(), p.getType(),
 						p.getOrgin(), p.getWeight(), p.getMaterials(),
-						p.getDesc(), p.getPrice(), p.getDiscount(),
+						p.getDesc(), p.getDiscount(),
 						p.getRemark(), p.getId() });
 	}
 

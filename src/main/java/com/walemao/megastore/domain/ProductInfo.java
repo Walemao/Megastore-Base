@@ -16,7 +16,6 @@ public class ProductInfo {
 	private String weight;
 	private String materials;
 	private String desc;
-	private BigDecimal price;
 	private double discount;
 	private String remark;
 	private Date creattime;
@@ -104,12 +103,6 @@ public class ProductInfo {
 	}
 	public void setDesc(String desc) {
 		this.desc = desc;
-	}
-	public BigDecimal getPrice() {
-		return price;
-	}
-	public void setPrice(BigDecimal price) {
-		this.price = price;
 	}
 	public double getDiscount() {
 		return discount;
