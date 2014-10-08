@@ -11,7 +11,7 @@ public class ProductBase {
 	private boolean recommend;
 	private String thumbnail;
 	private List<String> images;
-	private int type;
+	private int classify;
 	private String orgin;
 	private String materials;
 	private String desc;
@@ -76,11 +76,11 @@ public class ProductBase {
 	public void setRecommend(boolean recommend) {
 		this.recommend = recommend;
 	}
-	public int getType() {
-		return type;
+	public int getClassify() {
+		return classify;
 	}
-	public void setType(int type) {
-		this.type = type;
+	public void setClassify(int classify) {
+		this.classify = classify;
 	}
 	public String getOrgin() {
 		return orgin;

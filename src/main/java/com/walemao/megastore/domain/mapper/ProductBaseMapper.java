@@ -27,7 +27,7 @@ public class ProductBaseMapper implements RowMapper<ProductBase>{
 		ProductClassify productClassification = new ProductClassify();
 		productClassification.setName(rs.getString("pc_name"));
 		pro.setProductClassification(productClassification);
-		pro.setType(rs.getInt("p_type"));
+		pro.setClassify(rs.getInt("p_classify"));
 		pro.setOrgin(rs.getString("p_origin"));
 		pro.setMaterials(rs.getString("p_materials"));
 		pro.setDesc(rs.getString("p_desc"));

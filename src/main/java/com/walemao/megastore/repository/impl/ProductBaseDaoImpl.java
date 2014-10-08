@@ -10,11 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.mapper.ProductInfoMapper;
 import com.walemao.megastore.domain.mapper.ProductBaseMapper;
 import com.walemao.megastore.repository.ProductBaseDao;
+import com.walemao.megastore.util.ToolUtil;
 
 @Repository
 public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao {
@@ -72,40 +72,38 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	@Override
 	public int insert(ProductBase p, int[] ids) {
 		// TODO Auto-generated method stub
-		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_materials,p_desc,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_images,p_classify,p_origin,p_materials,p_desc,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?)";
 
 		int id = this.addIntoDB(
 				sql,
 				new Object[] { p.getNumber(), p.getName(), p.isRecommend(),
-						p.getThumbnail(), p.getImages(), p.getType(),
+						p.getThumbnail(), p.getImages(), p.getClassify(),
 						p.getOrgin(), p.getMaterials(), p.getDesc(),
 						p.getDiscount(), p.getRemark() });
 		p.setId(id);
-		int length = ids.length;
-		if (length > 0) {
-			StringBuffer sb = new StringBuffer();
-			sb.append("(");
-			for (int i = 0; i < length - 1; ++i) {
-				sb.append(ids[i] + ",");
-			}
-			;
-			sb.append(ids[length - 1] + ")");
+		if (ids.length > 0) {
 			sql = "update t_product_info set pd_productid=? where pd_id in ?";
-			this.jdbcTemplate.update(sql, new Object[] { id, sb.toString() });
+			this.jdbcTemplate.update(sql,
+					new Object[] { id, ToolUtil.IntDataToString(ids) });
 		}
 		return id;
 	}
 
 	@Override
-	public void update(ProductBase p) {
+	public void update(ProductBase p, int[] ids) {
 		// TODO Auto-generated method stub
-		String sql = "Update t_product_base set p_number=?,p_name=?,p_recommend=?,p_thumbnail=?,p_images=?,p_type=?,p_origin=?,p_materials=?,p_desc=?,p_discount=?,p_remark=? where p_id=?";
+		String sql = "Update t_product_base set p_number=?,p_name=?,p_recommend=?,p_thumbnail=?,p_images=?,p_classify=?,p_origin=?,p_materials=?,p_desc=?,p_discount=?,p_remark=? where p_id=?";
 		this.jdbcTemplate.update(
 				sql,
 				new Object[] { p.getNumber(), p.getName(), p.isRecommend(),
-						p.getThumbnail(), p.getImages(), p.getType(),
+						p.getThumbnail(), p.getImages(), p.getClassify(),
 						p.getOrgin(), p.getMaterials(), p.getDesc(),
 						p.getDiscount(), p.getRemark(), p.getId() });
+		if (ids.length > 0) {
+			sql = "update t_product_info set pd_productid=? where pd_id in ?";
+			this.jdbcTemplate.update(sql,
+					new Object[] { p.getId(), ToolUtil.IntDataToString(ids) });
+		}
 	}
 
 	@Override
