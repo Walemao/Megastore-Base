@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-08 20:32:22
+Date: 2014-10-08 20:59:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -235,7 +235,7 @@ CREATE TABLE `t_product_favorites` (
 DROP TABLE IF EXISTS `t_product_info`;
 CREATE TABLE `t_product_info` (
   `pd_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品编号',
-  `pd_productid` bigint(20) NOT NULL DEFAULT '-1' COMMENT '商品ID，关联t_product',
+  `pd_productid` bigint(20) NOT NULL DEFAULT '0' COMMENT '商品ID，关联t_product',
   `pd_name` varchar(255) NOT NULL COMMENT '商品型号名称',
   `pd_thumbnail` longtext COMMENT '缩略图',
   `pd_thummd5` char(16) DEFAULT NULL COMMENT '图片MD5',
@@ -247,7 +247,7 @@ CREATE TABLE `t_product_info` (
   UNIQUE KEY `idx_t_product_info_2` (`pd_thummd5`) USING BTREE,
   KEY `idx_t_product_info_1` (`pd_productid`) USING BTREE,
   CONSTRAINT `fk_product_info_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_base` (`p_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_proposal

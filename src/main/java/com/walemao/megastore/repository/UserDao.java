@@ -15,4 +15,5 @@ public interface UserDao {
 	public boolean CheckUsername(String username);
 	public boolean CheckMobilephone(String mobilephone);
 	public boolean CheckEmail(String email);
+	public void delete(String username);
 }
