@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.walemao.megastore.domain.ProductType;
+import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.service.ProductService;
 import com.walemao.megastore.util.DateUtil;
@@ -52,7 +52,7 @@ public class ProductController extends BaseController {
 	 * */
 	@RequestMapping(value = "/admin/product", params = { "add" }, method = RequestMethod.GET)
 	public String addProductPage(
-			@ModelAttribute("productInfo") ProductInfo productInfo) {
+			@ModelAttribute("productBase") ProductBase productBase) {
 
 		return "admin/product/product";
 	}
@@ -63,7 +63,7 @@ public class ProductController extends BaseController {
 	 * */
 	@RequestMapping(value = "/admin/product/{id}", method = RequestMethod.GET)
 	public String getProductInfo(@PathVariable("id") int id,
-			@ModelAttribute("productInfo") ProductInfo productInfo,
+			@ModelAttribute("productBase") ProductBase productBase,
 			HttpServletRequest request) {
 
 		return "admin/product/product";
@@ -75,17 +75,15 @@ public class ProductController extends BaseController {
 	 * */
 	@RequestMapping(value = "/admin/product", method = RequestMethod.POST)
 	public String addProduct(
-			@ModelAttribute("productInfo") ProductInfo productInfo,
+			@ModelAttribute("productBase") ProductBase productBase,
 			HttpServletRequest request, RedirectAttributes redirectAttributes) {
 
-		productInfo.setCreattime(new Date());
-		productInfo.setType(0);
-		if (productInfo.getProductColors() == null) {
-			productInfo.setProductColors(new ArrayList<ProductType>());
-		}
+		productBase.setCreattime(new Date());
+		productBase.setType(0);
+		
 
 		try {
-			int id = this.productService.insert(productInfo);
+			int id = this.productService.insert(productBase);
 			redirectAttributes.addFlashAttribute("status", "success");
 			redirectAttributes.addFlashAttribute("messageStatus", "Success！");
 			redirectAttributes.addFlashAttribute("message", "添加商品成功！");
@@ -121,11 +119,11 @@ public class ProductController extends BaseController {
 			logger.debug("打印路径： {}", thumbnailUrl);
 			logger.debug("打印MD5： {}", thumbnailMD5);
 
-			ProductType productType = new ProductType();
-			productType.setThumbnail(thumbnailUrl);
-			productType.setName(typeName);
-			productType.setAmount(amount);
-			productType.setCreatetime(new Date());
+			ProductInfo productInfo = new ProductInfo();
+			productInfo.setThumbnail(thumbnailUrl);
+			productInfo.setName(typeName);
+			productInfo.setAmount(amount);
+			productInfo.setCreatetime(new Date());
 
 			requestMap.put("status", "success");
 			requestMap.put("thumbnailUrl", thumbnailUrl);
@@ -163,15 +161,15 @@ public class ProductController extends BaseController {
 	 * 
 	 * */
 	@SuppressWarnings("unchecked")
-	public void addProductColorSession(String thumbnailMD5, ProductType productType, HttpServletRequest request){		
+	public void addProductColorSession(String thumbnailMD5, ProductInfo productInfo, HttpServletRequest request){		
 		if(request.getSession().getAttribute("productInfoSession") == null){
 			Map<String,Object> sessionMap = new HashMap<String,Object>();
-			sessionMap.put(thumbnailMD5, productType);
+			sessionMap.put(thumbnailMD5, productInfo);
 			request.getSession().setAttribute("productInfoSession", sessionMap);
 			
 		}else{
 			Map<String,Object> sessionMap = (Map<String, Object>) request.getSession().getAttribute("productInfoSession");
-			sessionMap.put(thumbnailMD5, productType);
+			sessionMap.put(thumbnailMD5, productInfo);
 			request.getSession().setAttribute("productInfoSession", sessionMap);
 		}
 		
