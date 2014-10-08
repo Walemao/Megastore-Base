@@ -125,8 +125,8 @@ function dateFormat(date){
  * 商品颜色分类动态生成
  * 
  * */
-function appendProductColor(thumbnail, name, id, amount){
-	var p = $('<p/>').addClass('form-control-static').addClass('clearfix').attr('data-id', id).attr('data-url', thumbnail).attr('data-name',name).attr('data-amount', amount);
+function appendProductColor(thumbnail, name, id){
+	var p = $('<p/>').addClass('form-control-static').addClass('clearfix').attr('data-id', id);
 	var radio = $('<input/>').attr('type','radio').attr('name','mainImg').addClass('main-img-radio').val(id).attr('data-toggle','tooltip').attr('data-original-title','设为主图');
 	var a = $('<a/>').addClass('thumbnail').attr('data-toggle', 'modal').attr('data-target', '#product-color-modal-update');
 	var img = $('<img/>').attr('width','50').attr('height','50').attr('src', thumbnail);

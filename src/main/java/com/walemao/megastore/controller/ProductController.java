@@ -52,7 +52,8 @@ public class ProductController extends BaseController {
 	 * */
 	@RequestMapping(value = "/admin/product", params = { "add" }, method = RequestMethod.GET)
 	public String addProductPage(
-			@ModelAttribute("productBase") ProductBase productBase) {
+			@ModelAttribute("productBase") ProductBase productBase,
+			@ModelAttribute("productInfo") ProductInfo productInfo) {
 
 		return "admin/product/product";
 	}
@@ -64,6 +65,7 @@ public class ProductController extends BaseController {
 	@RequestMapping(value = "/admin/product/{id}", method = RequestMethod.GET)
 	public String getProductInfo(@PathVariable("id") int id,
 			@ModelAttribute("productBase") ProductBase productBase,
+			@ModelAttribute("productInfo") ProductInfo productInfo,
 			HttpServletRequest request) {
 
 		return "admin/product/product";
@@ -80,7 +82,6 @@ public class ProductController extends BaseController {
 
 		productBase.setCreattime(new Date());
 		productBase.setType(0);
-		
 
 		try {
 			int id = this.productService.insert(productBase);
@@ -101,13 +102,24 @@ public class ProductController extends BaseController {
 	}
 
 	/**
-	 * 添加商品颜色分类
+	 * 根据MD5查看商品型号分类信息
+	 * 
+	 * */
+	@RequestMapping(value = "/admin/product/color", method = RequestMethod.GET)
+	public @ResponseBody ProductInfo getProductColor(String thumbnailMD5) {
+
+		return this.productService.getProductInfo(thumbnailMD5);
+	}
+
+	/**
+	 * 添加商品型号分类
 	 * 
 	 * */
 	@RequestMapping(value = "/admin/product/color", method = RequestMethod.POST)
-	public @ResponseBody Map<String, Object> addProductColor(String typeName,
-			@RequestParam(defaultValue = "0") int amount,
-			@RequestParam("thumbnail") MultipartFile file,
+	public @ResponseBody Map<String, Object> addProductColor(
+			@ModelAttribute("productInfo") ProductInfo productInfo,
+			@RequestParam(defaultValue = "0") int productId,
+			@RequestParam("thumbnailImg") MultipartFile file,
 			HttpServletRequest request) {
 
 		Map<String, Object> requestMap = new HashMap<String, Object>();
@@ -116,18 +128,14 @@ public class ProductController extends BaseController {
 					.uploadSingleFile(file, request);
 			String thumbnailMD5 = StringMD5.encode(thumbnailUrl);
 
-			logger.debug("打印路径： {}", thumbnailUrl);
-			logger.debug("打印MD5： {}", thumbnailMD5);
-
-			ProductInfo productInfo = new ProductInfo();
+			productInfo.setProductid(productId);
 			productInfo.setThumbnail(thumbnailUrl);
-			productInfo.setName(typeName);
-			productInfo.setAmount(amount);
+			productInfo.setThummd5(thumbnailMD5);
 			productInfo.setCreatetime(new Date());
+			this.productService.insert(productInfo);
 
 			requestMap.put("status", "success");
-			requestMap.put("thumbnailUrl", thumbnailUrl);
-			requestMap.put("thumbnailMD5", thumbnailMD5);
+			requestMap.put("productInfo", productInfo);
 			return requestMap;
 
 		} catch (Exception e) {
@@ -141,38 +149,21 @@ public class ProductController extends BaseController {
 	}
 
 	/**
-	 * 修改商品颜色分类
+	 * 修改商品型号分类
 	 * 
 	 * */
 	@RequestMapping(value = "/admin/product/color", method = RequestMethod.PUT)
-	public @ResponseBody Map<String, Object> updateProductColor(String typeName,
-			@RequestParam(defaultValue = "0") int amount, String thumbnailMD5,
+	public @ResponseBody Map<String, Object> updateProductColor(
+			@ModelAttribute("productInfo") ProductInfo productInfo,
+			@RequestParam(defaultValue = "0") int productId,
 			HttpServletRequest request) {
 
 		Map<String, Object> requestMap = new HashMap<String, Object>();
 		
-		
+		logger.debug("打印对象：{}", productInfo);
+
 		requestMap.put("status", "success");
 		return requestMap;
-	}
-
-	/**
-	 * Session添加
-	 * 
-	 * */
-	@SuppressWarnings("unchecked")
-	public void addProductColorSession(String thumbnailMD5, ProductInfo productInfo, HttpServletRequest request){		
-		if(request.getSession().getAttribute("productInfoSession") == null){
-			Map<String,Object> sessionMap = new HashMap<String,Object>();
-			sessionMap.put(thumbnailMD5, productInfo);
-			request.getSession().setAttribute("productInfoSession", sessionMap);
-			
-		}else{
-			Map<String,Object> sessionMap = (Map<String, Object>) request.getSession().getAttribute("productInfoSession");
-			sessionMap.put(thumbnailMD5, productInfo);
-			request.getSession().setAttribute("productInfoSession", sessionMap);
-		}
-		
 	}
 
 }
