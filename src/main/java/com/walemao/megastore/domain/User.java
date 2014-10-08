@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class User {
     private int id;
-    private String username;
+    private String userName;
     private String password;
     private String mobilephone;
     private String email;
@@ -14,8 +14,17 @@ public class User {
     private int type;
     private int level;
     private boolean enabled;
+    private String confirmPassword;
     
-    private UserBase userbase;
+    public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+	private UserBase userbase;
     private UserDetail userdetail;
     
 	public UserBase getUserbase() {
@@ -106,12 +115,12 @@ public class User {
 		this.id = id;
 	}
 	
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 	
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String username) {
+		this.userName = username;
 	}
 	
 	public String getPassword() {

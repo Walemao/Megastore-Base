@@ -1,5 +1,7 @@
 package com.walemao.megastore.service;
 
-public interface UserService {
+import com.walemao.megastore.domain.User;
 
+public interface UserService {
+	int insert(User user);
 }
