@@ -43,4 +43,11 @@ public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao 
 				new ProductInfoMapper()).get(0);
 	}
 
+	@Override
+	public void deleteUnused() {
+		// TODO Auto-generated method stub
+		String sql = "delete from t_product_info where pd_productid = -1";
+		this.jdbcTemplate.update(sql);
+	}
+
 }
