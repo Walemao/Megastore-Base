@@ -36,7 +36,7 @@ public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao 
 		String sql = "SELECT pd_id, pd_name, "
 				+ "	pd_thumbnail, pd_thummd5, pd_weight, "
 				+ "	pd_price, pd_amount, pd_createtime "
-				+ "FROM t_prodcut_info where pd_thummd5 = ? limit 1";
+				+ "FROM t_product_info where pd_thummd5 = ? limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { md5 },
 				new ProductInfoMapper()).get(0);
 	}

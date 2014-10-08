@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-08 15:41:02
+Date: 2014-10-08 17:10:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -154,7 +154,8 @@ CREATE TABLE `t_order` (
   PRIMARY KEY (`o_id`),
   KEY `idx_t_order_1` (`o_state`) USING BTREE COMMENT '订单状态索引',
   KEY `idx_t_order_2` (`o_paytype`) USING BTREE COMMENT '支付索引',
-  KEY `idx_t_order_3` (`deletemark`) USING BTREE COMMENT '删除标志索引'
+  KEY `idx_t_order_3` (`deletemark`) USING BTREE COMMENT '删除标志索引',
+  KEY `idx_t_order_4` (`o_username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -173,25 +174,6 @@ CREATE TABLE `t_order_detail` (
   PRIMARY KEY (`od_id`),
   UNIQUE KEY `idx_t_order_detail_2` (`od_productid`,`od_typeid`),
   KEY `idx_t_order_detail_1` (`od_productid`,`od_orderid`,`od_typeid`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for t_prodcut_info
--- ----------------------------
-DROP TABLE IF EXISTS `t_prodcut_info`;
-CREATE TABLE `t_prodcut_info` (
-  `pd_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品编号',
-  `pd_productid` bigint(20) DEFAULT NULL COMMENT '商品ID，关联t_product',
-  `pd_name` varchar(255) NOT NULL COMMENT '商品型号名称',
-  `pd_thumbnail` longtext COMMENT '缩略图',
-  `pd_thummd5` char(16) DEFAULT NULL COMMENT '图片MD5',
-  `pd_weight` varchar(20) DEFAULT NULL COMMENT '商品毛重',
-  `pd_price` decimal(10,0) DEFAULT '0' COMMENT '商品价格',
-  `pd_amount` int(11) DEFAULT '0' COMMENT '商品虚拟库存',
-  `pd_createtime` datetime DEFAULT NULL COMMENT '创建时间',
-  PRIMARY KEY (`pd_id`),
-  KEY `idx_t_product_color_1` (`pd_productid`) USING BTREE,
-  CONSTRAINT `fk_t_product_color_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_base` (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -244,6 +226,26 @@ CREATE TABLE `t_product_favorites` (
   PRIMARY KEY (`pf_id`),
   UNIQUE KEY `idx_t_product_favorites_1` (`pf_username`,`pf_productid`,`pf_typeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_product_info
+-- ----------------------------
+DROP TABLE IF EXISTS `t_product_info`;
+CREATE TABLE `t_product_info` (
+  `pd_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品编号',
+  `pd_productid` bigint(20) DEFAULT NULL COMMENT '商品ID，关联t_product',
+  `pd_name` varchar(255) NOT NULL COMMENT '商品型号名称',
+  `pd_thumbnail` longtext COMMENT '缩略图',
+  `pd_thummd5` char(16) DEFAULT NULL COMMENT '图片MD5',
+  `pd_weight` varchar(20) DEFAULT NULL COMMENT '商品毛重',
+  `pd_price` decimal(10,0) DEFAULT '0' COMMENT '商品价格',
+  `pd_amount` int(11) DEFAULT '0' COMMENT '商品虚拟库存',
+  `pd_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`pd_id`),
+  UNIQUE KEY `idx_t_product_info_2` (`pd_thummd5`) USING BTREE,
+  KEY `idx_t_product_info_1` (`pd_productid`) USING BTREE,
+  CONSTRAINT `fk_t_product_color_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_base` (`p_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_proposal
