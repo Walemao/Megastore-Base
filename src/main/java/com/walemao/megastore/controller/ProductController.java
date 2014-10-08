@@ -2,6 +2,7 @@ package com.walemao.megastore.controller;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -77,13 +78,15 @@ public class ProductController extends BaseController {
 	@RequestMapping(value = "/admin/product", method = RequestMethod.POST)
 	public String addProduct(
 			@ModelAttribute("productBase") ProductBase productBase,
+			@RequestParam(defaultValue = "0") int productType,
+			@RequestParam(value = "colorId", required = false) int[] colorIds,
 			HttpServletRequest request, RedirectAttributes redirectAttributes) {
 
 		productBase.setCreattime(new Date());
-		productBase.setType(0);
+		productBase.setClassify(productType);
 
 		try {
-			int id = this.productService.insertProductBase(productBase);
+			int id = this.productService.insertProductBase(productBase, colorIds);
 			redirectAttributes.addFlashAttribute("status", "success");
 			redirectAttributes.addFlashAttribute("messageStatus", "Success！");
 			redirectAttributes.addFlashAttribute("message", "添加商品成功！");

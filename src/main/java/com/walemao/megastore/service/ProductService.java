@@ -4,7 +4,7 @@ import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.ProductInfo;
 
 public interface ProductService {
-	public int insertProductBase(ProductBase p);
+	public int insertProductBase(ProductBase p, int[] ids);
 	
 	public int insertProductInfo(ProductInfo pi);
 	

@@ -45,10 +45,10 @@
 						<label class="control-label col-md-2">商品类型：</label>
 						<div class="col-md-3">
 							<select class="form-control" name="productType" id="productType">
-								<option>--所有商品--</option>
-								<option>积木</option>
-								<option>模型</option>
-								<option>益智</option>
+								<option value="0">--所有商品--</option>
+								<option value="1">积木</option>
+								<option value="2">模型</option>
+								<option value="3">益智</option>
 							</select>
 						</div>
 						<label class="control-label col-md-2">商品货号：</label>

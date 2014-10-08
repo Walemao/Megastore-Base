@@ -20,8 +20,8 @@ public class ProductServiceImpl implements ProductService {
 	
 	
 	@Override
-	public int insertProductBase(ProductBase p) {
-		return this.productDao.insert(p);
+	public int insertProductBase(ProductBase p, int[] ids) {
+		return this.productDao.insert(p, ids);
 	}
 
 

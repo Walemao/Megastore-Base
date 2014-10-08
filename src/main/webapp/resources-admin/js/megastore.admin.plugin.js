@@ -132,8 +132,9 @@ function appendProductColor(thumbnail, name, thummd5, id){
 	var img = $('<img/>').attr('width','50').attr('height','50').attr('src', thumbnail);
 	var color_span = $('<span/>').addClass('color-text').text(name);
 	var delete_span = $('<span/>').addClass('color-delete').attr('data-toggle','tooltip').attr('data-original-title','删除').html('<i class="icon-trash"></i>').attr('onClick','deleteInfo('+ id +')');
+	var input = $('<input/>').attr('type','hidden').attr('name','colorId').val(id);
 	a.append(img);
-	p.append(radio).append(a).append(color_span).append(delete_span);
+	p.append(radio).append(a).append(color_span).append(delete_span).append(input);
 	
 	$('.product-color-info').append(p);
 	$('[data-toggle="tooltip"]').tooltip({
