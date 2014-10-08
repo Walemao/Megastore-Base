@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.google.gson.Gson;
-import com.walemao.megastore.domain.ProductClassification;
+import com.walemao.megastore.domain.ProductClassify;
 import com.walemao.megastore.domain.ProductBase;
 
 public class ProductBaseMapper implements RowMapper<ProductBase>{
@@ -24,7 +24,7 @@ public class ProductBaseMapper implements RowMapper<ProductBase>{
 		pro.setThumbnail(rs.getString("p_thumbnail"));
 		Gson gson = new Gson(); 
 		pro.setImages(gson.fromJson(rs.getString("p_images"), ArrayList.class));
-		ProductClassification productClassification = new ProductClassification();
+		ProductClassify productClassification = new ProductClassify();
 		productClassification.setName(rs.getString("pc_name"));
 		pro.setProductClassification(productClassification);
 		pro.setType(rs.getInt("p_type"));

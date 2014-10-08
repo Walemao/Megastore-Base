@@ -5,15 +5,15 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.walemao.megastore.domain.ProductClassification;
+import com.walemao.megastore.domain.ProductClassify;
 
-public class ProductClassificationMapper implements RowMapper<ProductClassification>{
+public class ProductClassifyMapper implements RowMapper<ProductClassify>{
 
 	@Override
-	public ProductClassification mapRow(ResultSet rs, int rowNum)
+	public ProductClassify mapRow(ResultSet rs, int rowNum)
 			throws SQLException {
 		// TODO Auto-generated method stub
-		ProductClassification pcf = new ProductClassification();
+		ProductClassify pcf = new ProductClassify();
 		pcf.setId(rs.getInt("pc_id"));
 		pcf.setName(rs.getString("pc_name"));
 		return pcf;

@@ -1,6 +1,6 @@
 package com.walemao.megastore.domain;
 
-public class ProductClassification {
+public class ProductClassify {
 	private int id;
 	private String name;
 	public int getId() {

@@ -8,35 +8,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.walemao.megastore.domain.ProductClassification;
-import com.walemao.megastore.domain.mapper.ProductClassificationMapper;
-import com.walemao.megastore.repository.ProductClassficationDao;
+import com.walemao.megastore.domain.ProductClassify;
+import com.walemao.megastore.domain.mapper.ProductClassifyMapper;
+import com.walemao.megastore.repository.ProductClassfyDao;
 
 @Repository
-public class ProductClassficationDaoImpl extends CommonDaoImpl implements
-		ProductClassficationDao {
+public class ProductClassfyDaoImpl extends CommonDaoImpl implements
+		ProductClassfyDao {
 	private Logger logger = LoggerFactory
-			.getLogger(ProductClassficationDaoImpl.class);
+			.getLogger(ProductClassfyDaoImpl.class);
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public List<ProductClassification> getProductClassifications() {
+	public List<ProductClassify> getProductClassifies() {
 		// TODO Auto-generated method stub
-		String sql = "select * from t_product_classification order by pc_id";
-		return this.jdbcTemplate.query(sql, new ProductClassificationMapper());
+		String sql = "select pc_id,pc_name from t_product_classify order by pc_id";
+		return this.jdbcTemplate.query(sql, new ProductClassifyMapper());
 	}
 
 	@Override
-	public int insert(ProductClassification p) {
+	public int insert(ProductClassify p) {
 		// TODO Auto-generated method stub
 		String sql = "insert into t_product_classification(pc_name) values (?)";
 		return this.addIntoDB(sql, new Object[] { p.getName() });
 	}
 
 	@Override
-	public void update(ProductClassification p) {
+	public void update(ProductClassify p) {
 		// TODO Auto-generated method stub
 		String sql = "update t_product_classification set pc_name=? where pc_id=?";
 		this.jdbcTemplate.update(sql, new Object[] { p.getName(), p.getId() });

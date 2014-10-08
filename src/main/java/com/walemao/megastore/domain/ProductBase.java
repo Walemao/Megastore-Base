@@ -19,7 +19,7 @@ public class ProductBase {
 	private String remark;
 	private Date creattime;
 	
-	private ProductClassification productClassification;
+	private ProductClassify productClassification;
 	private List<ProductInfo> productInfos;
 	
 	public String getNumber() {
@@ -31,10 +31,10 @@ public class ProductBase {
 	public void setProductInfos(List<ProductInfo> productInfos) {
 		this.productInfos = productInfos;
 	}
-	public ProductClassification getProductClassification() {
+	public ProductClassify getProductClassification() {
 		return productClassification;
 	}
-	public void setProductClassification(ProductClassification productClassification) {
+	public void setProductClassification(ProductClassify productClassification) {
 		this.productClassification = productClassification;
 	}
 	public String getThumbnail() {
