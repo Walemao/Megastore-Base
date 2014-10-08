@@ -191,8 +191,8 @@
             </div>
           <div class="modal-body">
             <form id="product-color-form-update" action="<c:url value="/admin/product/color?${_csrf.parameterName}=${_csrf.token}" />" method="POST" class="form-horizontal" role="form">
-               <input type="hidden" name="_method" value="PUT">
-               <input type="hidden" id="thumbnailMD5" name="id" value="">
+               <input type="hidden" name="_method" value="PUT" />
+               <input type="hidden" id="thumbnailMD5" name="thumbnailMD5" value="" />
                <div class="form-group">
                   <label class="control-label col-md-3">分类名称：</label>
                   <div class="col-md-9">
@@ -225,6 +225,7 @@
 </body>
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
 <script type="text/javascript">
+    /** 添加颜色分类 **/
     $('#product-color-modal-add').modal('hide');
     $('#product-color-modal-add').on('hidden.bs.modal', function(){
     	$('#product-color-form-add input').val('');
@@ -238,9 +239,11 @@
     		}
     	});
     });
-    	
+    
+    /** 修改颜色分类 **/
     $('#product-color-modal-update').on('shown.bs.modal', function(e){
     	var $invoker = $(e.relatedTarget);
+    	window.invoker = $invoker;
     	var id = $invoker.parent().attr('data-id');
     	var url = $invoker.parent().attr('data-url');
     	var name = $invoker.parent().attr('data-name');
@@ -254,7 +257,22 @@
     
     $('#product-color-modal-update').on('hidden.bs.modal', function(){
     	$('#product-color-form-update input').val('');
+    	$('#product-color-form-update input[name=_method]').val('PUT');
     	$('.color-img').html('');
+    });
+    
+    $('#product-color-modal-update .submit').on('click',function(){
+    	$('#product-color-form-update').ajaxSubmit(function(data){
+    		if(data.status == 'success'){
+    			var $invoker = window.invoker;
+    			var name = $('#product-color-form-update input[name=typeName]').val();
+    	    	var amount = $('#product-color-form-update input[name=amount]').val();
+    			$invoker.parent().attr('data-name', name);
+    	    	$invoker.parent().attr('data-amount', amount);
+    	    	$invoker.parent().find('.color-text').text(name);
+    			$('#product-color-modal-update').modal('hide');
+    		}
+    	});   	
     });
     
   

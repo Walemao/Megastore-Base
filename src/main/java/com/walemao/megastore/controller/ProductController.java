@@ -114,18 +114,19 @@ public class ProductController extends BaseController {
 
 		Map<String, Object> requestMap = new HashMap<String, Object>();
 		try {
-			String thumbnailUrl = FileUploadUtil.uploadSingleFile(file, request);
+			String thumbnailUrl = FileUploadUtil
+					.uploadSingleFile(file, request);
 			String thumbnailMD5 = StringMD5.encode(thumbnailUrl);
-			
+
 			logger.debug("打印路径： {}", thumbnailUrl);
 			logger.debug("打印MD5： {}", thumbnailMD5);
-			
+
 			ProductType productType = new ProductType();
 			productType.setThumbnail(thumbnailUrl);
 			productType.setName(typeName);
 			productType.setAmount(amount);
 			productType.setCreatetime(new Date());
-			
+
 			requestMap.put("status", "success");
 			requestMap.put("thumbnailUrl", thumbnailUrl);
 			requestMap.put("thumbnailMD5", thumbnailMD5);
@@ -142,8 +143,38 @@ public class ProductController extends BaseController {
 	}
 
 	/**
-	 * 修改商品
+	 * 修改商品颜色分类
 	 * 
 	 * */
+	@RequestMapping(value = "/admin/product/color", method = RequestMethod.PUT)
+	public @ResponseBody Map<String, Object> updateProductColor(String typeName,
+			@RequestParam(defaultValue = "0") int amount, String thumbnailMD5,
+			HttpServletRequest request) {
+
+		Map<String, Object> requestMap = new HashMap<String, Object>();
+		
+		
+		requestMap.put("status", "success");
+		return requestMap;
+	}
+
+	/**
+	 * Session添加
+	 * 
+	 * */
+	@SuppressWarnings("unchecked")
+	public void addProductColorSession(String thumbnailMD5, ProductType productType, HttpServletRequest request){		
+		if(request.getSession().getAttribute("productInfoSession") == null){
+			Map<String,Object> sessionMap = new HashMap<String,Object>();
+			sessionMap.put(thumbnailMD5, productType);
+			request.getSession().setAttribute("productInfoSession", sessionMap);
+			
+		}else{
+			Map<String,Object> sessionMap = (Map<String, Object>) request.getSession().getAttribute("productInfoSession");
+			sessionMap.put(thumbnailMD5, productType);
+			request.getSession().setAttribute("productInfoSession", sessionMap);
+		}
+		
+	}
 
 }
