@@ -1,6 +1,5 @@
 package com.walemao.megastore.controller;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -84,7 +83,7 @@ public class ProductController extends BaseController {
 		productBase.setType(0);
 
 		try {
-			int id = this.productService.insert(productBase);
+			int id = this.productService.insertProductBase(productBase);
 			redirectAttributes.addFlashAttribute("status", "success");
 			redirectAttributes.addFlashAttribute("messageStatus", "Success！");
 			redirectAttributes.addFlashAttribute("message", "添加商品成功！");
@@ -92,6 +91,7 @@ public class ProductController extends BaseController {
 			return "redirect:/admin/product/" + id;
 
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 
@@ -119,10 +119,16 @@ public class ProductController extends BaseController {
 	public @ResponseBody Map<String, Object> addProductColor(
 			@ModelAttribute("productInfo") ProductInfo productInfo,
 			@RequestParam(defaultValue = "0") int productId,
-			@RequestParam("thumbnailImg") MultipartFile file,
+			@RequestParam(value = "thumbnailImg", required = false) MultipartFile file,
 			HttpServletRequest request) {
 
 		Map<String, Object> requestMap = new HashMap<String, Object>();
+		if (file == null) {
+			requestMap.put("status", "danger");
+			requestMap.put("message", "请选择文件！");
+			return requestMap;
+		}
+
 		try {
 			String thumbnailUrl = FileUploadUtil
 					.uploadSingleFile(file, request);
@@ -132,18 +138,19 @@ public class ProductController extends BaseController {
 			productInfo.setThumbnail(thumbnailUrl);
 			productInfo.setThummd5(thumbnailMD5);
 			productInfo.setCreatetime(new Date());
-			this.productService.insert(productInfo);
+			int id = this.productService.insertProductInfo(productInfo);
+			productInfo.setId(id);
 
 			requestMap.put("status", "success");
 			requestMap.put("productInfo", productInfo);
 			return requestMap;
 
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 
 		requestMap.put("status", "danger");
-		requestMap.put("messageStatus", "Fail！");
 		requestMap.put("message", "添加失败！");
 		return requestMap;
 	}
@@ -155,14 +162,45 @@ public class ProductController extends BaseController {
 	@RequestMapping(value = "/admin/product/color", method = RequestMethod.PUT)
 	public @ResponseBody Map<String, Object> updateProductColor(
 			@ModelAttribute("productInfo") ProductInfo productInfo,
-			@RequestParam(defaultValue = "0") int productId,
 			HttpServletRequest request) {
 
 		Map<String, Object> requestMap = new HashMap<String, Object>();
-		
-		logger.debug("打印对象：{}", productInfo);
+		try {
+			this.productService.updateProductInfo(productInfo);
+			requestMap.put("status", "success");
+			return requestMap;
 
-		requestMap.put("status", "success");
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+
+		requestMap.put("status", "danger");
+		requestMap.put("message", "修改失败！");
+		return requestMap;
+	}
+
+	/**
+	 * 删除商品型号分类
+	 * 
+	 * */
+	@RequestMapping(value = "/admin/product/color", method = RequestMethod.DELETE)
+	public @ResponseBody Map<String, Object> deleteProductColor(int id,
+			HttpServletRequest request) {
+		Map<String, Object> requestMap = new HashMap<String, Object>();
+
+		try {
+			this.productService.deleteProductInfo(id);
+			requestMap.put("status", "success");
+			return requestMap;
+
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+
+		requestMap.put("status", "danger");
+		requestMap.put("message", "删除失败！");
 		return requestMap;
 	}
 

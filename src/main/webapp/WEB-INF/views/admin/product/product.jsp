@@ -184,6 +184,12 @@
                   </div>
                </div>
             </form:form>
+            <div class="alert alert-danger alert-dismissible alert-option-error" role="alert" style="display: none;">
+				<button type="button" class="close" data-dismiss="alert">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<strong class="alert-option-error-info"></strong> 
+			</div>
           </div>
           <div class="modal-footer">
              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -204,8 +210,10 @@
           <div class="modal-body">
             <form:form id="product-color-form-update" action="${typeUrl}" method="POST" class="form-horizontal" modelAttribute="productInfo">
                <input type="hidden" name="_method" value="PUT" />
-               <input type="hidden" id="thumbnailMD5" name="thumbnailMD5" value="" />
-               <input type="hidden" name="productId" value=""/>
+               <form:hidden path="id"/>
+               <form:hidden path="productid"/>
+               <form:hidden path="thumbnail"/>
+               <form:hidden path="thummd5"/>
                <div class="form-group">
                   <label class="control-label col-md-3">型号名称：</label>
                   <div class="col-md-8">
@@ -245,6 +253,12 @@
                   </div>
                </div>
             </form:form>
+            <div class="alert alert-danger alert-dismissible alert-option-error" role="alert" style="display: none;">
+				<button type="button" class="close" data-dismiss="alert">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<strong class="alert-option-error-info"></strong> 
+			</div>
           </div>
           <div class="modal-footer">
              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -263,13 +277,17 @@
     $('#product-color-modal-add').modal('hide');
     $('#product-color-modal-add').on('hidden.bs.modal', function(){
     	$('#product-color-form-add input').val('');
+    	$('.alert-option-error').hide();
     });
     
     $('#product-color-modal-add .submit').on('click',function(){
     	$('#product-color-form-add').ajaxSubmit(function(data){
     		if(data.status == 'success'){
-    			appendProductColor(data.productInfo.thumbnail, data.productInfo.name, data.productInfo.thummd5);
+    			appendProductColor(data.productInfo.thumbnail, data.productInfo.name, data.productInfo.thummd5, data.productInfo.id);
     			$('#product-color-modal-add').modal('hide');
+    		}else{
+    			$('.alert-option-error-info').text(data.message);
+    			$('.alert-option-error').show();
     		}
     	});
     });
@@ -278,10 +296,12 @@
     $('#product-color-modal-update').on('shown.bs.modal', function(e){
     	var $invoker = $(e.relatedTarget);
     	window.invoker = $invoker;
-    	var id = $invoker.parent().attr('data-id');
-    	$.get('<c:url value="/admin/product/color" />', {thumbnailMD5 : id}, function(data){
-    		$('#thumbnailMD5').val(id);
-    		$('#product-color-form-update input[name=productId]').val(data.productid);
+    	var thummd5 = $invoker.parent().attr('data-str');
+    	$.get('<c:url value="/admin/product/color" />', {thumbnailMD5 : thummd5}, function(data){
+    		$('#product-color-form-update input[name=id]').val(data.id);
+    		$('#product-color-form-update input[name=thumbnail]').val(data.thumbnail);
+    		$('#product-color-form-update input[name=thummd5]').val(thummd5);
+    		$('#product-color-form-update input[name=productid]').val(data.productid);
     		$('#product-color-form-update input[name=price]').val(data.price);
 	    	$('#product-color-form-update input[name=weight]').val(data.weight);
     		$('#product-color-form-update input[name=name]').val(data.name);
@@ -295,6 +315,7 @@
     	$('#product-color-form-update input').val('');
     	$('#product-color-form-update input[name=_method]').val('PUT');
     	$('.color-img').html('');
+    	$('.alert-option-error').hide();
     });
     
     $('#product-color-modal-update .submit').on('click',function(){
@@ -306,10 +327,29 @@
  
     	    	$invoker.parent().find('.color-text').text(name);
     			$('#product-color-modal-update').modal('hide');
+    		}else{
+    			$('.alert-option-error-info').text(data.message);
+    			$('.alert-option-error').show();
     		}
     	});   	
     });
     
+    /** 删除颜色分类 **/
+    function deleteInfo(id){
+    	if(window.confirm('你确定要删除吗？')){
+    		$.post('<c:url value="/admin/product/color?${_csrf.parameterName}=${_csrf.token}" />',{_method : 'DELETE', id : id},function(data){
+        		if(data.status == 'success'){
+        			$('.form-control-static').each(function(){
+        				if($(this).attr("data-id") == id){
+        					$(this).remove();
+        				}
+        			});
+        		}else{
+        			alert(data.message);
+        		}
+        	});
+    	}
+    }
   
 </script>
 </html>

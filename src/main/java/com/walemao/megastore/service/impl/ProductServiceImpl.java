@@ -20,13 +20,13 @@ public class ProductServiceImpl implements ProductService {
 	
 	
 	@Override
-	public int insert(ProductBase p) {
+	public int insertProductBase(ProductBase p) {
 		return this.productDao.insert(p);
 	}
 
 
 	@Override
-	public int insert(ProductInfo pi) {
+	public int insertProductInfo(ProductInfo pi) {
 		return this.productInfoDao.insert(pi);
 	}
 
@@ -34,6 +34,18 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public ProductInfo getProductInfo(String md5) {
 		return this.productInfoDao.getProductInfo(md5);
+	}
+
+
+	@Override
+	public void deleteProductInfo(int id) {
+		this.productInfoDao.delete(id);
+	}
+
+
+	@Override
+	public void updateProductInfo(ProductInfo pi) {
+		this.productInfoDao.update(pi);
 	}
 
 }
