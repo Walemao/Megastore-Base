@@ -70,7 +70,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	}
 
 	@Override
-	public int insert(ProductBase p, List<String> md5List) {
+	public int insert(ProductBase p, int[] ids) {
 		// TODO Auto-generated method stub
 		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_materials,p_desc,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -81,15 +81,15 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 						p.getOrgin(), p.getMaterials(), p.getDesc(),
 						p.getDiscount(), p.getRemark() });
 		p.setId(id);
-		int length = md5List.size();
+		int length = ids.length;
 		if (length > 0) {
 			StringBuffer sb = new StringBuffer();
 			sb.append("(");
 			for (int i = 0; i < length - 1; ++i) {
-				sb.append("'" + md5List.get(i) + "',");
+				sb.append(ids[i] + ",");
 			}
 			;
-			sb.append("'" + md5List.get(length - 1) + "')");
+			sb.append(ids[length - 1] + ")");
 			sql = "update t_product_info set pd_productid=? where pd_id in ?";
 			this.jdbcTemplate.update(sql, new Object[] { id, sb.toString() });
 		}

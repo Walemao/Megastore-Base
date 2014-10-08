@@ -8,7 +8,7 @@ import com.walemao.megastore.domain.ProductBase;
 public interface ProductBaseDao {
 	public List<ProductBase> getProducts(String parm,int type,Date startTime,Date endTime,int mark);
 	public ProductBase getProduct(int id);
-	public int insert(ProductBase p,List<String> md5List);
+	public int insert(ProductBase p,int[] ids);
 	public void update(ProductBase p);
 	/**
 	 * 伪删除
