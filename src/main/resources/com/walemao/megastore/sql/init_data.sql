@@ -1,6 +1,6 @@
 INSERT INTO `d_province` (
-	`ProvinceID`,
-	`ProvinceName`
+	`provinceid`,
+	`provincename`
 )
 VALUES
 	(1, '北京市'),
