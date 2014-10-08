@@ -50,7 +50,8 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 		String args = mark == 0 ? "null" : "not null";
 		String sql = "select p_id,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin"
 				+ ",p_materials,p_desc,p_discount,p_remark,p_creattime,pc_name from t_product_base a left join t_product_classification b"
-				+ " on a.p_type = b.pc_id where a.p_id <> 0 and a.deletemark is " + args;
+				+ " on a.p_type = b.pc_id where a.p_id <> 0 and a.deletemark is "
+				+ args;
 		List<Object> list = new ArrayList<Object>();
 		if (parm == null || parm.length() <= 0) {
 		} else {
@@ -69,7 +70,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	}
 
 	@Override
-	public int insert(ProductBase p) {
+	public int insert(ProductBase p, List<String> md5List) {
 		// TODO Auto-generated method stub
 		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin,p_materials,p_desc,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -80,16 +81,15 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 						p.getOrgin(), p.getMaterials(), p.getDesc(),
 						p.getDiscount(), p.getRemark() });
 		p.setId(id);
-		List<ProductInfo> list = p.getProductInfos();
-		int length = list.size();
+		int length = md5List.size();
 		if (length > 0) {
 			StringBuffer sb = new StringBuffer();
 			sb.append("(");
 			for (int i = 0; i < length - 1; ++i) {
-				sb.append(list.get(i).getId() + ",");
+				sb.append("'" + md5List.get(i) + "',");
 			}
 			;
-			sb.append(list.get(length - 1).getId() + ")");
+			sb.append("'" + md5List.get(length - 1) + "')");
 			sql = "update t_product_info set pd_productid=? where pd_id in ?";
 			this.jdbcTemplate.update(sql, new Object[] { id, sb.toString() });
 		}
