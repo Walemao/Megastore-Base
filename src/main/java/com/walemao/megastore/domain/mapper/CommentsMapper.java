@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.walemao.megastore.domain.Comments;
 import com.walemao.megastore.domain.OrderDetail;
-import com.walemao.megastore.domain.ProductType;
+import com.walemao.megastore.domain.ProductInfo;
 
 public class CommentsMapper implements RowMapper<Comments> {
 
@@ -22,7 +22,7 @@ public class CommentsMapper implements RowMapper<Comments> {
 		c.setType(rs.getInt("c_type"));
 		
 		OrderDetail orderdetail = new OrderDetail();
-		ProductType producttype = new ProductType();
+		ProductInfo producttype = new ProductInfo();
 		producttype.setName(rs.getString("pd_name"));
 		orderdetail.setProducttype(producttype);
 		c.setOrderdetail(orderdetail);

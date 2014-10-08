@@ -2,7 +2,6 @@ package com.walemao.megastore.repository.impl;
 
 import java.util.List;
 
-import org.omg.CORBA.OBJ_ADAPTER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 

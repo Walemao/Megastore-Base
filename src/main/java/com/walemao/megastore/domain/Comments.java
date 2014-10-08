@@ -11,7 +11,7 @@ public class Comments {
 	private int orderdetailid;
 	private Date createtime;
 
-	private ProductInfo productInfo;
+	private ProductBase productInfo;
 	private OrderDetail orderdetail;
 
 	public int getProductid() {
@@ -78,11 +78,11 @@ public class Comments {
 		this.createtime = createtime;
 	}
 
-	public ProductInfo getProductInfo() {
+	public ProductBase getProductInfo() {
 		return productInfo;
 	}
 
-	public void setProductInfo(ProductInfo productInfo) {
+	public void setProductInfo(ProductBase productInfo) {
 		this.productInfo = productInfo;
 	}
 }

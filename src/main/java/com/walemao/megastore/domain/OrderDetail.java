@@ -11,8 +11,8 @@ public class OrderDetail {
 	private String remark;
 	private Date createtime;
 
-	private ProductInfo product;
-	private ProductType producttype;
+	private ProductBase product;
+	private ProductInfo producttype;
 
 	public Date getCreatetime() {
 		return createtime;
@@ -70,19 +70,19 @@ public class OrderDetail {
 		this.remark = remark;
 	}
 
-	public ProductInfo getProduct() {
+	public ProductBase getProduct() {
 		return product;
 	}
 
-	public void setProduct(ProductInfo product) {
+	public void setProduct(ProductBase product) {
 		this.product = product;
 	}
 
-	public ProductType getProducttype() {
+	public ProductInfo getProducttype() {
 		return producttype;
 	}
 
-	public void setProducttype(ProductType producttype) {
+	public void setProducttype(ProductInfo producttype) {
 		this.producttype = producttype;
 	}
 }

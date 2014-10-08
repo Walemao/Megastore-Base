@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-07 17:51:40
+Date: 2014-10-08 14:24:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -89,7 +89,7 @@ CREATE TABLE `t_address` (
   `a_isdefault` tinyint(1) DEFAULT NULL COMMENT '是否默认',
   `a_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`a_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_comments
@@ -176,20 +176,47 @@ CREATE TABLE `t_order_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for t_prodcut_type
+-- Table structure for t_prodcut_info
 -- ----------------------------
-DROP TABLE IF EXISTS `t_prodcut_type`;
-CREATE TABLE `t_prodcut_type` (
+DROP TABLE IF EXISTS `t_prodcut_info`;
+CREATE TABLE `t_prodcut_info` (
   `pd_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品型号ID',
   `pd_productid` bigint(20) NOT NULL COMMENT '商品ID，关联t_product',
   `pd_name` varchar(255) NOT NULL COMMENT '商品型号名称',
   `pd_thumbnail` longtext COMMENT '缩略图',
+  `pd_thummd5` char(16) DEFAULT NULL COMMENT '图片MD5',
+  `pd_weight` varchar(20) DEFAULT NULL COMMENT '商品毛重',
+  `pd_price` decimal(10,0) DEFAULT '0' COMMENT '商品价格',
   `pd_amount` int(11) DEFAULT '0' COMMENT '商品虚拟库存',
   `pd_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`pd_id`),
   KEY `idx_t_product_color_1` (`pd_productid`) USING BTREE,
-  CONSTRAINT `fk_t_product_color_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_info` (`p_id`)
+  CONSTRAINT `fk_t_product_color_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_base` (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_product_base
+-- ----------------------------
+DROP TABLE IF EXISTS `t_product_base`;
+CREATE TABLE `t_product_base` (
+  `p_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品id',
+  `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
+  `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
+  `p_thumbnail` longtext COMMENT '商品缩略图',
+  `p_images` longtext COMMENT '商品图片',
+  `p_classify` int(11) DEFAULT '0' COMMENT '商品分类,关联t_product_classify',
+  `p_origin` varchar(50) DEFAULT NULL COMMENT '商品产地',
+  `p_materials` varchar(50) DEFAULT NULL COMMENT '商品材质',
+  `p_desc` varchar(255) DEFAULT NULL COMMENT '商品描述',
+  `p_discount` double DEFAULT NULL COMMENT '商品折扣',
+  `p_remark` varchar(255) DEFAULT NULL COMMENT '商品备注',
+  `p_creattime` datetime DEFAULT NULL COMMENT '商品上架时间',
+  `deletemark` datetime DEFAULT NULL,
+  PRIMARY KEY (`p_id`),
+  KEY `idx_t_product_name` (`p_name`),
+  KEY `idx_t_product_deletemark` (`deletemark`),
+  KEY `p_id` (`p_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_product_classify
@@ -215,34 +242,6 @@ CREATE TABLE `t_product_favorites` (
   PRIMARY KEY (`pf_id`),
   UNIQUE KEY `idx_t_product_favorites_1` (`pf_username`,`pf_productid`,`pf_typeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for t_product_info
--- ----------------------------
-DROP TABLE IF EXISTS `t_product_info`;
-CREATE TABLE `t_product_info` (
-  `p_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '商品id',
-  `p_number` varchar(255) DEFAULT NULL COMMENT '商品货号',
-  `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
-  `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
-  `p_thumbnail` longtext COMMENT '商品缩略图',
-  `p_images` longtext COMMENT '商品图片',
-  `p_classify` int(11) DEFAULT '0' COMMENT '商品分类,关联t_product_classify',
-  `p_origin` varchar(50) DEFAULT NULL COMMENT '商品产地',
-  `p_weight` varchar(50) DEFAULT NULL COMMENT '商品毛重',
-  `p_materials` varchar(50) DEFAULT NULL COMMENT '商品材质',
-  `p_desc` varchar(255) DEFAULT NULL COMMENT '商品描述',
-  `p_price` decimal(10,0) DEFAULT NULL COMMENT '商品价格',
-  `p_discount` double DEFAULT NULL COMMENT '商品折扣',
-  `p_remark` varchar(255) DEFAULT NULL COMMENT '商品备注',
-  `p_creattime` datetime DEFAULT NULL COMMENT '商品上架时间',
-  `deletemark` datetime DEFAULT NULL,
-  PRIMARY KEY (`p_id`),
-  UNIQUE KEY `idx_t_product_number` (`p_number`),
-  KEY `idx_t_product_name` (`p_name`),
-  KEY `idx_t_product_deletemark` (`deletemark`),
-  KEY `p_id` (`p_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_proposal
@@ -290,8 +289,8 @@ CREATE TABLE `t_user` (
   `u_email` varchar(255) DEFAULT NULL COMMENT '邮箱',
   `u_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   `u_remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `u_type` tinyint(1) DEFAULT NULL COMMENT '用户类型',
-  `u_level` tinyint(1) DEFAULT NULL COMMENT '会员等级',
+  `u_type` tinyint(1) DEFAULT '0' COMMENT '用户类型0是普通用户，1是管理员',
+  `u_level` tinyint(1) DEFAULT '0' COMMENT '会员等级，默认0',
   `u_enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用，0是未启用，1是启用',
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`u_id`),
