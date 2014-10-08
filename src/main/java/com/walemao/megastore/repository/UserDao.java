@@ -11,4 +11,5 @@ public interface UserDao {
 	public void updatePasswd(User user);
 	public void updateEmail(User user);
 	public void updateMobilephone(User user);
+	public int insert(User user);
 }
