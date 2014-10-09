@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-09 16:44:57
+Date: 2014-10-09 17:43:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -89,7 +89,7 @@ CREATE TABLE `t_address` (
   `a_mobilephone` char(11) DEFAULT NULL COMMENT '手机号码',
   `a_phone` char(20) DEFAULT NULL COMMENT '座机',
   `a_isdefault` tinyint(1) DEFAULT NULL COMMENT '是否默认',
-  `a_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `a_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`a_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -104,8 +104,8 @@ CREATE TABLE `t_comments` (
   `c_type` tinyint(1) DEFAULT NULL COMMENT '评论类别（好评）详见d_comments',
   `c_productid` bigint(20) NOT NULL COMMENT '商品ID',
   `c_orderdetailid` bigint(20) NOT NULL COMMENT '订单详情ID，可以获取到购买物品以及购买时间',
-  `c_createtime` datetime DEFAULT NULL COMMENT '创建时间',
-  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  `c_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
+  `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`c_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -123,7 +123,7 @@ CREATE TABLE `t_complaints` (
   `c_email` varchar(255) DEFAULT NULL COMMENT '电子邮箱',
   `c_orderid` bigint(20) DEFAULT NULL COMMENT '关联订单号',
   `c_content` varchar(255) DEFAULT NULL COMMENT '内容',
-  `c_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `c_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`c_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -144,7 +144,7 @@ DROP TABLE IF EXISTS `t_order`;
 CREATE TABLE `t_order` (
   `o_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `o_username` varchar(50) NOT NULL COMMENT '用户名',
-  `o_createtime` datetime DEFAULT NULL COMMENT '下单时间',
+  `o_createtime` timestamp NULL DEFAULT NULL COMMENT '下单时间',
   `o_addressinfo` longtext NOT NULL COMMENT '地址详细信息',
   `o_confirm` varchar(50) DEFAULT NULL COMMENT '确认人名称',
   `o_state` tinyint(1) DEFAULT NULL COMMENT '订单状态',
@@ -152,7 +152,7 @@ CREATE TABLE `t_order` (
   `o_freight` decimal(12,0) DEFAULT NULL COMMENT '运费',
   `o_remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `o_paytype` tinyint(1) DEFAULT NULL COMMENT '支付方式',
-  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`o_id`),
   KEY `idx_t_order_1` (`o_state`) USING BTREE COMMENT '订单状态索引',
   KEY `idx_t_order_2` (`o_paytype`) USING BTREE COMMENT '支付索引',
@@ -171,8 +171,8 @@ CREATE TABLE `t_order_detail` (
   `od_orderid` bigint(20) NOT NULL COMMENT '订单表id',
   `od_amount` int(11) DEFAULT '0' COMMENT '订单数量',
   `od_reamark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `od_createtime` datetime DEFAULT NULL COMMENT '创建时间',
-  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  `od_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
+  `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`od_id`),
   UNIQUE KEY `idx_t_order_detail_2` (`od_productid`,`od_typeid`),
   KEY `idx_t_order_detail_1` (`od_productid`,`od_orderid`,`od_typeid`) USING BTREE
@@ -194,8 +194,8 @@ CREATE TABLE `t_product_base` (
   `p_desc` varchar(255) DEFAULT NULL COMMENT '商品描述',
   `p_discount` double DEFAULT NULL COMMENT '商品折扣',
   `p_remark` varchar(255) DEFAULT NULL COMMENT '商品备注',
-  `p_createtime` datetime DEFAULT NULL COMMENT '商品上架时间',
-  `deletemark` datetime DEFAULT NULL,
+  `p_createtime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '商品上架时间',
+  `deletemark` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`p_id`),
   UNIQUE KEY `idx_t_product_base_1` (`p_number`),
   KEY `idx_t_product_base_2` (`p_name`) USING BTREE,
@@ -222,8 +222,8 @@ CREATE TABLE `t_product_favorites` (
   `pf_username` varchar(50) NOT NULL COMMENT '用户名',
   `pf_productid` char(36) NOT NULL COMMENT '商品ID',
   `pf_typeid` bigint(20) DEFAULT NULL COMMENT '商品型号ID',
-  `pf_creattime` datetime DEFAULT NULL COMMENT '创建时间',
-  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  `pf_creattime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
+  `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`pf_id`),
   UNIQUE KEY `idx_t_product_favorites_1` (`pf_username`,`pf_productid`,`pf_typeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -254,7 +254,7 @@ CREATE TABLE `t_product_info` (
   `pd_weight` varchar(20) DEFAULT NULL COMMENT '商品毛重',
   `pd_price` decimal(10,0) DEFAULT '0' COMMENT '商品价格',
   `pd_amount` int(11) DEFAULT '0' COMMENT '商品虚拟库存',
-  `pd_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `pd_createtime` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`pd_id`),
   UNIQUE KEY `idx_t_product_info_2` (`pd_thummd5`) USING BTREE,
   KEY `idx_t_product_info_1` (`pd_productid`) USING BTREE,
@@ -275,7 +275,7 @@ CREATE TABLE `t_proposal` (
   `p_contact` char(11) DEFAULT NULL COMMENT '联系方式',
   `p_email` varchar(255) DEFAULT NULL COMMENT '电子邮箱',
   `p_content` varchar(255) DEFAULT NULL COMMENT '内容',
-  `p_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `p_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -289,8 +289,8 @@ CREATE TABLE `t_shopping_cart` (
   `sc_productid` char(36) NOT NULL COMMENT '商品ID',
   `sc_typeid` bigint(20) NOT NULL COMMENT '商品型号ID',
   `sc_amount` int(11) DEFAULT NULL COMMENT '数量',
-  `sc_createtime` datetime DEFAULT NULL COMMENT '创建时间',
-  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  `sc_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
+  `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`sc_id`),
   UNIQUE KEY `idx_t_shopping_cart_1` (`sc_username`,`sc_productid`,`sc_typeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -305,12 +305,12 @@ CREATE TABLE `t_user` (
   `u_password` varchar(255) DEFAULT NULL COMMENT '密码',
   `u_mobilephone` char(11) DEFAULT NULL COMMENT '手机',
   `u_email` varchar(255) DEFAULT NULL COMMENT '邮箱',
-  `u_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `u_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   `u_remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `u_type` tinyint(1) DEFAULT '0' COMMENT '用户类型0是普通用户，1是管理员',
   `u_level` tinyint(1) DEFAULT '0' COMMENT '会员等级，默认0',
   `u_enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用，0是未启用，1是启用',
-  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`u_id`),
   UNIQUE KEY `idx_t_user_4` (`u_username`) USING BTREE,
   KEY `idx_t_user_1` (`u_type`) USING BTREE,
@@ -376,7 +376,7 @@ DROP TABLE IF EXISTS `t_user_login`;
 CREATE TABLE `t_user_login` (
   `ul_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户登陆表ID',
   `ul_username` varchar(50) NOT NULL COMMENT '用户名',
-  `ul_lastlogin` datetime DEFAULT NULL COMMENT '登录时间',
+  `ul_lastlogin` timestamp NULL DEFAULT NULL COMMENT '登录时间',
   PRIMARY KEY (`ul_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -401,8 +401,8 @@ CREATE TABLE `t_warehouse_product` (
   `wp_productid` char(36) NOT NULL COMMENT '商品ID',
   `wp_typeid` bigint(20) NOT NULL COMMENT '商品型号ID',
   `wp_amount` bigint(20) DEFAULT NULL COMMENT '数量',
-  `wp_createtime` datetime DEFAULT NULL COMMENT '操作时间',
-  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  `wp_createtime` timestamp NULL DEFAULT NULL COMMENT '操作时间',
+  `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`wp_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -414,8 +414,8 @@ CREATE TABLE `t_warehouse_product_rejected` (
   `pr_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '退货表编号',
   `pr_productid` bigint(20) NOT NULL COMMENT '商品ID',
   `pr_typeid` bigint(20) NOT NULL COMMENT '商品型号ID',
-  `pr_createtime` datetime DEFAULT NULL COMMENT '创建时间',
+  `pr_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   `pr_remark` varchar(255) DEFAULT NULL COMMENT '退货理由',
-  `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
+  `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`pr_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
