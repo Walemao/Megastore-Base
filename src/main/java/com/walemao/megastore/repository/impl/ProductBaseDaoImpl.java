@@ -14,6 +14,7 @@ import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.mapper.ProductInfoMapper;
 import com.walemao.megastore.domain.mapper.ProductBaseMapper;
 import com.walemao.megastore.repository.ProductBaseDao;
+import com.walemao.megastore.util.DateUtil;
 
 @Repository
 public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao {
@@ -64,8 +65,8 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 		}
 		if (startTime != null && endTime != null) {
 			sql += " and p_createtime between ? and ?";
-			list.add(startTime);
-			list.add(endTime);
+			list.add(DateUtil.FormatToD(startTime));
+			list.add(DateUtil.FormatToD(endTime));
 		}
 		sql += " order by p_createtime desc";
 		return this.jdbcTemplate.query(sql, list.toArray(),
