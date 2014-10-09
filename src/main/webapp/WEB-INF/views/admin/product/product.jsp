@@ -90,6 +90,20 @@
 						<label class="control-label col-md-2">型号分类：</label>
 						<div class="col-md-4 product-color-info">
 							<a class="btn btn-default add-color-btn" data-toggle="modal" data-target="#product-color-modal-add"><i class="icon-plus"></i>添加型号分类</a>
+							<c:if test="${productBase.id !=null}">
+							 <form:hidden path="id"/>
+							 <c:forEach items="${productBase.productInfos}" var="productInfo">
+							  <p class="form-control-static clearfix" data-str="<c:out value="${productInfo.thummd5 }"/>" data-id="<c:out value="${productInfo.id }"/>">
+							   <input type="radio" name="mainImg" class="main-img-radio" data-toggle="tooltip" data-original-title="设为主图" value="<c:out value="${productInfo.thumbnail }"/>" <c:if test="${productBase.thumbnail==productInfo.thumbnail}"> checked</c:if> />
+							   <a class="thumbnail" data-toggle="modal" data-original-title="#product-color-modal-update">
+							     <img src="<c:out value="${productInfo.thumbnail }"/>" width="50" height="50"/>
+							   </a>
+							   <span class="color-text"><c:out value="${productInfo.name}"/></span>
+							   <span class="color-delete" data-toggle="tooltip" data-original-title="删除" onclick="deleteInfo(<c:out value="${productInfo.id}"/>)"><i class="icon-trash"></i></span>
+							   <input type="hidden" name="colorId" value="<c:out value="${productInfo.id}"/>" />
+							  </p>
+							 </c:forEach>
+							</c:if>
 						</div>
 					</div>
 

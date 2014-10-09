@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,11 +67,13 @@ public class ProductController extends BaseController {
 	public String getProductInfo(@PathVariable("id") int id,
 			@ModelAttribute("productBase") ProductBase productBase,
 			@ModelAttribute("productInfo") ProductInfo productInfo,
-			HttpServletRequest request) {
-          
+			Model model, HttpServletRequest request) {
+
 		productBase = this.productService.getProduct(id);
-		request.setAttribute("productBase", productBase);
 		
+		model.addAttribute(productBase);
+		request.setAttribute("productBase", productBase);
+
 		return "admin/product/product";
 	}
 
@@ -91,7 +94,8 @@ public class ProductController extends BaseController {
 		productBase.setThumbnail(mainImg);
 
 		try {
-			int id = this.productService.insertProductBase(productBase, colorIds);
+			int id = this.productService.insertProductBase(productBase,
+					colorIds);
 			redirectAttributes.addFlashAttribute("status", "success");
 			redirectAttributes.addFlashAttribute("messageStatus", "Success！");
 			redirectAttributes.addFlashAttribute("message", "添加商品成功！");
