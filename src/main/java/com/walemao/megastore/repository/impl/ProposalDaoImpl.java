@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.walemao.megastore.domain.Proposal;
 import com.walemao.megastore.domain.mapper.ProposalMapper;
 import com.walemao.megastore.repository.ProposalDao;
+import com.walemao.megastore.util.DateUtil;
 
 @Repository
 public class ProposalDaoImpl extends CommonDaoImpl implements ProposalDao {
@@ -40,8 +41,8 @@ public class ProposalDaoImpl extends CommonDaoImpl implements ProposalDao {
 		}
 		if (startTime != null && endTime != null) {
 			sql += " and p_createtime between ? and ?";
-			list.add(startTime);
-			list.add(endTime);
+			list.add(DateUtil.FormatToD(startTime));
+			list.add(DateUtil.FormatToD(endTime));
 		}
 		sql += " order by p_createtime desc";
 		return this.JdbcTemplate.query(sql, list.toArray(),

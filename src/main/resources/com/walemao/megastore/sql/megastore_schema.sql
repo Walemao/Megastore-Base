@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-09 17:43:34
+Date: 2014-10-09 21:28:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -115,10 +115,11 @@ CREATE TABLE `t_comments` (
 DROP TABLE IF EXISTS `t_complaints`;
 CREATE TABLE `t_complaints` (
   `c_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '投诉咨询表ID',
+  `c_username` varchar(50) NOT NULL COMMENT '用户名',
   `c_subject` tinyint(2) DEFAULT NULL COMMENT '主题选择',
   `c_name` char(20) DEFAULT NULL COMMENT '姓名',
-  `c_provinces` tinyint(4) DEFAULT NULL COMMENT '省份',
-  `c_cities` smallint(6) DEFAULT NULL COMMENT '城市',
+  `c_province` tinyint(4) DEFAULT NULL COMMENT '省份',
+  `c_city` smallint(6) DEFAULT NULL COMMENT '城市',
   `c_contact` char(11) DEFAULT NULL COMMENT '联系电话',
   `c_email` varchar(255) DEFAULT NULL COMMENT '电子邮箱',
   `c_orderid` bigint(20) DEFAULT NULL COMMENT '关联订单号',
