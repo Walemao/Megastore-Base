@@ -9,5 +9,5 @@ public interface UserDetailDao {
 
 	public void update(UserDetail u);
 
-	public void delete(UserDetail u);
+	public void delete(String username);
 }

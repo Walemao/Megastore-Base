@@ -8,4 +8,5 @@ public interface ProductImageDao {
 	public int insert(ProductImage pi);
 	public List<ProductImage> getProductImages(int productId);
 	public void update(int productId, int[] ids);
+	public void delete(int id);
 }

@@ -51,10 +51,10 @@ public class UserBaseDaoImpl extends CommonDaoImpl implements UserBaseDao {
 	}
 
 	@Override
-	public void delete(UserBase u) {
+	public void delete(String username) {
 		// TODO Auto-generated method stub
 		String sql = "delete from t_user_base where u_username=?";
-		this.jdbcTemplate.update(sql, new Object[] { u.getUsername() });
+		this.jdbcTemplate.update(sql, new Object[] { username });
 	}
 
 }

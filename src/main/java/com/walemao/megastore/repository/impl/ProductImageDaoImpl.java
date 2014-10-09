@@ -44,4 +44,11 @@ public class ProductImageDaoImpl extends CommonDaoImpl implements
 				new ProductImageMapper());
 	}
 
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		String sql = "delete from t_product_images where pi_id=?";
+		this.jdbcTemplate.update(sql, new Object[] { id });
+	}
+
 }

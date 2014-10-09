@@ -1,11 +1,10 @@
 package com.walemao.megastore.repository.impl;
 
 import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -18,7 +17,6 @@ import com.walemao.megastore.util.DateUtil;
 
 @Repository
 public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao {
-	private Logger logger = LoggerFactory.getLogger(ProductBaseDaoImpl.class);
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

@@ -45,10 +45,10 @@ public class UserDetailDaoImpl extends CommonDaoImpl implements UserDetailDao {
 	}
 
 	@Override
-	public void delete(UserDetail u) {
+	public void delete(String username) {
 		// TODO Auto-generated method stub
 		String sql = "delete from t_user_detail where u_username=?";
-		this.jdbcTemplate.update(sql, new Object[] { u.getUsername() });
+		this.jdbcTemplate.update(sql, new Object[] { username });
 	}
 
 }
