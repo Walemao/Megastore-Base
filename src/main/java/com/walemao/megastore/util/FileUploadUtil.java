@@ -82,7 +82,7 @@ public class FileUploadUtil {
 		String basePath = request.getScheme() + "://" + request.getServerName()
 				+ ":" + request.getServerPort() + path;
 		requestMap.put("status", "success");
-		requestMap.put("message", basePath + "/resources-admin/Upload/"
+		requestMap.put("thumbnailUrl", basePath + "/resources-admin/Upload/"
 				+ fileName);
 		return requestMap;
 

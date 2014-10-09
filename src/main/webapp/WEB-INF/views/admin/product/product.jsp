@@ -111,17 +111,16 @@
 					<div class="form-group">
 						<label class="control-label col-md-2">商品描述：</label>
 						<div class="col-md-6">
-							<form:textarea path="desc" rows="3"
+							<form:textarea path="desc" rows="5"
 								cssClass="form-control input-sm" />
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label class="control-label col-md-2">商品备注：</label>
 						<div class="col-md-6">
 							<form:input path="remark" cssClass="form-control input-sm" />
 						</div>
-					</div>
+					</div>				
 					<div class="form-group form-actions">
 						<div class="col-md-10 col-md-offset-2">
 							<input type="submit" value="确定" class="btn btn-success" /> <input
@@ -139,8 +138,17 @@
 			</div>
             </c:if>
             
-			<!-- 商品展示图片上传 -->
-			
+            <!-- 商品展示图片 -->
+			<div class="form-box">
+			    <h4 class="form-box-header form-box-header-push">商品展示图片<small>将图片拖入下面区域上传，只允许上传jpg、png和gif格式</small></h4>
+			    <div class="form-box-content">
+			      <div class="dropzone push dz-clickable">
+			          <div class="dz-default dz-message">
+			             <span>图片上传区域</span>
+			          </div>
+			       </div>
+			    </div>
+			</div>
 		</div>
 
 	</div>
@@ -214,7 +222,7 @@
      </div>
     </div>
     
-    <!-- 颜色分类编辑modal -->
+    <!-- 型号分类编辑modal -->
 	<div id="product-color-modal-update" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	    <div class="modal-dialog">
           <div class="modal-content">
@@ -287,8 +295,9 @@
 	<%@ include file="/WEB-INF/views/includes/admin_footer.jspf"%>
 </body>
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
+<script type="text/javascript" src="<c:url value="/resources-admin/js/dropzone.js"/>"></script>
 <script type="text/javascript">
-    /** 添加颜色分类 **/
+    /** 添加型号分类 **/
     $('#product-color-modal-add').modal('hide');
     $('#product-color-modal-add').on('hidden.bs.modal', function(){
     	$('#product-color-form-add input').val('');
@@ -307,7 +316,7 @@
     	});
     });
     
-    /** 修改颜色分类 **/
+    /** 修改型号分类 **/
     $('#product-color-modal-update').on('shown.bs.modal', function(e){
     	var $invoker = $(e.relatedTarget);
     	window.invoker = $invoker;
@@ -349,7 +358,7 @@
     	});   	
     });
     
-    /** 删除颜色分类 **/
+    /** 删除型号分类 **/
     function deleteInfo(id){
     	if(window.confirm('你确定要删除吗？')){
     		$.post('<c:url value="/admin/product/color?${_csrf.parameterName}=${_csrf.token}" />',{_method : 'DELETE', id : id},function(data){
@@ -365,6 +374,16 @@
         	});
     	}
     }
+    
+    /** 添加展示图片  **/
+    $('.dropzone').dropzone({
+        url: '<c:url value="/admin/product/img?${_csrf.parameterName}=${_csrf.token}" />',
+        paramName: 'productImg',
+        maxFiles: 10,
+        maxFilesize: 1024,
+        acceptedFiles: '.jpg,.png,.gif',
+        addRemoveLinks: true,
+    });
   
 </script>
 </html>

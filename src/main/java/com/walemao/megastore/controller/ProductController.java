@@ -190,9 +190,9 @@ public class ProductController extends BaseController {
 			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
-		
+
 		requestMap.put("status", "danger");
-		return requestMap; 
+		return requestMap;
 	}
 
 	/**
@@ -224,8 +224,13 @@ public class ProductController extends BaseController {
 		}
 
 		try {
-			String thumbnailUrl = FileUploadUtil
-					.uploadSingleFile(file, request);
+			Map<String, Object> fileMap = FileUploadUtil.uploadSingleFile(file, request);
+			if((fileMap.get("status")).equals("error")){
+				requestMap.put("status", "danger");
+				requestMap.put("message", (String) fileMap.get("message"));
+				return requestMap;
+			}
+			String thumbnailUrl = (String) fileMap.get("thumbnailUrl");
 			String thumbnailMD5 = StringMD5.encode(thumbnailUrl);
 
 			productInfo.setProductid(productId);
@@ -294,6 +299,35 @@ public class ProductController extends BaseController {
 
 		requestMap.put("status", "danger");
 		requestMap.put("message", "删除失败！");
+		return requestMap;
+	}
+
+	/**
+	 * 添加展示图片
+	 * 
+	 * */
+	@RequestMapping(value = "/admin/product/img", method = RequestMethod.POST)
+	public @ResponseBody Map<String, Object> addProductImg(
+			@RequestParam(value = "productImg") MultipartFile file,
+			HttpServletRequest request) {
+		Map<String, Object> requestMap = new HashMap<String, Object>();
+		
+		try {
+			Map<String, Object> fileMap = FileUploadUtil.uploadSingleFile(file, request);
+			String imgUrl = (String) fileMap.get("thumbnailUrl");
+			String imgMD5 = StringMD5.encode(imgUrl);
+			
+			requestMap.put("status", "success");
+			requestMap.put("message", "上传成功！");
+			return requestMap;
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+
+		requestMap.put("status", "fail");
+		requestMap.put("message", "上传失败！");
 		return requestMap;
 	}
 
