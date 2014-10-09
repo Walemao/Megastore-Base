@@ -101,17 +101,17 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	}
 
 	@Override
-	public void delete(ProductBase p) {
+	public void delete(int id) {
 		// TODO Auto-generated method stub
 		String sql = "Update t_product_base set deletemark=now() where p_id=?";
-		this.jdbcTemplate.update(sql, new Object[] { p.getId() });
+		this.jdbcTemplate.update(sql, new Object[] { id });
 	}
 
 	@Override
-	public void permanentlyDelete(ProductBase p) {
+	public void permanentlyDelete(int id) {
 		// TODO Auto-generated method stub
 		String sql = "delete from t_product_base where p_id=?";
-		this.jdbcTemplate.update(sql, new Object[] { p.getId() });
+		this.jdbcTemplate.update(sql, new Object[] { id });
 	}
 
 }

@@ -59,7 +59,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 	@Override
 	public void delete(int id) {
 		// TODO Auto-generated method stub
-		String sql = "update t_order set deletermark=now() where od_id=?";
+		String sql = "update t_order set deletemark=now() where od_id=?";
 		this.jdbcTemplate.update(sql, new Object[] { id });
 	}
 
@@ -113,6 +113,13 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 		// TODO Auto-generated method stub
 		String sql = "update t_order set o_state = ? where o_id=?";
 		this.jdbcTemplate.update(sql, new Object[] { o.getState(), o.getId() });
+	}
+
+	@Override
+	public void permanentlyDelete(int id) {
+		// TODO Auto-generated method stub
+		String sql = "delete from t_order where o_id=?";
+		this.jdbcTemplate.update(sql, new Object[] { id });
 	}
 
 }

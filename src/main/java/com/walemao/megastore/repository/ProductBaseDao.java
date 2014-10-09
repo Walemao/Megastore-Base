@@ -29,12 +29,12 @@ public interface ProductBaseDao {
 	 * 
 	 * @param p
 	 */
-	public void delete(ProductBase p);
+	public void delete(int id);
 
 	/**
 	 * 永久删除
 	 * 
 	 * @param p
 	 */
-	public void permanentlyDelete(ProductBase p);
+	public void permanentlyDelete(int id);
 }

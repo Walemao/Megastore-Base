@@ -20,7 +20,7 @@ public class ProposalDaoImpl extends CommonDaoImpl implements ProposalDao {
 
 	@Override
 	public List<Proposal> getProposals(String parm, int subject,
-			Date startTime, Date endTime) {
+			Date startTime, Date endTime, String username) {
 		// TODO Auto-generated method stub
 		String sql = "select p_id,p_username,p_subject,p_name,p_province,p_city,p_contact,p_email,p_content,p_createtime from t_proposal where 1=1";
 		List<Object> list = new ArrayList<Object>();
@@ -33,6 +33,11 @@ public class ProposalDaoImpl extends CommonDaoImpl implements ProposalDao {
 			sql += " and p_subject = ?";
 			list.add(subject);
 		}
+		if (username == null || parm.length() <= 0) {
+		} else {
+			sql += " and p_username = ?";
+			list.add(username);
+		}
 		if (startTime != null && endTime != null) {
 			sql += " and p_createtime between ? and ?";
 			list.add(startTime);
@@ -41,6 +46,13 @@ public class ProposalDaoImpl extends CommonDaoImpl implements ProposalDao {
 		sql += " order by p_createtime desc";
 		return this.JdbcTemplate.query(sql, list.toArray(),
 				new ProposalMapper());
+	}
+
+	@Override
+	public List<Proposal> getProposals(String parm, int subject,
+			Date startTime, Date endTime) {
+		// TODO Auto-generated method stub
+		return this.getProposals(parm, subject, startTime, endTime, null);
 	}
 
 	@Override
