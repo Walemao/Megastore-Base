@@ -127,7 +127,7 @@ function dateFormat(date){
  * */
 function appendProductColor(thumbnail, name, thummd5, id){
 	var p = $('<p/>').addClass('form-control-static').addClass('clearfix').attr('data-str', thummd5).attr('data-id', id);
-	var radio = $('<input/>').attr('type','radio').attr('name','mainImg').addClass('main-img-radio').val(thummd5).attr('data-toggle','tooltip').attr('data-original-title','设为主图');
+	var radio = $('<input/>').attr('type','radio').attr('name','mainImg').addClass('main-img-radio').val(thumbnail).attr('data-toggle','tooltip').attr('data-original-title','设为主图');
 	var a = $('<a/>').addClass('thumbnail').attr('data-toggle', 'modal').attr('data-target', '#product-color-modal-update');
 	var img = $('<img/>').attr('width','50').attr('height','50').attr('src', thumbnail);
 	var color_span = $('<span/>').addClass('color-text').text(name);

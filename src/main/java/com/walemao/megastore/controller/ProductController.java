@@ -67,7 +67,10 @@ public class ProductController extends BaseController {
 			@ModelAttribute("productBase") ProductBase productBase,
 			@ModelAttribute("productInfo") ProductInfo productInfo,
 			HttpServletRequest request) {
-
+          
+		productBase = this.productService.getProduct(id);
+		request.setAttribute("productBase", productBase);
+		
 		return "admin/product/product";
 	}
 
@@ -79,11 +82,13 @@ public class ProductController extends BaseController {
 	public String addProduct(
 			@ModelAttribute("productBase") ProductBase productBase,
 			@RequestParam(defaultValue = "0") int productType,
+			@RequestParam(defaultValue = "") String mainImg,
 			@RequestParam(value = "colorId", required = false) int[] colorIds,
 			HttpServletRequest request, RedirectAttributes redirectAttributes) {
 
 		productBase.setCreattime(new Date());
 		productBase.setClassify(productType);
+		productBase.setThumbnail(mainImg);
 
 		try {
 			int id = this.productService.insertProductBase(productBase, colorIds);

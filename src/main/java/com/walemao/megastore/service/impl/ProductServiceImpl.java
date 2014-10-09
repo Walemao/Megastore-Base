@@ -1,5 +1,7 @@
 package com.walemao.megastore.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +23,10 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public int insertProductBase(ProductBase p, int[] ids) {
-		return this.productDao.insert(p, ids);
+		int i = this.productDao.insert(p);
+		this.productInfoDao.update(i, ids);
+		
+		return i;
 	}
 
 
@@ -46,6 +51,16 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public void updateProductInfo(ProductInfo pi) {
 		this.productInfoDao.update(pi);
+	}
+
+
+	@Override
+	public ProductBase getProduct(int id) {
+		ProductBase productBase = this.productDao.getProduct(id);
+		List<ProductInfo> infos = this.productInfoDao.getProductInfo(id);
+		
+		productBase.setProductColors(infos);
+		return productBase;
 	}
 
 }

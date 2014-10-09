@@ -14,4 +14,6 @@ public interface ProductService {
 	
 	public void updateProductInfo(ProductInfo pi);
 	
+	public ProductBase getProduct(int id);
+	
 }
