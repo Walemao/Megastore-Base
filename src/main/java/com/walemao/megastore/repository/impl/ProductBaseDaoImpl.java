@@ -70,7 +70,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	}
 
 	@Override
-	public int insert(ProductBase p, int[] ids) {
+	public int insert(ProductBase p) {
 		// TODO Auto-generated method stub
 		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_images,p_classify,p_origin,p_materials,p_desc,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -81,16 +81,11 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 						p.getOrgin(), p.getMaterials(), p.getDesc(),
 						p.getDiscount(), p.getRemark() });
 		p.setId(id);
-		if (ids.length > 0) {
-			sql = "update t_product_info set pd_productid=? where pd_id in "
-					+ ToolUtil.IntDataToString(ids);
-			this.jdbcTemplate.update(sql, new Object[] { p.getId() });
-		}
 		return id;
 	}
 
 	@Override
-	public void update(ProductBase p, int[] ids) {
+	public void update(ProductBase p) {
 		// TODO Auto-generated method stub
 		String sql = "Update t_product_base set p_number=?,p_name=?,p_recommend=?,p_thumbnail=?,p_images=?,p_classify=?,p_origin=?,p_materials=?,p_desc=?,p_discount=?,p_remark=? where p_id=?";
 		this.jdbcTemplate.update(
@@ -99,11 +94,6 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 						p.getThumbnail(), p.getImages(), p.getClassify(),
 						p.getOrgin(), p.getMaterials(), p.getDesc(),
 						p.getDiscount(), p.getRemark(), p.getId() });
-		if (ids.length > 0) {
-			sql = "update t_product_info set pd_productid=? where pd_id in "
-					+ ToolUtil.IntDataToString(ids);
-			this.jdbcTemplate.update(sql, new Object[] { p.getId() });
-		}
 	}
 
 	@Override

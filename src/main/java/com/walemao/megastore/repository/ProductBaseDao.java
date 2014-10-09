@@ -11,9 +11,9 @@ public interface ProductBaseDao {
 
 	public ProductBase getProduct(int id);
 
-	public int insert(ProductBase p, int[] ids);
+	public int insert(ProductBase p);
 
-	public void update(ProductBase p, int[] ids);
+	public void update(ProductBase p);
 
 	/**
 	 * 伪删除

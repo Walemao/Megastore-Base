@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.domain.mapper.ProductInfoMapper;
 import com.walemao.megastore.repository.ProductInfoDao;
+import com.walemao.megastore.util.ToolUtil;
 
 @Repository
 public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao {
@@ -59,6 +60,16 @@ public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao 
 		// TODO Auto-generated method stub
 		String sql = "delete from t_product_info where pd_productid = 0";
 		this.jdbcTemplate.update(sql);
+	}
+
+	@Override
+	public void update(int id, int[] ids) {
+		// TODO Auto-generated method stub
+		if (ids.length > 0) {
+			String sql = "update t_product_info set pd_productid=? where pd_id in "
+					+ ToolUtil.IntDataToString(ids);
+			this.jdbcTemplate.update(sql, new Object[] {id });
+		}
 	}
 
 }
