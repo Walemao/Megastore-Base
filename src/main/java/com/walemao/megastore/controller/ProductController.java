@@ -43,20 +43,27 @@ public class ProductController extends BaseController {
 	 * */
 	@RequestMapping(value = "/admin/products", method = RequestMethod.GET)
 	public String getProductPage(
-			@RequestParam(required = false) String parm,
-			@RequestParam(defaultValue = "0") int classify,
+			@RequestParam(required = false) String productName,
+			@RequestParam(defaultValue = "0") int productType,
 			@RequestParam(required = false) @DateTimeFormat(pattern = "yyyy/MM/dd") Date startDate,
 			@RequestParam(required = false) @DateTimeFormat(pattern = "yyyy/MM/dd") Date endDate,
 			@RequestParam(defaultValue = "0") int mark,
 			HttpServletRequest request) {
 
 		if (startDate == null || endDate == null) {
-			endDate = new Date();
-			startDate = new Date(endDate.getTime() - 7 * 24 * 3600 * 1000);
+			endDate = new Date(currentDate.getTime() + INTERVAL_TIME);
+			startDate = new Date(currentDate.getTime() - 7 * INTERVAL_TIME);
 		}
-		List<ProductBase> products = this.productService.getProducts(parm,
-				classify, startDate, endDate, mark);
-		
+
+		List<ProductBase> products = this.productService.getProducts(productName,
+				productType, startDate,
+				new Date(endDate.getTime() + INTERVAL_TIME), mark);
+		List<ProductClassify> productClassifies = this.productService
+				.getProductClassifies();
+
+		request.setAttribute("types", productClassifies);
+		request.setAttribute("productType", productType);
+		request.setAttribute("productName", productName);
 		request.setAttribute("products", products);
 		request.setAttribute("startDate", DateUtil.getDefaultDates().get(0));
 		request.setAttribute("endDate", DateUtil.getDefaultDates().get(1));

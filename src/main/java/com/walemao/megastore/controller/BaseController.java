@@ -1,6 +1,7 @@
 package com.walemao.megastore.controller;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,6 +21,8 @@ import org.springframework.web.servlet.mvc.multiaction.NoSuchRequestHandlingMeth
 
 public class BaseController {
 	private Logger logger = LoggerFactory.getLogger(BaseController.class);
+	public Date currentDate = new Date();
+	public long INTERVAL_TIME = 24 * 3600 * 1000;
 
 	@ExceptionHandler(Exception.class)
 	public void exceptionHandler(Exception e, HttpServletRequest request, HttpServletResponse response) {

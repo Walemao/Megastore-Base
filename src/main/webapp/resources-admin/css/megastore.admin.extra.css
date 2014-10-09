@@ -32,6 +32,10 @@ h1, h2, h3 {
 	padding-right: 5px;
 }
 
+.product-list-table td.product-list{
+	padding-top: 25px;
+}
+
 .product-list-table .thumbnail{
 	width: 60px;
 	height: 60px;
