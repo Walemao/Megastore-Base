@@ -4,11 +4,11 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 
 public class FileUploadUtil {
@@ -44,29 +44,26 @@ public class FileUploadUtil {
 	}
 
 	/**
-	 * 批量上传创建文件名
-	 * 
-	 * */
-	private static String createFileName(MultipartFile file, int idx) {
-		if (file.isEmpty())
-			return "";
-		String fileName = file.getOriginalFilename();
-		return getDataTimeFormat() + idx
-				+ fileName.substring(fileName.lastIndexOf('.'));
-	}
-
-	/**
 	 * 单个文件上传方法
 	 * 
 	 * */
-	public static String uploadSingleFile(MultipartFile file, HttpServletRequest request) throws Exception {
+	public static Map<String, Object> uploadSingleFile(MultipartFile file,
+			HttpServletRequest request) throws Exception {
+		Map<String, Object> requestMap = new HashMap<String, Object>();
 		if (file.isEmpty()) {
-			return "";
+			requestMap.put("status", "error");
+			requestMap.put("message", "空文件");
+			return requestMap;
 		}
 		byte[] bytes = file.getBytes();
-
+		if (FileTypeUtil.getFileTypeByStream(bytes) == null) {
+			requestMap.put("status", "error");
+			requestMap.put("message", "文件可能不是jpg,png,gif。");
+			return requestMap;
+		}
 		// create directory to store file
-		setHostName(request.getSession().getServletContext().getRealPath("/resources-admin/Upload/"));
+		setHostName(request.getSession().getServletContext()
+				.getRealPath("/resources-admin/Upload/"));
 		File dir = new File(getHostName());
 		if (!dir.exists())
 			dir.mkdirs();
@@ -80,12 +77,15 @@ public class FileUploadUtil {
 
 		stream.write(bytes);
 		stream.close();
-		
-		String path = request.getContextPath();  
-        String basePath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort()+ path;
-		
 
-		return basePath + "/resources-admin/Upload/" + fileName;
+		String path = request.getContextPath();
+		String basePath = request.getScheme() + "://" + request.getServerName()
+				+ ":" + request.getServerPort() + path;
+		requestMap.put("status", "success");
+		requestMap.put("message", basePath + "/resources-admin/Upload/"
+				+ fileName);
+		return requestMap;
+
 	}
 
 }
