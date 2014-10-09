@@ -1,5 +1,7 @@
 package com.walemao.megastore.repository.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -45,6 +47,17 @@ public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao 
 	}
 
 	@Override
+	public List<ProductInfo> getProductInfo(int productid) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT pd_id,pd_productid,pd_name, "
+				+ "	pd_thumbnail, pd_thummd5, pd_weight, "
+				+ "	pd_price, pd_amount, pd_createtime "
+				+ "FROM t_product_info where pd_productid = ?";
+		return this.jdbcTemplate.query(sql, new Object[] { productid },
+				new ProductInfoMapper());
+	}
+
+	@Override
 	public ProductInfo getProductInfo(String md5) {
 		// TODO Auto-generated method stub
 		String sql = "SELECT pd_id,pd_productid,pd_name, "
@@ -68,7 +81,7 @@ public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao 
 		if (ids.length > 0) {
 			String sql = "update t_product_info set pd_productid=? where pd_id in "
 					+ ToolUtil.IntDataToString(ids);
-			this.jdbcTemplate.update(sql, new Object[] {id });
+			this.jdbcTemplate.update(sql, new Object[] { id });
 		}
 	}
 
