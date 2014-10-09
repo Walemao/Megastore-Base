@@ -6,8 +6,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 
-import com.walemao.megastore.controller.RegistrationController;
-
 @Component("registrationValidator")
 public class RegistrationValidation 
 {
