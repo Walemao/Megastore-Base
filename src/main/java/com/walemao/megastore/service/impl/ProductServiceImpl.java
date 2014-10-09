@@ -18,7 +18,7 @@ import com.walemao.megastore.service.ProductService;
 public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
-	private ProductBaseDao productDao;
+	private ProductBaseDao productBaseDao;
 	
 	@Autowired
 	private ProductInfoDao productInfoDao;
@@ -31,17 +31,21 @@ public class ProductServiceImpl implements ProductService {
 	public List<ProductBase> getProducts(String parm, int classify, Date startTime,
 			Date endTime, int mark){
 		
-		return this.productDao.getProducts(parm, classify, startTime, endTime, mark);
+		return this.productBaseDao.getProducts(parm, classify, startTime, endTime, mark);
 	}
 	
 	@Override
 	public int insertProduct(ProductBase p, int[] ids) {
-		int i = this.productDao.insert(p);
+		int i = this.productBaseDao.insert(p);
 		this.productInfoDao.update(i, ids);
 		
 		return i;
 	}
-
+	
+	@Override
+	public void deleteProduct(int productId) {
+		this.productBaseDao.delete(productId);
+	}
 
 	@Override
 	public int insertProductInfo(ProductInfo pi) {
@@ -69,7 +73,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductBase getProduct(int id) {
-		ProductBase productBase = this.productDao.getProduct(id);
+		ProductBase productBase = this.productBaseDao.getProduct(id);
 		List<ProductInfo> infos = this.productInfoDao.getProductInfo(id);
 		
 		productBase.setProductColors(infos);
@@ -79,7 +83,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public void updateProduct(ProductBase p, int[] ids) {
-		this.productDao.update(p);
+		this.productBaseDao.update(p);
 		this.productInfoDao.update(p.getId(), ids);
 	}
 

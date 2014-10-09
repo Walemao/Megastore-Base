@@ -55,9 +55,9 @@ public class ProductController extends BaseController {
 			startDate = new Date(currentDate.getTime() - 7 * INTERVAL_TIME);
 		}
 
-		List<ProductBase> products = this.productService.getProducts(productName,
-				productType, startDate,
-				new Date(endDate.getTime() + INTERVAL_TIME), mark);
+		List<ProductBase> products = this.productService.getProducts(
+				productName, productType, startDate, new Date(endDate.getTime()
+						+ INTERVAL_TIME), mark);
 		List<ProductClassify> productClassifies = this.productService
 				.getProductClassifies();
 
@@ -170,6 +170,29 @@ public class ProductController extends BaseController {
 		}
 
 		return "redirect:/admin/product/" + productBase.getId();
+	}
+
+	/**
+	 * 删除商品
+	 * 
+	 * */
+	@RequestMapping(value = "/admin/product", method = RequestMethod.DELETE)
+	public @ResponseBody Map<String, Object> deleteProduct(int productId,
+			HttpServletRequest request) {
+		Map<String, Object> requestMap = new HashMap<String, Object>();
+
+		try {
+			this.productService.deleteProduct(productId);
+			requestMap.put("status", "success");
+			return requestMap;
+
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+		
+		requestMap.put("status", "danger");
+		return requestMap; 
 	}
 
 	/**

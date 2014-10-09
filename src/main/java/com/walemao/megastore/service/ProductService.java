@@ -14,6 +14,8 @@ public interface ProductService {
 	
 	public int insertProduct(ProductBase p, int[] ids);
 	
+	public void deleteProduct(int productId);
+	
 	public int insertProductInfo(ProductInfo pi);
 	
 	public ProductInfo getProductInfo(String md5); 

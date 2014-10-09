@@ -80,7 +80,7 @@
 									data-original-title="查看" href="<c:url value="/admin/product/${product.id}"/>"><i class="icon-info-sign"></i></a>
 								<a class="btn btn-xs btn-success" data-toggle="tooltip"
 									data-original-title="编辑" href="<c:url value="/admin/product/${product.id}"/>"><i class="icon-pencil"></i></a>
-								<a class="btn btn-xs btn-danger" data-toggle="tooltip"
+								<a class="btn btn-xs btn-danger delete-product-trigger" data-id="<c:out value="${product.id}"/>" data-toggle="tooltip"
 									data-original-title="删除"><i class="icon-trash"></i></a>
 							</div>
 						</td>
@@ -113,6 +113,17 @@
 </body>
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
 <script type="text/javascript">
-	
+	$('.delete-product-trigger').click(function(){
+		if(window.confirm('你确定要删除吗？')){
+		   var id = $(this).attr('data-id');
+		   $.post('<c:url value="/admin/product?${_csrf.parameterName}=${_csrf.token}"/>', {_method : 'DELETE', productId : id}, function(data){
+			  if(data.status == 'success'){
+				  window.location.reload();
+			  }else{
+				  alert('删除失败！');
+			  }
+		   });
+		}
+	});
 </script>
 </html>
