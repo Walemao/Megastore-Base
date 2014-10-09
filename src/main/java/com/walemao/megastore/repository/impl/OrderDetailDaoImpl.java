@@ -24,7 +24,7 @@ public class OrderDetailDaoImpl implements OrderDetailDao {
 				+ "	od_typeid, pd_name, od_orderid, "
 				+ "	od_amount, od_reamark, od_createtime "
 				+ "FROM t_order_detail a LEFT JOIN ( "
-				+ "	SELECT p_id, p_number, p_name, pd_id, pd_price, pd_name FROM" 
+				+ "	SELECT p_id, p_number, p_name, pd_id, pd_price, pd_name FROM"
 				+ "		t_product_base a "
 				+ "	LEFT JOIN t_prodcut_info b ON a.p_id = b.pd_productid "
 				+ ") b ON a.od_productid = b.p_id "

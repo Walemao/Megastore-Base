@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-08 20:59:05
+Date: 2014-10-09 14:40:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -188,7 +188,6 @@ CREATE TABLE `t_product_base` (
   `p_name` varchar(255) DEFAULT NULL COMMENT '商品名称',
   `p_recommend` tinyint(1) DEFAULT '0' COMMENT '是否推荐，1表示推荐，0表示未推荐',
   `p_thumbnail` longtext COMMENT '商品缩略图',
-  `p_images` longtext COMMENT '商品图片',
   `p_classify` int(11) DEFAULT '0' COMMENT '商品分类,关联t_product_classify',
   `p_origin` varchar(50) DEFAULT NULL COMMENT '商品产地',
   `p_materials` varchar(50) DEFAULT NULL COMMENT '商品材质',
@@ -202,7 +201,7 @@ CREATE TABLE `t_product_base` (
   KEY `idx_t_product_base_2` (`p_name`) USING BTREE,
   KEY `idx_t_product_base_4` (`deletemark`) USING BTREE,
   KEY `idx_t_product_base_3` (`p_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_product_classify
@@ -212,7 +211,7 @@ CREATE TABLE `t_product_classify` (
   `pc_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品分类ID',
   `pc_name` varchar(50) DEFAULT NULL COMMENT '分类名称',
   PRIMARY KEY (`pc_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_product_favorites
@@ -227,6 +226,19 @@ CREATE TABLE `t_product_favorites` (
   `deletemark` datetime DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`pf_id`),
   UNIQUE KEY `idx_t_product_favorites_1` (`pf_username`,`pf_productid`,`pf_typeid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_product_images
+-- ----------------------------
+DROP TABLE IF EXISTS `t_product_images`;
+CREATE TABLE `t_product_images` (
+  `pi_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `pi_src` longtext COMMENT '图片地址',
+  `pi_md5` char(16) DEFAULT NULL COMMENT '图片MD5',
+  `pi_sort` int(11) DEFAULT '0' COMMENT '排序',
+  `pi_productid` bigint(20) DEFAULT NULL COMMENT '商品ID',
+  PRIMARY KEY (`pi_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -247,7 +259,7 @@ CREATE TABLE `t_product_info` (
   UNIQUE KEY `idx_t_product_info_2` (`pd_thummd5`) USING BTREE,
   KEY `idx_t_product_info_1` (`pd_productid`) USING BTREE,
   CONSTRAINT `fk_product_info_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_base` (`p_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_proposal
@@ -258,8 +270,8 @@ CREATE TABLE `t_proposal` (
   `p_username` varchar(50) NOT NULL COMMENT '用户名',
   `p_subject` tinyint(2) DEFAULT NULL COMMENT '建议留言类型',
   `p_name` char(20) DEFAULT NULL COMMENT '姓名',
-  `p_provinces` tinyint(4) DEFAULT '0' COMMENT '省份',
-  `p_cities` smallint(6) DEFAULT '0' COMMENT '城市',
+  `p_province` tinyint(4) DEFAULT '0' COMMENT '省份',
+  `p_city` smallint(6) DEFAULT '0' COMMENT '城市',
   `p_contact` char(11) DEFAULT NULL COMMENT '联系方式',
   `p_email` varchar(255) DEFAULT NULL COMMENT '电子邮箱',
   `p_content` varchar(255) DEFAULT NULL COMMENT '内容',

@@ -32,7 +32,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	@Override
 	public ProductBase getProduct(int id) {
 		// TODO Auto-generated method stub
-		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_images,p_classify,p_origin"
+		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_classify,p_origin"
 				+ ",p_materials,p_desc,p_discount,p_remark,p_creattime,pc_name from t_product_base a left join t_product_classify b"
 				+ " on a.p_classify = b.pc_id where p_id = ? limit 1";
 		ProductBase productInfo = this.jdbcTemplate.query(sql,
@@ -44,11 +44,11 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	}
 
 	@Override
-	public List<ProductBase> getProducts(String parm, int classify, Date startTime,
-			Date endTime, int mark) {
+	public List<ProductBase> getProducts(String parm, int classify,
+			Date startTime, Date endTime, int mark) {
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
-		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_images,p_classify,p_origin"
+		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_classify,p_origin"
 				+ ",p_materials,p_desc,p_discount,p_remark,p_creattime,pc_name from t_product_base a left join t_product_classify b"
 				+ " on a.p_classify = b.pc_id where a.p_id <> 0 and a.deletemark is "
 				+ args;
@@ -72,14 +72,14 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	@Override
 	public int insert(ProductBase p) {
 		// TODO Auto-generated method stub
-		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_images,p_classify,p_origin,p_materials,p_desc,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_classify,p_origin,p_materials,p_desc,p_discount,p_remark) values (?,?,?,?,?,?,?,?,?,?,?)";
 
 		int id = this.addIntoDB(
 				sql,
 				new Object[] { p.getNumber(), p.getName(), p.isRecommend(),
-						p.getThumbnail(), p.getImages(), p.getClassify(),
-						p.getOrgin(), p.getMaterials(), p.getDesc(),
-						p.getDiscount(), p.getRemark() });
+						p.getThumbnail(), p.getClassify(), p.getOrgin(),
+						p.getMaterials(), p.getDesc(), p.getDiscount(),
+						p.getRemark() });
 		p.setId(id);
 		return id;
 	}
@@ -87,13 +87,13 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	@Override
 	public void update(ProductBase p) {
 		// TODO Auto-generated method stub
-		String sql = "Update t_product_base set p_number=?,p_name=?,p_recommend=?,p_thumbnail=?,p_images=?,p_classify=?,p_origin=?,p_materials=?,p_desc=?,p_discount=?,p_remark=? where p_id=?";
+		String sql = "Update t_product_base set p_number=?,p_name=?,p_recommend=?,p_thumbnail=?,p_classify=?,p_origin=?,p_materials=?,p_desc=?,p_discount=?,p_remark=? where p_id=?";
 		this.jdbcTemplate.update(
 				sql,
 				new Object[] { p.getNumber(), p.getName(), p.isRecommend(),
-						p.getThumbnail(), p.getImages(), p.getClassify(),
-						p.getOrgin(), p.getMaterials(), p.getDesc(),
-						p.getDiscount(), p.getRemark(), p.getId() });
+						p.getThumbnail(), p.getClassify(), p.getOrgin(),
+						p.getMaterials(), p.getDesc(), p.getDiscount(),
+						p.getRemark(), p.getId() });
 	}
 
 	@Override

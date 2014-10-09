@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.walemao.megastore.repository.CommonDao;
 
 @Repository
-public class CommonDaoImpl implements CommonDao{
+public class CommonDaoImpl implements CommonDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

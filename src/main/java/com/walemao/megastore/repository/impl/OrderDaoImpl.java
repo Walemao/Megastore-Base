@@ -26,8 +26,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 		// TODO Auto-generated method stub
 		final List<OrderDetail> list = o.getList();
 		String sql = "insert into t_order(o_username,o_createtime,o_addressinfo,o_fee,o_freight,o_remark,o_paytype) values (?,now(),?,?,?,?,?,?)";
-		int id = this.addIntoDB(
-				sql,
+		int id = this.addIntoDB(sql,
 				new Object[] { o.getUsername(), o.getAddressinfo(), o.getFee(),
 						o.getFreight(), o.getRemark(), o.getPaytype() });
 		o.setId(id);

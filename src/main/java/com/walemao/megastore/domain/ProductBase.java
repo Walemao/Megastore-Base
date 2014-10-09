@@ -10,7 +10,6 @@ public class ProductBase {
 	private String name;
 	private boolean recommend;
 	private String thumbnail;
-	private List<String> images;
 	private int classify;
 	private String orgin;
 	private String materials;
@@ -21,7 +20,14 @@ public class ProductBase {
 	
 	private ProductClassify productClassification;
 	private List<ProductInfo> productInfos;
+	private List<ProductImage> productImages;
 	
+	public List<ProductImage> getProductImages() {
+		return productImages;
+	}
+	public void setProductImages(List<ProductImage> productImages) {
+		this.productImages = productImages;
+	}
 	public String getNumber() {
 		return number;
 	}
@@ -40,17 +46,11 @@ public class ProductBase {
 	public String getThumbnail() {
 		return thumbnail;
 	}
-	public List<String> getImages() {
-		return images;
-	}
 	public void setCreattime(Date creattime) {
 		this.creattime = creattime;
 	}
 	public void setThumbnail(String thumbnail) {
 		this.thumbnail = thumbnail;
-	}
-	public void setImages(List<String> images) {
-		this.images = images;
 	}
 	public List<ProductInfo> getProductInfos() {
 		return productInfos;

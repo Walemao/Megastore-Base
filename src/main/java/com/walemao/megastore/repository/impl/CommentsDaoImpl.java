@@ -22,7 +22,8 @@ public class CommentsDaoImpl extends CommonDaoImpl implements CommentsDao {
 	public List<Comments> getComments(Date startTime, Date endTime, int mark) {
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
-		String sql = "select c_id,c_username,c_content,c_type,c_productid,c_orderdetailid,c_createtime from t_comments where deletemark is " + args;
+		String sql = "select c_id,c_username,c_content,c_type,c_productid,c_orderdetailid,c_createtime from t_comments where deletemark is "
+				+ args;
 		List<Object> list = new ArrayList<Object>();
 		if (startTime != null && endTime != null) {
 			sql += " and c_createtime between ? and ?";
