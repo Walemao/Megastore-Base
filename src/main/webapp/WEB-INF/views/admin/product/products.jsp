@@ -66,41 +66,28 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td></td>
-						<td>德国Hape 80粒积木 木制 婴儿宝宝儿童益智玩具</td>
-						<td>积木</td>
-						<td>2014/10/05 16:04:30</td>
+				    <%int i = 1;%>
+					<c:forEach items="${products}" var="product">
+					  <tr>
+						<td><%=i%></td>
+						<td><a class="thumbnail"><img src="<c:out value="${product.thumbnail}" />" width="60" height="60"></a></td>
+						<td><c:out value="${product.name}" /></td>
+						<td><c:out value="${product.productClassification.name}" /></td>
+						<td>
+						<fmt:formatDate value="${product.creattime}" type="date" pattern="yyyy/MM/dd HH:mm:ss"/></td>
 						<td>
 							<div class="btn-group">
 								<a class="btn btn-xs btn-info" data-toggle="tooltip"
-									data-original-title="查看" href="#"><i class="icon-info-sign"></i></a>
+									data-original-title="查看" href="<c:url value="/admin/product/${product.id}"/>"><i class="icon-info-sign"></i></a>
 								<a class="btn btn-xs btn-success" data-toggle="tooltip"
-									data-original-title="编辑" href="#"><i class="icon-pencil"></i></a>
+									data-original-title="编辑" href="<c:url value="/admin/product/${product.id}"/>"><i class="icon-pencil"></i></a>
 								<a class="btn btn-xs btn-danger" data-toggle="tooltip"
-									data-original-title="删除" href="#"><i class="icon-trash"></i></a>
+									data-original-title="删除"><i class="icon-trash"></i></a>
 							</div>
 						</td>
 					</tr>
-
-					<tr>
-						<td>2</td>
-						<td></td>
-						<td>米米智玩 早教智力160片大块积木宝宝木制儿童益智玩具</td>
-						<td>积木</td>
-						<td>2014/10/04 13:46:21</td>
-						<td>
-							<div class="btn-group">
-								<a class="btn btn-xs btn-info" data-toggle="tooltip"
-									data-original-title="查看" href="#"><i class="icon-info-sign"></i></a>
-								<a class="btn btn-xs btn-success" data-toggle="tooltip"
-									data-original-title="编辑" href="#"><i class="icon-pencil"></i></a>
-								<a class="btn btn-xs btn-danger" data-toggle="tooltip"
-									data-original-title="删除" href="#"><i class="icon-trash"></i></a>
-							</div>
-						</td>
-					</tr>
+					<%i++;%>
+					</c:forEach>
 				</tbody>
 				<tfoot>
 					<tr>

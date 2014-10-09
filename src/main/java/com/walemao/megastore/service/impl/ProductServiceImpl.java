@@ -1,13 +1,16 @@
 package com.walemao.megastore.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.walemao.megastore.domain.ProductBase;
+import com.walemao.megastore.domain.ProductClassify;
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.repository.ProductBaseDao;
+import com.walemao.megastore.repository.ProductClassfyDao;
 import com.walemao.megastore.repository.ProductInfoDao;
 import com.walemao.megastore.service.ProductService;
 
@@ -20,9 +23,19 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductInfoDao productInfoDao;
 	
+	@Autowired
+	private ProductClassfyDao productClassfyDao;
+	
 	
 	@Override
-	public int insertProductBase(ProductBase p, int[] ids) {
+	public List<ProductBase> getProducts(String parm, int classify, Date startTime,
+			Date endTime, int mark){
+		
+		return this.productDao.getProducts(parm, classify, startTime, endTime, mark);
+	}
+	
+	@Override
+	public int insertProduct(ProductBase p, int[] ids) {
 		int i = this.productDao.insert(p);
 		this.productInfoDao.update(i, ids);
 		
@@ -62,5 +75,19 @@ public class ProductServiceImpl implements ProductService {
 		productBase.setProductColors(infos);
 		return productBase;
 	}
+
+
+	@Override
+	public void updateProduct(ProductBase p, int[] ids) {
+		this.productDao.update(p);
+		this.productInfoDao.update(p.getId(), ids);
+	}
+
+
+	@Override
+	public List<ProductClassify> getProductClassifies() {
+		return this.productClassfyDao.getProductClassifies();
+	}
+
 
 }

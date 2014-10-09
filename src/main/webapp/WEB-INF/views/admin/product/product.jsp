@@ -18,18 +18,20 @@
 		<%@ include file="/WEB-INF/views/includes/admin_aside.jspf"%>
 
 		<div id="content">
-			<ul id="nav-info" class="clearfix">
-				<li><a href="#"><i class="icon-gift"></i></a></li>
-				<li><a href="#">商品管理</a></li>
-				<li class="active"><a href="#">添加商品</a></li>
-			</ul>
-			<!-- 商品基本信息 -->
-			<c:set var="method" value="POST" />
+		    <c:set var="method" value="POST" />
+		    <c:set var="title" value="添加商品" />
 			<c:url var="productUrl" value="/admin/product" />
 			<c:url value="/admin/product/color?${_csrf.parameterName}=${_csrf.token}" var="typeUrl"/>
 			<c:if test="${param.add == null }">
 				<c:set var="method" value="PUT" />
+				<c:set var="title" value="修改商品" />
 			</c:if>
+			<ul id="nav-info" class="clearfix">
+				<li><a href="#"><i class="icon-gift"></i></a></li>
+				<li><a href="#">商品管理</a></li>
+				<li class="active"><a href="#">${title}</a></li>
+			</ul>
+			<!-- 商品基本信息 -->
 			<form:form action="${productUrl}" method="${method}"
 				class="form-horizontal form-box" modelAttribute="productBase">
 				<h4 class="form-box-header">商品信息</h4>
@@ -45,10 +47,9 @@
 						<label class="control-label col-md-2">商品类型：</label>
 						<div class="col-md-3">
 							<select class="form-control" name="productType" id="productType">
-								<option value="0">--所有商品--</option>
-								<option value="1">积木</option>
-								<option value="2">模型</option>
-								<option value="3">益智</option>
+							<c:forEach items="${types}" var="type">
+							<option value="<c:out value="${type.id}"></c:out>" <c:if test="${type.id == productBase.classify}"> selected</c:if>><c:out value="${type.name}"></c:out></option>
+							</c:forEach>
 							</select>
 						</div>
 						<label class="control-label col-md-2">商品货号：</label>

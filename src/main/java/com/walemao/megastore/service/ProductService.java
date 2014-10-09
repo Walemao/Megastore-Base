@@ -1,10 +1,18 @@
 package com.walemao.megastore.service;
 
+import java.util.Date;
+import java.util.List;
+
 import com.walemao.megastore.domain.ProductBase;
+import com.walemao.megastore.domain.ProductClassify;
 import com.walemao.megastore.domain.ProductInfo;
 
 public interface ProductService {
-	public int insertProductBase(ProductBase p, int[] ids);
+	
+	public List<ProductBase> getProducts(String parm, int classify, Date startTime,
+			Date endTime, int mark);
+	
+	public int insertProduct(ProductBase p, int[] ids);
 	
 	public int insertProductInfo(ProductInfo pi);
 	
@@ -15,5 +23,9 @@ public interface ProductService {
 	public void updateProductInfo(ProductInfo pi);
 	
 	public ProductBase getProduct(int id);
+	
+	public void updateProduct(ProductBase p, int[] ids);
+	
+	public List<ProductClassify> getProductClassifies();
 	
 }
