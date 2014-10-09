@@ -55,8 +55,11 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 		List<Object> list = new ArrayList<Object>();
 		if (parm == null || parm.length() <= 0) {
 		} else {
-			sql += " and p_name like ? and p_classify=?";
+			sql += " and p_name like ?";
 			list.add("%" + parm + "%");
+		}
+		if (classify != 0) {
+			sql += " and p_classify = ?";
 			list.add(classify);
 		}
 		if (startTime != null && endTime != null) {

@@ -6,6 +6,15 @@ import java.util.List;
 import com.walemao.megastore.domain.ProductBase;
 
 public interface ProductBaseDao {
+	/**
+	 * 
+	 * @param parm 			产品名称
+	 * @param classify 		产品类型，0表示所有类型
+	 * @param startTime 	查询开始时间
+	 * @param endTime 		查询结束时间
+	 * @param mark 			0表示查询所有商品 1表示删除的商品
+	 * @return				返回所有商品列表
+	 */
 	public List<ProductBase> getProducts(String parm, int classify, Date startTime,
 			Date endTime, int mark);
 
