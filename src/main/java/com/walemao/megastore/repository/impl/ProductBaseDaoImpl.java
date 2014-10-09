@@ -72,7 +72,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	@Override
 	public int insert(ProductBase p) {
 		// TODO Auto-generated method stub
-		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_classify,p_origin,p_materials,p_desc,p_discount,p_remark,pd_createtime) values (?,?,?,?,?,?,?,?,?,?,now())";
+		String sql = "insert into t_product_base(p_number,p_name,p_recommend,p_thumbnail,p_classify,p_origin,p_materials,p_desc,p_discount,p_remark,p_createtime) values (?,?,?,?,?,?,?,?,?,?,now())";
 
 		int id = this.addIntoDB(
 				sql,
