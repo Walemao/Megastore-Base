@@ -1,6 +1,7 @@
 package com.walemao.megastore.domain;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class ProductInfo {
@@ -12,7 +13,7 @@ public class ProductInfo {
 	private String weight;
 	private String name;
 	private int amount;
-	private Date createtime;
+	private Timestamp createtime;
 
 	public String getWeight() {
 		return weight;
@@ -78,11 +79,11 @@ public class ProductInfo {
 		this.name = name;
 	}
 
-	public Date getCreatetime() {
+	public Timestamp getCreatetime() {
 		return createtime;
 	}
 
-	public void setCreatetime(Date createtime) {
+	public void setCreatetime(Timestamp createtime) {
 		this.createtime = createtime;
 	}
 

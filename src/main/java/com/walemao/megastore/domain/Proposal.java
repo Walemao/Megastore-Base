@@ -1,5 +1,6 @@
 package com.walemao.megastore.domain;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Proposal {
@@ -12,7 +13,14 @@ public class Proposal {
 	private String contact;
 	private String email;
 	private String content;
-	private Date createTime;
+	private Timestamp createTime;
+	
+	public Timestamp getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Timestamp createTime) {
+		this.createTime = createTime;
+	}
 	public int getId() {
 		return id;
 	}
@@ -66,11 +74,5 @@ public class Proposal {
 	}
 	public void setContent(String content) {
 		this.content = content;
-	}
-	public Date getCreateTime() {
-		return createTime;
-	}
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
 	}
 }

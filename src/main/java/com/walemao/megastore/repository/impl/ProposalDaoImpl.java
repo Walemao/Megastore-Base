@@ -43,4 +43,23 @@ public class ProposalDaoImpl extends CommonDaoImpl implements ProposalDao {
 				new ProposalMapper());
 	}
 
+	@Override
+	public int insert(Proposal p) {
+		// TODO Auto-generated method stub
+		String sql = "insert into t_proposal(p_username,p_subject,p_name,p_province,p_city,p_contact,p_email,p_content,p_createtime) values"
+				+ "(?,?,?,?,?,?,?,?,now())";
+		return this.addIntoDB(
+				sql,
+				new Object[] { p.getUsername(), p.getSubject(), p.getName(),
+						p.getProvince(), p.getCity(), p.getContact(),
+						p.getEmail(), p.getContent() });
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		String sql = "delete from t_proposal where p_id=?";
+		this.JdbcTemplate.update(sql, new Object[] { id });
+	}
+
 }

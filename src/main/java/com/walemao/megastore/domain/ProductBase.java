@@ -1,7 +1,8 @@
 package com.walemao.megastore.domain;
 
 
-import java.util.Date;
+
+import java.sql.Timestamp;
 import java.util.List;
 
 public class ProductBase {
@@ -16,7 +17,7 @@ public class ProductBase {
 	private String desc;
 	private double discount;
 	private String remark;
-	private Date creattime;
+	private Timestamp creattime;
 	
 	private ProductClassify productClassification;
 	private List<ProductInfo> productInfos;
@@ -46,7 +47,10 @@ public class ProductBase {
 	public String getThumbnail() {
 		return thumbnail;
 	}
-	public void setCreattime(Date creattime) {
+	public Timestamp getCreattime() {
+		return creattime;
+	}
+	public void setCreattime(Timestamp creattime) {
 		this.creattime = creattime;
 	}
 	public void setThumbnail(String thumbnail) {
@@ -111,8 +115,5 @@ public class ProductBase {
 	}
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-	public Date getCreattime() {
-		return creattime;
 	}
 }

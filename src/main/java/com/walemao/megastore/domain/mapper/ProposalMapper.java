@@ -22,7 +22,7 @@ public class ProposalMapper implements RowMapper<Proposal> {
 		proposal.setContact(rs.getString("p_contact"));
 		proposal.setEmail(rs.getString("p_email"));
 		proposal.setContent(rs.getString("p_content"));
-		proposal.setCreateTime(rs.getDate("p_creattime"));
+		proposal.setCreateTime(rs.getTimestamp("p_creattime"));
 		return proposal;
 	}
 

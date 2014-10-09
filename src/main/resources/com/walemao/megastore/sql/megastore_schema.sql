@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-09 14:40:21
+Date: 2014-10-09 16:44:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -194,14 +194,14 @@ CREATE TABLE `t_product_base` (
   `p_desc` varchar(255) DEFAULT NULL COMMENT '商品描述',
   `p_discount` double DEFAULT NULL COMMENT '商品折扣',
   `p_remark` varchar(255) DEFAULT NULL COMMENT '商品备注',
-  `p_creattime` datetime DEFAULT NULL COMMENT '商品上架时间',
+  `p_createtime` datetime DEFAULT NULL COMMENT '商品上架时间',
   `deletemark` datetime DEFAULT NULL,
   PRIMARY KEY (`p_id`),
   UNIQUE KEY `idx_t_product_base_1` (`p_number`),
   KEY `idx_t_product_base_2` (`p_name`) USING BTREE,
   KEY `idx_t_product_base_4` (`deletemark`) USING BTREE,
   KEY `idx_t_product_base_3` (`p_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_product_classify
@@ -259,23 +259,23 @@ CREATE TABLE `t_product_info` (
   UNIQUE KEY `idx_t_product_info_2` (`pd_thummd5`) USING BTREE,
   KEY `idx_t_product_info_1` (`pd_productid`) USING BTREE,
   CONSTRAINT `fk_product_info_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_base` (`p_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_proposal
 -- ----------------------------
 DROP TABLE IF EXISTS `t_proposal`;
 CREATE TABLE `t_proposal` (
-  `p_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `p_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '建议留言表ID',
   `p_username` varchar(50) NOT NULL COMMENT '用户名',
-  `p_subject` tinyint(2) DEFAULT NULL COMMENT '建议留言类型',
+  `p_subject` tinyint(2) DEFAULT '0' COMMENT '建议留言类型',
   `p_name` char(20) DEFAULT NULL COMMENT '姓名',
   `p_province` tinyint(4) DEFAULT '0' COMMENT '省份',
   `p_city` smallint(6) DEFAULT '0' COMMENT '城市',
   `p_contact` char(11) DEFAULT NULL COMMENT '联系方式',
   `p_email` varchar(255) DEFAULT NULL COMMENT '电子邮箱',
   `p_content` varchar(255) DEFAULT NULL COMMENT '内容',
-  `p_creattime` datetime DEFAULT NULL COMMENT '创建时间',
+  `p_createtime` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`p_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

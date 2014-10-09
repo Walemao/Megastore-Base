@@ -21,7 +21,7 @@ public class ProductInfoMapper implements RowMapper<ProductInfo> {
 		productinfo.setWeight(rs.getString("pd_weight"));
 		productinfo.setPrice(rs.getBigDecimal("pd_price"));
 		productinfo.setAmount(rs.getInt("pd_amount"));
-		productinfo.setCreatetime(rs.getDate("pd_createtime"));
+		productinfo.setCreatetime(rs.getTimestamp("pd_createtime"));
 		return productinfo;
 	}
 

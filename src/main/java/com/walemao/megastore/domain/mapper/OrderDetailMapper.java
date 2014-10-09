@@ -24,7 +24,7 @@ public class OrderDetailMapper implements RowMapper<OrderDetail> {
 		productType.setThumbnail(rs.getString(""));
 		oDetail.setAmount(rs.getInt("od_amount"));
 		oDetail.setRemark(rs.getString("od_reamark"));
-		oDetail.setCreatetime(rs.getDate("od_createtime"));
+		oDetail.setCreatetime(rs.getTimestamp("od_createtime"));
 		return oDetail;
 	}
 

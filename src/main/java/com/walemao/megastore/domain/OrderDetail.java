@@ -1,6 +1,6 @@
 package com.walemao.megastore.domain;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class OrderDetail {
 	private int id;
@@ -9,16 +9,16 @@ public class OrderDetail {
 	private int orderid;
 	private int amount;
 	private String remark;
-	private Date createtime;
+	private Timestamp createtime;
 
 	private ProductBase product;
 	private ProductInfo producttype;
 
-	public Date getCreatetime() {
+	public Timestamp getCreatetime() {
 		return createtime;
 	}
 
-	public void setCreatetime(Date createtime) {
+	public void setCreatetime(Timestamp createtime) {
 		this.createtime = createtime;
 	}
 
