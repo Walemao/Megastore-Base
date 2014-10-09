@@ -33,7 +33,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	public ProductBase getProduct(int id) {
 		// TODO Auto-generated method stub
 		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_classify,p_origin"
-				+ ",p_materials,p_desc,p_discount,p_remark,p_creattime,pc_name from t_product_base a left join t_product_classify b"
+				+ ",p_materials,p_desc,p_discount,p_remark,p_createtime,pc_name from t_product_base a left join t_product_classify b"
 				+ " on a.p_classify = b.pc_id where p_id = ? limit 1";
 		ProductBase productInfo = this.jdbcTemplate.query(sql,
 				new Object[] { id }, new ProductBaseMapper()).get(0);
@@ -49,7 +49,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
 		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_classify,p_origin"
-				+ ",p_materials,p_desc,p_discount,p_remark,p_creattime,pc_name from t_product_base a left join t_product_classify b"
+				+ ",p_materials,p_desc,p_discount,p_remark,p_createtime,pc_name from t_product_base a left join t_product_classify b"
 				+ " on a.p_classify = b.pc_id where a.p_id <> 0 and a.deletemark is "
 				+ args;
 		List<Object> list = new ArrayList<Object>();
@@ -60,11 +60,11 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 			list.add(classify);
 		}
 		if (startTime != null && endTime != null) {
-			sql += " and p_creattime between ? and ?";
+			sql += " and p_createtime between ? and ?";
 			list.add(startTime);
 			list.add(endTime);
 		}
-		sql += " order by p_creattime desc";
+		sql += " order by p_createtime desc";
 		return this.jdbcTemplate.query(sql, list.toArray(),
 				new ProductBaseMapper());
 	}
