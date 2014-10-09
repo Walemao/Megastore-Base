@@ -64,7 +64,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 			list.add(classify);
 		}
 		if (startTime != null && endTime != null) {
-			sql += " and p_createtime between ? and ?";
+			sql += " and (p_createtime between ? and ? )";
 			list.add(DateUtil.FormatToD(startTime));
 			list.add(DateUtil.FormatToD(endTime));
 		}
