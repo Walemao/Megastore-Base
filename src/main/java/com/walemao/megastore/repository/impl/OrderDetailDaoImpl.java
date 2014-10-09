@@ -34,4 +34,18 @@ public class OrderDetailDaoImpl implements OrderDetailDao {
 				new OrderDetailMapper());
 	}
 
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		String sql = "update t_order_detail set deletemark = now() where od_id = ?";
+		this.jdbcTemplate.update(sql, new Object[] { id });
+	}
+
+	@Override
+	public void permanentlyDelete(int id) {
+		// TODO Auto-generated method stub
+		String sql = "delete from t_order_detail where od_id = ?";
+		this.jdbcTemplate.update(sql, new Object[] { id });
+	}
+
 }

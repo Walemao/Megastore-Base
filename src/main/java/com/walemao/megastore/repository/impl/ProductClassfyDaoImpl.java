@@ -2,7 +2,6 @@ package com.walemao.megastore.repository.impl;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -37,6 +36,13 @@ public class ProductClassfyDaoImpl extends CommonDaoImpl implements
 		// TODO Auto-generated method stub
 		String sql = "update t_product_classification set pc_name=? where pc_id=?";
 		this.jdbcTemplate.update(sql, new Object[] { p.getName(), p.getId() });
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		String sql = "delete from t_product_classification where pc_id=?";
+		this.jdbcTemplate.update(sql, new Object[] { id });
 	}
 
 }
