@@ -82,9 +82,9 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 						p.getDiscount(), p.getRemark() });
 		p.setId(id);
 		if (ids.length > 0) {
-			sql = "update t_product_info set pd_productid=? where pd_id in ?";
-			this.jdbcTemplate.update(sql,
-					new Object[] { id, ToolUtil.IntDataToString(ids) });
+			sql = "update t_product_info set pd_productid=? where pd_id in "
+					+ ToolUtil.IntDataToString(ids);
+			this.jdbcTemplate.update(sql, new Object[] { p.getId() });
 		}
 		return id;
 	}
@@ -100,9 +100,9 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 						p.getOrgin(), p.getMaterials(), p.getDesc(),
 						p.getDiscount(), p.getRemark(), p.getId() });
 		if (ids.length > 0) {
-			sql = "update t_product_info set pd_productid=? where pd_id in ?";
-			this.jdbcTemplate.update(sql,
-					new Object[] { p.getId(), ToolUtil.IntDataToString(ids) });
+			sql = "update t_product_info set pd_productid=? where pd_id in "
+					+ ToolUtil.IntDataToString(ids);
+			this.jdbcTemplate.update(sql, new Object[] { p.getId() });
 		}
 	}
 
