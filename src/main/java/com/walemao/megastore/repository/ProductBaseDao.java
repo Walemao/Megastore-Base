@@ -6,7 +6,7 @@ import java.util.List;
 import com.walemao.megastore.domain.ProductBase;
 
 public interface ProductBaseDao {
-	public List<ProductBase> getProducts(String parm, int type, Date startTime,
+	public List<ProductBase> getProducts(String parm, int classify, Date startTime,
 			Date endTime, int mark);
 
 	public ProductBase getProduct(int id);

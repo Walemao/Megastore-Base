@@ -33,7 +33,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	@Override
 	public ProductBase getProduct(int id) {
 		// TODO Auto-generated method stub
-		String sql = "select p_id,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin"
+		String sql = "select p_id,p_name,p_recommend,p_thumbnail,p_images,p_classify,p_origin"
 				+ ",p_materials,p_desc,p_price,p_discount,p_remark,p_creattime from t_product_base where p_id = ? limit 1";
 		ProductBase productInfo = this.jdbcTemplate.query(sql,
 				new Object[] { id }, new ProductBaseMapper()).get(0);
@@ -44,20 +44,20 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	}
 
 	@Override
-	public List<ProductBase> getProducts(String parm, int type, Date startTime,
+	public List<ProductBase> getProducts(String parm, int classify, Date startTime,
 			Date endTime, int mark) {
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
-		String sql = "select p_id,p_name,p_recommend,p_thumbnail,p_images,p_type,p_origin"
+		String sql = "select p_id,p_name,p_recommend,p_thumbnail,p_images,p_classify,p_origin"
 				+ ",p_materials,p_desc,p_discount,p_remark,p_creattime,pc_name from t_product_base a left join t_product_classification b"
-				+ " on a.p_type = b.pc_id where a.p_id <> 0 and a.deletemark is "
+				+ " on a.p_classify = b.pc_id where a.p_id <> 0 and a.deletemark is "
 				+ args;
 		List<Object> list = new ArrayList<Object>();
 		if (parm == null || parm.length() <= 0) {
 		} else {
-			sql += " and p_name like ? and p_type=?";
+			sql += " and p_name like ? and p_classify=?";
 			list.add("%" + parm + "%");
-			list.add(type);
+			list.add(classify);
 		}
 		if (startTime != null && endTime != null) {
 			sql += " and p_creattime between ? and ?";
