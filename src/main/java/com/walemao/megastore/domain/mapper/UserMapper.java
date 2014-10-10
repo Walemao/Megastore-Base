@@ -4,12 +4,12 @@ import java.sql.ResultSet;
 
 import java.sql.SQLException;
 
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 import com.walemao.megastore.domain.User;
 
 
-public class UserMapper implements RowMapper<User> {
+public class UserMapper implements ParameterizedRowMapper<User> {
 
 	@Override
 	public User mapRow(ResultSet rs, int rowNum) throws SQLException {

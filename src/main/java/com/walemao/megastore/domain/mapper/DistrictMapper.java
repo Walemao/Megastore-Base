@@ -3,11 +3,11 @@ package com.walemao.megastore.domain.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 import com.walemao.megastore.domain.District;
 
-public class DistrictMapper implements RowMapper<District> {
+public class DistrictMapper implements ParameterizedRowMapper<District> {
 
 	@Override
 	public District mapRow(ResultSet rs, int rowNum) throws SQLException {

@@ -3,11 +3,11 @@ package com.walemao.megastore.domain.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 import com.walemao.megastore.domain.Complaint;
 
-public class ComplaintMapper implements RowMapper<Complaint> {
+public class ComplaintMapper implements ParameterizedRowMapper<Complaint> {
 
 	@Override
 	public Complaint mapRow(ResultSet rs, int rowNum) throws SQLException {
