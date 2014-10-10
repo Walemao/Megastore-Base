@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.ProductClassify;
 import com.walemao.megastore.domain.ProductImage;
@@ -32,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
 	private ProductImageDao productImageDao;
 
 	@Override
-	public List<ProductBase> getProducts(String parm, int classify,
+	public CurrentPage<ProductBase> getProducts(String parm, int classify,
 			Date startTime, Date endTime, int mark) {
 
 		return this.productBaseDao.getProducts(parm, classify, startTime,

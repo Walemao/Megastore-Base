@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.ProductClassify;
 import com.walemao.megastore.domain.ProductImage;
@@ -56,9 +57,10 @@ public class ProductController extends BaseController {
 			startDate = new Date(currentDate.getTime() - 7 * INTERVAL_TIME);
 		}
 
-		List<ProductBase> products = this.productService.getProducts(
+		CurrentPage<ProductBase> pb = this.productService.getProducts(
 				productName, productType, startDate, new Date(endDate.getTime()
 						+ INTERVAL_TIME), mark);
+		List<ProductBase> products = pb.getPageItems();
 		List<ProductClassify> productClassifies = this.productService
 				.getProductClassifies();
 

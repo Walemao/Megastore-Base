@@ -3,6 +3,7 @@ package com.walemao.megastore.repository;
 import java.util.Date;
 import java.util.List;
 
+import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.ProductBase;
 
 public interface ProductBaseDao {
@@ -22,7 +23,7 @@ public interface ProductBaseDao {
 	 *            页面大小
 	 * @return 返回所有商品列表
 	 */
-	public List<ProductBase> getProducts(String parm, int classify,
+	public CurrentPage<ProductBase> getProducts(String parm, int classify,
 			Date startTime, Date endTime, int mark);
 
 	public ProductBase getProduct(int id);

@@ -48,7 +48,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 	}
 
 	@Override
-	public List<ProductBase> getProducts(String parm, int classify,
+	public CurrentPage<ProductBase> getProducts(String parm, int classify,
 			Date startTime, Date endTime, int mark) throws DataAccessException {
 		// TODO Auto-generated method stub
 		PaginationHelper<ProductBase> ph = new PaginationHelper<ProductBase>();
@@ -77,11 +77,9 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 			list.add(DateUtil.FormatToD(endTime));
 		}
 		sql += " order by p_createtime desc";
-		CurrentPage<ProductBase> p = ph.fetchPage(jdbcTemplate,
+		return ph.fetchPage(jdbcTemplate,
 				sql.replace(queryArgs, "count(1)"), sql, list.toArray(),
 				1, 2, new ProductBaseMapper());
-		pb = p.getPageItems();
-		return pb;
 	}
 
 	@Override
