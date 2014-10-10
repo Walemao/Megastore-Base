@@ -66,7 +66,7 @@
 				</thead>
 				<tbody>
 				    <%int i = 1;%>
-					<c:forEach items="${products}" var="product">
+					<c:forEach items="${curretPage.pageItems}" var="product">
 					  <tr>
 						<td class="product-list"><%=i%></td>
 						<td><a class="thumbnail"><img src="<c:out value="${product.thumbnail}" />" width="60" height="60"></a></td>
@@ -98,6 +98,9 @@
 								<li><a href="#">3</a></li>
 								<li><a href="#">4</a></li>
 								<li><a href="#">5</a></li>
+								<c:out value="${curretPage.pageNo}"/>
+								<c:out value="${curretPage.pageSize}"/>
+								<c:out value="${curretPage.pageAvailable}"/>
 								<li><a href="#"><i class="icon-chevron-right"></i></a></li>
 							</ul>
 						</td>

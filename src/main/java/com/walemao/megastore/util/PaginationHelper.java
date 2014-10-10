@@ -26,8 +26,9 @@ public class PaginationHelper<E> {
         }  
         // create the page object  
         final CurrentPage<E> page = new CurrentPage<E>();  
-        page.setPageNumber(pageNo);  
-        page.setPagesAvailable(pageCount);  
+        page.setPageAvailable(pageCount);
+        page.setPageNo(pageNo);
+        page.setPageSize(pageSize);
         // fetch a single page of results  
         final int startRow = (pageNo - 1) * pageSize;  
         jt.query(sqlFetchRows, args, new ResultSetExtractor() {  

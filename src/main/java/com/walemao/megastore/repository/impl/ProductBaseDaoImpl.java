@@ -1,15 +1,14 @@
 package com.walemao.megastore.repository.impl;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.walemao.megastore.domain.CurrentPage;
@@ -22,7 +21,8 @@ import com.walemao.megastore.util.PaginationHelper;
 
 @Repository
 public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao {
-
+	private Logger logger = LoggerFactory.getLogger(ProductBaseDaoImpl.class);
+			
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
@@ -52,7 +52,7 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 			Date startTime, Date endTime, int mark) throws DataAccessException {
 		// TODO Auto-generated method stub
 		PaginationHelper<ProductBase> ph = new PaginationHelper<ProductBase>();
-		List<ProductBase> pb = new ArrayList<ProductBase>();
+
 		String args = mark == 0 ? "null" : "not null";
 		String queryArgs = "p_id,p_number,p_name,p_recommend,p_thumbnail,p_classify,p_origin"
 				+ ",p_materials,p_desc,p_discount,p_remark,p_createtime,pc_name";
@@ -77,9 +77,10 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 			list.add(DateUtil.FormatToD(endTime));
 		}
 		sql += " order by p_createtime desc";
+		
 		return ph.fetchPage(jdbcTemplate,
 				sql.replace(queryArgs, "count(1)"), sql, list.toArray(),
-				1, 2, new ProductBaseMapper());
+				CurrentPage.getPageNubmer(), CurrentPage.getPageLength(), new ProductBaseMapper());
 	}
 
 	@Override

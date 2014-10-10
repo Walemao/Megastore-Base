@@ -45,6 +45,7 @@ public class ProductController extends BaseController {
 	 * */
 	@RequestMapping(value = "/admin/products", method = RequestMethod.GET)
 	public String getProductPage(
+			CurrentPage<ProductBase> currentPage,
 			@RequestParam(required = false) String productName,
 			@RequestParam(defaultValue = "0") int productType,
 			@RequestParam(required = false) @DateTimeFormat(pattern = "yyyy/MM/dd") Date startDate,
@@ -60,14 +61,13 @@ public class ProductController extends BaseController {
 		CurrentPage<ProductBase> pb = this.productService.getProducts(
 				productName, productType, startDate, new Date(endDate.getTime()
 						+ INTERVAL_TIME), mark);
-		List<ProductBase> products = pb.getPageItems();
 		List<ProductClassify> productClassifies = this.productService
-				.getProductClassifies();
-
+				.getProductClassifies();	
+		
 		request.setAttribute("types", productClassifies);
 		request.setAttribute("productType", productType);
 		request.setAttribute("productName", productName);
-		request.setAttribute("products", products);
+		request.setAttribute("curretPage", pb);
 		request.setAttribute("startDate", DateUtil.getDefaultDates().get(0));
 		request.setAttribute("endDate", DateUtil.getDefaultDates().get(1));
 		return "admin/product/products";
