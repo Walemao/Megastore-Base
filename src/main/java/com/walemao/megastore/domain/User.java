@@ -1,6 +1,6 @@
 package com.walemao.megastore.domain;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class User {
 	private int id;
@@ -8,8 +8,7 @@ public class User {
 	private String password;
 	private String mobilephone;
 	private String email;
-	private Date createTime;
-	private String loginTime;
+	private Timestamp createTime;
 	private String remark;
 	private int type;
 	private int level;
@@ -68,20 +67,12 @@ public class User {
 		this.email = email;
 	}
 
-	public Date getCreateTime() {
+	public Timestamp getCreateTime() {
 		return createTime;
 	}
 
-	public void setCreateTime(Date createTime) {
+	public void setCreateTime(Timestamp createTime) {
 		this.createTime = createTime;
-	}
-
-	public String getLoginTime() {
-		return loginTime;
-	}
-
-	public void setLoginTime(String loginTime) {
-		this.loginTime = loginTime;
 	}
 
 	public String getRemark() {

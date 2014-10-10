@@ -5,7 +5,7 @@ import java.util.List;
 import com.walemao.megastore.domain.User;
 
 public interface UserDao {
-	public List<User> getUsers();
+	public List<User> getUsers(String username);
 	public User getUser(int id);
 	public User getUser(String username);
 	public void updatePasswd(User user);

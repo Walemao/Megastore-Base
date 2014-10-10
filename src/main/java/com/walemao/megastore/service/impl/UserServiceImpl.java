@@ -22,9 +22,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<User> getUsers() {
+	public List<User> getUsers(String username) {
 		// TODO Auto-generated method stub
-		return userDao.getUsers();
+		return userDao.getUsers(username);
 	}
 
 }

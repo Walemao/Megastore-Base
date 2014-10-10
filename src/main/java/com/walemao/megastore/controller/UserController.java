@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.walemao.megastore.domain.User;
 import com.walemao.megastore.service.UserService;
@@ -31,9 +32,10 @@ public class UserController extends BaseController {
 	}
 
 	@RequestMapping(value = "/admin/users", method = { RequestMethod.GET })
-	public String getUsers(HttpServletRequest request) {
+	public String getUsers(@RequestParam(required = false) String userName,
+			HttpServletRequest request) {
 
-		List<User> users = this.UserService.getUsers();
+		List<User> users = this.UserService.getUsers(userName);
 		request.setAttribute("users", users);
 		return "admin/user/users";
 	}

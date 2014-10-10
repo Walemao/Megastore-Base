@@ -19,14 +19,20 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	private String querySql = "select u_id,a.u_username as u_username,u_password,u_mobilephone,"
+	private String querySql = "select a.u_id as u_id,a.u_username as u_username,u_password,u_mobilephone,"
 			+ "u_email,u_createtime,u_remark,u_type,u_level,u_head_portrait"
 			+ " from t_user a left join t_user_base b on a.u_username = b.u_username";
 
-	public List<User> getUsers() {
-		String sql = querySql
-				+ " where deletemark is null order by u_createtime desc";
-		return this.jdbcTemplate.query(sql, new UserMapper());
+	public List<User> getUsers(String username) {
+		String sql = querySql;
+		if (username == null || username.length() <= 0) {
+			sql += " where deletemark is null order by u_createtime desc";
+			return this.jdbcTemplate.query(sql, new UserMapper());
+		} else {
+			sql += " where deletemark is null and a.u_username like ? order by u_createtime desc";
+			return this.jdbcTemplate.query(sql, new Object[] { "%"
+					+ username + "%" }, new UserMapper());
+		}
 	}
 
 	@Override
