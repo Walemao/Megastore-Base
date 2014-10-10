@@ -1,7 +1,6 @@
 package com.walemao.megastore.repository;
 
 import java.util.Date;
-import java.util.List;
 
 import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.ProductBase;

@@ -24,10 +24,10 @@
 			
 			<h3 class="page-header page-header-top">用户列表</h3>
 			<div class="well clearfix">
-				<form action="<c:url value="/admin/users" />" method="get"
+				<form action="<c:url value="/admin/user" />" method="get"
 					class="form-inline product-search-form" role="form">
 					<div class="form-group">
-						<label class="control-label" for="productName">用户名称：</label> <input
+						<label class="control-label" for="userName">用户名称：</label> <input
 							type="text" class="form-control" id="userName"
 							name="userName" placeholder="输入用户"
 							value="<c:out value="${userName}"></c:out>">
@@ -64,7 +64,7 @@
 									data-original-title="查看" href="<c:url value="/admin/user/${user.id}"/>"><i class="icon-info-sign"></i></a>
 								<a class="btn btn-xs btn-success" data-toggle="tooltip"
 									data-original-title="编辑" href="<c:url value="/admin/user/${user.id}"/>"><i class="icon-pencil"></i></a>
-								<a class="btn btn-xs btn-danger delete-product-trigger" data-id="<c:out value="${user.id}"/>" data-toggle="tooltip"
+								<a class="btn btn-xs btn-danger delete-product-trigger" data-id="<c:out value="${user.userName}"/>" data-toggle="tooltip"
 									data-original-title="删除"><i class="icon-trash"></i></a>
 							</div>
 						</td>
@@ -92,4 +92,19 @@
 	</div>
 	<%@ include file="/WEB-INF/views/includes/admin_footer.jspf"%>
 </body>
+<%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
+<script type="text/javascript">
+	$('.delete-product-trigger').click(function(){
+		if(window.confirm('你确定要删除吗？')){
+		   var userName = $(this).attr('data-id');
+		   $.post('<c:url value="/admin/user?${_csrf.parameterName}=${_csrf.token}"/>', {_method : 'DELETE', username : userName}, function(data){
+			  if(data.status == 'success'){
+				  window.location.reload();
+			  }else{
+				  alert('删除失败！');
+			  }
+		   });
+		}
+	});
+</script>
 </html>

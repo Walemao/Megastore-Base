@@ -4,13 +4,13 @@ import java.sql.ResultSet;
 
 import java.sql.SQLException;
 
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 import com.walemao.megastore.domain.Comments;
 import com.walemao.megastore.domain.OrderDetail;
 import com.walemao.megastore.domain.ProductInfo;
 
-public class CommentsMapper implements RowMapper<Comments> {
+public class CommentsMapper implements ParameterizedRowMapper<Comments> {
 
 	@Override
 	public Comments mapRow(ResultSet rs, int rowNum) throws SQLException {

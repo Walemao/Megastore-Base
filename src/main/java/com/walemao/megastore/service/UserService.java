@@ -7,4 +7,5 @@ import com.walemao.megastore.domain.User;
 public interface UserService {
 	public List<User> getUsers(String username);
 	public int insert(User user);
+	public void delete(String username);
 }
