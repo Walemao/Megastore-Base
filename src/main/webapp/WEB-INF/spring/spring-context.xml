@@ -37,6 +37,8 @@
 		<property name="acquireIncrement" value="5" />
 		<property name="statementsCacheSize" value="100" />
 		<property name="releaseHelperThreads" value="3" />
+		<property name="connectionTimeoutInMs" value="5000" />
+		<property name="closeConnectionWatchTimeoutInMs" value="1000" />
 	</bean>
 
 

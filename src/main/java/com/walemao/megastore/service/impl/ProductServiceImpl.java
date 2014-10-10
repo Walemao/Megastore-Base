@@ -81,8 +81,10 @@ public class ProductServiceImpl implements ProductService {
 	public ProductBase getProduct(int id) {
 		ProductBase productBase = this.productBaseDao.getProduct(id);
 		List<ProductInfo> infos = this.productInfoDao.getProductInfo(id);
+		List<ProductImage> images = this.productImageDao.getProductImages(id);
 		
 		productBase.setProductColors(infos);
+		productBase.setProductImages(images);
 		return productBase;
 	}
 

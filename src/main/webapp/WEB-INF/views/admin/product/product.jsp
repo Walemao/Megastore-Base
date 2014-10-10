@@ -122,6 +122,11 @@
 						</div>
 					</div>					
 					<div class="img_hidden_ids">
+					 <c:if test="${productBase.id !=null}">
+					    <c:forEach items="${productBase.productImages}" var="productImage">
+					       <input type="hidden" name="imageId" id="img_<c:out value="${productImage.id}" />" value="<c:out value="${productImage.id}" />">
+					    </c:forEach>
+					 </c:if>
 					</div>			
 					<div class="form-group form-actions">
 						<div class="col-md-10 col-md-offset-2">
