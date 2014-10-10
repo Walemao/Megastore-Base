@@ -19,7 +19,7 @@
 	<!-- 验证前台用户 -->
 	<beans:bean id="loginFilter"
 		class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
-		<beans:property name="authenticationManager" ref="authenticationManager" />
+		<beans:property name="authenticationManager" ref="org.springframework.security.authenticationManager" />
 		<beans:property name="usernameParameter" value="username"></beans:property>
 		<beans:property name="passwordParameter" value="password"></beans:property>
 		<beans:property name="authenticationFailureHandler"
@@ -43,7 +43,7 @@
 	<!-- 验证后台用户 -->
 	<beans:bean id="adminLoginFilter"
 		class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
-		<beans:property name="authenticationManager" ref="authenticationManager" />
+		<beans:property name="authenticationManager" ref="org.springframework.security.authenticationManager" />
 		<beans:property name="usernameParameter" value="username"></beans:property>
 		<beans:property name="passwordParameter" value="password"></beans:property>
 		<beans:property name="authenticationFailureHandler"
@@ -124,15 +124,35 @@
 		<csrf />
 
 	</http>
-
-	<!-- 认证管理 -->
-	<authentication-manager alias="authenticationManager">
-		<authentication-provider>
-			<jdbc-user-service id="userDetailsService"
+	
+	<!-- 盐 -->
+	<beans:bean id="saltSource"
+		class="org.springframework.security.authentication.dao.ReflectionSaltSource">
+		<beans:property name="userPropertyToUse" value = "username"></beans:property>
+	</beans:bean>
+	
+	<!-- md5加密方式 -->
+	<beans:bean id="md5" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder">
+	</beans:bean>
+	
+	<!-- userDetailsService获取jdbc数据 -->
+	<jdbc-user-service id="userDetailsService"
 				data-source-ref="dataSource"
 				users-by-username-query="select u_username as username, u_password as password, u_enabled as enabled from t_user where u_username = ?"
-				authorities-by-username-query="select username, authority from t_user_authority where username = ?" />
-		</authentication-provider>
-	</authentication-manager>
+				authorities-by-username-query="select username, authority from t_user_authority where username = ?"/>
 
+	<beans:bean id="daoAuthenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<!-- <beans:property name="passwordEncoder" ref="md5"></beans:property>
+		<beans:property name="saltSource" ref="saltSource"></beans:property> -->
+		<beans:property name="userDetailsService" ref="userDetailsService"></beans:property>
+	</beans:bean>
+	
+	<!-- ======================== AUTHENTICATION ======================= -->
+	<beans:bean  id="org.springframework.security.authenticationManager"  class="org.springframework.security.authentication.ProviderManager">
+		<beans:property name="providers">
+			<beans:list>
+				<beans:ref local="daoAuthenticationProvider"/>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
 </beans:beans>
