@@ -73,7 +73,7 @@
 						<td class="product-list"><c:out value="${product.name}" /></td>
 						<td class="product-list"><c:out value="${product.productClassification.name}" /></td>
 						<td class="product-list">
-						<fmt:formatDate value="${product.creattime}" type="date" pattern="yyyy/MM/dd HH:mm:ss"/></td>
+						<fmt:formatDate value="${product.createtime}" type="date" pattern="yyyy/MM/dd HH:mm:ss"/></td>
 						<td class="product-list">
 							<div class="btn-group">
 								<a class="btn btn-xs btn-info" data-toggle="tooltip"

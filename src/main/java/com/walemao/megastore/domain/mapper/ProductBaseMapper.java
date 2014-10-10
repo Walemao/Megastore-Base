@@ -29,7 +29,7 @@ public class ProductBaseMapper implements RowMapper<ProductBase>{
 		pro.setDesc(rs.getString("p_desc"));
 		pro.setDiscount(rs.getDouble("p_discount"));
 		pro.setRemark(rs.getString("p_remark"));
-		pro.setCreattime(rs.getTimestamp("p_createtime"));
+		pro.setCreatetime(rs.getTimestamp("p_createtime"));
 		return pro;
 	}
 

@@ -21,32 +21,75 @@
 				<li><a href="#"><i class="icon-gift"></i></a></li>
 				<li class="active"><a href="#">用户管理</a></li>
 			</ul>
+			
 			<h3 class="page-header page-header-top">用户列表</h3>
-			<div class="well">
+			<div class="well clearfix">
 				<form action="<c:url value="/admin/users" />" method="get"
 					class="form-inline product-search-form" role="form">
 					<div class="form-group">
-						<label class="control-label" for="userType">用户类型：</label> <select
-							class="form-control" name="userType" id="userType">
-							<c:forEach items="${types}" var="type">
-								<option value="<c:out value="${type.id}"></c:out>"
-									<c:if test="${type.id == userType}"> selected</c:if>><c:out
-										value="${type.name}"></c:out></option>
-							</c:forEach>
-						</select> 
-					</div>
-					<div class="form-group">
 						<label class="control-label" for="productName">用户名称：</label> <input
-							type="text" class="form-control" id="productName"
-							name="productName" placeholder="输入用户"
-							value="<c:out value="${productName}"></c:out>">
+							type="text" class="form-control" id="userName"
+							name="userName" placeholder="输入用户"
+							value="<c:out value="${userName}"></c:out>">
 					</div>
 					<button type="submit" class="btn btn-success">
 						<i class="icon-search"></i>查询
 					</button>
 				</form>
 			</div>
+			
+			
+			<table class="table product-list-table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th><i class="icon-camera-retro"></i>头像</th>
+						<th><i class="icon-book"></i>用户名</th>
+						<th><i class="icon-time"></i>注册时间</th>
+						<th><i class="icon-bolt"></i>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+				    <%int i = 1;%>
+					<c:forEach items="${users}" var="user">
+					  <tr>
+						<td class="product-list"><%=i%></td>
+						<td><a class="thumbnail"><img src="<c:out value="${user.thumbnail}" />" width="60" height="60"></a></td>
+						<td class="product-list"><c:out value="${user.userName}" /></td>
+						<td class="product-list">
+						<fmt:formatDate value="${user.createtime}" type="date" pattern="yyyy/MM/dd HH:mm:ss"/></td>
+						<td class="product-list">
+							<div class="btn-group">
+								<a class="btn btn-xs btn-info" data-toggle="tooltip"
+									data-original-title="查看" href="<c:url value="/admin/product/${product.id}"/>"><i class="icon-info-sign"></i></a>
+								<a class="btn btn-xs btn-success" data-toggle="tooltip"
+									data-original-title="编辑" href="<c:url value="/admin/product/${product.id}"/>"><i class="icon-pencil"></i></a>
+								<a class="btn btn-xs btn-danger delete-product-trigger" data-id="<c:out value="${product.id}"/>" data-toggle="tooltip"
+									data-original-title="删除"><i class="icon-trash"></i></a>
+							</div>
+						</td>
+					</tr>
+					<%i++;%>
+					</c:forEach>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="6">
+							<ul class="pagination" style="float: right;">
+								<li><a href="#"><i class="icon-chevron-left"></i></a></li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#"><i class="icon-chevron-right"></i></a></li>
+							</ul>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
 		</div>
 	</div>
+	<%@ include file="/WEB-INF/views/includes/admin_footer.jspf"%>
 </body>
 </html>

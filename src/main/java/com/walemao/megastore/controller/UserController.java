@@ -1,7 +1,5 @@
 package com.walemao.megastore.controller;
 
-import java.util.Date;
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,7 +34,7 @@ public class UserController extends BaseController {
 	public String getUsers(HttpServletRequest request) {
 
 		List<User> users = this.UserService.getUsers();
-		request.setAttribute("products", users);
+		request.setAttribute("users", users);
 		return "admin/user/users";
 	}
 

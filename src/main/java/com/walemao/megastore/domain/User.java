@@ -3,20 +3,20 @@ package com.walemao.megastore.domain;
 import java.util.Date;
 
 public class User {
-    private int id;
-    private String userName;
-    private String password;
-    private String mobilephone;
-    private String email;
-    private Date createTime;
-    private String loginTime;
-    private String remark;
-    private int type;
-    private int level;
-    private boolean enabled;
-    private String confirmPassword;
-    
-    public String getConfirmPassword() {
+	private int id;
+	private String userName;
+	private String password;
+	private String mobilephone;
+	private String email;
+	private Date createTime;
+	private String loginTime;
+	private String remark;
+	private int type;
+	private int level;
+	private boolean enabled;
+	private String confirmPassword;
+
+	public String getConfirmPassword() {
 		return confirmPassword;
 	}
 
@@ -25,8 +25,8 @@ public class User {
 	}
 
 	private UserBase userbase;
-    private UserDetail userdetail;
-    
+	private UserDetail userdetail;
+
 	public UserBase getUserbase() {
 		return userbase;
 	}
@@ -110,27 +110,25 @@ public class User {
 	public int getId() {
 		return id;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public String getUserName() {
 		return userName;
 	}
-	
+
 	public void setUserName(String username) {
 		this.userName = username;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
-	
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-    
-    
-    
+
 }

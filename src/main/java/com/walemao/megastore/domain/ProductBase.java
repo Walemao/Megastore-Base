@@ -17,7 +17,7 @@ public class ProductBase {
 	private String desc;
 	private double discount;
 	private String remark;
-	private Timestamp creattime;
+	private Timestamp createtime;
 	
 	private ProductClassify productClassification;
 	private List<ProductInfo> productInfos;
@@ -47,11 +47,11 @@ public class ProductBase {
 	public String getThumbnail() {
 		return thumbnail;
 	}
-	public Timestamp getCreattime() {
-		return creattime;
+	public Timestamp getCreatetime() {
+		return createtime;
 	}
-	public void setCreattime(Timestamp creattime) {
-		this.creattime = creattime;
+	public void setCreatetime(Timestamp createtime) {
+		this.createtime = createtime;
 	}
 	public void setThumbnail(String thumbnail) {
 		this.thumbnail = thumbnail;
