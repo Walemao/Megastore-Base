@@ -35,8 +35,8 @@
 			   <ul>
 			      <li><a href="<c:url value="/admin/index" />" class="${sm_0}"><i class="icon-dashboard"></i>仪表盘</a></li>
 			      <li><a href="<c:url value="/admin/products" />" class="${sm_1}"><i class="icon-gift"></i>商品管理</a></li>
-			      <li><a href="#" class="${sm_2}"><i class="icon-table"></i>订单管理</a></li>
-			      <li><a href="#" class="${sm_3}"><i class="icon-group"></i>用户管理</a></li>
+			      <li><a href="# class="${sm_2}"><i class="icon-table"></i>订单管理</a></li>
+			      <li><a href="<c:url value="/admin/users" />" class="${sm_3}"><i class="icon-group"></i>用户管理</a></li>
 			      <li><a href="#" class="${sm_4}"><i class="icon-comments"></i>评论管理</a></li>		      
 			      <li><a href="#" class="${sm_5}"><i class="icon-exchange"></i>退换货管理</a></li>
 			      <li><a href="#" class="${sm_6}"><i class="icon-inbox"></i>仓库管理</a></li>
