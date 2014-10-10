@@ -33,7 +33,7 @@ public class ProductImageDaoImpl extends CommonDaoImpl implements
 		// TODO Auto-generated method stub
 		final int id = productId;
 		final int[] idss = ids;
-		if (ids.length > 0) {
+		if (ids != null) {
 			String sql = "update t_product_images set pi_productid=?,pi_sort=? where pi_id in "
 					+ ToolUtil.IntDataToString(ids);
 			this.jdbcTemplate.batchUpdate(sql,

@@ -23,32 +23,27 @@
 			</ul>
 			<h3 class="page-header page-header-top">用户列表</h3>
 			<div class="well">
-			<form action="<c:url value="/admin/users" />" method="get" class="form-inline product-search-form" role="form">
+				<form action="<c:url value="/admin/users" />" method="get"
+					class="form-inline product-search-form" role="form">
 					<div class="form-group">
-						<label class="control-label" for="productType">商品类型：</label> <select
-							class="form-control" name="productType" id="productType">
+						<label class="control-label" for="userType">用户类型：</label> <select
+							class="form-control" name="userType" id="userType">
 							<c:forEach items="${types}" var="type">
-							<option value="<c:out value="${type.id}"></c:out>" <c:if test="${type.id == productType}"> selected</c:if>><c:out value="${type.name}"></c:out></option>
+								<option value="<c:out value="${type.id}"></c:out>"
+									<c:if test="${type.id == userType}"> selected</c:if>><c:out
+										value="${type.name}"></c:out></option>
 							</c:forEach>
-						</select>
-						<a class="product-type-edit" data-toggle="tooltip" data-original-title="管理类型"><i class="icon-edit"></i></a>
+						</select> 
 					</div>
 					<div class="form-group">
-						<label class="control-label" for="productName">商品名称：</label>
-						<input type="text" class="form-control"
-							id="productName" name="productName" placeholder="输入商品名称" value="<c:out value="${productName}"></c:out>">
+						<label class="control-label" for="productName">用户名称：</label> <input
+							type="text" class="form-control" id="productName"
+							name="productName" placeholder="输入用户"
+							value="<c:out value="${productName}"></c:out>">
 					</div>
-					<div class="form-group">
-					    <label class="control-label">选择时间：</label>
-					    <div id="advanced-daterangepicker" class="btn btn-default">
-			                         <i class="icon-calendar"></i>
-			                         <span class="daterange"><span class="start-date-span">${startDate}</span> 至 <span class="end-date-span">${endDate}</span></span>
-			                         <b class="caret"></b>
-			                         <input id="startDate" type="hidden" name="startDate" value="${startDate}" />
-			                         <input id="endDate" type="hidden" name="endDate" value="${endDate}">
-			            </div>
-					</div>
-					<button type="submit" class="btn btn-success"><i class="icon-search"></i>查询</button>
+					<button type="submit" class="btn btn-success">
+						<i class="icon-search"></i>查询
+					</button>
 				</form>
 			</div>
 		</div>
