@@ -38,6 +38,10 @@
 		<property name="statementsCacheSize" value="100" />
 		<property name="releaseHelperThreads" value="3" />
 	</bean>
+
+
+
+
 	<!-- log4jdbc代理数据源 -->
 	<bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
 		<constructor-arg ref="dataSourceSpied" />
@@ -47,12 +51,16 @@
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
+
 	<!-- 初始化数据库数据 -->
-	<jdbc:initialize-database data-source="dataSource" enabled="false" ignore-failures="ALL">
-		<jdbc:script encoding="UTF-8" location="/WEB-INF/classes/com/walemao/megastore/sql/megastore_schema.sql" />
-		<jdbc:script encoding="UTF-8" location="/WEB-INF/classes/com/walemao/megastore/sql/init_user.sql" />
-		<jdbc:script encoding="UTF-8" location="/WEB-INF/classes/com/walemao/megastore/sql/init_user_authority.sql" />
+	<jdbc:initialize-database data-source="dataSource"
+		enabled="false" ignore-failures="ALL">
+		<jdbc:script encoding="UTF-8"
+			location="/WEB-INF/classes/com/walemao/megastore/sql/megastore_schema.sql" />
+		<jdbc:script encoding="UTF-8"
+			location="/WEB-INF/classes/com/walemao/megastore/sql/init_user.sql" />
+		<jdbc:script encoding="UTF-8"
+			location="/WEB-INF/classes/com/walemao/megastore/sql/init_user_authority.sql" />
 	</jdbc:initialize-database>
 
 	<!-- 配置MongoDB数据源 -->
@@ -63,14 +71,37 @@
 			socket-keep-alive="true" socket-timeout="1500" slave-ok="true"
 			write-number="1" write-timeout="0" write-fsync="true" />
 	</mongo:mongo>
-	
+
 	<!-- Mongo Template -->
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg ref="mongo" />
 		<constructor-arg name="databaseName" value="what2eat" />
 	</bean>
 
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- 定义事务传播属性 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
 
-    <!-- 导入Spring Security配置文件 -->
+			<!-- 对查询方法不进行事务 -->
+			<tx:method name="get*" propagation="NOT_SUPPORTED"
+				read-only="true" />
+
+			<!-- 对剩余的方法进行事务 -->
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="transactionPointCut"
+			expression="execution(* com.walemao.megastore.service.impl..*.*(..))" />
+		<aop:advisor pointcut-ref="transactionPointCut"
+			advice-ref="txAdvice" />
+	</aop:config>
+
+	<!-- 导入Spring Security配置文件 -->
 	<import resource="spring-security.xml" />
 </beans>
