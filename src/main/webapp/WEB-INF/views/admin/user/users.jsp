@@ -54,17 +54,17 @@
 					<c:forEach items="${users}" var="user">
 					  <tr>
 						<td class="product-list"><%=i%></td>
-						<td><a class="thumbnail"><img src="<c:out value="${user.thumbnail}" />" width="60" height="60"></a></td>
+						<td><a class="thumbnail"><img src="<c:out value="${user.head_portrait}" />" width="60" height="60"></a></td>
 						<td class="product-list"><c:out value="${user.userName}" /></td>
 						<td class="product-list">
-						<fmt:formatDate value="${user.createtime}" type="date" pattern="yyyy/MM/dd HH:mm:ss"/></td>
+						<fmt:formatDate value="${user.createTime}" type="date" pattern="yyyy/MM/dd HH:mm:ss"/></td>
 						<td class="product-list">
 							<div class="btn-group">
 								<a class="btn btn-xs btn-info" data-toggle="tooltip"
-									data-original-title="查看" href="<c:url value="/admin/product/${product.id}"/>"><i class="icon-info-sign"></i></a>
+									data-original-title="查看" href="<c:url value="/admin/user/${user.id}"/>"><i class="icon-info-sign"></i></a>
 								<a class="btn btn-xs btn-success" data-toggle="tooltip"
-									data-original-title="编辑" href="<c:url value="/admin/product/${product.id}"/>"><i class="icon-pencil"></i></a>
-								<a class="btn btn-xs btn-danger delete-product-trigger" data-id="<c:out value="${product.id}"/>" data-toggle="tooltip"
+									data-original-title="编辑" href="<c:url value="/admin/user/${user.id}"/>"><i class="icon-pencil"></i></a>
+								<a class="btn btn-xs btn-danger delete-product-trigger" data-id="<c:out value="${user.id}"/>" data-toggle="tooltip"
 									data-original-title="删除"><i class="icon-trash"></i></a>
 							</div>
 						</td>

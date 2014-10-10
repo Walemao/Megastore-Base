@@ -15,6 +15,15 @@ public class User {
 	private int level;
 	private boolean enabled;
 	private String confirmPassword;
+	private String head_portrait;
+
+	public String getHead_portrait() {
+		return head_portrait;
+	}
+
+	public void setHead_portrait(String head_portrait) {
+		this.head_portrait = head_portrait;
+	}
 
 	public String getConfirmPassword() {
 		return confirmPassword;

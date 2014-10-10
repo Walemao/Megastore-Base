@@ -23,6 +23,7 @@ public class UserMapper implements RowMapper<User> {
 		user.setRemark(rs.getString("u_remark"));
 		user.setType(rs.getInt("u_type"));
 		user.setLevel(rs.getInt("u_level"));
+		user.setHead_portrait(rs.getString("u_head_portrait"));
 		return user;
 	}
 }

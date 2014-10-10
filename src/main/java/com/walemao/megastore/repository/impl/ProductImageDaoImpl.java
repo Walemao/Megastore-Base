@@ -43,7 +43,7 @@ public class ProductImageDaoImpl extends CommonDaoImpl implements
 								int i) throws SQLException {
 							// TODO Auto-generated method stub
 							ps.setInt(1, id);
-							ps.setInt(2, ++i);
+							ps.setInt(2, i);
 						}
 
 						@Override

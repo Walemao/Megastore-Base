@@ -19,16 +19,20 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	private String querySql = "select u_id,a.u_username as u_username,u_password,u_mobilephone,"
+			+ "u_email,u_createtime,u_remark,u_type,u_level,u_head_portrait"
+			+ " from t_user a left join t_user_base b on a.u_username = b.u_username";
 
 	public List<User> getUsers() {
-		String sql = "select u_id,u_username,u_password,u_mobilephone,u_email,u_createtime,u_remark,u_type,u_level from t_user where deletemark is null order by u_createtime desc";
+		String sql = querySql
+				+ " where deletemark is null order by u_createtime desc";
 		return this.jdbcTemplate.query(sql, new UserMapper());
 	}
 
 	@Override
 	public User getUser(int id) {
 		// TODO Auto-generated method stub
-		String sql = "select u_id,u_username,u_password,u_mobilephone,u_email,u_createtime,u_remark,u_type,u_level from t_user where u_id = ? limit 1";
+		String sql = querySql + " where u_id = ? limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { id },
 				new UserMapper()).get(0);
 	}
@@ -36,7 +40,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public User getUser(String username) {
 		// TODO Auto-generated method stub
-		String sql = "select u_id,u_username,u_password,u_mobilephone,u_email,u_createtime,u_remark,u_type,u_level from t_user where u_username = ? limit 1";
+		String sql = querySql + " where u_username = ? limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { username },
 				new UserMapper()).get(0);
 	}
