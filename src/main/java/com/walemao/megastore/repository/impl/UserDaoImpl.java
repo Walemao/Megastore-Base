@@ -38,7 +38,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public User getUser(int id) {
 		// TODO Auto-generated method stub
-		String sql = querySql + " where u_id = ? limit 1";
+		String sql = querySql + " where u_id = ? and deletemark is null limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { id },
 				new UserMapper()).get(0);
 	}
@@ -46,7 +46,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public User getUser(String username) {
 		// TODO Auto-generated method stub
-		String sql = querySql + " where u_username = ? limit 1";
+		String sql = querySql + " where u_username = ? and deletemark is null limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { username },
 				new UserMapper()).get(0);
 	}
@@ -54,7 +54,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public void updatePasswd(User user) {
 		// TODO Auto-generated method stub
-		String sql = "update t_user set u_password =? where u_username = ?";
+		String sql = "update t_user set u_password =? where u_username = ? and deletemark is null";
 		this.jdbcTemplate.update(sql,
 				new Object[] { user.getPassword(), user.getUserName() });
 	}
@@ -62,7 +62,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public void updateEmail(User user) {
 		// TODO Auto-generated method stub
-		String sql = "update t_user set u_email =? where u_username = ?";
+		String sql = "update t_user set u_email =? where u_username = ? and deletemark is null";
 		this.jdbcTemplate.update(sql,
 				new Object[] { user.getEmail(), user.getUserName() });
 
@@ -71,7 +71,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public void updateMobilephone(User user) {
 		// TODO Auto-generated method stub
-		String sql = "update t_user set u_mobilephone =? where u_username = ?";
+		String sql = "update t_user set u_mobilephone =? where u_username = ? and deletemark is null";
 		this.jdbcTemplate.update(sql, new Object[] { user.getMobilephone(),
 				user.getUserName() });
 
@@ -91,7 +91,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public boolean CheckUsername(String username) {
 		// TODO Auto-generated method stub
-		String sql = "select 1 from t_user where u_username=? limit 1";
+		String sql = "select 1 from t_user where u_username=? and deletemark is null limit 1";
 		return this.jdbcTemplate.queryForInt(sql, new Object[] { username }) == 1 ? true
 				: false;
 	}
@@ -100,7 +100,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public boolean CheckMobilephone(String mobilephone) {
 		// TODO Auto-generated method stub
-		String sql = "select 1 from t_user where u_mobilephone=? limit 1";
+		String sql = "select 1 from t_user where u_mobilephone=? and deletemark is null limit 1";
 		return this.jdbcTemplate.queryForInt(sql, new Object[] { mobilephone }) == 1 ? true
 				: false;
 	}
@@ -109,7 +109,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public boolean CheckEmail(String email) {
 		// TODO Auto-generated method stub
-		String sql = "select 1 from t_user where u_email=? limit 1";
+		String sql = "select 1 from t_user where u_email=? and deletemark is null limit 1";
 		return this.jdbcTemplate.queryForInt(sql, new Object[] { email }) == 1 ? true
 				: false;
 	}
@@ -117,7 +117,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public void delete(String username) {
 		// TODO Auto-generated method stub
-		String sql = "delete from t_user where u_username=?";
+		String sql = "update t_user set deletemark=now() where u_username=? and deletemark is null";
 		this.jdbcTemplate.update(sql, new Object[] { username });
 	}
 
