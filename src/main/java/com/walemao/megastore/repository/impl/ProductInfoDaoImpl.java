@@ -78,7 +78,7 @@ public class ProductInfoDaoImpl extends CommonDaoImpl implements ProductInfoDao 
 	@Override
 	public void update(int id, int[] ids) {
 		// TODO Auto-generated method stub
-		if (ids.length > 0) {
+		if (ids != null) {
 			String sql = "update t_product_info set pd_productid=? where pd_id in "
 					+ ToolUtil.IntDataToString(ids);
 			this.jdbcTemplate.update(sql, new Object[] { id });
