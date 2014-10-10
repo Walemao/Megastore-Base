@@ -1,13 +1,14 @@
 package com.walemao.megastore.domain.mapper;
 
 import java.sql.ResultSet;
+
 import java.sql.SQLException;
 
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 import com.walemao.megastore.domain.ProductImage;
 
-public class ProductImageMapper implements RowMapper<ProductImage> {
+public class ProductImageMapper implements ParameterizedRowMapper<ProductImage> {
 
 	@Override
 	public ProductImage mapRow(ResultSet rs, int rowNum) throws SQLException {

@@ -1,13 +1,14 @@
 package com.walemao.megastore.domain.mapper;
 
 import java.sql.ResultSet;
+
 import java.sql.SQLException;
 
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 import com.walemao.megastore.domain.City;
 
-public class CityMapper implements RowMapper<City> {
+public class CityMapper implements ParameterizedRowMapper<City> {
 
 	@Override
 	public City mapRow(ResultSet rs, int rowNum) throws SQLException {
