@@ -120,7 +120,9 @@
 						<div class="col-md-6">
 							<form:input path="remark" cssClass="form-control input-sm" />
 						</div>
-					</div>				
+					</div>					
+					<div class="img_hidden_ids">
+					</div>			
 					<div class="form-group form-actions">
 						<div class="col-md-10 col-md-offset-2">
 							<input type="submit" value="确定" class="btn btn-success" /> <input
@@ -375,10 +377,10 @@
     	}
     }
     
-    /** 添加展示图片  **/
+    /** 添加和删除展示图片  **/
     window.sort = 1;
     $('.dropzone').dropzone({
-        url: '<c:url value="/admin/product/img?${_csrf.parameterName}=${_csrf.token}&sort='+ window.sort +'&productId=${productBase.id}" />',
+        url: '<c:url value="/admin/product/img?${_csrf.parameterName}=${_csrf.token}&productId=${productBase.id}" />',
         paramName: 'productImg',
         maxFiles: 10,
         maxFilesize: 1024,
@@ -387,12 +389,17 @@
         init: function() {
             this.on("success", function(file, data) {
             	var sort = window.sort;
-            	console.log(window.sort);
             	window.sort = sort + 1;
-            	this.options.url = '<c:url value="/admin/product/img?${_csrf.parameterName}=${_csrf.token}&sort='+ window.sort +'&productId=${productBase.id}" />';
+            	var image_id_input = $('<input/>').attr('type', 'hidden').attr('name', 'imageId').attr('id','img_' + data.imgId).val(data.imgId);
+            	$('.img_hidden_ids').append(image_id_input);
+            	file.fileId = data.imgId;
             });
             this.on("removedfile", function(file) {
-         
+                $.post('<c:url value="/admin/product/img?${_csrf.parameterName}=${_csrf.token}" />', {_method : 'DELETE', imageId : file.fileId}, function(data){
+                	if(data.status == 'success'){
+                		$('#img_'+ file.fileId).remove();
+                	}
+                });
             });
         }
     });

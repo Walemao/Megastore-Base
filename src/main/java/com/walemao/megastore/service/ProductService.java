@@ -13,8 +13,8 @@ public interface ProductService {
 	public List<ProductBase> getProducts(String parm, int classify, Date startTime,
 			Date endTime, int mark);
 	
-	public int insertProduct(ProductBase p, int[] ids);
-	
+	public int insertProduct(ProductBase p, int[] colorIds, int[] imageIds);
+
 	public void deleteProduct(int productId);
 	
 	public int insertProductInfo(ProductInfo pi);
@@ -27,10 +27,12 @@ public interface ProductService {
 	
 	public ProductBase getProduct(int id);
 	
-	public void updateProduct(ProductBase p, int[] ids);
+	public void updateProduct(ProductBase p, int[] colorIds, int[] imagesIds);
 	
 	public List<ProductClassify> getProductClassifies();
 	
-	public int insert(ProductImage pi);
+	public int insertProductImage(ProductImage pi);
+	
+	public void deleteProductImage(int id);
 	
 }

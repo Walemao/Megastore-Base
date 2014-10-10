@@ -118,13 +118,15 @@ public class ProductController extends BaseController {
 			@RequestParam(defaultValue = "0") int productType,
 			@RequestParam(defaultValue = "") String mainImg,
 			@RequestParam(value = "colorId", required = false) int[] colorIds,
+			@RequestParam(value = "imageId", required = false) int[] imageIds,
 			HttpServletRequest request, RedirectAttributes redirectAttributes) {
 
 		productBase.setClassify(productType);
 		productBase.setThumbnail(mainImg);
 
 		try {
-			int id = this.productService.insertProduct(productBase, colorIds);
+			int id = this.productService.insertProduct(productBase, colorIds,
+					imageIds);
 			redirectAttributes.addFlashAttribute("status", "success");
 			redirectAttributes.addFlashAttribute("messageStatus", "Success！");
 			redirectAttributes.addFlashAttribute("message", "添加商品成功！");
@@ -152,13 +154,14 @@ public class ProductController extends BaseController {
 			@RequestParam(defaultValue = "0") int productType,
 			@RequestParam(defaultValue = "") String mainImg,
 			@RequestParam(value = "colorId", required = false) int[] colorIds,
+			@RequestParam(value = "imageId", required = false) int[] imageIds,
 			HttpServletRequest request, RedirectAttributes redirectAttributes) {
 
 		productBase.setClassify(productType);
 		productBase.setThumbnail(mainImg);
 
 		try {
-			this.productService.updateProduct(productBase, colorIds);
+			this.productService.updateProduct(productBase, colorIds, imageIds);
 			redirectAttributes.addFlashAttribute("status", "success");
 			redirectAttributes.addFlashAttribute("messageStatus", "Success！");
 			redirectAttributes.addFlashAttribute("message", "修改商品成功！");
@@ -311,7 +314,7 @@ public class ProductController extends BaseController {
 	@RequestMapping(value = "/admin/product/img", method = RequestMethod.POST)
 	public @ResponseBody Map<String, Object> addProductImg(
 			@RequestParam(defaultValue = "0") int productId,
-			@RequestParam(defaultValue = "1") int sort,
+			@RequestParam(defaultValue = "0") int sort,
 			@RequestParam(value = "productImg") MultipartFile file,
 			HttpServletRequest request) {
 		Map<String, Object> requestMap = new HashMap<String, Object>();
@@ -327,7 +330,7 @@ public class ProductController extends BaseController {
 			productImage.setPicMd5(imgMD5);
 			productImage.setProductid(productId);
 			productImage.setSort(sort);
-			int id = this.productService.insert(productImage);
+			int id = this.productService.insertProductImage(productImage);
 
 			requestMap.put("status", "success");
 			requestMap.put("imgId", id);
@@ -343,4 +346,30 @@ public class ProductController extends BaseController {
 		return requestMap;
 	}
 
+	/**
+	 * 删除展示图片
+	 * 
+	 * 
+	 * */
+	@RequestMapping(value = "/admin/product/img", method = RequestMethod.DELETE)
+	public @ResponseBody Map<String, Object> deleteProductImg(int imageId,
+			HttpServletRequest request) {
+
+		Map<String, Object> requestMap = new HashMap<String, Object>();
+
+		try {
+			this.productService.deleteProductImage(imageId);
+			logger.debug("删除成功");
+			requestMap.put("status", "success");
+			return requestMap;
+
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+
+		requestMap.put("status", "fail");
+		requestMap.put("message", "删除失败！");
+		return requestMap;
+	}
 }

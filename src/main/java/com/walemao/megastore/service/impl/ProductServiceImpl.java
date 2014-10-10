@@ -40,9 +40,10 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public int insertProduct(ProductBase p, int[] ids) {
+	public int insertProduct(ProductBase p, int[] colorIds, int[] imageIds) {
 		int i = this.productBaseDao.insert(p);
-		this.productInfoDao.update(i, ids);
+		this.productInfoDao.update(i, colorIds);
+		this.productImageDao.update(i, imageIds);
 		
 		return i;
 	}
@@ -87,9 +88,10 @@ public class ProductServiceImpl implements ProductService {
 
 
 	@Override
-	public void updateProduct(ProductBase p, int[] ids) {
+	public void updateProduct(ProductBase p, int[] colorIds, int[] imagesIds) {
 		this.productBaseDao.update(p);
-		this.productInfoDao.update(p.getId(), ids);
+		this.productInfoDao.update(p.getId(), colorIds);
+		this.productImageDao.update(p.getId(), imagesIds);
 	}
 
 
@@ -99,8 +101,14 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public int insert(ProductImage pi) {
+	public int insertProductImage(ProductImage pi) {
 		return this.productImageDao.insert(pi);
+	}
+
+	@Override
+	public void deleteProductImage(int id) {
+		
+		this.productImageDao.delete(id);
 	}
 
 
