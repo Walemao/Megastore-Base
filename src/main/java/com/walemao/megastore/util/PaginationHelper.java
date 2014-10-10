@@ -12,11 +12,11 @@ import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import com.walemao.megastore.domain.CurrentPage;
 
 public class PaginationHelper<E> {
-	@SuppressWarnings({ "deprecation", "unchecked", "unused", "rawtypes" })
-	public CurrentPage<E> fetchPage(final JdbcTemplate jt,  
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
+	public <T> CurrentPage<E> fetchPage(final JdbcTemplate jt,  
             final String sqlCountRows, final String sqlFetchRows,  
             final Object args[], final int pageNo, final int pageSize,  
-            final ParameterizedRowMapper<E> rowMapper) {  
+            final ParameterizedRowMapper<T> rowMapper) {  
         // determine how many rows are available  
         final int rowCount = jt.queryForInt(sqlCountRows, args);  
         // calculate the number of pages  

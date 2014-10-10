@@ -1,19 +1,24 @@
 package com.walemao.megastore.repository.impl;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.mapper.ProductInfoMapper;
 import com.walemao.megastore.domain.mapper.ProductBaseMapper;
 import com.walemao.megastore.repository.ProductBaseDao;
 import com.walemao.megastore.util.DateUtil;
+import com.walemao.megastore.util.PaginationHelper;
 
 @Repository
 public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao {
@@ -44,11 +49,16 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 
 	@Override
 	public List<ProductBase> getProducts(String parm, int classify,
-			Date startTime, Date endTime, int mark) {
+			Date startTime, Date endTime, int mark) throws DataAccessException {
 		// TODO Auto-generated method stub
+		PaginationHelper<ProductBase> ph = new PaginationHelper<ProductBase>();
+		List<ProductBase> pb = new ArrayList<ProductBase>();
 		String args = mark == 0 ? "null" : "not null";
-		String sql = "select p_id,p_number,p_name,p_recommend,p_thumbnail,p_classify,p_origin"
-				+ ",p_materials,p_desc,p_discount,p_remark,p_createtime,pc_name from t_product_base a left join t_product_classify b"
+		String queryArgs = "p_id,p_number,p_name,p_recommend,p_thumbnail,p_classify,p_origin"
+				+ ",p_materials,p_desc,p_discount,p_remark,p_createtime,pc_name";
+		String sql = "select "
+				+ queryArgs
+				+ " from t_product_base a left join t_product_classify b"
 				+ " on a.p_classify = b.pc_id where a.p_id <> 0 and a.deletemark is "
 				+ args;
 		List<Object> list = new ArrayList<Object>();
@@ -67,8 +77,11 @@ public class ProductBaseDaoImpl extends CommonDaoImpl implements ProductBaseDao 
 			list.add(DateUtil.FormatToD(endTime));
 		}
 		sql += " order by p_createtime desc";
-		return this.jdbcTemplate.query(sql, list.toArray(),
-				new ProductBaseMapper());
+		CurrentPage<ProductBase> p = ph.fetchPage(jdbcTemplate,
+				sql.replace(queryArgs, "count(1)"), sql, list.toArray(),
+				1, 2, new ProductBaseMapper());
+		pb = p.getPageItems();
+		return pb;
 	}
 
 	@Override

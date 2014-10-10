@@ -18,36 +18,36 @@ import com.walemao.megastore.service.ProductService;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-	
+
 	@Autowired
 	private ProductBaseDao productBaseDao;
-	
+
 	@Autowired
 	private ProductInfoDao productInfoDao;
-	
+
 	@Autowired
 	private ProductClassfyDao productClassfyDao;
-	
+
 	@Autowired
 	private ProductImageDao productImageDao;
-	
-	
+
 	@Override
-	public List<ProductBase> getProducts(String parm, int classify, Date startTime,
-			Date endTime, int mark){
-		
-		return this.productBaseDao.getProducts(parm, classify, startTime, endTime, mark);
+	public List<ProductBase> getProducts(String parm, int classify,
+			Date startTime, Date endTime, int mark) {
+
+		return this.productBaseDao.getProducts(parm, classify, startTime,
+				endTime, mark);
 	}
-	
+
 	@Override
 	public int insertProduct(ProductBase p, int[] colorIds, int[] imageIds) {
 		int i = this.productBaseDao.insert(p);
 		this.productInfoDao.update(i, colorIds);
 		this.productImageDao.update(i, imageIds);
-		
+
 		return i;
 	}
-	
+
 	@Override
 	public void deleteProduct(int productId) {
 		this.productBaseDao.delete(productId);
@@ -58,36 +58,31 @@ public class ProductServiceImpl implements ProductService {
 		return this.productInfoDao.insert(pi);
 	}
 
-
 	@Override
 	public ProductInfo getProductInfo(String md5) {
 		return this.productInfoDao.getProductInfo(md5);
 	}
-
 
 	@Override
 	public void deleteProductInfo(int id) {
 		this.productInfoDao.delete(id);
 	}
 
-
 	@Override
 	public void updateProductInfo(ProductInfo pi) {
 		this.productInfoDao.update(pi);
 	}
-
 
 	@Override
 	public ProductBase getProduct(int id) {
 		ProductBase productBase = this.productBaseDao.getProduct(id);
 		List<ProductInfo> infos = this.productInfoDao.getProductInfo(id);
 		List<ProductImage> images = this.productImageDao.getProductImages(id);
-		
+
 		productBase.setProductColors(infos);
 		productBase.setProductImages(images);
 		return productBase;
 	}
-
 
 	@Override
 	public void updateProduct(ProductBase p, int[] colorIds, int[] imagesIds) {
@@ -95,7 +90,6 @@ public class ProductServiceImpl implements ProductService {
 		this.productInfoDao.update(p.getId(), colorIds);
 		this.productImageDao.update(p.getId(), imagesIds);
 	}
-
 
 	@Override
 	public List<ProductClassify> getProductClassifies() {
@@ -109,9 +103,8 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public void deleteProductImage(int id) {
-		
+
 		this.productImageDao.delete(id);
 	}
-
 
 }

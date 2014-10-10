@@ -4,12 +4,12 @@ import java.sql.ResultSet;
 
 import java.sql.SQLException;
 
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 import com.walemao.megastore.domain.ProductClassify;
 import com.walemao.megastore.domain.ProductBase;
 
-public class ProductBaseMapper implements RowMapper<ProductBase>{
+public class ProductBaseMapper implements ParameterizedRowMapper<ProductBase>{
 
 	@Override
 	public ProductBase mapRow(ResultSet rs, int rowNum) throws SQLException {
