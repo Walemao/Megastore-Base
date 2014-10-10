@@ -376,13 +376,25 @@
     }
     
     /** 添加展示图片  **/
+    window.sort = 1;
     $('.dropzone').dropzone({
-        url: '<c:url value="/admin/product/img?${_csrf.parameterName}=${_csrf.token}" />',
+        url: '<c:url value="/admin/product/img?${_csrf.parameterName}=${_csrf.token}&sort='+ window.sort +'&productId=${productBase.id}" />',
         paramName: 'productImg',
         maxFiles: 10,
         maxFilesize: 1024,
         acceptedFiles: '.jpg,.png,.gif',
         addRemoveLinks: true,
+        init: function() {
+            this.on("success", function(file, data) {
+            	var sort = window.sort;
+            	console.log(window.sort);
+            	window.sort = sort + 1;
+            	this.options.url = '<c:url value="/admin/product/img?${_csrf.parameterName}=${_csrf.token}&sort='+ window.sort +'&productId=${productBase.id}" />';
+            });
+            this.on("removedfile", function(file) {
+         
+            });
+        }
     });
   
 </script>

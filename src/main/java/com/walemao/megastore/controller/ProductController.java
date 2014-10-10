@@ -24,6 +24,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.ProductClassify;
+import com.walemao.megastore.domain.ProductImage;
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.service.ProductService;
 import com.walemao.megastore.util.DateUtil;
@@ -224,8 +225,9 @@ public class ProductController extends BaseController {
 		}
 
 		try {
-			Map<String, Object> fileMap = FileUploadUtil.uploadSingleFile(file, request);
-			if((fileMap.get("status")).equals("error")){
+			Map<String, Object> fileMap = FileUploadUtil.uploadSingleFile(file,
+					request);
+			if ((fileMap.get("status")).equals("error")) {
 				requestMap.put("status", "danger");
 				requestMap.put("message", (String) fileMap.get("message"));
 				return requestMap;
@@ -308,19 +310,29 @@ public class ProductController extends BaseController {
 	 * */
 	@RequestMapping(value = "/admin/product/img", method = RequestMethod.POST)
 	public @ResponseBody Map<String, Object> addProductImg(
+			@RequestParam(defaultValue = "0") int productId,
+			@RequestParam(defaultValue = "1") int sort,
 			@RequestParam(value = "productImg") MultipartFile file,
 			HttpServletRequest request) {
 		Map<String, Object> requestMap = new HashMap<String, Object>();
-		
+
 		try {
-			Map<String, Object> fileMap = FileUploadUtil.uploadSingleFile(file, request);
+			Map<String, Object> fileMap = FileUploadUtil.uploadSingleFile(file,
+					request);
 			String imgUrl = (String) fileMap.get("thumbnailUrl");
 			String imgMD5 = StringMD5.encode(imgUrl);
-			
+
+			ProductImage productImage = new ProductImage();
+			productImage.setPicSrc(imgUrl);
+			productImage.setPicMd5(imgMD5);
+			productImage.setProductid(productId);
+			productImage.setSort(sort);
+			int id = this.productService.insert(productImage);
+
 			requestMap.put("status", "success");
-			requestMap.put("message", "上传成功！");
+			requestMap.put("imgId", id);
 			return requestMap;
-			
+
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			e.printStackTrace();

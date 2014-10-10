@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.ProductClassify;
+import com.walemao.megastore.domain.ProductImage;
 import com.walemao.megastore.domain.ProductInfo;
 import com.walemao.megastore.repository.ProductBaseDao;
 import com.walemao.megastore.repository.ProductClassfyDao;
+import com.walemao.megastore.repository.ProductImageDao;
 import com.walemao.megastore.repository.ProductInfoDao;
 import com.walemao.megastore.service.ProductService;
 
@@ -25,6 +27,9 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
 	private ProductClassfyDao productClassfyDao;
+	
+	@Autowired
+	private ProductImageDao productImageDao;
 	
 	
 	@Override
@@ -91,6 +96,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<ProductClassify> getProductClassifies() {
 		return this.productClassfyDao.getProductClassifies();
+	}
+
+	@Override
+	public int insert(ProductImage pi) {
+		return this.productImageDao.insert(pi);
 	}
 
 

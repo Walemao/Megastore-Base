@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.ProductClassify;
+import com.walemao.megastore.domain.ProductImage;
 import com.walemao.megastore.domain.ProductInfo;
 
 public interface ProductService {
@@ -29,5 +30,7 @@ public interface ProductService {
 	public void updateProduct(ProductBase p, int[] ids);
 	
 	public List<ProductClassify> getProductClassifies();
+	
+	public int insert(ProductImage pi);
 	
 }
