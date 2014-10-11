@@ -29,12 +29,17 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	public CurrentPage<User> getUsers(String username, int type)
 			throws DataAccessException {
 		PaginationHelper<User> ph = new PaginationHelper<User>();
+		String code = "";
 		switch (type) {
 		case 0:
-			querySql += " and u_enabled = 0";
+			code = " and u_enabled = 0";
+			queryCount += code;
+			querySql += code;
 			break;
 		case 1:
-			querySql += " and u_enabled = 1";
+			code = " and u_enabled = 1";
+			queryCount += code;
+			querySql += code;
 			break;
 		case 2:
 			break;
