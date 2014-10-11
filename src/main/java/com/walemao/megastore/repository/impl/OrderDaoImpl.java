@@ -29,8 +29,8 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 		PaginationHelper<Order> ph = new PaginationHelper<Order>();
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
-		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is "
-				+ args;
+		String queryArgs ="o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype";
+		String sql = "select " + queryArgs + " from t_order where deletemark is " + args;
 		List<Object> list = new ArrayList<Object>();
 		if (parm == null || parm.length() <= 0) {
 		} else {
@@ -43,7 +43,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 			list.add(endTime);
 		}
 		sql += " order by o_createtime desc";
-		return ph.fetchPage(jdbcTemplate, sqlCountRows, sqlFetchRows, args, pageNo, pageSize, rowMapper)
+		return ph.fetchPage(jdbcTemplate, sql.replace(queryArgs, "count(1)", sqlFetchRows, args, pageNo, pageSize, rowMapper)
 		//return this.jdbcTemplate.query(sql, list.toArray(), new OrderMapper());
 	}
 
@@ -61,7 +61,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 		list.add(username);
 		return this.jdbcTemplate.query(sql, list.toArray(), new OrderMapper());
 	}
-	
+
 	@Override
 	public int insert(Order o) {
 		// TODO Auto-generated method stub
@@ -103,8 +103,6 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 		String sql = "update t_order set deletemark=now() where od_id=?";
 		this.jdbcTemplate.update(sql, new Object[] { id });
 	}
-
-	
 
 	@Override
 	public Order getOrder(int orderId) {

@@ -31,10 +31,10 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 		PaginationHelper<User> ph = new PaginationHelper<User>();
 		switch (type) {
 		case 0:
-			querySql += " and type=0";
+			querySql += " and u_type = 0";
 			break;
 		case 1:
-			querySql += " and type=1";
+			querySql += " and u_type = 1";
 			break;
 		case 2:
 			break;
