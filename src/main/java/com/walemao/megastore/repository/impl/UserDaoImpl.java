@@ -23,7 +23,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	private String queryCount = "select count(1)"
 			+ " from t_user a left join t_user_base b on a.u_username = b.u_username";
 	private String querySql = "select a.u_id as u_id,a.u_username as u_username,u_password,u_mobilephone,"
-			+ "u_email,u_createtime,u_remark,u_type,u_level,u_head_portrait"
+			+ "u_email,u_createtime,u_remark,u_type,u_level,u_enabled,u_head_portrait"
 			+ " from t_user a left join t_user_base b on a.u_username = b.u_username";
 
 	public CurrentPage<User> getUsers(String username)

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-09 21:28:08
+Date: 2014-10-11 14:20:43
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -65,7 +65,7 @@ CREATE TABLE `d_province` (
 -- ----------------------------
 DROP TABLE IF EXISTS `d_user`;
 CREATE TABLE `d_user` (
-  `ud_id` int(255) NOT NULL COMMENT '用户维表ID',
+  `ud_id` int(11) NOT NULL COMMENT '用户维表ID',
   `ud_key` int(11) DEFAULT NULL COMMENT 'key值',
   `ud_value` varchar(255) DEFAULT NULL COMMENT '具体值',
   `ud_type` tinyint(4) DEFAULT NULL COMMENT '类型',
@@ -202,7 +202,7 @@ CREATE TABLE `t_product_base` (
   KEY `idx_t_product_base_2` (`p_name`) USING BTREE,
   KEY `idx_t_product_base_4` (`deletemark`) USING BTREE,
   KEY `idx_t_product_base_3` (`p_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_product_classify
@@ -240,7 +240,7 @@ CREATE TABLE `t_product_images` (
   `pi_sort` int(11) DEFAULT '0' COMMENT '排序',
   `pi_productid` bigint(20) DEFAULT NULL COMMENT '商品ID',
   PRIMARY KEY (`pi_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_product_info
@@ -260,7 +260,7 @@ CREATE TABLE `t_product_info` (
   UNIQUE KEY `idx_t_product_info_2` (`pd_thummd5`) USING BTREE,
   KEY `idx_t_product_info_1` (`pd_productid`) USING BTREE,
   CONSTRAINT `fk_product_info_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_base` (`p_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_proposal
@@ -302,8 +302,9 @@ CREATE TABLE `t_shopping_cart` (
 DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
   `u_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户id',
-  `u_username` varchar(50) DEFAULT NULL COMMENT '用户名',
+  `u_username` varchar(50) NOT NULL COMMENT '用户名',
   `u_password` varchar(255) DEFAULT NULL COMMENT '密码',
+  `u_salt` char(40) DEFAULT NULL COMMENT '盐',
   `u_mobilephone` char(11) DEFAULT NULL COMMENT '手机',
   `u_email` varchar(255) DEFAULT NULL COMMENT '邮箱',
   `u_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
