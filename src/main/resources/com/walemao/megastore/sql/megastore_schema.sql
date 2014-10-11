@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-11 14:20:43
+Date: 2014-10-11 16:54:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -307,18 +307,18 @@ CREATE TABLE `t_user` (
   `u_salt` char(40) DEFAULT NULL COMMENT '盐',
   `u_mobilephone` char(11) DEFAULT NULL COMMENT '手机',
   `u_email` varchar(255) DEFAULT NULL COMMENT '邮箱',
-  `u_createtime` timestamp NULL DEFAULT NULL COMMENT '创建时间',
+  `u_createtime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `u_remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `u_type` tinyint(1) DEFAULT '0' COMMENT '用户类型0是普通用户，1是管理员',
   `u_level` tinyint(1) DEFAULT '0' COMMENT '会员等级，默认0',
-  `u_enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用，0是未启用，1是启用',
+  `u_enabled` tinyint(1) DEFAULT '1' COMMENT '是否启用，0是未启用，1是启用',
   `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`u_id`),
   UNIQUE KEY `idx_t_user_4` (`u_username`) USING BTREE,
   KEY `idx_t_user_1` (`u_type`) USING BTREE,
   KEY `idx_t_user_2` (`u_level`),
-  KEY `idx_t_user_3` (`deletemark`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  KEY `idx_t_user_3` (`u_enabled`)
+) ENGINE=InnoDB AUTO_INCREMENT=996 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_user_authority
