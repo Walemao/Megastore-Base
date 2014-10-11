@@ -674,7 +674,7 @@ span.input-group-addon {
 	background-color: #f9f9f9;
 }
 
-.input-group-addon .icon-search{
+.input-group-addon .icon-search {
 	padding-left: 6px;
 }
 
@@ -687,10 +687,26 @@ span.input-group-addon {
 	border-bottom: 1px solid #ddd;
 }
 
-.tab-content-default .row{
+.tab-content-default .row {
 	margin: 0;
 	padding: 0;
+	margin-bottom: 15px;
 }
 
+.user-base-info-table {
+	margin-top: 15px;
+}
+
+.user-base-info-table tr td{
+	height: 40px;
+}
+
+.user-base-info-table tr:FIRST-CHILD td{
+	border-top: none;
+}
+
+#dash-tabs-user-base i{
+	padding-right: 5px;
+}
 
 
