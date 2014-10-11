@@ -20,41 +20,40 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	private String queryCount = "select count(1)"
-			+ " from t_user a left join t_user_base b on a.u_username = b.u_username where 1=1 ";
-	private String querySql = "select a.u_id as u_id,a.u_username as u_username,u_password,u_mobilephone,"
-			+ "u_email,u_createtime,u_remark,u_type,u_level,u_enabled,u_head_portrait"
+	private String queryAgrs = "a.u_id as u_id,a.u_username as u_username,u_password,u_mobilephone,"
+			+ "u_email,u_createtime,u_remark,u_type,u_level,u_enabled,u_head_portrait";
+	private String querySql = "select "
+			+ queryAgrs
 			+ " from t_user a left join t_user_base b on a.u_username = b.u_username where 1=1 ";
 
 	public CurrentPage<User> getUsers(String username, int type)
 			throws DataAccessException {
 		PaginationHelper<User> ph = new PaginationHelper<User>();
 		String code = "";
-		String sql0 = queryCount;
 		String sql1 = querySql;
 		switch (type) {
 		case 0:
 			code = " and u_enabled = 0";
-			sql0 += code;
 			sql1 += code;
 			break;
 		case 1:
 			code = " and u_enabled = 1";
-			sql0 += code;
 			sql1 += code;
 			break;
 		case 2:
 			break;
 		}
 		if (username == null || username.equals("")) {
-			String appendSql = " order by u_createtime desc";
-			return ph.fetchPage(jdbcTemplate, sql0 + appendSql, sql1
-					+ appendSql, new Object[] {}, CurrentPage.getPageNubmer(),
-					CurrentPage.getPageLength(), new UserMapper());
+			sql1 += " order by u_createtime desc";
+			return ph.fetchPage(jdbcTemplate,
+					sql1.replace(queryAgrs, "count(1)"), sql1, new Object[] {},
+					CurrentPage.getPageNubmer(), CurrentPage.getPageLength(),
+					new UserMapper());
 		} else {
-			String appendSql = " and a.u_username like ? order by u_createtime desc";
-			return ph.fetchPage(jdbcTemplate, sql0 + appendSql, sql1
-					+ appendSql, new Object[] { "%" + username + "%" },
+			sql1 += " and a.u_username like ? order by u_createtime desc";
+			return ph.fetchPage(jdbcTemplate,
+					sql1.replace(queryAgrs, "count(1)"), sql1,
+					new Object[] { "%" + username + "%" },
 					CurrentPage.getPageNubmer(), CurrentPage.getPageLength(),
 					new UserMapper());
 		}
