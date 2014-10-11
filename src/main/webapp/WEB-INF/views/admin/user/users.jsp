@@ -67,13 +67,10 @@
 									<a class="btn btn-xs btn-info" data-toggle="tooltip"
 										data-original-title="查看"
 										href="<c:url value="/admin/user/${user.id}"/>"><i
-										class="icon-info-sign"></i></a> <a class="btn btn-xs btn-success"
-										data-toggle="tooltip" data-original-title="编辑"
-										href="<c:url value="/admin/user/${user.id}"/>"><i
-										class="icon-pencil"></i></a> <a
+										class="icon-info-sign"></i></a><a
 										class="btn btn-xs btn-danger delete-product-trigger"
 										data-id="<c:out value="${user.userName}"/>"
-										data-toggle="tooltip" data-original-title="删除"><i
+										data-toggle="tooltip" data-original-title="禁用"><i
 										class="icon-trash"></i></a>
 								</div>
 							</td>
@@ -90,17 +87,17 @@
 							<ul class="pagination" style="float: right;">
 								<li
 									<c:if test="${curretPage.pageNo == 1}">class="disabled"</c:if>><a
-									href="<c:url value="/admin/users?pageNo=${curretPage.pageNo - 1}"/> "><i
+									href="<c:url value="/admin/users?pageNo=${curretPage.pageNo - 1}&pageSize=${curretPage.pageSize}"/> "><i
 										class="icon-chevron-left"></i></a></li>
 								<c:forEach begin="1" end="${curretPage.pageAvailable}" var="i">
 									<li
 										<c:if test="${curretPage.pageNo == i}">class="active"</c:if>><a
-										href="<c:url value="/admin/users?pageNo=${i}"/>"><c:out
+										href="<c:url value="/admin/users?pageNo=${i}&pageSize=${curretPage.pageSize}"/>"><c:out
 												value="${i}" /></a></li>
 								</c:forEach>
 								<li
 									<c:if test="${curretPage.pageNo == curretPage.pageAvailable}">class="disabled"</c:if>><a
-									href="<c:url value="/admin/users?pageNo=${curretPage.pageNo + 1}" />"><i
+									href="<c:url value="/admin/users?pageNo=${curretPage.pageNo + 1}&pageSize=${curretPage.pageSize}" />"><i
 										class="icon-chevron-right"></i></a></li>
 							</ul>
 						</td>

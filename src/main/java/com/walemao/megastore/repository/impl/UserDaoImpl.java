@@ -127,7 +127,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public void delete(String username) {
 		// TODO Auto-generated method stub
-		String sql = "update t_user set deletemark=now() where u_username=? and deletemark is null";
+		String sql = "update t_user set deletemark=now(),u_enabled=0 where u_username=? and deletemark is null";
 		this.jdbcTemplate.update(sql, new Object[] { username });
 	}
 
