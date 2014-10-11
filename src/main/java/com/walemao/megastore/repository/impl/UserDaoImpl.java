@@ -30,28 +30,30 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 			throws DataAccessException {
 		PaginationHelper<User> ph = new PaginationHelper<User>();
 		String code = "";
+		String sql0 = queryCount;
+		String sql1 = querySql;
 		switch (type) {
 		case 0:
 			code = " and u_enabled = 0";
-			queryCount += code;
-			querySql += code;
+			sql0 += code;
+			sql1 += code;
 			break;
 		case 1:
 			code = " and u_enabled = 1";
-			queryCount += code;
-			querySql += code;
+			sql0 += code;
+			sql1 += code;
 			break;
 		case 2:
 			break;
 		}
 		if (username == null || username.equals("")) {
 			String appendSql = " order by u_createtime desc";
-			return ph.fetchPage(jdbcTemplate, queryCount + appendSql, querySql
+			return ph.fetchPage(jdbcTemplate, sql0 + appendSql, sql1
 					+ appendSql, new Object[] {}, CurrentPage.getPageNubmer(),
 					CurrentPage.getPageLength(), new UserMapper());
 		} else {
 			String appendSql = " and a.u_username like ? order by u_createtime desc";
-			return ph.fetchPage(jdbcTemplate, queryCount + appendSql, querySql
+			return ph.fetchPage(jdbcTemplate, sql0 + appendSql, sql1
 					+ appendSql, new Object[] { "%" + username + "%" },
 					CurrentPage.getPageNubmer(), CurrentPage.getPageLength(),
 					new UserMapper());
