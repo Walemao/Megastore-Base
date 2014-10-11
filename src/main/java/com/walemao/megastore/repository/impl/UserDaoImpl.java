@@ -40,12 +40,12 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 			break;
 		}
 		if (username == null || username.equals("")) {
-			String appendSql = " and deletemark is null order by u_createtime desc";
+			String appendSql = " order by u_createtime desc";
 			return ph.fetchPage(jdbcTemplate, queryCount + appendSql, querySql
 					+ appendSql, new Object[] {}, CurrentPage.getPageNubmer(),
 					CurrentPage.getPageLength(), new UserMapper());
 		} else {
-			String appendSql = " and deletemark is null and a.u_username like ? order by u_createtime desc";
+			String appendSql = " and a.u_username like ? order by u_createtime desc";
 			return ph.fetchPage(jdbcTemplate, queryCount + appendSql, querySql
 					+ appendSql, new Object[] { "%" + username + "%" },
 					CurrentPage.getPageNubmer(), CurrentPage.getPageLength(),
