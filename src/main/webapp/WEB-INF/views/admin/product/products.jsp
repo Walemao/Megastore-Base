@@ -93,11 +93,11 @@
 						<td colspan="6">
 						<!-- 分页显示 -->
 							<ul class="pagination" style="float: right;">
-								<li <c:if test="${curretPage.pageNo == 1}">class="disabled"</c:if>><a href="<c:url value="/admin/products?pageNo=${curretPage.pageNo - 1}"/> "><i class="icon-chevron-left"></i></a></li>
+								<li <c:if test="${curretPage.pageNo == 1}">class="disabled"</c:if>><a href="<c:url value="/admin/products?pageNo=${curretPage.pageNo - 1}&pageSize=${curretPage.pageSize}"/> "><i class="icon-chevron-left"></i></a></li>
 								<c:forEach begin="1" end="${curretPage.pageAvailable}" var="i">
-								  <li <c:if test="${curretPage.pageNo == i}">class="active"</c:if>><a href="<c:url value="/admin/products?pageNo=${i}"/>" ><c:out value="${i}" /></a></li>
+								  <li <c:if test="${curretPage.pageNo == i}">class="active"</c:if>><a href="<c:url value="/admin/products?pageNo=${i}&pageSize=${curretPage.pageSize}"/>" ><c:out value="${i}" /></a></li>
 								</c:forEach>
-								<li <c:if test="${curretPage.pageNo == curretPage.pageAvailable}">class="disabled"</c:if>><a href="<c:url value="/admin/products?pageNo=${curretPage.pageNo + 1}" />"><i class="icon-chevron-right"></i></a></li>
+								<li <c:if test="${curretPage.pageNo == curretPage.pageAvailable}">class="disabled"</c:if>><a href="<c:url value="/admin/products?pageNo=${curretPage.pageNo + 1}&pageSize=${curretPage.pageSize}" />"><i class="icon-chevron-right"></i></a></li>
 							</ul>
 						</td>
 					</tr>
