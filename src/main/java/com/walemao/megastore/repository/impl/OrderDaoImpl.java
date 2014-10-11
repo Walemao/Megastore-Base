@@ -10,10 +10,12 @@ import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.Order;
 import com.walemao.megastore.domain.OrderDetail;
 import com.walemao.megastore.domain.mapper.OrderMapper;
 import com.walemao.megastore.repository.OrderDao;
+import com.walemao.megastore.util.PaginationHelper;
 
 @Repository
 public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
@@ -21,6 +23,45 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
+	@Override
+	public CurrentPage<Order> getAllOrders(String parm, Date startTime, Date endTime,
+			int mark) {
+		PaginationHelper<Order> ph = new PaginationHelper<Order>();
+		// TODO Auto-generated method stub
+		String args = mark == 0 ? "null" : "not null";
+		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is "
+				+ args;
+		List<Object> list = new ArrayList<Object>();
+		if (parm == null || parm.length() <= 0) {
+		} else {
+			sql += " and o_id like ?";
+			list.add("%" + parm + "%");
+		}
+		if (startTime != null && endTime != null) {
+			sql += " and o_createtime between ? and ?";
+			list.add(startTime);
+			list.add(endTime);
+		}
+		sql += " order by o_createtime desc";
+		return ph.fetchPage(jdbcTemplate, sqlCountRows, sqlFetchRows, args, pageNo, pageSize, rowMapper)
+		//return this.jdbcTemplate.query(sql, list.toArray(), new OrderMapper());
+	}
+
+	@Override
+	public List<Order> getOrders(Date startTime, Date endTime, String username) {
+		// TODO Auto-generated method stub
+		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is null";
+		List<Object> list = new ArrayList<Object>();
+		if (startTime != null && endTime != null) {
+			sql += " and o_createtime between ? and ?";
+			list.add(startTime);
+			list.add(endTime);
+		}
+		sql += " and o_username=? order by o_createtime desc";
+		list.add(username);
+		return this.jdbcTemplate.query(sql, list.toArray(), new OrderMapper());
+	}
+	
 	@Override
 	public int insert(Order o) {
 		// TODO Auto-generated method stub
@@ -63,42 +104,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 		this.jdbcTemplate.update(sql, new Object[] { id });
 	}
 
-	@Override
-	public List<Order> getAllOrders(String parm, Date startTime, Date endTime,
-			int mark) {
-		// TODO Auto-generated method stub
-		String args = mark == 0 ? "null" : "not null";
-		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is "
-				+ args;
-		List<Object> list = new ArrayList<Object>();
-		if (parm == null || parm.length() <= 0) {
-		} else {
-			sql += " and o_id like ?";
-			list.add("%" + parm + "%");
-		}
-		if (startTime != null && endTime != null) {
-			sql += " and o_createtime between ? and ?";
-			list.add(startTime);
-			list.add(endTime);
-		}
-		sql += " order by o_createtime desc";
-		return this.jdbcTemplate.query(sql, list.toArray(), new OrderMapper());
-	}
-
-	@Override
-	public List<Order> getOrders(Date startTime, Date endTime, String username) {
-		// TODO Auto-generated method stub
-		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is null";
-		List<Object> list = new ArrayList<Object>();
-		if (startTime != null && endTime != null) {
-			sql += " and o_createtime between ? and ?";
-			list.add(startTime);
-			list.add(endTime);
-		}
-		sql += " and o_username=? order by o_createtime desc";
-		list.add(username);
-		return this.jdbcTemplate.query(sql, list.toArray(), new OrderMapper());
-	}
+	
 
 	@Override
 	public Order getOrder(int orderId) {

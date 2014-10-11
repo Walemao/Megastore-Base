@@ -40,12 +40,12 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 			break;
 		}
 		if (username == null || username.equals("")) {
-			String appendSql = " deletemark is null order by u_createtime desc";
+			String appendSql = " and deletemark is null order by u_createtime desc";
 			return ph.fetchPage(jdbcTemplate, queryCount + appendSql, querySql
 					+ appendSql, new Object[] {}, CurrentPage.getPageNubmer(),
 					CurrentPage.getPageLength(), new UserMapper());
 		} else {
-			String appendSql = " deletemark is null and a.u_username like ? order by u_createtime desc";
+			String appendSql = " and deletemark is null and a.u_username like ? order by u_createtime desc";
 			return ph.fetchPage(jdbcTemplate, queryCount + appendSql, querySql
 					+ appendSql, new Object[] { "%" + username + "%" },
 					CurrentPage.getPageNubmer(), CurrentPage.getPageLength(),
@@ -56,7 +56,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public User getUser(int id) {
 		// TODO Auto-generated method stub
-		String sql = querySql + " u_id = ? and deletemark is null limit 1";
+		String sql = querySql + " and u_id = ? and deletemark is null limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { id },
 				new UserMapper()).get(0);
 	}
@@ -65,7 +65,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	public User getUser(String username) {
 		// TODO Auto-generated method stub
 		String sql = querySql
-				+ " u_username = ? and deletemark is null limit 1";
+				+ " and u_username = ? and deletemark is null limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { username },
 				new UserMapper()).get(0);
 	}
