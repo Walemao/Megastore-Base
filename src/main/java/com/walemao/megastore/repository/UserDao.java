@@ -4,7 +4,13 @@ import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.User;
 
 public interface UserDao {
-	public CurrentPage<User> getUsers(String username);
+	/**
+	 * 
+	 * @param username
+	 * @param type		0是禁用 1是启用  2是所有
+	 * @return
+	 */
+	public CurrentPage<User> getUsers(String username,int type);
 
 	public User getUser(int id);
 
