@@ -99,11 +99,11 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public int insert(User user) {
 		// TODO Auto-generated method stub
-		String sql = "insert into t_user(u_username,u_password,u_mobilephone,u_email,u_createtime) values(?,?,?,?,now())";
+		String sql = "insert into t_user(u_username,u_password,u_salt) values(?,?,?)";
 		return this.addIntoDB(
 				sql,
 				new Object[] { user.getUserName(), user.getPassword(),
-						user.getMobilephone(), user.getEmail() });
+						user.getSalt() });
 	}
 
 	@SuppressWarnings("deprecation")
@@ -134,10 +134,11 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void delete(String username) {
+	public void delete(String username, boolean flag) {
 		// TODO Auto-generated method stub
-		String sql = "update t_user set deletemark=now(),u_enabled=0 where u_username=? and deletemark is null";
-		this.jdbcTemplate.update(sql, new Object[] { username });
+		String args = flag ? "null" : "now()";
+		String sql = "update t_user set deletemark=?,u_enabled=? where u_username=? and deletemark is null";
+		this.jdbcTemplate.update(sql, new Object[] { args, flag, username });
 	}
 
 }

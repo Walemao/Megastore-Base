@@ -6,6 +6,7 @@ public class User {
 	private int id;
 	private String userName;
 	private String password;
+	private String salt;
 	private String mobilephone;
 	private String email;
 	private Timestamp createTime;
@@ -22,6 +23,14 @@ public class User {
 
 	public void setHead_portrait(String head_portrait) {
 		this.head_portrait = head_portrait;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 
 	public String getConfirmPassword() {
@@ -130,5 +139,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
 
 }

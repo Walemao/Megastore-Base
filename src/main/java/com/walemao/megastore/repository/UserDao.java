@@ -7,10 +7,11 @@ public interface UserDao {
 	/**
 	 * 
 	 * @param username
-	 * @param type		0是禁用 1是启用  2是所有
+	 * @param type
+	 *            0是禁用 1是启用 2是所有
 	 * @return
 	 */
-	public CurrentPage<User> getUsers(String username,int type);
+	public CurrentPage<User> getUsers(String username, int type);
 
 	public User getUser(int id);
 
@@ -30,5 +31,5 @@ public interface UserDao {
 
 	public boolean CheckEmail(String email);
 
-	public void delete(String username);
+	public void delete(String username, boolean flag);
 }
