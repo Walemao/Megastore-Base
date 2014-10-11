@@ -33,8 +33,8 @@
 					</div>
 					
 					<div class="form-group">
-						<label class="control-label" for="productType">用户状态：</label>
-						 <select class="form-control" name="enabled">
+						<label class="control-label" for="enabled">用户状态：</label>
+						 <select class="form-control" name="enabled" id="userStatus">
 							<option value="1">启用中</option>
 							<option value="0">已禁用</option>
 							<option value="2">所有用户</option>
@@ -89,14 +89,14 @@
 										href="<c:url value="/admin/user/${user.id}"/>"><i
 										class="icon-info-sign"></i></a>
 								    <c:if test="${user.enabled==true}">
-									<a class="btn btn-xs btn-danger delete-product-trigger"
-										data-id="<c:out value="${user.userName}"/>"
+									<a class="btn btn-xs btn-danger control-user-status"
+										data-id="<c:out value="${user.userName}"/>" data-status="0"
 										data-toggle="tooltip" data-original-title="禁用"><i
 										class="icon-remove-sign"></i></a>
 									</c:if>
 									<c:if test="${user.enabled==false}">
-									<a class="btn btn-xs btn-success delete-product-trigger"
-										data-id="<c:out value="${user.userName}"/>"
+									<a class="btn btn-xs btn-success control-user-status"
+										data-id="<c:out value="${user.userName}"/>" data-status="1"
 										data-toggle="tooltip" data-original-title="启用"><i
 										class="icon-ok-sign"></i></a>
 									</c:if>
@@ -138,22 +138,25 @@
 </body>
 <%@ include file="/WEB-INF/views/includes/admin_foot_scripts_links.jspf"%>
 <script type="text/javascript">
-	$('.delete-product-trigger')
-			.click(
-					function() {
-						if (window.confirm('你确定要删除吗？')) {
+   var select_status = '<c:out value="${enabled}"/>';
+   $('#userStatus').val(select_status);
+   
+   /** 禁用和启用用户 **/
+   $('.control-user-status').click(function() {
+						var status = $(this).attr('data-status');
+						var text = (status = 0)? '启用' : '禁用';
+						if (window.confirm('你确定要' + text + '吗？')) {
 							var userName = $(this).attr('data-id');
-							$
-									.post(
-											'<c:url value="/admin/user?${_csrf.parameterName}=${_csrf.token}"/>',
+							$.post('<c:url value="/admin/user?${_csrf.parameterName}=${_csrf.token}"/>',
 											{
 												_method : 'DELETE',
-												username : userName
+												username : userName,
+												enabled : status
 											}, function(data) {
 												if (data.status == 'success') {
 													window.location.reload();
 												} else {
-													alert('删除失败！');
+													alert( text + '失败！');
 												}
 											});
 						}

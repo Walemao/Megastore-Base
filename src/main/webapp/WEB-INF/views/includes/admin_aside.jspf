@@ -12,7 +12,7 @@
 		request.setAttribute("sm_1", "active");
 	} else if (uri.matches(".*/admin/orders.*")) {
 		request.setAttribute("sm_2", "active");
-	} else if (uri.matches(".*/main/data.*")) {
+	} else if (uri.matches(".*/admin/user.*")) {
 		request.setAttribute("sm_3", "active");
 	} else if(uri.matches(".*/main/label.*")){
 		request.setAttribute("sm_3", "active");

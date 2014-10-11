@@ -678,7 +678,19 @@ span.input-group-addon {
 	padding-left: 6px;
 }
 
+.tab-content-default {
+	border: none;
+	padding: 0;
+	margin: 0;
+	overflow: auto;
+	height:auto;
+	border-bottom: 1px solid #ddd;
+}
 
+.tab-content-default .row{
+	margin: 0;
+	padding: 0;
+}
 
 
 

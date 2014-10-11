@@ -22,15 +22,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public CurrentPage<User> getUsers(String username) {
+	public CurrentPage<User> getUsers(String username, int enabled) {
 		// TODO Auto-generated method stub
-		return userDao.getUsers(username);
+		return userDao.getUsers(username, enabled);
 	}
 
 	@Override
-	public void delete(String username) {
+	public void delete(String username, boolean enabled) {
 		// TODO Auto-generated method stub
-		userDao.delete(username);
+		userDao.delete(username, enabled);
 	}
 
 }

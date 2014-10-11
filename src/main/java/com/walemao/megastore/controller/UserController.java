@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,25 +37,46 @@ public class UserController {
 		return "index";
 	}
 
+	/**
+	 * 查看用户列表
+	 * 
+	 * */
 	@RequestMapping(value = "/admin/users", method = { RequestMethod.GET })
 	public String getUsers(CurrentPage<User> currentPage,
 			@RequestParam(required = false) String userName,
+			@RequestParam(defaultValue = "1") int enabled,
 			HttpServletRequest request) {
 
-		CurrentPage<User> cp = this.UserService.getUsers(userName);
+		CurrentPage<User> cp = this.UserService.getUsers(userName, enabled);
 		logger.debug("打印对象：{}", cp.getPageItems());
 		request.setAttribute("userName", userName);
 		request.setAttribute("curretPage", cp);
+		request.setAttribute("enabled", enabled);
 		return "admin/user/users";
 	}
 
+	/**
+	 * 查看用户信息
+	 * 
+	 * */
+	@RequestMapping(value = "/admin/user/{id}", method = { RequestMethod.GET })
+	public String getUser(@PathVariable("id") int userId,
+			HttpServletRequest request) {
+
+		return "admin/user/user";
+	}
+
+	/**
+	 * 禁用用户
+	 * 
+	 * */
 	@RequestMapping(value = "/admin/user", method = { RequestMethod.DELETE })
 	public @ResponseBody Map<String, Object> deleteUser(String username,
-			HttpServletRequest request) {
+			boolean enabled, HttpServletRequest request) {
 		Map<String, Object> requestMap = new HashMap<String, Object>();
 
 		try {
-			this.UserService.delete(username);
+			this.UserService.delete(username, enabled);
 			requestMap.put("status", "success");
 			return requestMap;
 
