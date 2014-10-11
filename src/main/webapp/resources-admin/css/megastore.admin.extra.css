@@ -24,34 +24,34 @@ h1, h2, h3 {
 	background-color: #f9f9f9;
 }
 
-.product-list-table tr th, .product-list-table tr td {
+.content-list-table tr th, .content-list-table tr td {
 	text-align: center !important;
 }
 
-.product-list-table i {
+.content-list-table i {
 	padding-right: 5px;
 }
 
-.product-list-table td.product-list {
+.content-list-table td.content-list {
 	padding-top: 25px;
 }
 
-.product-list-table .thumbnail {
+.content-list-table .thumbnail {
 	width: 60px;
 	height: 60px;
 	margin: 0 auto;
 }
 
-.product-search-form {
+.content-search-form {
 	float: left;
 	width: 90%;
 }
 
-.product-search-form .form-group {
+.content-search-form .form-group {
 	margin-right: 20px;
 }
 
-.product-search-form .control-label {
+.content-search-form .control-label {
 	font-weight: 500;
 }
 

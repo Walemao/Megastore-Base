@@ -24,7 +24,7 @@
 			</ul>
 			<h3 class="page-header page-header-top">商品列表</h3>
 			<div class="well">
-				<form action="<c:url value="/admin/products" />" method="get" class="form-inline product-search-form" role="form">
+				<form action="<c:url value="/admin/products" />" method="get" class="form-inline content-search-form" role="form">
 					<div class="form-group">
 						<label class="control-label" for="productType">商品类型：</label> <select
 							class="form-control" name="productType" id="productType">
@@ -32,7 +32,6 @@
 							<option value="<c:out value="${type.id}"></c:out>" <c:if test="${type.id == productType}"> selected</c:if>><c:out value="${type.name}"></c:out></option>
 							</c:forEach>
 						</select>
-						<a class="product-type-edit" data-toggle="tooltip" data-original-title="管理类型"><i class="icon-edit"></i></a>
 					</div>
 					<div class="form-group">
 						<label class="control-label" for="productName">商品名称：</label>
@@ -53,7 +52,7 @@
 				</form>
 				<a class="btn btn-default add-product-btn" href="<c:url value="/admin/product?add" />"><i class="icon-plus"></i>添加商品</a>
 			</div>
-			<table class="table product-list-table">
+			<table class="table content-list-table">
 				<thead>
 					<tr>
 						<th>#</th>
@@ -68,13 +67,13 @@
 				    <%int i = 1;%>
 					<c:forEach items="${curretPage.pageItems}" var="product">
 					  <tr>
-						<td class="product-list"><%=i%></td>
+						<td class="content-list"><%=i%></td>
 						<td><a class="thumbnail"><img src="<c:out value="${product.thumbnail}" />" width="60" height="60"></a></td>
-						<td class="product-list"><c:out value="${product.name}" /></td>
-						<td class="product-list"><c:out value="${product.productClassification.name}" /></td>
-						<td class="product-list">
+						<td class="content-listt"><c:out value="${product.name}" /></td>
+						<td class="content-list"><c:out value="${product.productClassification.name}" /></td>
+						<td class="content-list">
 						<fmt:formatDate value="${product.createtime}" type="date" pattern="yyyy/MM/dd HH:mm:ss"/></td>
-						<td class="product-list">
+						<td class="content-list">
 							<div class="btn-group">
 								<a class="btn btn-xs btn-info" data-toggle="tooltip"
 									data-original-title="查看" href="<c:url value="/admin/product/${product.id}"/>"><i class="icon-info-sign"></i></a>

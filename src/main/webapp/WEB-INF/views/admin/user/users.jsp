@@ -25,12 +25,22 @@
 			<h3 class="page-header page-header-top">用户列表</h3>
 			<div class="well clearfix">
 				<form action="<c:url value="/admin/users" />" method="get"
-					class="form-inline product-search-form" role="form">
+					class="form-inline content-search-form" role="form">
 					<div class="form-group">
 						<label class="control-label" for="userName">用户名称：</label> <input
 							type="text" class="form-control" id="userName" name="userName"
 							placeholder="输入用户" value="<c:out value="${userName}"></c:out>">
 					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="productType">用户状态：</label>
+						 <select class="form-control" name="enabled">
+							<option value="1">启用中</option>
+							<option value="0">已禁用</option>
+							<option value="2">所有用户</option>
+						</select>
+					</div>
+					
 					<button type="submit" class="btn btn-success">
 						<i class="icon-search"></i>查询
 					</button>
@@ -38,12 +48,13 @@
 			</div>
 
 
-			<table class="table product-list-table">
+			<table class="table content-list-table">
 				<thead>
 					<tr>
 						<th>#</th>
 						<th><i class="icon-camera-retro"></i>头像</th>
-						<th><i class="icon-book"></i>用户名</th>
+						<th><i class="icon-user"></i>用户名</th>
+						<th><i class="icon-flag"></i>用户状态</th>
 						<th><i class="icon-time"></i>注册时间</th>
 						<th><i class="icon-bolt"></i>操作</th>
 					</tr>
@@ -54,24 +65,41 @@
 					%>
 					<c:forEach items="${curretPage.pageItems}" var="user">
 						<tr>
-							<td class="product-list"><%=i%></td>
+							<td class="content-list"><%=i%></td>
 							<td><a class="thumbnail"><img
 									src="<c:out value="${user.head_portrait}" />" width="60"
 									height="60"></a></td>
-							<td class="product-list"><c:out value="${user.userName}" /></td>
-							<td class="product-list"><fmt:formatDate
+							<td class="content-list"><c:out value="${user.userName}" /></td>
+							<td class="content-list">
+							   <c:if test="${user.enabled==true}">
+							      启用中
+							   </c:if>
+							   <c:if test="${user.enabled==false}">
+							      已禁用
+							   </c:if>
+							</td>
+							
+							<td class="content-list"><fmt:formatDate
 									value="${user.createTime}" type="date"
 									pattern="yyyy/MM/dd HH:mm:ss" /></td>
-							<td class="product-list">
+							<td class="content-list">
 								<div class="btn-group">
 									<a class="btn btn-xs btn-info" data-toggle="tooltip"
 										data-original-title="查看"
 										href="<c:url value="/admin/user/${user.id}"/>"><i
-										class="icon-info-sign"></i></a><a
-										class="btn btn-xs btn-danger delete-product-trigger"
+										class="icon-info-sign"></i></a>
+								    <c:if test="${user.enabled==true}">
+									<a class="btn btn-xs btn-danger delete-product-trigger"
 										data-id="<c:out value="${user.userName}"/>"
 										data-toggle="tooltip" data-original-title="禁用"><i
-										class="icon-trash"></i></a>
+										class="icon-remove-sign"></i></a>
+									</c:if>
+									<c:if test="${user.enabled==false}">
+									<a class="btn btn-xs btn-success delete-product-trigger"
+										data-id="<c:out value="${user.userName}"/>"
+										data-toggle="tooltip" data-original-title="启用"><i
+										class="icon-ok-sign"></i></a>
+									</c:if>
 								</div>
 							</td>
 						</tr>
