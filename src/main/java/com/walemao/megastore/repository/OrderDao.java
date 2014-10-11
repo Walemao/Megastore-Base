@@ -1,8 +1,8 @@
 package com.walemao.megastore.repository;
 
 import java.util.Date;
-import java.util.List;
 
+import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.Order;
 
 public interface OrderDao {
@@ -17,7 +17,7 @@ public interface OrderDao {
 	 *            0查看所有订单 1查看删除的订单
 	 * @return 返回所有订单列表
 	 */
-	public List<Order> getAllOrders(String parm, Date startTime, Date endTime,
+	public CurrentPage<Order> getAllOrders(String parm, Date startTime, Date endTime,
 			int mark);
 
 	/**
@@ -30,7 +30,7 @@ public interface OrderDao {
 	 *            用户名
 	 * @return 返回用户的订单列表
 	 */
-	public List<Order> getOrders(Date startTime, Date endTime, String username);
+	public CurrentPage<Order> getOrders(Date startTime, Date endTime, String username);
 
 	/**
 	 * 

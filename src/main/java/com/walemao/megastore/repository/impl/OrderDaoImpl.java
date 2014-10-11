@@ -22,14 +22,14 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-
+	String queryArgs ="o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype";
+	
 	@Override
 	public CurrentPage<Order> getAllOrders(String parm, Date startTime, Date endTime,
 			int mark) {
 		PaginationHelper<Order> ph = new PaginationHelper<Order>();
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
-		String queryArgs ="o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype";
 		String sql = "select " + queryArgs + " from t_order where deletemark is " + args;
 		List<Object> list = new ArrayList<Object>();
 		if (parm == null || parm.length() <= 0) {
@@ -43,12 +43,11 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 			list.add(endTime);
 		}
 		sql += " order by o_createtime desc";
-		return ph.fetchPage(jdbcTemplate, sql.replace(queryArgs, "count(1)", sqlFetchRows, args, pageNo, pageSize, rowMapper)
-		//return this.jdbcTemplate.query(sql, list.toArray(), new OrderMapper());
+		return ph.fetchPage(jdbcTemplate, sql.replace(queryArgs, "count(1)"), sql, list.toArray(), CurrentPage.getPageNubmer(), CurrentPage.getPageLength(), new OrderMapper());
 	}
 
 	@Override
-	public List<Order> getOrders(Date startTime, Date endTime, String username) {
+	public CurrentPage<Order> getOrders(Date startTime, Date endTime, String username) {
 		// TODO Auto-generated method stub
 		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where deletemark is null";
 		List<Object> list = new ArrayList<Object>();
