@@ -123,8 +123,11 @@
 					</div>					
 					<div class="img_hidden_ids">
 					 <c:if test="${productBase.id !=null}">
+					    <%int i=1; %>
 					    <c:forEach items="${productBase.productImages}" var="productImage">
 					       <input type="hidden" name="imageId" id="img_<c:out value="${productImage.id}" />" value="<c:out value="${productImage.id}" />">
+					       <input type="hidden" name="imageUrl" class="product-image-onserver-<%=i%> image-count" value="<c:out value="${productImage.picSrc}" />" >
+					     <%i++; %>
 					    </c:forEach>
 					 </c:if>
 					</div>			
@@ -392,6 +395,15 @@
         acceptedFiles: '.jpg,.png,.gif',
         addRemoveLinks: true,
         init: function() {
+        	var count = $('.image-count').length;
+        	if(count > 0){
+        		for(var i=1; i<=count; i++){
+    				var mockFile = { name: '已上传的图片', size: 12345};
+    				this.options.addedfile.call(this, mockFile);
+    				this.options.thumbnail.call(this, mockFile, $('.product-image-onserver-'+i).val());	
+    			} 
+        	}    
+        	
             this.on("success", function(file, data) {
             	var sort = window.sort;
             	window.sort = sort + 1;
@@ -399,6 +411,7 @@
             	$('.img_hidden_ids').append(image_id_input);
             	file.fileId = data.imgId;
             });
+            
             this.on("removedfile", function(file) {
                 $.post('<c:url value="/admin/product/img?${_csrf.parameterName}=${_csrf.token}" />', {_method : 'DELETE', imageId : file.fileId}, function(data){
                 	if(data.status == 'success'){
@@ -408,6 +421,7 @@
             });
         }
     });
+    
   
 </script>
 </html>

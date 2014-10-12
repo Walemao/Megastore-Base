@@ -69,7 +69,7 @@
 					  <tr>
 						<td class="content-list"><%=i%></td>
 						<td><a class="thumbnail"><img src="<c:out value="${product.thumbnail}" />" width="60" height="60"></a></td>
-						<td class="content-listt"><c:out value="${product.name}" /></td>
+						<td class="content-list"><c:out value="${product.name}" /></td>
 						<td class="content-list"><c:out value="${product.productClassification.name}" /></td>
 						<td class="content-list">
 						<fmt:formatDate value="${product.createtime}" type="date" pattern="yyyy/MM/dd HH:mm:ss"/></td>
