@@ -1,5 +1,7 @@
 package com.walemao.megastore.repository;
 
+import java.util.Date;
+
 import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.User;
 
@@ -11,7 +13,8 @@ public interface UserDao {
 	 *            0是禁用 1是启用 2是所有
 	 * @return
 	 */
-	public CurrentPage<User> getUsers(String username, int type);
+	public CurrentPage<User> getUsers(String username, Date startTime,
+			Date endTime, int type);
 
 	public User getUser(int id);
 

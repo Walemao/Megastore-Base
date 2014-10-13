@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.log4j.spi.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.impl.Log4jLoggerFactory;
+
 public class DateUtil {
 	/**
 	 * 
@@ -45,6 +49,18 @@ public class DateUtil {
 	 */
 	public static String FormatToE(Date date) {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd /n HH:mm:ss");
+		return dateFormat.format(date);
+	}
+	
+	/**
+	 * 转化方法成yyyy/MM/dd带换行格式
+	 * 
+	 * @param date
+	 *            传入的Date格式的时间参数
+	 * @return yyyy/MM/dd带换行格式
+	 */
+	public static String FormatToF(Date date){
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 		return dateFormat.format(date);
 	}
 }
