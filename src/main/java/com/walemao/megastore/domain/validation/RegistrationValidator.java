@@ -5,13 +5,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.walemao.megastore.domain.User;
 import com.walemao.megastore.repository.UserDao;
 
-
+@Component
 public class RegistrationValidator implements Validator
 {
 	private Logger logger = LoggerFactory.getLogger(RegistrationValidator.class);
@@ -32,17 +31,17 @@ public class RegistrationValidator implements Validator
 				"User Name must not be Empty.");*/
 
 		String userName = user.getUsername();
-		logger.debug("fff" + userName);
 		if ((userName.length()) > 50) 
 		{
-			errors.rejectValue("userName",
+			errors.rejectValue("username",
 					"lengthOfUser.registration.userName",
 					"User Name must not more than 50 characters.");
 		}
 		
-		if (true || userDao.CheckUsername(user.getUsername()))
+		if (userDao.CheckUsername(user.getUsername()))
 		{
-			errors.rejectValue("userName",
+			System.out.println("ffffffasdfasdfasdfsfdadfasdf");
+			errors.rejectValue("username",
 					"User:userName",
 					"User Name exists");
 		}
