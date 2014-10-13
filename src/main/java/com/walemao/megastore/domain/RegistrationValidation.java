@@ -22,7 +22,7 @@ public class RegistrationValidation
 				"NotEmpty.registration.userName",
 				"User Name must not be Empty.");
 		logger.debug("ffffffffffffffffffff");
-		String userName = user.getUserName();
+		String userName = user.getUsername();
 		logger.debug("fff" + userName);
 		if ((userName.length()) > 50) 
 		{

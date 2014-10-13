@@ -27,9 +27,9 @@
 				<form action="<c:url value="/admin/users" />" method="get"
 					class="form-inline content-search-form" role="form">
 					<div class="form-group">
-						<label class="control-label" for="userName">用户名称：</label> <input
-							type="text" class="form-control" id="userName" name="userName"
-							placeholder="输入用户" value="<c:out value="${userName}"></c:out>">
+						<label class="control-label" for="username">用户名称：</label> <input
+							type="text" class="form-control" id="username" name="username"
+							placeholder="输入用户" value="<c:out value="${username}"></c:out>">
 					</div>
 					
 					<div class="form-group">
@@ -69,7 +69,7 @@
 							<td><a class="thumbnail"><img
 									src="<c:out value="${user.head_portrait}" />" width="60"
 									height="60"></a></td>
-							<td class="content-list"><c:out value="${user.userName}" /></td>
+							<td class="content-list"><c:out value="${user.username}" /></td>
 							<td class="content-list">
 							   <c:if test="${user.enabled==true}">
 							      启用中
@@ -90,13 +90,13 @@
 										class="icon-info-sign"></i></a>
 								    <c:if test="${user.enabled==true}">
 									<a class="btn btn-xs btn-danger control-user-status"
-										data-id="<c:out value="${user.userName}"/>" data-status="0"
+										data-id="<c:out value="${user.username}"/>" data-status="0"
 										data-toggle="tooltip" data-original-title="禁用"><i
 										class="icon-remove-sign"></i></a>
 									</c:if>
 									<c:if test="${user.enabled==false}">
 									<a class="btn btn-xs btn-success control-user-status"
-										data-id="<c:out value="${user.userName}"/>" data-status="1"
+										data-id="<c:out value="${user.username}"/>" data-status="1"
 										data-toggle="tooltip" data-original-title="启用"><i
 										class="icon-ok-sign"></i></a>
 									</c:if>
@@ -146,11 +146,11 @@
 						var status = $(this).attr('data-status');
 						var text = (status = 0)? '启用' : '禁用';
 						if (window.confirm('你确定要' + text + '吗？')) {
-							var userName = $(this).attr('data-id');
+							var username = $(this).attr('data-id');
 							$.post('<c:url value="/admin/user?${_csrf.parameterName}=${_csrf.token}"/>',
 											{
 												_method : 'DELETE',
-												username : userName,
+												username : username,
 												enabled : status
 											}, function(data) {
 												if (data.status == 'success') {

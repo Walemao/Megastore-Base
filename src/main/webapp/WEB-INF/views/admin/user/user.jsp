@@ -19,7 +19,7 @@
 		<div id="content">
 			<ul id="nav-info" class="clearfix">
 				<li><a href="#"><i class="icon-gift"></i></a></li>
-				<li><a href="#">用户管理</a></li>
+				<li><a href="../users">用户管理</a></li>
 				<li class="active"><a href="#">用户信息</a></li>
 			</ul>
 
@@ -38,7 +38,7 @@
 							<table class="table user-base-info-table">
 								<tr>
 								  <td width="20"><label><i class="icon-user"></i>用户名：</label></td>
-								  <td width="30">tyjuncai</td>
+								  <td width="30"><c:out value="${user.userName}" /></td>
 								  <td width="20"><label><i class="icon-envelope"></i>邮箱：</label></td>
 								  <td width="30">tyjuncai@qq.com</td>
 								</tr>

@@ -81,7 +81,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		String sql = "update t_user set u_password =? where u_username = ? and deletemark is null";
 		this.jdbcTemplate.update(sql,
-				new Object[] { user.getPassword(), user.getUserName() });
+				new Object[] { user.getPassword(), user.getUsername() });
 	}
 
 	@Override
@@ -89,7 +89,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		String sql = "update t_user set u_email =? where u_username = ? and deletemark is null";
 		this.jdbcTemplate.update(sql,
-				new Object[] { user.getEmail(), user.getUserName() });
+				new Object[] { user.getEmail(), user.getUsername() });
 
 	}
 
@@ -98,7 +98,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		String sql = "update t_user set u_mobilephone =? where u_username = ? and deletemark is null";
 		this.jdbcTemplate.update(sql, new Object[] { user.getMobilephone(),
-				user.getUserName() });
+				user.getUsername() });
 
 	}
 
@@ -108,7 +108,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 		String sql = "insert into t_user(u_username,u_password,u_salt) values(?,?,?)";
 		return this.addIntoDB(
 				sql,
-				new Object[] { user.getUserName(), user.getPassword(),
+				new Object[] { user.getUsername(), user.getPassword(),
 						user.getSalt() });
 	}
 
