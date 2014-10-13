@@ -1,8 +1,5 @@
 package com.walemao.megastore.dao;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
