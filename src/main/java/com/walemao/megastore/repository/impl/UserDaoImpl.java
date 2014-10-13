@@ -24,7 +24,8 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 			+ "u_email,u_createtime,u_remark,u_type,u_level,u_enabled,u_head_portrait";
 	private String querySql = "select "
 			+ queryAgrs
-			+ " from t_user a left join t_user_base b on a.u_username = b.u_username where 1=1 ";
+			+ " from t_user a left join t_user_base b"
+			+ " on a.u_username = b.u_username where 1=1 and u_type<> 1 ";
 
 	public CurrentPage<User> getUsers(String username, int type)
 			throws DataAccessException {
