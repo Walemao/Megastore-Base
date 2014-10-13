@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-11 16:54:25
+Date: 2014-10-13 22:38:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -148,7 +148,7 @@ CREATE TABLE `t_order` (
   `o_createtime` timestamp NULL DEFAULT NULL COMMENT '下单时间',
   `o_addressinfo` longtext NOT NULL COMMENT '地址详细信息',
   `o_confirm` varchar(50) DEFAULT NULL COMMENT '确认人名称',
-  `o_state` tinyint(1) DEFAULT NULL COMMENT '订单状态',
+  `o_state` tinyint(1) DEFAULT '0' COMMENT '订单状态',
   `o_fee` decimal(12,0) DEFAULT NULL COMMENT '订单金额',
   `o_freight` decimal(12,0) DEFAULT NULL COMMENT '运费',
   `o_remark` varchar(255) DEFAULT NULL COMMENT '备注',
@@ -201,8 +201,9 @@ CREATE TABLE `t_product_base` (
   UNIQUE KEY `idx_t_product_base_1` (`p_number`),
   KEY `idx_t_product_base_2` (`p_name`) USING BTREE,
   KEY `idx_t_product_base_4` (`deletemark`) USING BTREE,
-  KEY `idx_t_product_base_3` (`p_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+  KEY `idx_t_product_base_3` (`p_id`) USING BTREE,
+  KEY `idx_t_product_base_5` (`p_classify`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_product_classify
@@ -240,7 +241,7 @@ CREATE TABLE `t_product_images` (
   `pi_sort` int(11) DEFAULT '0' COMMENT '排序',
   `pi_productid` bigint(20) DEFAULT NULL COMMENT '商品ID',
   PRIMARY KEY (`pi_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_product_info
@@ -260,7 +261,7 @@ CREATE TABLE `t_product_info` (
   UNIQUE KEY `idx_t_product_info_2` (`pd_thummd5`) USING BTREE,
   KEY `idx_t_product_info_1` (`pd_productid`) USING BTREE,
   CONSTRAINT `fk_product_info_1` FOREIGN KEY (`pd_productid`) REFERENCES `t_product_base` (`p_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_proposal
@@ -318,14 +319,14 @@ CREATE TABLE `t_user` (
   KEY `idx_t_user_1` (`u_type`) USING BTREE,
   KEY `idx_t_user_2` (`u_level`),
   KEY `idx_t_user_3` (`u_enabled`)
-) ENGINE=InnoDB AUTO_INCREMENT=996 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_user_authority
 -- ----------------------------
 DROP TABLE IF EXISTS `t_user_authority`;
 CREATE TABLE `t_user_authority` (
-  `username` varchar(255) NOT NULL COMMENT '用户名',
+  `username` varchar(50) NOT NULL COMMENT '用户名',
   `authority` varchar(255) NOT NULL COMMENT '权限',
   UNIQUE KEY `idx_auth_username` (`username`,`authority`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
