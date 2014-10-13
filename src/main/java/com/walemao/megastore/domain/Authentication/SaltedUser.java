@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
+@SuppressWarnings("serial")
 public class SaltedUser extends User
 {
 	private String salt;
