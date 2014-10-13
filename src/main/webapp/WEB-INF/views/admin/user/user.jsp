@@ -37,30 +37,39 @@
 						<div class="col-md-7">
 							<table class="table user-base-info-table">
 								<tr>
-								  <td width="20"><label><i class="icon-user"></i>用户名：</label></td>
-								  <td width="30"><c:out value="${user.userName}" /></td>
-								  <td width="20"><label><i class="icon-envelope"></i>邮箱：</label></td>
-								  <td width="30">tyjuncai@qq.com</td>
+									<td width="20"><label><i class="icon-user"></i>用户名：</label></td>
+									<td width="30"><c:out value="${user.username}" /></td>
+									<td width="20"><label><i class="icon-envelope"></i>邮箱：</label></td>
+									<td width="30"><c:out value="${user.email}" /></td>
 								</tr>
 								<tr>
-								  <td><label><i class="icon-phone-sign"></i>电话：</label></td>
-								  <td>13425081463</td>
-								  <td><label><i class="icon-flag"></i>是否启用：</label></td>
-								  <td>是</td>
+									<td><label><i class="icon-phone-sign"></i>电话：</label></td>
+									<td><c:out value="${user.mobilephone}" /></td>
+									<td><label><i class="icon-flag"></i>是否启用：</label></td>
+									<td><c:if test="${user.enabled==true}">
+							      启用中
+							   </c:if> <c:if test="${user.enabled==false}">
+							      已禁用
+							   </c:if></td>
 								</tr>
 								<tr>
-								  <td><label><i class="icon-time"></i>注册时间：</label></td>
-								  <td>2014/10/11 16:46:31</td>
-								  <td><label><i class="icon-star"></i>用户等级：</label></td>
-								  <td>1</td>
+									<td><label><i class="icon-time"></i>注册时间：</label></td>
+									<td>><c:out value="${user.createtime}" /></td>
+									<td><label><i class="icon-star"></i>用户等级：</label></td>
+									<td>1</td>
 								</tr>
 							</table>
 						</div>
-						<div class="col-md-1"><!-- 空间占位标签 --></div>
+						<div class="col-md-1">
+							<!-- 空间占位标签 -->
+						</div>
 						<div class="col-md-2">
-							<h5 class="page-header-sub" style="padding-left: 10px;"><i class="icon-camera-retro"></i>用户头像</h5>
+							<h5 class="page-header-sub" style="padding-left: 10px;">
+								<i class="icon-camera-retro"></i>用户头像
+							</h5>
 							<a class="thumbnail" style="width: 120px;"> <img
-								src="<c:url value="/resources-admin/images/user_image.png"/>" width="120" height="120" />
+								src="<c:url value="/resources-admin/images/user_image.png"/>"
+								width="120" height="120" />
 							</a>
 						</div>
 					</div>
@@ -71,11 +80,11 @@
 				<div class="tab-pane" id="dash-tabs-user-extra">nmhyrty</div>
 			</div>
 
-            <!-- 用户订单信息 -->
-            <h3 class="page-header">用户订单</h3>
+			<!-- 用户订单信息 -->
+			<h3 class="page-header">用户订单</h3>
 
-            <!-- 用户收货地址信息 -->
-            <h3 class="page-header">用户收货地址</h3>
+			<!-- 用户收货地址信息 -->
+			<h3 class="page-header">用户收货地址</h3>
 		</div>
 
 	</div>

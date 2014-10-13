@@ -22,7 +22,7 @@ import com.walemao.megastore.domain.User;
 import com.walemao.megastore.service.UserService;
 
 @Controller
-public class UserController {
+public class UserController extends BaseController{
 	private Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Autowired
 	private UserService UserService;
@@ -62,7 +62,8 @@ public class UserController {
 	@RequestMapping(value = "/admin/user/{id}", method = { RequestMethod.GET })
 	public String getUser(@PathVariable("id") int userId,
 			HttpServletRequest request) {
-
+		User user = this.UserService.getUser(userId);
+		request.setAttribute("user", user);
 		return "admin/user/user";
 	}
 

@@ -62,7 +62,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	@Override
 	public User getUser(int id) {
 		// TODO Auto-generated method stub
-		String sql = querySql + " and u_id = ? and deletemark is null limit 1";
+		String sql = querySql + " and a.u_id = ? and deletemark is null limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { id },
 				new UserMapper()).get(0);
 	}
@@ -71,7 +71,7 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	public User getUser(String username) {
 		// TODO Auto-generated method stub
 		String sql = querySql
-				+ " and u_username = ? and deletemark is null limit 1";
+				+ " and a.u_username = ? and deletemark is null limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { username },
 				new UserMapper()).get(0);
 	}
