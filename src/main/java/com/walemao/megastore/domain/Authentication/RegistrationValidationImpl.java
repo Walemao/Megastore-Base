@@ -20,9 +20,9 @@ public class RegistrationValidationImpl implements RegistrationValidation
 	public void validate(Object target, Errors errors) 
 	{
 		User user = (User) target;
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName",
+/*		ValidationUtils.rejectIfEmptyOrWhitespace(user.getUsername(), "userName",
 				"NotEmpty.registration.userName",
-				"User Name must not be Empty.");
+				"User Name must not be Empty.");*/
 
 		String userName = user.getUsername();
 		logger.debug("fff" + userName);

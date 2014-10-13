@@ -51,8 +51,8 @@ body {
 				<strong>注册系统</strong>
 			</legend>
 			<!-- reg表单 -->
-			<form:label path="userName">用户名 </form:label>
-			<form:input path="userName" cssClass="form-control" />
+			<form:label path="username">用户名 </form:label>
+			<form:input path="username" cssClass="form-control" />
 
 			<form:label path="password" style="margin-top: 5px;">密&nbsp;&nbsp;码</form:label>
 			<form:input path="password" cssclass="form-control" />
