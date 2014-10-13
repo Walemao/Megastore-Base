@@ -23,7 +23,7 @@
 	
 	
 	<!-- 项目配置文件 -->
-	<context:property-placeholder location="/apptest.properties" />
+	<context:property-placeholder location="/app-test.properties" />
 
 	<!-- 配置Mysql数据源 -->
 	<bean id="dataSourceSpied" class="com.jolbox.bonecp.BoneCPDataSource"
