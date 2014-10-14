@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-14 11:22:17
+Date: 2014-10-14 14:38:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -159,7 +159,7 @@ CREATE TABLE `t_order` (
   KEY `idx_t_order_2` (`o_paytype`) USING BTREE COMMENT '支付索引',
   KEY `idx_t_order_3` (`deletemark`) USING BTREE COMMENT '删除标志索引',
   KEY `idx_t_order_4` (`o_username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10000000 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_order_detail
