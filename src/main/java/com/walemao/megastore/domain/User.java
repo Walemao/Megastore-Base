@@ -16,6 +16,26 @@ public class User {
 	private boolean enabled;
 	private String confirmPassword;
 	private String head_portrait;
+	
+	private UserBase userBase;
+	private UserDetail userDetail;
+	
+
+	public UserBase getUserBase() {
+		return userBase;
+	}
+
+	public void setUserBase(UserBase userBase) {
+		this.userBase = userBase;
+	}
+
+	public UserDetail getUserDetail() {
+		return userDetail;
+	}
+
+	public void setUserDetail(UserDetail userDetail) {
+		this.userDetail = userDetail;
+	}
 
 	public String getHead_portrait() {
 		return head_portrait;

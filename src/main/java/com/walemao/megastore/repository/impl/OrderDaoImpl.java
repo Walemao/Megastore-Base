@@ -23,7 +23,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	String queryArgs = "o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype";
+	String queryArgs = "o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_status,o_fee,o_freight,o_remark,o_paytype";
 
 	@Override
 	public CurrentPage<Order> getAllOrders(String parm, Date startTime,
@@ -40,7 +40,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 			list.add("%" + parm + "%");
 		}
 		if (orderStatus != EnumOrder.全部状态.getKey()) {
-			sql += " and o_state = ?";
+			sql += " and o_status = ?";
 			list.add(orderStatus);
 		}
 		if (startTime != null && endTime != null) {
@@ -68,7 +68,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 			list.add(endTime);
 		}
 		if (orderStatus != EnumOrder.全部状态.getKey()) {
-			sql += " and o_state = ?";
+			sql += " and o_status = ?";
 			list.add(orderStatus);
 		}
 		sql += " and o_username=? order by o_createtime desc";
@@ -123,7 +123,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 	@Override
 	public Order getOrder(int orderId) {
 		// TODO Auto-generated method stub
-		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_state,o_fee,o_freight,o_remark,o_paytype from t_order where o_id=? limit 1";
+		String sql = "select o_id,o_username,o_createtime,o_addressinfo,o_confirm,o_status,o_fee,o_freight,o_remark,o_paytype from t_order where o_id=? limit 1";
 		return this.jdbcTemplate.query(sql, new Object[] { orderId },
 				new OrderMapper()).get(0);
 	}
@@ -131,8 +131,8 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 	@Override
 	public void updateOrderStatus(Order o) {
 		// TODO Auto-generated method stub
-		String sql = "update t_order set o_state = ? where o_id=?";
-		this.jdbcTemplate.update(sql, new Object[] { o.getState(), o.getId() });
+		String sql = "update t_order set o_status = ? where o_id=?";
+		this.jdbcTemplate.update(sql, new Object[] { o.getStatus(), o.getId() });
 	}
 
 	@Override

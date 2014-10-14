@@ -10,7 +10,7 @@ public class Order {
 	private Date createtime;
 	private String addressinfo;
 	private String confirm;
-	private int state;
+	private int status;
 	private BigDecimal fee;
 	private BigDecimal freight;
 	private String remark;
@@ -54,11 +54,11 @@ public class Order {
 	public void setAddressinfo(String addressinfo) {
 		this.addressinfo = addressinfo;
 	}
-	public int getState() {
-		return state;
+	public int getStatus() {
+		return status;
 	}
-	public void setState(int state) {
-		this.state = state;
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	public BigDecimal getFee() {
 		return fee;

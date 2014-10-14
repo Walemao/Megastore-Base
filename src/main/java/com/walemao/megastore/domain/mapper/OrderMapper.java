@@ -17,7 +17,7 @@ public class OrderMapper implements ParameterizedRowMapper<Order>{
 		order.setCreatetime(rs.getDate("o_createtime"));
 		order.setAddressinfo(rs.getString("o_addressinfo"));
 		order.setConfirm(rs.getString("o_confirm"));
-		order.setState(rs.getInt("o_state"));
+		order.setStatus(rs.getInt("o_status"));
 		order.setFee(rs.getBigDecimal("o_fee"));
 		order.setFreight(rs.getBigDecimal("o_freight"));
 		order.setRemark(rs.getString("o_remark"));

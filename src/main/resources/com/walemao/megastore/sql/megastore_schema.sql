@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-13 22:38:09
+Date: 2014-10-14 11:22:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -147,15 +147,15 @@ CREATE TABLE `t_order` (
   `o_username` varchar(50) NOT NULL COMMENT '用户名',
   `o_createtime` timestamp NULL DEFAULT NULL COMMENT '下单时间',
   `o_addressinfo` longtext NOT NULL COMMENT '地址详细信息',
-  `o_confirm` varchar(50) DEFAULT NULL COMMENT '确认人名称',
-  `o_state` tinyint(1) DEFAULT '0' COMMENT '订单状态',
+  `o_confirm` varchar(50) DEFAULT NULL COMMENT '确认人账号 管理员',
+  `o_status` tinyint(1) DEFAULT '0' COMMENT '订单状态',
   `o_fee` decimal(12,0) DEFAULT NULL COMMENT '订单金额',
   `o_freight` decimal(12,0) DEFAULT NULL COMMENT '运费',
   `o_remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `o_paytype` tinyint(1) DEFAULT NULL COMMENT '支付方式',
   `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`o_id`),
-  KEY `idx_t_order_1` (`o_state`) USING BTREE COMMENT '订单状态索引',
+  KEY `idx_t_order_1` (`o_status`) USING BTREE COMMENT '订单状态索引',
   KEY `idx_t_order_2` (`o_paytype`) USING BTREE COMMENT '支付索引',
   KEY `idx_t_order_3` (`deletemark`) USING BTREE COMMENT '删除标志索引',
   KEY `idx_t_order_4` (`o_username`)
