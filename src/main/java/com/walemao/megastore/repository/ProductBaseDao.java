@@ -24,7 +24,7 @@ public interface ProductBaseDao {
 	 */
 	public CurrentPage<ProductBase> getProducts(String parm, int classify,
 			Date startTime, Date endTime, int mark);
-
+	
 	public ProductBase getProduct(int id);
 
 	public int insert(ProductBase p);

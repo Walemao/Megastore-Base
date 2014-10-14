@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.Order;
 import com.walemao.megastore.domain.OrderDetail;
+import com.walemao.megastore.domain.Enum.EnumOrder;
 import com.walemao.megastore.domain.mapper.OrderMapper;
 import com.walemao.megastore.repository.OrderDao;
 import com.walemao.megastore.util.PaginationHelper;
@@ -26,7 +27,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 
 	@Override
 	public CurrentPage<Order> getAllOrders(String parm, Date startTime,
-			Date endTime, int mark) {
+			Date endTime, int orderStatus, int mark) {
 		PaginationHelper<Order> ph = new PaginationHelper<Order>();
 		// TODO Auto-generated method stub
 		String args = mark == 0 ? "null" : "not null";
@@ -37,6 +38,10 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 		} else {
 			sql += " and o_id like ?";
 			list.add("%" + parm + "%");
+		}
+		if (orderStatus != EnumOrder.全部状态.getKey()) {
+			sql += " and o_state = ?";
+			list.add(orderStatus);
 		}
 		if (startTime != null && endTime != null) {
 			sql += " and o_createtime between ? and ?";
@@ -51,7 +56,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 
 	@Override
 	public CurrentPage<Order> getOrders(Date startTime, Date endTime,
-			String username) {
+			int orderStatus, String username) {
 		// TODO Auto-generated method stub
 		PaginationHelper<Order> ph = new PaginationHelper<Order>();
 		String sql = "select " + queryArgs
@@ -61,6 +66,10 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 			sql += " and o_createtime between ? and ?";
 			list.add(startTime);
 			list.add(endTime);
+		}
+		if (orderStatus != EnumOrder.全部状态.getKey()) {
+			sql += " and o_state = ?";
+			list.add(orderStatus);
 		}
 		sql += " and o_username=? order by o_createtime desc";
 		list.add(username);
@@ -131,6 +140,14 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 		// TODO Auto-generated method stub
 		String sql = "delete from t_order where o_id=?";
 		this.jdbcTemplate.update(sql, new Object[] { id });
+	}
+
+	@Override
+	public void updateConfirm(Order o) {
+		// TODO Auto-generated method stub
+		String sql = "update t_order set o_confirm = ? where o_id=?";
+		this.jdbcTemplate.update(sql,
+				new Object[] { o.getConfirm(), o.getId() });
 	}
 
 }
