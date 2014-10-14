@@ -1,5 +1,7 @@
 package com.walemao.megastore.repository.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -17,8 +19,9 @@ public class UserDetailDaoImpl extends CommonDaoImpl implements UserDetailDao {
 	public UserDetail getUserDetail(String username) {
 		// TODO Auto-generated method stub
 		String sql = "select u_id,u_username,u_matrial_status,u_education,u_professional,u_industry,u_income,u_interests,u_selfdesc from t_user_detail where u_username = ? limit 1";
-		return this.jdbcTemplate.query(sql, new Object[] { username },
-				new UserDetailMapper()).get(0);
+		List<UserDetail> list = this.jdbcTemplate.query(sql,
+				new Object[] { username }, new UserDetailMapper());
+		return list.size() > 0 ? list.get(0) : null;
 	}
 
 	@Override
