@@ -4,6 +4,7 @@ public enum EnumOrder {
 	全部状态("全部状态", -1), 等待付款("等待付款", 0), 等待收货("等待收货", 1), 已完成("已完成", 2), 已取消(
 			"已取消", 3);
 	private int key;
+
 	public void setKey(int key) {
 		this.key = key;
 	}
@@ -14,8 +15,15 @@ public enum EnumOrder {
 		this.name = name;
 		this.key = key;
 	}
-	
-	
+
+	public static String getName(int key) {
+		for (EnumOrder e : EnumOrder.values()) {
+			if (e.getKey() == key)
+				return e.name;
+		}
+		return null;
+	}
+
 	public int getKey() {
 		return key;
 	}

@@ -1,6 +1,7 @@
 package com.walemao.megastore.domain.mapper;
 
 import java.sql.ResultSet;
+
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
@@ -24,6 +25,7 @@ public class OrderMapper implements ParameterizedRowMapper<Order>{
 		order.setFreight(rs.getBigDecimal("o_freight"));
 		order.setRemark(rs.getString("o_remark"));
 		order.setPaytype(rs.getInt("o_paytype"));
+		order.setOrderStatus(EnumOrder.getName(order.getStatus()));
 		return order;
 	}
 
