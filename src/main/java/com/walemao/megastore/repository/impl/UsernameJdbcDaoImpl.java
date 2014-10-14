@@ -1,4 +1,4 @@
-package com.walemao.megastore.domain.Authentication;
+package com.walemao.megastore.repository.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,14 +18,6 @@ import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 
 public class UsernameJdbcDaoImpl extends JdbcDaoImpl
 {
-
-	/*public void changePassword(String username, String password) 
-	{  
-	    getJdbcTemplate().update(  
-	      "UPDATE USERS SET PASSWORD = ? WHERE USERNAME = ?",  
-	      password, username);  
-	} */
-	
 	@Override  
 	protected UserDetails createUserDetails(String username,  
 	          UserDetails userFromUserQuery,  

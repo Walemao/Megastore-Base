@@ -3,6 +3,7 @@ package com.walemao.megastore.repository.impl;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,11 +86,11 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void updatePasswd(User user) {
+	public void updatePasswd(String username, String password) {
 		// TODO Auto-generated method stub
 		String sql = "update t_user set u_password =? where u_username = ? and u_enabled<> 0";
 		this.jdbcTemplate.update(sql,
-				new Object[] { user.getPassword(), user.getUsername() });
+				new Object[] { username, password });
 	}
 
 	@Override
@@ -120,31 +121,29 @@ public class UserDaoImpl extends CommonDaoImpl implements UserDao {
 						user.getSalt() });
 	}
 
-	@SuppressWarnings("deprecation")
+	
 	@Override
 	public boolean CheckUsername(String username) {
 		// TODO Auto-generated method stub
 		String sql = "select 1 from t_user where u_username=? and u_enabled<> 0 limit 1";
-		return this.jdbcTemplate.queryForInt(sql, new Object[] { username }) == 1 ? true
-				: false;
+		List<Map<String, Object>> list = this.jdbcTemplate.queryForList(sql, new Object[] { username });
+		return list.size() == 1 ? true : false;
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public boolean CheckMobilephone(String mobilephone) {
 		// TODO Auto-generated method stub
 		String sql = "select 1 from t_user where u_mobilephone=? and u_enabled<> 0 limit 1";
-		return this.jdbcTemplate.queryForInt(sql, new Object[] { mobilephone }) == 1 ? true
-				: false;
+		List<Map<String, Object>> list =  this.jdbcTemplate.queryForList(sql, new Object[] { mobilephone });
+		return list.size() == 1 ? true : false;
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public boolean CheckEmail(String email) {
 		// TODO Auto-generated method stub
 		String sql = "select 1 from t_user where u_email=? and u_enabled<> 0 limit 1";
-		return this.jdbcTemplate.queryForInt(sql, new Object[] { email }) == 1 ? true
-				: false;
+		List<Map<String, Object>> list =  this.jdbcTemplate.queryForList(sql, new Object[] { email });
+		return list.size() == 1 ? true : false;
 	}
 
 	@Override

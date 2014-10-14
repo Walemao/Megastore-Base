@@ -1,4 +1,4 @@
-package com.walemao.megastore.domain.Authentication;
+package com.walemao.megastore.repository.impl;
 
 import java.util.Collection;
 

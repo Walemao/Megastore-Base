@@ -20,7 +20,7 @@ public interface UserDao {
 
 	public User getUser(String username);
 
-	public void updatePasswd(User user);
+	public void updatePasswd(String username, String password);
 
 	public void updateEmail(User user);
 
