@@ -14,7 +14,9 @@ public class OrderMapper implements ParameterizedRowMapper<Order>{
 	public Order mapRow(ResultSet rs, int rowNum) throws SQLException {
 		// TODO Auto-generated method stub
 		Order order = new Order();
-		order.setCreatetime(rs.getDate("o_createtime"));
+		order.setId(rs.getInt("o_id"));
+		order.setUsername(rs.getString("o_username"));
+		order.setCreatetime(rs.getTimestamp("o_createtime"));
 		order.setAddressinfo(rs.getString("o_addressinfo"));
 		order.setConfirm(rs.getString("o_confirm"));
 		order.setStatus(rs.getInt("o_status"));
