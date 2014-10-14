@@ -10,9 +10,17 @@ public class Comments {
 	private int productid;
 	private int orderdetailid;
 	private Date createtime;
+	
+	private ProductInfo productInfo;
+	private ProductBase productBase;
 
-	private ProductBase productInfo;
-	private OrderDetail orderdetail;
+	public ProductInfo getProductInfo() {
+		return productInfo;
+	}
+
+	public void setProductInfo(ProductInfo productInfo) {
+		this.productInfo = productInfo;
+	}
 
 	public int getProductid() {
 		return productid;
@@ -20,14 +28,6 @@ public class Comments {
 
 	public void setProductid(int productid) {
 		this.productid = productid;
-	}
-
-	public OrderDetail getOrderdetail() {
-		return orderdetail;
-	}
-
-	public void setOrderdetail(OrderDetail orderdetail) {
-		this.orderdetail = orderdetail;
 	}
 
 	public int getOrderdetailid() {
@@ -78,11 +78,12 @@ public class Comments {
 		this.createtime = createtime;
 	}
 
-	public ProductBase getProductInfo() {
-		return productInfo;
+	public ProductBase getProductBase() {
+		return productBase;
 	}
 
-	public void setProductInfo(ProductBase productInfo) {
-		this.productInfo = productInfo;
+	public void setProductBase(ProductBase productBase) {
+		this.productBase = productBase;
 	}
-}
+
+ }

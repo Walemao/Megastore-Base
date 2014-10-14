@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 import com.walemao.megastore.domain.Comments;
-import com.walemao.megastore.domain.OrderDetail;
+import com.walemao.megastore.domain.ProductBase;
 import com.walemao.megastore.domain.ProductInfo;
 
 public class CommentsMapper implements ParameterizedRowMapper<Comments> {
@@ -20,13 +20,13 @@ public class CommentsMapper implements ParameterizedRowMapper<Comments> {
 		c.setUsername(rs.getString("c_username"));
 		c.setContent(rs.getString("c_content"));
 		c.setType(rs.getInt("c_type"));
-		
-		OrderDetail orderdetail = new OrderDetail();
-		ProductInfo producttype = new ProductInfo();
-		producttype.setName(rs.getString("pd_name"));
-		orderdetail.setProducttype(producttype);
-		c.setOrderdetail(orderdetail);
-		
+		c.setProductid(rs.getInt("c_productid"));
+		ProductBase pb = new ProductBase();
+		pb.setName(rs.getString("p_name"));
+		c.setProductBase(pb);
+		ProductInfo productInfo = new ProductInfo();
+		productInfo.setName(rs.getString("pd_name"));
+		c.setProductInfo(productInfo);
 		c.setCreatetime(rs.getDate("c_createtime"));
 		return c;
 	}
