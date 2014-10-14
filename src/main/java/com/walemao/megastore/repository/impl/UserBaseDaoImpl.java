@@ -1,5 +1,7 @@
 package com.walemao.megastore.repository.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -18,8 +20,9 @@ public class UserBaseDaoImpl extends CommonDaoImpl implements UserBaseDao {
 	public UserBase getUserBase(String username) {
 		// TODO Auto-generated method stub
 		String sql = "select u_id,u_username,u_head_portrait,u_nickname,u_realname,u_sex,u_birth,u_isval_email,u_provices,u_cities,u_districts,u_address,u_zipcode,u_isval_mobilephone,u_telphone from t_user_base where u_username = ? limit 1";
-		return this.jdbcTemplate.query(sql, new Object[] { username },
-				new UserBaseMapper()).get(0);
+		List<UserBase> list = this.jdbcTemplate.query(sql,
+				new Object[] { username }, new UserBaseMapper());
+		return list.size() > 0 ? list.get(0) : null;
 	}
 
 	@Override

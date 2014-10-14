@@ -10,7 +10,6 @@ import com.walemao.megastore.repository.UserDetailDao;
 
 @Repository
 public class UserDetailDaoImpl extends CommonDaoImpl implements UserDetailDao {
-
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 

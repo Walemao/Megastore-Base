@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2014-10-14 14:38:05
+Date: 2014-10-14 16:55:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -149,10 +149,10 @@ CREATE TABLE `t_order` (
   `o_addressinfo` longtext NOT NULL COMMENT '地址详细信息',
   `o_confirm` varchar(50) DEFAULT NULL COMMENT '确认人账号 管理员',
   `o_status` tinyint(1) DEFAULT '0' COMMENT '订单状态',
-  `o_fee` decimal(12,0) DEFAULT NULL COMMENT '订单金额',
-  `o_freight` decimal(12,0) DEFAULT NULL COMMENT '运费',
+  `o_fee` decimal(12,0) DEFAULT '0' COMMENT '订单金额',
+  `o_freight` decimal(12,0) DEFAULT '0' COMMENT '运费',
   `o_remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `o_paytype` tinyint(1) DEFAULT NULL COMMENT '支付方式',
+  `o_paytype` tinyint(1) DEFAULT '0' COMMENT '支付方式',
   `deletemark` timestamp NULL DEFAULT NULL COMMENT '删除标志',
   PRIMARY KEY (`o_id`),
   KEY `idx_t_order_1` (`o_status`) USING BTREE COMMENT '订单状态索引',
@@ -241,7 +241,7 @@ CREATE TABLE `t_product_images` (
   `pi_sort` int(11) DEFAULT '0' COMMENT '排序',
   `pi_productid` bigint(20) DEFAULT NULL COMMENT '商品ID',
   PRIMARY KEY (`pi_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_product_info
@@ -353,7 +353,7 @@ CREATE TABLE `t_user_base` (
   `u_telphone` varchar(20) DEFAULT NULL COMMENT '座机',
   PRIMARY KEY (`u_id`),
   UNIQUE KEY `idx_t_user_base_1` (`u_username`) USING BTREE COMMENT '用户名唯一索引'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_user_detail
@@ -370,7 +370,7 @@ CREATE TABLE `t_user_detail` (
   `u_interests` varchar(255) DEFAULT NULL COMMENT '兴趣爱好',
   `u_selfdesc` varchar(255) DEFAULT NULL COMMENT '自我介绍',
   PRIMARY KEY (`u_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for t_user_login
