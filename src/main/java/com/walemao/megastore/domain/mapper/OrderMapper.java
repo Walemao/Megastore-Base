@@ -1,12 +1,12 @@
 package com.walemao.megastore.domain.mapper;
 
 import java.sql.ResultSet;
-
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
 import com.walemao.megastore.domain.Order;
+import com.walemao.megastore.domain.Enum.EnumOrder;
 
 public class OrderMapper implements ParameterizedRowMapper<Order>{
 

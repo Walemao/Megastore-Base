@@ -1,6 +1,7 @@
 package com.walemao.megastore.repository;
 
 import java.util.Date;
+import java.util.List;
 
 import com.walemao.megastore.domain.CurrentPage;
 import com.walemao.megastore.domain.Order;
@@ -26,7 +27,7 @@ public interface OrderDao {
 	 * @param orderStatus	订单状态
 	 * @return
 	 */
-	public CurrentPage<Order> getOrders(Date startTime, Date endTime,int orderStatus,
+	public List<Order> getOrders(Date startTime, Date endTime,int orderStatus,
 			String username);
 
 	/**

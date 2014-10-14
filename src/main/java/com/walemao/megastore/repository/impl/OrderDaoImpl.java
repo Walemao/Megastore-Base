@@ -55,10 +55,9 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 	}
 
 	@Override
-	public CurrentPage<Order> getOrders(Date startTime, Date endTime,
+	public List<Order> getOrders(Date startTime, Date endTime,
 			int orderStatus, String username) {
 		// TODO Auto-generated method stub
-		PaginationHelper<Order> ph = new PaginationHelper<Order>();
 		String sql = "select " + queryArgs
 				+ " from t_order where deletemark is null";
 		List<Object> list = new ArrayList<Object>();
@@ -73,9 +72,7 @@ public class OrderDaoImpl extends CommonDaoImpl implements OrderDao {
 		}
 		sql += " and o_username=? order by o_createtime desc";
 		list.add(username);
-		return ph.fetchPage(jdbcTemplate, sql.replace(queryArgs, "count(1)"),
-				sql, list.toArray(), CurrentPage.getPageNubmer(),
-				CurrentPage.getPageLength(), new OrderMapper());
+		return this.jdbcTemplate.query(sql, list.toArray(),new OrderMapper());
 	}
 
 	@Override
